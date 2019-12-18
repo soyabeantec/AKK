@@ -1,0 +1,54 @@
+\babel@toc {german}{}
+\babel@toc {german}{}
+\babel@toc {german}{}
+\babel@toc {german}{}
+\babel@toc {german}{}
+\contentsline {chapter}{\numberline {1}Einleitung}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Ausgangslage}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Ziele}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Übersicht}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Basic Terminology}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Related Work and Projects}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Structure of the Thesis}{4}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Used Technologies}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Cinema 4D}{5}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Visualisierung}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Kapitel1}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Kapitel2}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Kapitel3}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Kapitel4}{6}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Die Arbeitsumgebung}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}AWS}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Linux}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Portainer}{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}IntelliJ}{7}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Vim}{7}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Docker}{7}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Technologien}{8}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Kapitel1}{8}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Kapitel2}{8}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Kapitel3}{8}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Kapitel4}{8}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Was sind Visualisierungs Applikationen}{9}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Kapitel1}{9}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Kapitel2}{9}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Kapitel3}{9}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Kapitel4}{9}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Der Unterschied zwischen Javascript und Zero Code}{10}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Kapitel1}{10}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Kapitel2}{10}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Kapitel3}{10}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Kapitel4}{10}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Vergleich der Visualisierungs Applikationen}{11}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Kapitel1}{11}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Kapitel2}{11}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Kapitel3}{11}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Kapitel4}{11}{section.8.4}%
+\contentsline {chapter}{\numberline {9}Probleme beim Visualisierungsprozess}{12}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Kapitel1}{12}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Kapitel2}{12}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Kapitel3}{12}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Kapitel4}{12}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Summary}{13}{chapter.10}%
+\contentsline {chapter}{\numberline {A}Additional Information}{18}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Individual Goals}{19}{appendix.B}%
