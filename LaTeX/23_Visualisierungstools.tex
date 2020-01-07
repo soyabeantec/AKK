@@ -1,5 +1,154 @@
-\chapter{Was sind Visualisierungs Applikationen}
-\section{Kapitel1}
-\section{Kapitel2}
-\section{Kapitel3}
-\section{Kapitel4}
+\chapter{Der Unterschied zwischen Javascript und Zero Code}
+Die Entscheidung ob mit JavaScript Frameworks oder „Zero Code“ Frameworks gearbeitet werden soll muss bereits früh im Projekt geklärt werden weil es enorme Auswirkungen hat auf den Aufwand der eingeplant werden muss.
+\section{JavaScript Frameworks}
+JavaScript ist eine Skriptsprache und wurde erschaffen um CSS und HTML zu erweitern. Es kann verwendet werden um Websites Interaktiver zu machen sodass der Benutzer nicht jedes Mal eine vollständige neue Seite laden muss wenn er zum Beispiel eine neue Filteroption einer Liste auswählt. JavaScript kann aber noch viel mehr. Vgl JAVASCRIPT !!!
+In unserem Fall könnte man JavaScript verwenden um interaktive Grafiken auf einer Website zu platzieren. Dies hätte den Vorteil das der Kunde das Diagramm nach seinen Wünschen anpassen könnte um die Daten anzuzeigen welche er gerade benötigt. 
+Nachteile bei der Verwendung von diversen JavaScript Frameworks sind zum Beispiel der Große Aufwand der von Nöten ist weil man einen vollständigen Server mit Datenbankzugriff selber ausimplementieren muss. Die Interaktivität muss man dabei ebenfalls selber integrieren.
+Um einen besseren Überblick über die vorhandenen Libraries zu bekommen habe ich folgende Untersucht:
+\subsection{D3}\label{ssec:D3}
+„D3.js ist eine JavaScript-Bibliothek zur Manipulation von Dokumenten auf Basis von Daten. D3 hilft Ihnen, Daten mit Hilfe von HTML, SVG und CSS zum Leben zu erwecken. Die Betonung von D3 auf Webstandards gibt Ihnen die vollen Möglichkeiten moderner Browser, ohne sich an ein proprietäres Framework zu binden, und kombiniert leistungsstarke Visualisierungskomponenten mit einem datengesteuerten Ansatz zur DOM-Manipulation.“~\cite{d3js} 
+\subsection{Google Charts}
+Google Charts ist sehr ähnlich zu D3(~\ref{ssec:D3} ) 
+\section{Zero Code Frameworks}
+Wie die Überschrift bereits vermuten lässt handelt es sich bei „Zero Code“ Frameworks um Applikationen die bereits vollständig implementiert worden sind. Der Arbeitsaufwand hält sich dementsprechend auch in gewissen Grenzen. Was aber nicht bedeutet das gar keine Zeit investiert werden muss denn zusätzlich zu dem Installations Vorgang muss auch eine Datenbank- oder eventuell REST-Schnittstelle implementiert werden. Nachdem unser Arbeitgeber MIC die Vorgabe gab das wir mit einem „Zero Code“ Framework arbeiten sollen folgt nun eine detailliertere Form der getesteten Frameworks:
+\subsection{Tableu}
+Tableau ist ein kostenpflichtiges Datenvisualisierungstool, das für große Daten in Unternehmen optimiert ist. Obwohl es eine überwältigende Menge an Möglichkeiten hat und dies einige Zeit zum Erlernen benötigt, ist es besonders für Nicht-Techniker sehr einfach zu bedienen. Einmal richtig aufgesetzt können Datenfelder mit Hilfe von Drag n Drop einfach in das Diagramm gezogen werden und die Daten erscheinen im Diagramm. Es hilft auch bei der Auswahl der besten Grafik für jede Datenquelle indem es Vorschläge anzeigt. Hat der Benutzer ein Diagramm fertig kann er es auch in die Cloud stellen damit alle berechtigten Nutzer darauf zugreifen können. 
+\subsubsection{Vorteile}
+\begin{itemize}
+\item Einfaches einfügen der Daten durch Drag n Drop
+\item Visualisierungen einfach über die Cloud teilen
+\item Auf verschiedensten Geräten verwendbar
+\end{itemize}
+\subsubsection{Nachteile}
+\begin{itemize}
+\item Vergleichsweise Teuer
+\item Nur als Desktop App verfügbar 
+\item Schwierig zu Erlernen
+\end{itemize}
+\subsubsection{Tableau Preise}
+Ein weiterer Wunsch von MIC war es das die verwendeten Technologien Gratis sind oder nicht viel kosten. Tableau erreichte diese Anforderung eindeutig nicht was die folgende Abbildung \ref{img:tableu_preise} über die Preispolitik zeigt.
+\begin{figure}
+    \centering
+    \includegraphics[scale=.45]{images/Tableau_Preise.png}
+    \caption{Tableau Preispolitik}
+    \label{img:tableu_preise}
+\end{figure}
+Zusätzlich kann man noch extra Pakete dazu bestellen
+\subsection{Infogram}
+Infogram ist ein Online-Werkzeug zur Erstellung von Grafiken und Diagrammen.
+Es bietet 5 verschiedene Datenbanken (MySQL, Postgre, Amazon Redshift, Oracle und MS SQL Server), aber keine REST-Schnittstelle, da es hauptsächlich dazu dient, hübsche Grafiken für Präsentationen und Berichte zu erstellen.
+Außerdem kann man Daten per Upload importieren, mit Google Drive, Drop Box und Json. 
+\subsubsection{Vorteile} 
+\begin{itemize}
+\item Sehr gut verwendbar für Presentationen
+\item Einfach und Intuitiv zu benutzen
+\item Online Teamarbeit an einem Document
+\item Unglaublich schöne Grafiken
+\end{itemize}
+\subsubsection{Nachteile}
+\begin{itemize}
+\item Vergleichsweise Teuer
+\item Keine Analysefunktionen
+\item Nur eine kleine Auswahl an Funktionen und Grafiken
+\item Keine REST-Schnittstelle
+\end{itemize}
+\subsubsection{Infogram Preise}
+Infogram ist für seine Funktionen vergleichsweise teuer, ähnlich zu Tableau was in folgender Abbildung zu sehen ist \ref{img:infogram_preise}
+\begin{figure}[h]
+    \includegraphics[scale=.50]{images/Infogram_Preise.png}
+    \caption{Infogram Preispolitik}
+    \label{img:infogram_preise}
+\end{figure}
+\subsection{Chartblock}
+Chartblock ist ein sehr einfaches Werkzeug, mit dem man Diagramme in einer Wizard-Form(Schritt-für-Schritt Anleitung) erstellen kann. Zur Zeit der Entscheidung welches Tool verwendet werden soll  hatte es keine Möglichkeit daten außer mit csv, Excel oder Manuell zu importieren, daher ist es für unseren Anwendungsfall derzeit nicht relevant
+\subsection{Datawrapper}
+Datawrapper ist ähnlich zu Chartblock jedoch liegt der Fokus auf Diagramme für Journalisten. Es hat ebenso keine Möglichkeit Daten aus einer Datenbank oder einer REST-Schnittstelle zu entnehmen weswegen es ebenfalls nicht infrage kommt.
+\subsection{Qlik}
+Qlik ist ein Tool mit Schwerpunkt Data Analytics. Es kann aber auch Diagramme zeichnen.
+Qlik kann Daten aus allen gängigen Quellen verarbeiten und es schlägt dabei auch vor wie Datensätze verbunden werden könnten was einiges an Aufwand spart. Auch bei der gemeinsamen Erstellung und Verteilung von Daten hilft Qlik. Sodass auch Nicht-Techniker die Informationen Nützen und verwenden können
+\subsubsection{Vorteile} 
+\begin{itemize}
+\item Code freie Daten Analysefunktionen mit Künstlicher Intelligenz
+\item Auf allen gängigen Plattformen benutzbar
+\item Legt großen Wert auf Zusammenarbeit
+\item Viele Datenimport Möglichkeiten darunter REST
+\item Hohe Skalierbarkeit mit Multi-Nodes
+\item Interaktive Diagramme
+\end{itemize}
+\subsubsection{Nachteile}
+\begin{itemize}
+\item Der Preis ist nicht ersichtlich, weil er für jeden Kunden einzeln berechnet wird
+\item Es gibt Programme die deutlich schönere Grafiken und Diagramme erzeugen
+\end{itemize}
+
+\subsection{Power Bi}
+PowerBI ist das Business-Intelligence-Werkzeug von Microsoft. Es ist einfach zu bedienen und hat sehr schöne Diagramme out-of-the-box. Leider konnte ich die REST-API nicht ausprobieren, weil man das online registrieren muss und Admin-Berechtigungen von MIC benötigt. Es gibt aber Testdaten mit denen man zumindest den Diagramm Teil der Applikation ausprobieren kann. Die Benutzung ist sehr einfach auch ohne technische Erfahrung und die Diagramme sind wirklich sehr schön.
+\begin{itemize}
+\item Interaktive Diagramme
+\item Sehr Intuitiv in der Benutzung auch ohne Technische Erfahrung
+\item Sehr schöne Diagramme
+\item Es können Datenabfragen mit Volltextsuche gemacht werden (nur auf Englisch)
+\item Eigene Analysefunktionen geschrieben in Python oder R
+\item Auf allen gängigen Plattformen benutzbar
+\end{itemize}
+\subsubsection{Nachteile}
+\begin{itemize}
+\item Der Preis ist nicht ersichtlich, weil er für jeden Kunden einzeln berechnet wird
+\item Es gibt Programme die deutlich schönere Grafiken und Diagramme erzeugen
+\end{itemize}
+Die Tatsache das Power Bi fast ausschließlich in der Cloud läuft kann sowohl Vorteile als auch Nachteile bieten. Ein klarer Vorteil dabei wäre das sich MIC nicht eigene Server bauen oder vorhandene Server belasten müsste. Ein Nachteil wäre die starke Abhängigkeit von dem Cloud
+\subsubsection{Power Bi Preispolitik}
+Microsoft verlangt für seinen Enterprise Service nicht Pro Benutzer sondern Pro benutzer Rechen- und Speicherkapazität. Wie in Folgender Abbildung ersichtlich wird gibt es aber auch ein Pro Benutzer Abonnement:
+\begin{figure}[h]
+    \includegraphics[scale=.60]{images/PowerBi_Preise.png}
+    \caption{PowerBI Preispolitik}
+    \label{img:powerbi_preise}
+\end{figure}
+
+\subsection{Kibana}
+Kibana ist ein grafisches Werkzeug, das auf Elasticsearch basiert. Elasticsearch ist eine Dokumentbasierte NoSQL Datenbank welche durch Features wie Volltextsuche und extrem schnelle Suchabfragen glänzt. Eine weitere tolle Eigenheit ist das Kibana sowohl als auch Elasticsearch schnell über Docker aufgesetzt werden können und sofort Startbereit sind und Daten über REST-Schnittstelle oder Zugriff auf externe Datenbanken importiert werden können. Kibana bietet aber auch out-of-the-box die Möglichkeit Musterdatensätze zu verwenden um einen ersten Eindruck zu erhalten. Kibana dient nicht nur zur Visualisierung, sondern auch zur Überwachung von Abfragen auf Daten. So kann z.B. kontrolliert werden von wem die Daten benutzt werden.
+\begin{itemize}
+\item Umfassendes Berechtigungssystem
+\item Sehr einfach aufzusetzen
+\item Schöne Diagramme
+\item Es können Datenabfragen mit Volltextsuche gemacht werden (nur auf Englisch)
+\item Sehr schnell durch die Elasticsearch Suchmaschine
+\item REST-Schnittstelle verfügbar
+\item Hochgradig Interaktive Diagramme
+\item Sehr gute Skalierbarkeit dank Multi-Nodes
+\item Opensource und Großteils Gratis
+\end{itemize}
+\subsubsection{Nachteile}
+\begin{itemize}
+\item Erweiterte Sicherheitsfunktionen, Multi-Nodes, Machine Learning und Support kosten etwas
+\item Diagramme erstellen dauert etwas ist etwas komplexer als bei anderen Visualisierungs Programmen
+\end{itemize}
+\section{Andere Tools}
+\subsection{Dash by Plotly}
+Dash ist eine Open-Source-Bibliothek für R und Python. Es wird kein JavaScript benötigt, aber Python. Mit Python schreibt man sowohl das Layout der Website sowohl als auch die Logik des Servers dahinter. Somit erreicht es einen ähnlich großen Funktionsumfang wie oben genannte JavaScript Frameworks mit dem bedeutenden Unterschied das Python mit wenigen Zeilen Code sehr viel mehr bewirken kann als JavaScript. Jedoch muss hier jedes Diagramm und Dashboard von einem Programmierer Entwickelt werden. Einfache Kunden können somit nur schwer Änderungen an dem Diagramm vornehmen oder gar neue erstellen.
+\subsubsection{Vorteile} 
+\begin{itemize}
+\item Gratis benutzung der Bibliotheken. Nur der Support ist kostenpflichtig
+\item Kann gut in Websiten eingebunden werden
+\item REST-Schnittstelle kann selber geschrieben werden
+\item Die Interaktivität der Diagramme wird von den Dash Bibliotheken unterstützt => Weniger Aufwand bei der Implementierung
+\end{itemize}
+\subsubsection{Nachteile}
+\begin{itemize}
+\item Implementierungen notwendig
+\item Analysefunktionen müssen selber geschrieben werden
+\item Nicht-Techniker können keine eigenen Diagramme erstellen
+\end{itemize}
+\section{Vergleich der Visualisierungs Applikationen}
+Es gibt noch viel mehr Visualisierungsprogramme aber die wohl wichtigsten / bekanntesten sind hier gelistet. Eine paar der oben gelisteten Programme sind Nichenprodukte, es wird bestimmte Einsatzzwecke für Applikationen wie z.B. Chartblock geben jedoch werden diese nicht für die folgende Top 3 reichen. 
+Zur Erinnerung hier die Anforderungen von MIC für ein Visualisierungs Tool. REFERENZ EINFÜGEN
+\subsection{Dritter Platz: Qlik}
+Qlik ist nicht schlecht, aber im Vergleich zu Kibana und PowerBI ist das Einrichten von Beziehungen und das Erstellen von Diagrammen etwas komplexer. Wenn man z.B. Daten von einer REST-Verbindung erhält, erzeugt es einige Spalten mehr als im Original-Datensatz, was sehr irritierend ist und für einen erhöhten Aufwand in der REST-Schnittstellenimplementierung sorgt. Ein weiterer wichtiger Punkt ist, dass Qlik-Benutzer sich über den hohen RAM-Bedarf beschweren welcher bei der geplanten Hochskalierung der Hardwareressourcen zu bedeutenden Kostenerhöhungen führen wird. Somit fällt Qlik trotz der guten Analytischen Funktionen auf Platz 3.
+\subsection{Zweiter Platz: Power Bi}
+Die Entscheidung zwischen PowerBI und Kibana war eine schwere Wahl, weil PowerBI wirklich schön und einfach zu bedienen ist. Darüber hinaus hat es einige Features wie die "Voll Text ERKLÄRUNG REFERENZIEREN Abfragen" und "On-Click-Analyse", die sie sehr gut machen. Leider konnte ich die REST-API aufgrund eines komplexen Azure (Cloud von Microsoft) Registrierungsmechanismus nicht überprüfen. Ein entscheidender Faktor war die Auslieferung (Deployment) von PowerBI. Es gibt nur ein zusätzliches Tool namens "PowerBI Report Server", das nur dazu dient, Berichte innerhalb einer Firma zu verbreiten, die vorher in PowerBI Desktop gemacht wurden. Dieses eine Programm läuft auf einem Server in der Firma die es einsetzt. Der ganze Rest Verarbeitung der Visualisierung und der Analytischen Funktionen übernimmt die Microsoft Cloud Azure. Dadurch wird das Produkt nicht nur deutlich teurer, sondern die Firma wird auch sehr viel stärker an Microsoft gebunden.
+\subsection{Erster Platz: Kibana}
+Kibana ist gleich in den meisten Punkten mit PowerBI, aber es gibt zwei wichtige Punkte, die Kibana ein wenig besser machen:
+\begin{enumerate}
+\item Kibana und Elasticsearch sind out-of-the-box für den Einsatz auf Servern konzipiert, was die Bereitstellung und den Zugriff von vielen verschiedenen Geräten aus erleichtert, ohne dass eine Desktop-Applikation installiert werden muss.
+\item Besonders Elasticsearch ist (wie beworben) sehr schnell, da es für den Anwendungsfall gebaut ist für Analysefunktionen niedrige Zugriffszeiten zu bieten.
+\end{enumerate}

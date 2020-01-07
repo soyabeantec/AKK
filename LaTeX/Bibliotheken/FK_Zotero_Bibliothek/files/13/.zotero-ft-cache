@@ -1,0 +1,320 @@
+Skip to content
+
+    Why GitHub?
+    Features →
+        Code review
+        Project management
+        Integrations
+        Actions
+        Package registry
+        Team management
+        Social coding
+        Documentation
+        Code hosting
+        Customer stories →
+        Security →
+    Enterprise
+    Explore
+        Explore GitHub →
+    Learn & contribute
+        Topics
+        Collections
+        Trending
+        Learning Lab
+        Open source guides
+    Connect with others
+        Events
+        Community forum
+        GitHub Education
+    Marketplace
+    Pricing
+    Plans →
+        Compare plans
+        Contact Sales
+        Nonprofit →
+        Education →
+
+    In this repository All GitHub ↵
+    Jump to ↵
+
+    No suggested jump to results
+
+    In this repository All GitHub ↵
+    Jump to ↵
+    In this repository All GitHub ↵
+    Jump to ↵
+
+Sign in Sign up
+
+    Watch 6
+    Star 13
+    Fork 3
+
+friendica / docker
+Code Issues 7 Pull requests 0 Projects 0 Security Insights
+Dismiss
+Join GitHub today
+
+GitHub is home to over 36 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+New issue
+
+Have a question about this project? Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+
+Pick a username
+
+Email Address
+
+Password
+
+Sign up for GitHub
+
+By clicking “Sign up for GitHub”, you agree to our terms of service and privacy statement . We’ll occasionally send you account related emails.
+
+Already on GitHub? Sign in to your account
+Cannot start service web: OCI runtime create failed #8
+Closed
+jaltek opened this issue May 23, 2018 · 13 comments
+Closed
+Cannot start service web: OCI runtime create failed #8
+jaltek opened this issue May 23, 2018 · 13 comments
+Comments
+@jaltek
+Copy link Quote reply
+jaltek commented May 23, 2018
+
+By using the docker-compose example for "Base version - FPM" I got an error while firing up the containers:
+
+ERROR: for friendica_web_1 Cannot start service web: OCI runtime create failed: container_linux.go:348: starting container process caused "process_linux.go:402: container init caused \"rootfs_linux.go:58: mounting \\\"/srv/docker/friendica/nginx.conf\\\" to rootfs \\\"/var/lib/docker/overlay2/***UUID***/merged\\\" at \\\"/var/lib/docker/overlay2/***UUID***/merged/etc/nginx/nginx.conf\\\" caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+
+docker-compose created an empty folder nginx.conf inside the directory of the docker-compose.yml file during startup.
+@nupplaphil
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Collaborator
+nupplaphil commented May 23, 2018
+
+Did you create a local nginx.conf before starting?
+@jaltek
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Author
+jaltek commented May 23, 2018
+
+No (I figured that's where the mistake was). If this is a prerequisite maybe it should be mentioned in the README :)
+@nupplaphil
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Collaborator
+nupplaphil commented May 23, 2018
+
+Hm.. There is a sentence about looking for examples in the examples folder.
+
+But I will write it more clear / prominent :-)
+@jaltek
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Author
+jaltek commented May 23, 2018
+
+Well - I first assumed it will run out of the box like the apache example without any further configuration.
+A docker compose example YAML file tempts you to try it out quickly :)
+@MrPetovan MrPetovan added the Bug label May 23, 2018
+@jaltek
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Author
+jaltek commented May 25, 2018
+
+If you are going to edit the README because of the nginx-fpm example maybe you should replace the
+
+ links: - app  
+
+flag in flavor of version 3 of the compose file.
+Quote:
+
+    The --link flag is a legacy feature of Docker. It may eventually be removed. Unless you absolutely need to continue using it, we recommend that you use user-defined networks to facilitate communication between two containers instead of using --link. One feature that user-defined networks do not support that you can do with --link is sharing environmental variables between containers. However, you can use other mechanisms such as volumes to share environment variables between containers in a more controlled way.
+
+Ref: https://docs.docker.com/compose/compose-file/#links
+
+Maybe something like:
+
+ version : ' 3 '  
+
+services :
+  db :
+    image : mariadb 
+    restart : always 
+    volumes :
+      - db:/var/lib/mysql 
+    environment :
+      - MYSQL_USER=friendica 
+      - MYSQL_PASSWORD= 
+      - MYSQL_DATABASE=friendica 
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes 
+    networks :
+      main :
+        aliases :
+          - db 
+
+  app :
+    image : friendica/server:fpm 
+    restart : always 
+    volumes :
+      - friendica:/var/www/html  
+    environment :
+      - MYSQL_HOST=db 
+      - MYSQL_PORT=3306 
+      - MYSQL_USER=friendica 
+      - MYSQL_PASSWORD= 
+      - MYSQL_DATABASE=friendica 
+      - MAILNAME=root@friendica.local 
+    hostname : friendica.local 
+    depends_on :
+      - db 
+    networks :
+      main :
+        aliases :
+          - app 
+
+  web :
+    image : nginx 
+    ports :
+      - 8080:80 
+    volumes :
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro 
+    volumes_from :
+      - app 
+    restart : always 
+    networks :
+      main :
+        aliases :
+          - web 
+
+volumes :
+  db :
+  friendica :
+
+networks :
+  main :
+
+👍 1
+@nupplaphil
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Collaborator
+nupplaphil commented May 25, 2018
+
+I will change the link to the custom network linking, but I don't want to change the version to "3" because there are currently a lot of version 2 docker-compose configs out there.
+
+When you make a nginx.conf file with the help of one of the examples and start it with the given docker-compose file, is the docker environment working?
+@nupplaphil nupplaphil referenced this issue May 26, 2018
+Merged
+Adding examples for docker-compose #11
+@nupplaphil
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Collaborator
+nupplaphil commented May 26, 2018
+
+There is a new description in the README for using this example.
+@jaltek
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Author
+jaltek commented May 26, 2018
+Hi, as I wrote you via Mastodon/Friendica I'm currently on vacation. I will test it in a week :) Am 26. Mai 2018 19:15:11 schrieb Philipp <notifications@github.com>:
+…
+There is a new description in the README for using this example. — You are receiving this because you authored the thread. Reply to this email directly, view it on GitHub, or mute the thread.
+👍 1
+@jaltek
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Author
+jaltek commented Jun 4, 2018
+
+Works perfect :)
+
+But the compose example from README differs from .examples/docker-compose/insecure/mariadb-cron-smtp/fpm/docker-compose.yml or was that on purpose?
+@nupplaphil
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Collaborator
+nupplaphil commented Jun 6, 2018
+
+Thanks for the feedback :-)
+
+Yes, because the example-files are more like a "template" for everybody. So there are more environment variables to consider and the db-credentials are in a separated file.
+
+The docker-compose examples in the README are for "quick&dirty" setups.
+
+In the near future, I will make docker-compose files with traefik as a ACME(Let's encrypt) and Reverse Proxy (=> secure docker-compose files ;-) )
+@nupplaphil
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Collaborator
+nupplaphil commented Jun 23, 2018
+
+@jaltek Can I close this issue? Is the answer for the README suitable for you?
+@jaltek
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+Author
+jaltek commented Jun 25, 2018
+
+IMHO yes. Thx!
+👍 1
+@jaltek jaltek closed this Jun 25, 2018
+@pianic26
+This comment has been minimized.
+Sign in to view
+Copy link Quote reply
+pianic26 commented Jun 4, 2019
+
+I have the same problem; I'm new with docker and I don't how to fix please help
+ERROR: for firstproject-webserver Cannot start service webserver: OCI runtime create failed: container_linux.go:345: starting container process caused "process_linux.go:424: container init caused "rootfs_linux.go:58: mounting \"/c/firstproject/phpdocker/nginx/nginx.conf\" to rootfs \"/mnt/sda1/var/lib/docker/overlay2/ccb70cb832f49a81d583eb3e389371e01865cb6ab9ae7dd4a923d4f434a9361c/merged\" at \"/mnt/sda1/var/lib/docker/overlay2/ccb70cb832f49a81d583eb3e389371e01865Creating firstproject-php-fpm ... done
+u trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected tCreating firstproject-mysql ... done
+docker-compose.txt
+@nupplaphil nupplaphil referenced this issue Jun 16, 2019
+Open
+Cannot start service webserver: OCI runtime create failed #65
+Sign up for free to join this conversation on GitHub . Already have an account? Sign in to comment
+Assignees
+No one assigned
+Labels
+Bug
+Projects
+None yet
+Milestone
+No milestone
+4 participants
+@jaltek @nupplaphil @pianic26 @MrPetovan
+
+    © 2019 GitHub , Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.

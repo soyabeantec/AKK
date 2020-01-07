@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon / product-logo / 64x64px / enterprise-search / white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-/-product-logo-/-64x64px-/-enterprise-search-/-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(5.000000, 5.000000)" fill="#FFFFFF">
+            <path d="M27,0 C22.076,0 17.475,1.339 13.5,3.642 C21.563,8.312 27,17.012 27,27 C27,36.988 21.563,45.688 13.5,50.358 C17.475,52.661 22.076,54 27,54 C41.912,54 54,41.912 54,27 C54,12.088 41.912,0 27,0" id="Fill-1"></path>
+            <path d="M14,41 L16.921,41 C20.142,37.107 22,32.17 22,27 C22,21.83 20.142,16.893 16.921,13 L14,13 C6.268,13 0,19.268 0,27 C0,34.732 6.268,41 14,41" id="Fill-3"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,1435 @@
+    Products
+    Back
+    Elastic for
+    App Search
+
+    Add search to your app
+    Site Search
+
+    Add search to your website
+    Enterprise Search
+
+    Search all of your content
+    APM
+
+    Monitor your apps
+    Logs
+
+    Centralize, analyze logs
+    Infrastructure
+
+    Centralize, analyze metrics
+    SIEM
+
+    Analyze security events
+    Maps
+
+    Explore geo data
+    Uptime
+
+    Monitor availability
+    View all products
+    Elastic (ELK) Stack
+    Elasticsearch
+
+    Store, search, analyze
+    Kibana
+
+    Visualize, navigate, share
+    SaaS
+    Elastic Cloud
+
+    SaaS offerings
+    On-Prem
+    Download
+
+    Self-managed offerings
+    ECE
+
+    Centralized orchestration
+
+    Get started with Elasticsearch.
+    Watch video
+    Learn
+    Back
+    Blogs
+
+    Tutorials, updates, people
+    Docs
+
+    Product guides
+    Elastic{ON}
+
+    Global Elasticsearch conferences
+    Events & Meetups
+
+    Worldwide community events
+    Videos
+
+    Webinars, customers, tutorials
+    Community
+
+    Groups, forums, code
+    Consulting
+
+    Project acceleration packages
+    Training
+
+    Live, virtual, on-demand courses
+    Documentation
+
+    Popular topics
+    Elastic (ELK) Stack Upgrading
+    Elasticsearch Getting Started
+    Kibana Getting Started
+    Site Search Reference
+    App Search Reference
+    APM Overview
+
+    Upgrade the Elastic Stack.
+    Watch video
+    Company
+    Back
+    About
+
+    Our story, teams, Source Code
+    Customers
+
+    Case studies, videos, blogs
+    Jobs
+
+    Peruse our openings
+    Partners
+
+    Find or become a partner
+    Investor Relations
+
+    Results, filings, resources
+    Awards
+
+    Recognizing remarkable work
+    News
+
+    Popular topics
+    Elastic Stack 7.2.0 released
+    Introducing Elastic SIEM
+    Observability Updates in v 7.2
+
+    Elastic is a search company.
+    Watch video
+    Pricing
+    Back
+    Elastic Cloud Pricing
+
+    Deploy hosted Elasticsearch and our family of SaaS products
+    Elastic On-Prem Subscriptions
+
+    Deploy and run in the environment you choose
+    Elastic On-Prem Orchestration Subscriptions
+
+    Deploy, run, and orchestrate in the environment you choose
+
+    Get started with the official Elasticsearch Service.
+    Watch video
+
+Try Free Login
+
+    Contact
+    Try Free
+    Login
+
+    Documentation
+    Elasticsearch
+    7.2
+
+Docs
+You are looking at documentation for an older release. Not what you want? See the current release documentation .
+Elasticsearch Reference [7.2] » Document APIs » Index API
+«  Reading and Writing documents     Get API  »
+Index API edit
+Important
+
+See Removal of mapping types .
+
+The index API adds or updates a JSON document in a specific index, making it searchable. The following example inserts the JSON document into the "twitter" index with an id of 1:
+
+ PUT twitter/_doc/1
+{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elasticsearch"
+}
+
+Copy as cURL View in Console  
+
+The result of the above index operation is:
+
+ {
+    "_shards" : {
+        "total" : 2,
+        "failed" : 0,
+        "successful" : 2
+    },
+    "_index" : "twitter",
+    "_type" : "_doc",
+    "_id" : "1",
+    "_version" : 1,
+    "_seq_no" : 0,
+    "_primary_term" : 1,
+    "result" : "created"
+}
+
+The _shards header provides information about the replication process of the index operation:
+
+total
+    Indicates how many shard copies (primary and replica shards) the index operation should be executed on.
+successful
+    Indicates the number of shard copies the index operation succeeded on.
+failed
+    An array that contains replication-related errors in the case an index operation failed on a replica shard.
+
+The index operation is successful in the case successful is at least 1.
+Note
+
+Replica shards may not all be started when an indexing operation successfully returns (by default, only the primary is required, but this behavior can be changed ). In that case, total will be equal to the total shards based on the number_of_replicas setting and successful will be equal to the number of shards started (primary plus replicas). If there were no failures, the failed will be 0.
+Automatic Index Creation edit
+
+The index operation automatically creates an index if it does not already exist, and applies any index templates that are configured. The index operation also creates a dynamic mapping if one does not already exist. By default, new fields and objects will automatically be added to the mapping definition if needed. Check out the mapping section for more information on mapping definitions, and the put mapping API for information about updating mappings manually.
+
+Automatic index creation is controlled by the action.auto_create_index setting. This setting defaults to true , meaning that indices are always automatically created. Automatic index creation can be permitted only for indices matching certain patterns by changing the value of this setting to a comma-separated list of these patterns. It can also be explicitly permitted and forbidden by prefixing patterns in the list with a + or - . Finally it can be completely disabled by changing this setting to false .
+
+ PUT _cluster/settings
+{
+    "persistent": {
+        "action.auto_create_index": "twitter,index10,-index1*,+ind*"   
+    }
+}
+
+PUT _cluster/settings
+{
+    "persistent": {
+        "action.auto_create_index": "false"   
+    }
+}
+
+PUT _cluster/settings
+{
+    "persistent": {
+        "action.auto_create_index": "true"   
+    }
+}
+
+Copy as cURL View in Console  
+
+	
+
+Permit only the auto-creation of indices called twitter , index10 , no other index matching index1* , and any other index matching ind* . The patterns are matched in the order in which they are given.
+
+	
+
+Completely disable the auto-creation of indices.
+
+	
+
+Permit the auto-creation of indices with any name. This is the default.
+Operation Type edit
+
+The index operation also accepts an op_type that can be used to force a create operation, allowing for "put-if-absent" behavior. When create is used, the index operation will fail if a document by that id already exists in the index.
+
+Here is an example of using the op_type parameter:
+
+ PUT twitter/_doc/1?op_type=create
+{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elasticsearch"
+}
+
+Copy as cURL View in Console  
+
+Another option to specify create is to use the following uri:
+
+ PUT twitter/_create/1
+{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elasticsearch"
+}
+
+Copy as cURL View in Console  
+Automatic ID Generation edit
+
+The index operation can be executed without specifying the id. In such a case, an id will be generated automatically. In addition, the op_type will automatically be set to create . Here is an example (note the POST used instead of PUT ):
+
+ POST twitter/_doc/
+{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elasticsearch"
+}
+
+Copy as cURL View in Console  
+
+The result of the above index operation is:
+
+ {
+    "_shards" : {
+        "total" : 2,
+        "failed" : 0,
+        "successful" : 2
+    },
+    "_index" : "twitter",
+    "_type" : "_doc",
+    "_id" : "W0tpsmIBdwcYyG50zbta",
+    "_version" : 1,
+    "_seq_no" : 0,
+    "_primary_term" : 1,
+    "result": "created"
+}
+
+Optimistic concurrency control edit
+
+Index operations can be made conditional and only be performed if the last modification to the document was assigned the sequence number and primary term specified by the if_seq_no and if_primary_term parameters. If a mismatch is detected, the operation will result in a VersionConflictException and a status code of 409. See Optimistic concurrency control for more details.
+Routing edit
+
+By default, shard placement ? or routing ? is controlled by using a hash of the document’s id value. For more explicit control, the value fed into the hash function used by the router can be directly specified on a per-operation basis using the routing parameter. For example:
+
+ POST twitter/_doc?routing=kimchy
+{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elasticsearch"
+}
+
+Copy as cURL View in Console  
+
+In the example above, the "_doc" document is routed to a shard based on the routing parameter provided: "kimchy".
+
+When setting up explicit mapping, the _routing field can be optionally used to direct the index operation to extract the routing value from the document itself. This does come at the (very minimal) cost of an additional document parsing pass. If the _routing mapping is defined and set to be required , the index operation will fail if no routing value is provided or extracted.
+Distributed edit
+
+The index operation is directed to the primary shard based on its route (see the Routing section above) and performed on the actual node containing this shard. After the primary shard completes the operation, if needed, the update is distributed to applicable replicas.
+Wait For Active Shards edit
+
+To improve the resiliency of writes to the system, indexing operations can be configured to wait for a certain number of active shard copies before proceeding with the operation. If the requisite number of active shard copies are not available, then the write operation must wait and retry, until either the requisite shard copies have started or a timeout occurs. By default, write operations only wait for the primary shards to be active before proceeding (i.e. wait_for_active_shards=1 ). This default can be overridden in the index settings dynamically by setting index.write.wait_for_active_shards . To alter this behavior per operation, the wait_for_active_shards request parameter can be used.
+
+Valid values are all or any positive integer up to the total number of configured copies per shard in the index (which is number_of_replicas+1 ). Specifying a negative value or a number greater than the number of shard copies will throw an error.
+
+For example, suppose we have a cluster of three nodes, A , B , and C and we create an index index with the number of replicas set to 3 (resulting in 4 shard copies, one more copy than there are nodes). If we attempt an indexing operation, by default the operation will only ensure the primary copy of each shard is available before proceeding. This means that even if B and C went down, and A hosted the primary shard copies, the indexing operation would still proceed with only one copy of the data. If wait_for_active_shards is set on the request to 3 (and all 3 nodes are up), then the indexing operation will require 3 active shard copies before proceeding, a requirement which should be met because there are 3 active nodes in the cluster, each one holding a copy of the shard. However, if we set wait_for_active_shards to all (or to 4 , which is the same), the indexing operation will not proceed as we do not have all 4 copies of each shard active in the index. The operation will timeout unless a new node is brought up in the cluster to host the fourth copy of the shard.
+
+It is important to note that this setting greatly reduces the chances of the write operation not writing to the requisite number of shard copies, but it does not completely eliminate the possibility, because this check occurs before the write operation commences. Once the write operation is underway, it is still possible for replication to fail on any number of shard copies but still succeed on the primary. The _shards section of the write operation’s response reveals the number of shard copies on which replication succeeded/failed.
+
+ {
+    "_shards" : {
+        "total" : 2,
+        "failed" : 0,
+        "successful" : 2
+    }
+}
+
+Refresh edit
+
+Control when the changes made by this request are visible to search. See refresh .
+Noop Updates edit
+
+When updating a document using the index API a new version of the document is always created even if the document hasn’t changed. If this isn’t acceptable use the _update API with detect_noop set to true. This option isn’t available on the index API because the index API doesn’t fetch the old source and isn’t able to compare it against the new source.
+
+There isn’t a hard and fast rule about when noop updates aren’t acceptable. It’s a combination of lots of factors like how frequently your data source sends updates that are actually noops and how many queries per second Elasticsearch runs on the shard receiving the updates.
+Timeout edit
+
+The primary shard assigned to perform the index operation might not be available when the index operation is executed. Some reasons for this might be that the primary shard is currently recovering from a gateway or undergoing relocation. By default, the index operation will wait on the primary shard to become available for up to 1 minute before failing and responding with an error. The timeout parameter can be used to explicitly specify how long it waits. Here is an example of setting it to 5 minutes:
+
+ PUT twitter/_doc/1?timeout=5m
+{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elasticsearch"
+}
+
+Copy as cURL View in Console  
+Versioning edit
+
+Each indexed document is given a version number. By default, internal versioning is used that starts at 1 and increments with each update, deletes included. Optionally, the version number can be set to an external value (for example, if maintained in a database). To enable this functionality, version_type should be set to external . The value provided must be a numeric, long value greater than or equal to 0, and less than around 9.2e+18.
+
+When using the external version type, the system checks to see if the version number passed to the index request is greater than the version of the currently stored document. If true, the document will be indexed and the new version number used. If the value provided is less than or equal to the stored document’s version number, a version conflict will occur and the index operation will fail. For example:
+
+ PUT twitter/_doc/1?version=2&version_type=external
+{
+    "message" : "elasticsearch now has versioning support, double cool!"
+}
+
+Copy as cURL View in Console  
+
+NOTE: Versioning is completely real time, and is not affected by the near real time aspects of search operations. If no version is provided, then the operation is executed without any version checks.
+
+The above will succeed since the supplied version of 2 is higher than the current document version of 1. If the document was already updated and its version was set to 2 or higher, the indexing command will fail and result in a conflict (409 http status code).
+
+A nice side effect is that there is no need to maintain strict ordering of async indexing operations executed as a result of changes to a source database, as long as version numbers from the source database are used. Even the simple case of updating the Elasticsearch index using data from a database is simplified if external versioning is used, as only the latest version will be used if the index operations arrive out of order for whatever reason.
+Version types edit
+
+Next to the external version type explained above, Elasticsearch also supports other types for specific use cases. Here is an overview of the different version types and their semantics.
+
+internal
+    Only index the document if the given version is identical to the version of the stored document.
+external or external_gt
+    Only index the document if the given version is strictly higher than the version of the stored document or if there is no existing document. The given version will be used as the new version and will be stored with the new document. The supplied version must be a non-negative long number.
+external_gte
+    Only index the document if the given version is equal or higher than the version of the stored document. If there is no existing document the operation will succeed as well. The given version will be used as the new version and will be stored with the new document. The supplied version must be a non-negative long number.
+
+NOTE : The external_gte version type is meant for special use cases and should be used with care. If used incorrectly, it can result in loss of data. There is another option, force , which is deprecated because it can cause primary and replica shards to diverge.
+«  Reading and Writing documents     Get API  »
+On this page
+
+    Automatic Index Creation
+    Operation Type
+    Automatic ID Generation
+    Optimistic concurrency control
+    Routing
+    Distributed
+    Wait For Active Shards
+    Refresh
+    Noop Updates
+    Timeout
+    Versioning
+
+Getting Started Videos
+
+    Starting Elasticsearch
+    Introduction to Kibana
+    Logstash Starter Guide
+
+    Elasticsearch Reference:
+    Elasticsearch introduction
+        Data in: documents and indices
+        Information out: search and analyze
+        Scalability and resilience
+    Getting started with Elasticsearch
+        Installation
+        Exploring Your Cluster
+            Cluster Health
+            List All Indices
+            Create an Index
+            Index and Query a Document
+            Delete an Index
+        Modifying Your Data
+            Updating Documents
+            Deleting Documents
+            Batch Processing
+        Exploring Your Data
+            The Search API
+            Introducing the Query Language
+            Executing Searches
+            Executing Filters
+            Executing Aggregations
+        Conclusion
+    Set up Elasticsearch
+        Installing Elasticsearch
+            Install Elasticsearch from archive on Linux or MacOS
+            Install Elasticsearch with .zip on Windows
+            Install Elasticsearch with Debian Package
+            Install Elasticsearch with RPM
+            Install Elasticsearch with Windows MSI Installer
+            Install Elasticsearch with Docker
+            Install Elasticsearch on macOS with Homebrew
+        Configuring Elasticsearch
+            Setting JVM options
+            Secure settings
+            Logging configuration
+            Auditing settings
+            Cross-cluster replication settings
+            Index lifecycle management settings
+            License settings
+            Machine learning settings
+            Monitoring settings
+            Security settings
+            SQL access settings
+            Watcher settings
+        Important Elasticsearch configuration
+            path.data and path.logs
+            cluster.name
+            node.name
+            network.host
+            Discovery and cluster formation settings
+            Setting the heap size
+            JVM heap dump path
+            GC logging
+            Temp directory
+            JVM fatal error logs
+        Important System Configuration
+            Configuring system settings
+            Disable swapping
+            File Descriptors
+            Virtual memory
+            Number of threads
+            DNS cache settings
+            JNA temporary directory not mounted with noexec
+        Bootstrap Checks
+            Heap size check
+            File descriptor check
+            Memory lock check
+            Maximum number of threads check
+            Max file size check
+            Maximum size virtual memory check
+            Maximum map count check
+            Client JVM check
+            Use serial collector check
+            System call filter check
+            OnError and OnOutOfMemoryError checks
+            Early-access check
+            G1GC check
+            All permission check
+            Discovery configuration check
+        Starting Elasticsearch
+        Stopping Elasticsearch
+        Adding nodes to your cluster
+        Set up X-Pack
+        Configuring monitoring
+            Collecting monitoring data
+            Collecting monitoring data with Metricbeat
+            Collecting log data with Filebeat
+            Configuring indices for monitoring
+        Configuring security
+            Encrypting communications in Elasticsearch
+            Encrypting communications in an Elasticsearch Docker Container
+            Enabling Cipher Suites for Stronger Encryption
+            Separating node-to-node and client traffic
+            Configuring an Active Directory realm
+            Configuring a file realm
+            Configuring an LDAP realm
+            Configuring a native realm
+            Configuring a PKI realm
+            Configuring a SAML realm
+            Configuring a Kerberos realm
+            Security files
+            FIPS 140-2
+        Configuring X-Pack Java Clients
+        Bootstrap Checks for X-Pack
+    Upgrade Elasticsearch
+        Rolling upgrades
+        Full cluster restart upgrade
+        Reindex before upgrading
+            Reindex in place
+            Reindex from a remote cluster
+    API conventions
+        Multiple Indices
+        Date math support in index names
+        Common options
+        URL-based access control
+    Document APIs
+        Reading and Writing documents
+        Index API
+        Get API
+        Delete API
+        Delete By Query API
+        Update API
+        Update By Query API
+        Multi Get API
+        Bulk API
+        Reindex API
+        Term Vectors
+        Multi termvectors API
+        ?refresh
+        Optimistic concurrency control
+    Search APIs
+        Search
+        URI Search
+        Request Body Search
+            Doc value Fields
+            Explain
+            Field Collapsing
+            From / Size
+            Highlighting
+            Index Boost
+            Inner hits
+            min_score
+            Named Queries
+            Post filter
+            Preference
+            Query
+            Rescoring
+            Script Fields
+            Scroll
+            Search After
+            Search Type
+            Sequence Numbers and Primary Term
+            Sort
+            Source filtering
+            Stored Fields
+            Track total hits
+            Version
+        Search Template
+        Multi Search Template
+        Search Shards API
+        Suggesters
+            Term suggester
+            Phrase Suggester
+            Completion Suggester
+            Context Suggester
+            Returning the type of the suggester
+        Multi Search API
+        Count API
+        Validate API
+        Explain API
+        Profile API
+            Profiling Queries
+            Profiling Aggregations
+            Profiling Considerations
+        Field Capabilities API
+        Ranking Evaluation API
+    Aggregations
+        Metrics Aggregations
+            Avg Aggregation
+            Weighted Avg Aggregation
+            Cardinality Aggregation
+            Extended Stats Aggregation
+            Geo Bounds Aggregation
+            Geo Centroid Aggregation
+            Max Aggregation
+            Min Aggregation
+            Percentiles Aggregation
+            Percentile Ranks Aggregation
+            Scripted Metric Aggregation
+            Stats Aggregation
+            Sum Aggregation
+            Top Hits Aggregation
+            Value Count Aggregation
+            Median Absolute Deviation Aggregation
+        Bucket Aggregations
+            Adjacency Matrix Aggregation
+            Auto-interval Date Histogram Aggregation
+            Children Aggregation
+            Composite Aggregation
+            Date Histogram Aggregation
+            Date Range Aggregation
+            Diversified Sampler Aggregation
+            Filter Aggregation
+            Filters Aggregation
+            Geo Distance Aggregation
+            GeoHash grid Aggregation
+            GeoTile Grid Aggregation
+            Global Aggregation
+            Histogram Aggregation
+            IP Range Aggregation
+            Missing Aggregation
+            Nested Aggregation
+            Parent Aggregation
+            Range Aggregation
+            Reverse nested Aggregation
+            Sampler Aggregation
+            Significant Terms Aggregation
+            Significant Text Aggregation
+            Terms Aggregation
+        Pipeline Aggregations
+            Avg Bucket Aggregation
+            Derivative Aggregation
+            Max Bucket Aggregation
+            Min Bucket Aggregation
+            Sum Bucket Aggregation
+            Stats Bucket Aggregation
+            Extended Stats Bucket Aggregation
+            Percentiles Bucket Aggregation
+            Moving Average Aggregation
+            Moving Function Aggregation
+            Cumulative Sum Aggregation
+            Bucket Script Aggregation
+            Bucket Selector Aggregation
+            Bucket Sort Aggregation
+            Serial Differencing Aggregation
+        Matrix Aggregations
+            Matrix Stats
+        Caching heavy aggregations
+        Returning only aggregation results
+        Aggregation Metadata
+        Returning the type of the aggregation
+    Indices APIs
+        Create Index
+        Delete Index
+        Get Index
+        Indices Exists
+        Open / Close Index API
+        Shrink Index
+        Split Index
+        Rollover Index
+        Put Mapping
+        Get Mapping
+        Get Field Mapping
+        Types Exists
+        Index Aliases
+        Update Indices Settings
+        Get Settings
+        Analyze
+            Explain Analyze
+        Index Templates
+        Indices Stats
+        Indices Segments
+        Indices Recovery
+        Indices Shard Stores
+        Clear Cache
+        Flush
+            Synced Flush
+        Refresh
+        Force Merge
+    cat APIs
+        cat aliases
+        cat allocation
+        cat count
+        cat fielddata
+        cat health
+        cat indices
+        cat master
+        cat nodeattrs
+        cat nodes
+        cat pending tasks
+        cat plugins
+        cat recovery
+        cat repositories
+        cat thread pool
+        cat shards
+        cat segments
+        cat snapshots
+        cat templates
+    Cluster APIs
+        Cluster Health
+        Cluster State
+        Cluster Stats
+        Pending cluster tasks
+        Cluster Reroute
+        Cluster Update Settings
+        Cluster Get Settings
+        Nodes Stats
+        Nodes Info
+        Nodes Feature Usage
+        Remote Cluster Info
+        Task Management API
+        Nodes hot_threads
+        Cluster Allocation Explain API
+        Voting Configuration Exclusions
+    Query DSL
+        Query and filter context
+        Compound queries
+            Boolean
+            Boosting
+            Constant score
+            Disjunction max
+            Function score
+        Full text queries
+            Intervals
+            Match
+            Match boolean prefix
+            Match phrase
+            Match phrase prefix
+            Multi-match
+            Common Terms Query
+            Query string
+            Simple query string
+        Geo queries
+            Geo-bounding box
+            Geo-distance
+            Geo-polygon
+            Geo-shape
+        Joining queries
+            Nested
+            Has child
+            Has parent
+            Parent ID
+        Match all
+        Span queries
+            Span containing
+            Span field masking
+            Span first
+            Span multi-term
+            Span near
+            Span not
+            Span or
+            Span term
+            Span within
+        Specialized queries
+            Distance feature
+            More like this
+            Percolate
+            Rank feature
+            Script
+            Script score
+            Wrapper
+        Term-level queries
+            Exists
+            Fuzzy
+            IDs
+            Prefix
+            Range
+            Regexp
+            Term
+            Terms
+            Terms set
+            Type Query
+            Wildcard
+        minimum_should_match parameter
+        rewrite parameter
+        Regular expression syntax
+    Scripting
+        How to use scripts
+        Accessing document fields and special variables
+        Scripting and security
+        Painless scripting language
+        Lucene expressions language
+        Advanced scripts using script engines
+    Mapping
+        Removal of mapping types
+        Field datatypes
+            Alias
+            Arrays
+            Binary
+            Boolean
+            Date
+            Date nanoseconds
+            Dense vector
+            Geo-point
+            Geo-shape
+            IP
+            Join
+            Keyword
+            Nested
+            Numeric
+            Object
+            Percolator
+            Range
+            Rank feature
+            Rank features
+            Search-as-you-type
+            Sparse vector
+            Text
+            Token count
+        Meta-Fields
+            _field_names field
+            _ignored field
+            _id field
+            _index field
+            _meta field
+            _routing field
+            _source field
+            _type field
+        Mapping parameters
+            analyzer
+            normalizer
+            boost
+            coerce
+            copy_to
+            doc_values
+            dynamic
+            enabled
+            eager_global_ordinals
+            fielddata
+            format
+            ignore_above
+            ignore_malformed
+            index
+            index_options
+            index_phrases
+            index_prefixes
+            fields
+            norms
+            null_value
+            position_increment_gap
+            properties
+            search_analyzer
+            similarity
+            store
+            term_vector
+        Dynamic Mapping
+            Dynamic field mapping
+            Dynamic templates
+    Analysis
+        Anatomy of an analyzer
+        Testing analyzers
+        Analyzers
+            Configuring built-in analyzers
+            Standard Analyzer
+            Simple Analyzer
+            Whitespace Analyzer
+            Stop Analyzer
+            Keyword Analyzer
+            Pattern Analyzer
+            Language Analyzers
+            Fingerprint Analyzer
+            Custom Analyzer
+        Normalizers
+        Tokenizers
+            Standard Tokenizer
+            Letter Tokenizer
+            Lowercase Tokenizer
+            Whitespace Tokenizer
+            UAX URL Email Tokenizer
+            Classic Tokenizer
+            Thai Tokenizer
+            NGram Tokenizer
+            Edge NGram Tokenizer
+            Keyword Tokenizer
+            Pattern Tokenizer
+            Char Group Tokenizer
+            Simple Pattern Tokenizer
+            Simple Pattern Split Tokenizer
+            Path Hierarchy Tokenizer
+            Path Hierarchy Tokenizer Examples
+        Token Filters
+            ASCII Folding Token Filter
+            Flatten Graph Token Filter
+            Length Token Filter
+            Lowercase Token Filter
+            Uppercase Token Filter
+            NGram Token Filter
+            Edge NGram Token Filter
+            Porter Stem Token Filter
+            Shingle Token Filter
+            Stop Token Filter
+            Word Delimiter Token Filter
+            Word Delimiter Graph Token Filter
+            Multiplexer Token Filter
+            Conditional Token Filter
+            Predicate Token Filter Script
+            Stemmer Token Filter
+            Stemmer Override Token Filter
+            Keyword Marker Token Filter
+            Keyword Repeat Token Filter
+            KStem Token Filter
+            Snowball Token Filter
+            Phonetic Token Filter
+            Synonym Token Filter
+            Parsing synonym files
+            Synonym Graph Token Filter
+            Compound Word Token Filters
+            Reverse Token Filter
+            Elision Token Filter
+            Truncate Token Filter
+            Unique Token Filter
+            Pattern Capture Token Filter
+            Pattern Replace Token Filter
+            Trim Token Filter
+            Limit Token Count Token Filter
+            Hunspell Token Filter
+            Common Grams Token Filter
+            Normalization Token Filter
+            CJK Width Token Filter
+            CJK Bigram Token Filter
+            Delimited Payload Token Filter
+            Keep Words Token Filter
+            Keep Types Token Filter
+            Exclude mode settings example
+            Classic Token Filter
+            Apostrophe Token Filter
+            Decimal Digit Token Filter
+            Fingerprint Token Filter
+            MinHash Token Filter
+            Remove Duplicates Token Filter
+        Character Filters
+            HTML Strip Char Filter
+            Mapping Char Filter
+            Pattern Replace Char Filter
+    Modules
+        Discovery and cluster formation
+            Discovery
+            Quorum-based decision making
+            Voting configurations
+            Bootstrapping a cluster
+            Adding and removing nodes
+            Publishing the cluster state
+            Cluster fault detection
+            Discovery and cluster formation settings
+        Shard allocation and cluster-level routing
+            Cluster level shard allocation
+            Disk-based shard allocation
+            Shard allocation awareness
+            Cluster-level shard allocation filtering
+            Miscellaneous cluster settings
+        Local Gateway
+            Dangling indices
+        HTTP
+        Indices
+            Circuit Breaker
+            Fielddata
+            Node Query Cache
+            Indexing Buffer
+            Shard request cache
+            Indices Recovery
+            Search Settings
+        Network Settings
+        Node
+        Plugins
+        Snapshot And Restore
+        Thread Pool
+        Transport
+        Remote clusters
+        Cross-cluster search
+    Index modules
+        Analysis
+        Index Shard Allocation
+            Index-level shard allocation filtering
+            Delaying allocation when a node leaves
+            Index recovery prioritization
+            Total shards per node
+        Mapper
+        Merge
+        Similarity module
+        Slow Log
+        Store
+            Pre-loading data into the file system cache
+        Translog
+        Index Sorting
+            Use index sorting to speed up conjunctions
+    Ingest node
+        Pipeline Definition
+        Ingest APIs
+            Put Pipeline API
+            Get Pipeline API
+            Delete Pipeline API
+            Simulate Pipeline API
+        Accessing Data in Pipelines
+        Conditional Execution in Pipelines
+            Handling Nested Fields in Conditionals
+            Complex Conditionals
+            Conditionals with the Pipeline Processor
+            Conditionals with the Regular Expressions
+        Handling Failures in Pipelines
+        Processors
+            Append Processor
+            Bytes Processor
+            Convert Processor
+            Date Processor
+            Date Index Name Processor
+            Dissect Processor
+            Dot Expander Processor
+            Drop Processor
+            Fail Processor
+            Foreach Processor
+            GeoIP Processor
+            Grok Processor
+            Gsub Processor
+            HTML Strip Processor
+            Join Processor
+            JSON Processor
+            KV Processor
+            Pipeline Processor
+            Remove Processor
+            Rename Processor
+            Script Processor
+            Set Processor
+            Set Security User Processor
+            Split Processor
+            Sort Processor
+            Trim Processor
+            Uppercase Processor
+            URL Decode Processor
+            User Agent processor
+    Managing the index lifecycle
+        Getting started with index lifecycle management
+        Policy phases and actions
+            Timing
+            Phase Execution
+            Actions
+            Full Policy
+        Set up index lifecycle management policy
+            Applying a policy to an index template
+            Apply a policy to a create index request
+        Using policies to manage index rollover
+            Skipping Rollover
+        Update policy
+            Updates to policies not managing indices
+            Updates to executing policies
+            Switching policies for an index
+        Index lifecycle error handling
+        Restoring snapshots of managed indices
+        Start and stop index lifecycle management
+    SQL access
+        Overview
+        Getting Started with SQL
+        Conventions and Terminology
+            Mapping concepts across SQL and Elasticsearch
+        Security
+        SQL REST API
+            Overview
+            Response Data Formats
+            Paginating through a large response
+            Filtering using Elasticsearch query DSL
+            Columnar results
+            Supported REST parameters
+        SQL Translate API
+        SQL CLI
+        SQL JDBC
+            API usage
+        SQL ODBC
+            Driver installation
+            Configuration
+        SQL Client Applications
+            DBeaver
+            DbVisualizer
+            Microsoft Excel
+            Microsoft Power BI Desktop
+            Microsoft PowerShell
+            MicroStrategy Desktop
+            Qlik Sense Desktop
+            SQuirreL SQL
+            SQL Workbench/J
+            Tableau Desktop
+        SQL Language
+            Lexical Structure
+            SQL Commands
+            DESCRIBE TABLE
+            SELECT
+            SHOW COLUMNS
+            SHOW FUNCTIONS
+            SHOW TABLES
+            Data Types
+            Index patterns
+        Functions and Operators
+            Comparison Operators
+            Logical Operators
+            Math Operators
+            Cast Operators
+            LIKE and RLIKE Operators
+            Aggregate Functions
+            Grouping Functions
+            Date/Time and Interval Functions and Operators
+            Full-Text Search Functions
+            Mathematical Functions
+            String Functions
+            Type Conversion Functions
+            Geo Functions
+            Conditional Functions And Expressions
+            System Functions
+        Reserved keywords
+        SQL Limitations
+    Monitoring Elasticsearch
+        Collectors
+        Exporters
+            Local Exporters
+            HTTP Exporters
+        Pausing Data Collection
+    Rolling up historical data
+        Overview
+        API Quick Reference
+        Getting Started
+        Understanding Groups
+            Grouping Limitations with heterogeneous indices
+            Doc counts and overlapping jobs
+        Rollup Aggregation Limitations
+        Rollup Search Limitations
+    Frozen indices
+        Best practices
+        Searching a frozen index
+        Monitoring frozen indices
+    Administering Elasticsearch
+        Back up a cluster
+            Back up the data
+            Back up the cluster configuration
+            Back up the security configuration
+            Restore the security configuration
+            Restore the data
+    X-Pack APIs
+        Info API
+        Cross-cluster replication APIs
+            Get CCR stats
+            Create follower
+            Pause follower
+            Resume follower
+            Unfollow
+            Forget follower
+            Get follower stats
+            Get follower info
+            Create auto-follow pattern
+            Delete auto-follow pattern
+            Get auto-follow pattern
+        Data frame transform APIs
+            Create data frame transforms
+            Delete data frame transforms
+            Get data frame transforms
+            Get data frame transform statistics
+            Preview data frame transforms
+            Start data frame transforms
+            Stop data frame transforms
+        Explore API
+        Freeze index
+        Index lifecycle management API
+            Create policy
+            Get policy
+            Delete policy
+            Move to step
+            Remove policy
+            Retry policy
+            Get index lifecycle management status
+            Explain lifecycle
+            Start index lifecycle management
+            Stop index lifecycle management
+        Licensing APIs
+            Delete license
+            Get license
+            Get trial status
+            Start trial
+            Get basic status
+            Start basic
+            Update license
+        Migration APIs
+            Deprecation info
+        Machine learning APIs
+            Add events to calendar
+            Add jobs to calendar
+            Close jobs
+            Create jobs
+            Create calendar
+            Create datafeeds
+            Create filter
+            Delete calendar
+            Delete datafeeds
+            Delete events from calendar
+            Delete filter
+            Delete forecast
+            Delete jobs
+            Delete jobs from calendar
+            Delete model snapshots
+            Delete expired data
+            Find file structure
+            Flush jobs
+            Forecast jobs
+            Get calendars
+            Get buckets
+            Get overall buckets
+            Get categories
+            Get datafeeds
+            Get datafeed statistics
+            Get influencers
+            Get jobs
+            Get job statistics
+            Get machine learning info
+            Get model snapshots
+            Get scheduled events
+            Get filters
+            Get records
+            Open jobs
+            Post data to jobs
+            Preview datafeeds
+            Revert model snapshots
+            Set upgrade mode
+            Start datafeeds
+            Stop datafeeds
+            Update datafeeds
+            Update filter
+            Update jobs
+            Update model snapshots
+        Rollup APIs
+            Delete job
+            Get job
+            Create job
+            Start job
+            Stop job
+            Get rollup caps
+            Get rollup index caps
+            Rollup search
+            Rollup job configuration
+        Security APIs
+            Authenticate
+            Change passwords
+            Clear cache
+            Clear roles cache
+            Create API keys
+            Create or update application privileges
+            Create or update role mappings
+            Create or update roles
+            Create or update users
+            Delete application privileges
+            Delete role mappings
+            Delete roles
+            Delete users
+            Disable users
+            Enable users
+            Get API key information
+            Get application privileges
+            Get role mappings
+            Get roles
+            Get token
+            Get users
+            Has privileges
+            Invalidate API key
+            Invalidate token
+            OpenID Connect Prepare Authentication API
+            OpenID Connect Authenticate API
+            OpenID Connect Logout API
+            SSL certificate
+        Unfreeze index
+        Watcher APIs
+            Put watch
+            Get watch
+            Delete watch
+            Execute watch
+            Ack watch
+            Activate watch
+            Deactivate watch
+            Stats
+            Stop
+            Start
+        Definitions
+            Calendar resources
+            Datafeed resources
+            Data frame transform resources
+            Filter resources
+            Job resources
+            Job statistics
+            Model snapshot resources
+            Role mapping resources
+            Results resources
+            Scheduled event resources
+    Command line tools
+        elasticsearch-certgen
+        elasticsearch-certutil
+        elasticsearch-croneval
+        elasticsearch-migrate
+        elasticsearch-node
+        elasticsearch-saml-metadata
+        elasticsearch-setup-passwords
+        elasticsearch-shard
+        elasticsearch-syskeygen
+        elasticsearch-users
+    How To
+        General recommendations
+        Recipes
+            Mixing exact search with stemming
+            Getting consistent scoring
+            Incorporating static relevance signals into the score
+        Tune for indexing speed
+        Tune for search speed
+            Tune your queries with the Profile API
+            Faster phrase queries with index_phrases
+            Faster prefix queries with index_prefixes
+        Tune for disk usage
+    Testing
+        Java Testing Framework
+            Why randomized testing?
+            Using the Elasticsearch test classes
+            Unit tests
+            Integration tests
+            Randomized testing
+            Assertions
+    Glossary of terms
+    Release highlights
+        7.2.0
+        7.1.0
+        7.0.0
+    Breaking changes
+        7.2
+        7.1
+        7.0
+    Release notes
+        Elasticsearch version 7.2.1
+        Elasticsearch version 7.2.0
+        Elasticsearch version 7.1.1
+        Elasticsearch version 7.1.0
+        Elasticsearch version 7.0.0
+        Elasticsearch version 7.0.0-rc2
+        Elasticsearch version 7.0.0-rc1
+        Elasticsearch version 7.0.0-beta1
+        Elasticsearch version 7.0.0-alpha2
+        Elasticsearch version 7.0.0-alpha1
+
+Be in the know with the latest and greatest from Elastic.
+
+MarketoFEForm
+Products
+
+    Elastic Stack
+    Elasticsearch
+    Kibana
+    Logstash
+    Beats
+    Elastic Site Search
+    Elastic App Search
+    Elastic Enterprise Search
+    Elastic Logs
+    Elastic Infrastructure
+    Elastic APM
+    Elastic Uptime
+    Elastic SIEM
+    Elastic Maps
+    Elastic Cloud Enterprise
+    Elasticsearch-Hadoop
+
+About the Elastic Stack
+
+    What is Elasticsearch?
+    What is the ELK Stack?
+    What is X-Pack?
+    Compare AWS Elasticsearch
+    Elastic Stack Features
+    Alerting
+    Monitoring
+    Security
+    Reporting
+    Machine Learning
+    Graph Analytics
+    Canvas
+    Elasticsearch SQL
+    Business Analytics
+    Kubernetes Monitoring
+    ArcSight Integration
+    Elastic Maps Service
+
+Compliance & Security
+
+    Data Protection Compliance
+    Elastic for Government
+    US Gov't Compliance
+    GDPR Compliance
+
+Elastic Cloud
+
+    Elasticsearch Service
+    Elastic App Search Service
+    Elastic Site Search Service
+    Elasticsearch Service on GCP
+    Cloud Status
+
+Company
+
+    Careers/Jobs
+    Our Source Code
+    Teams
+    Board of Directors
+    Leadership
+    Contact
+    Our Story
+    Why Open Source
+    Distributed by Intention
+    Elastic Partner Program
+    Press & Announcements
+    Investor Relations
+    Elastic Store
+    Subscriptions
+    Support Portal
+
+Learn
+
+    Blog
+    Community
+    Customers & Use Cases
+    Documentation
+    Elastic{ON} Events
+    Forums
+    Meetups
+    Training
+    Videos & Webinars
+
+FOLLOW US
+
+Language
+
+    Trademarks
+    Terms of Use
+    Privacy
+    Brand
+
+© 2019. Elasticsearch B.V. All Rights Reserved
+
+Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.
+
+Apache, Apache Lucene, Apache Hadoop, Hadoop, HDFS and the yellow elephant logo are trademarks of the Apache Software Foundation in the United States and/or other countries.
+
+Notice
+
+This website or its third-party tools use cookies, which are necessary to its functioning and required to achieve the purposes illustrated in the cookie policy. If you want to know more or withdraw your consent to all or some of the cookies, please refer to the cookie policy .
+By closing this banner, scrolling this page, clicking a link or continuing to browse otherwise, you agree to the use of cookies.

@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" lang="de-de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="51-6d3a1e.css"><link rel="stylesheet" href="override.css"><link rel="stylesheet" href="mscc-0.css"><meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Registrieren einer App zum Einbetten von Power BI-Inhalten - Power BI">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/de-de/power-bi/developer/register-app">
+		<meta property="og:description" content="Erfahren Sie, wie Sie eine Anwendung zum Einbetten von Power BI-Inhalten in Azure Active Directory registrieren können.">
+		<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+		<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+		<meta name="breadcrumb_path" content="/power-bi/breadcrumb/toc.json">
+<meta name="bilingual_type" content="hover over">
+<meta name="uhfHeaderId" content="MSDocsHeader-MSPowerBI">
+<meta name="ms.openlocfilehash" content="73cca097ce6693c3bbee538eb1518a2ede19beab">
+<meta name="ms.contentlocale" content="de-DE">
+<meta name="author" content="rkarlin">
+<meta name="ms.lasthandoff" content="05/29/2019">
+<meta name="description" content="Erfahren Sie, wie Sie eine Anwendung zum Einbetten von Power BI-Inhalten in Azure Active Directory registrieren können.">
+<meta name="ms.author" content="rkarlin">
+<meta name="manager" content="kfile">
+<meta name="ms.translationtype" content="MT">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.sourcegitcommit" content="60dad5aa0d85db790553e537bf8ac34ee3289ba3">
+<meta name="ms.service" content="powerbi">
+<meta name="ms.date" content="04/02/2019">
+<meta name="ms.locfileid" content="61269699">
+<meta name="ms.subservice" content="powerbi-developer">
+<meta name="ms.reviewer" content="nishalit">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="powerbi-docs">
+<meta name="locale" content="de-de">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="MSDN">
+<meta name="depot_name" content="MSDN.powerbi-docs">
+<meta name="updated_at" content="2019-05-31 02:52 AM">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/powerbi-docs-pr.de-DE/blob/efa86dfaf1ae38862a90dfac8b3292a2a75f9991/powerbi-docs/developer/register-app.md">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/powerbi-docs-pr.de-DE/blob/live-sxs/powerbi-docs/developer/register-app.md">
+<meta name="document_id" content="edce6995-b777-06fc-49ee-b23eabf6a862">
+<meta name="document_version_independent_id" content="ffd0c74b-4a05-1019-6897-804d60c13765">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../TOC.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/de-DE/MSDN.powerbi-docs/{branchName}{pdfName}">
+<meta name="word_count" content="2520">
+
+	<meta name="scope" content="Power-BI">
+<link href="https://docs.microsoft.com/de-de/power-bi/developer/register-app" rel="canonical">
+	<title>Registrieren einer App zum Einbetten von Power BI-Inhalten - Power BI | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="1a12d9b5.css">
+
+	<link rel="stylesheet" href="cd54db8b.css">
+
+
+	<script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			azureHeaderLocale: 'de-de',
+			contentLocale: 'de-de',
+			contentDir: 'ltr',
+			userLocale: 'de-de',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/powerbi-docs.de-de',
+			feedbackProductUrl: 'https://ideas.powerbi.com/forums/265200-power-bi',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/powerbi-docs.de-de/blob/live/powerbi-docs/developer/register-app.md',
+		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: false,
+			enableUHFPPE: false
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="https://static.docs.com/ui/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/fetch/2.0.3/fetch.min.js" integrity="sha384-H3LQq82b6Mm80GYRHtRSlTwO9DoXctmYCVEYk9M8mp97lRzs6DuSrHVUg3SBP9w0" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof HTMLTemplateElement === 'undefined') {
+		document.write('<script src="https://static.docs.com/ui/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof URL !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"><\/script>');
+	}
+	</script>
+
+	<script src="jquery-3.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="485e113a.js"></script><style></style><script src="jsll-4.js" async="" defer="defer"></script>
+
+<script src="https://statics-uhf-wus.akamaized.net/shell/_scrf/js/themes=default/54-af9f9f/c0-247156/de-099401/e1-a50eee/e7-954872/d8-97d509/f0-251fe2/46-be1318/77-04a268/7f-652c90/63-077520/a4-34de62/75-71ddfc/db-bc0148/dc-7e9864/78-4c7d22/9f-d154ca/e4-8302f6/cd-23d3b0/6d-1e7ed0/b7-cadaa7/ca-40b7b0/4e-ee3a55/3e-f5c39b/c3-6454d7/f9-7592d3/92-10345d/79-499886/7e-cda2d3/32-6dafa3/93-283c2d/e0-3c9860/91-97a04f/1f-100dea/33-abe4df/18-d72213?ver=2.0&amp;iife=1" defer="defer"></script><script src="https://c.s-microsoft.com/mscc/statics/mscc-0.4.1.min.js" defer="defer"></script><style>
+			.c-uhfh input[type="search"],
+			.c-uhfh.c-sgl-stck .c-uhfh-actions .c-search input[type="search"] {
+				padding-left: 97px !important;
+			}</style><script async="" src="https://web.vortex.data.microsoft.com/collect/v1/t.js?ver=%272.1%27&amp;name=%27Ms.Webi.PageView%27&amp;time=%272019-07-17T13%3A55%3A28.908Z%27&amp;os=%27Windows%27&amp;appId=%27JS%3ADocs%27&amp;-ver=%271.0%27&amp;-impressionGuid=%2750353086-64a9-4706-a11d-7bbe7371dc16%27&amp;-pageName=%27edce6995-b777-06fc-49ee-b23eabf6a862%27&amp;-uri=%27https%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%27&amp;-market=%27de-de%27&amp;-pageType=%27conceptual%27&amp;-resHeight=1080&amp;-resWidth=1920&amp;-pageTags=%27%7B%22author%22%3A%22rkarlin%22%2C%22pgauth%22%3A%22rkarlin%22%2C%22manager%22%3A%22kfile%22%2C%22pgtop%22%3A%22conceptual%22%2C%22pgsrvcs%22%3A%22powerbi%22%2C%22date%22%3A%2204%2F02%2F2019%22%2C%22locfileid%22%3A%2261269699%22%2C%22reviewer%22%3A%22nishalit%22%2C%22depotname%22%3A%22MSDN.powerbi-docs%22%2C%22publishtime%22%3A%222019-05-31%2002%3A52%20AM%22%2C%22gitcommit%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fpowerbi-docs-pr.de-DE%2Fblob%2Fefa86dfaf1ae38862a90dfac8b3292a2a75f9991%2Fpowerbi-docs%2Fdeveloper%2Fregister-app.md%22%2C%22giturl%22%3A%22https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fpowerbi-docs-pr.de-DE%2Fblob%2Flive-sxs%2Fpowerbi-docs%2Fdeveloper%2Fregister-app.md%22%2C%22document_version_independent_id%22%3A%22ffd0c74b-4a05-1019-6897-804d60c13765%22%2C%22contentlocale%22%3A%22de-de%22%2C%22highContrast%22%3A%22false%22%2C%22metaTags%22%3A%7B%7D%7D%27&amp;-behavior=0&amp;*baseType=%27Ms.Content.PageView%27&amp;*cookieEnabled=true&amp;*isJs=true&amp;*title=%27Registrieren%20einer%20App%20zum%20Einbetten%20von%20Power%20BI-Inhalten%20-%20Power%20BI%20%7C%20Microsoft%20Docs%27&amp;*isLoggedIn=false&amp;*flashInstalled=false&amp;ext-javascript-ver=%271.1%27&amp;ext-javascript-libVer=%274.2.14%27&amp;ext-javascript-domain=%27docs.microsoft.com%27&amp;ext-javascript-msfpc=%27GUID%3Db6b8aae4b2ce46fd95529b0bc15bbe34%26HASH%3Db6b8%26LV%3D201907%26V%3D4%26LU%3D1562578274756%27&amp;ext-javascript-userConsent=false&amp;$mscomCookies=false"></script></head>
+
+<body dir="ltr" class="js-focus-visible" lang="de-de">
+<div class="header-holder has-default-focus">
+	<a href="#main" class="skip-to-main-link visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Weiter zum Hauptinhalt</a>
+		<div id="headerAreaHolder" data-bi-name="header">    <div id="headerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+        
+
+
+		<div data-m="{&quot;cN&quot;:&quot;cookiebanner_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+
+<div id="uhfCookieAlert">
+    <div id="msccBanner" dir="ltr" data-site-name="Microsoft.OneRenderFramework.Core" data-mscc-version="0.4.1" data-nver="aspnet-3.1.3" data-sver="0.1.2" class="cc-banner active" role="alert" aria-labelledby="msccMessage"><div class="cc-container"><svg class="cc-icon cc-v-center" x="0px" y="0px" viewBox="0 0 44 44" height="30px" fill="none" stroke="currentColor"><circle cx="22" cy="22" r="20" stroke-width="2"></circle><line x1="22" x2="22" y1="18" y2="33" stroke-width="3"></line><line x1="22" x2="22" y1="12" y2="15" stroke-width="3"></line></svg> <span id="msccMessage" class="cc-v-center cc-text" tabindex="0">Diese
+ Website verwendet Cookies für Analysen, personalisierte Inhalte und 
+Werbung. Indem Sie diese Website nutzen, erklären Sie sich mit dieser 
+Verwendung einverstanden.</span> <a href="https://go.microsoft.com/fwlink/?linkid=845480" target="_top" aria-label="Weitere Informationen über die Microsoft Cookie-Richtlinie" id="msccLearnMore" class="cc-link cc-v-center cc-float-right" data-mscc-ic="false">Weitere Informationen</a></div></div>
+</div>
+
+			
+		</div>
+
+
+
+		<a id="uhfSkipToMain" class="m-skip-to-main" href="#main" tabindex="0" style="z-index:3000002" data-m="{&quot;cN&quot;:&quot;Skip to content_nonnav&quot;,&quot;id&quot;:&quot;nn2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}">Zu Hauptinhalt springen</a>
+
+
+<header role="banner" class="c-uhfh context-uhf no-js c-sgl-stck c-category-header f-transparent" itemscope="itemscope" data-header-footprint="/MSDocs/MSDocsHeader-MSPowerBI, fromService: True" data-magict="true" itemtype="http://schema.org/Organization">
+	<div class="js-global-head f-closed global-head-cont theme-light" data-m="{&quot;cN&quot;:&quot;Universal Header_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+		<div class="c-uhfh-gcontainer-st">
+			<button type="button" class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="Alle Microsoft-Angebote erweitern, um eine Liste der Microsoft-Produkte und -Dienste anzuzeigen" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Mobile menu button_nonnav&quot;,&quot;id&quot;:&quot;nn1c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3m1r1a1&quot;}"></button>
+			<button type="button" class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Suche schließen" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Close Search_nonnav&quot;,&quot;id&quot;:&quot;nn2c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3m1r1a1&quot;}"></button>
+					<a id="uhfLogo" class="c-logo c-sgl-stk-uhfLogo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" data-m="{&quot;cN&quot;:&quot;GlobalNav_Logo_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3m1r1a1&quot;}">
+						<img alt="" itemprop="logo" itemscope="itemscope" class="c-image" src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" role="presentation" aria-hidden="true">
+						<span role="presentation" aria-hidden="true">Microsoft</span>
+					</a>
+			<div class="f-mobile-title">
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-left" aria-label="Weitere Menüoptionen anzeigen" data-m="{&quot;cN&quot;:&quot;Mobile back button_nonnav&quot;,&quot;id&quot;:&quot;nn4c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c3m1r1a1&quot;}"></button>
+				<span data-global-title="Microsoft-Homepage" class="js-mobile-title">Power BI</span>
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-right" aria-label="Weitere Menüoptionen anzeigen" data-m="{&quot;cN&quot;:&quot;Mobile forward button_nonnav&quot;,&quot;id&quot;:&quot;nn5c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c3m1r1a1&quot;}"></button>
+			</div>
+					<div class="c-show-pipe x-hidden-vp-mobile-st">
+						<a id="uhfCatLogo" class="c-logo c-cat-logo" href="https://powerbi.microsoft.com/" aria-label="Power BI" itemprop="url" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI_nav&quot;,&quot;id&quot;:&quot;n6c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c3m1r1a1&quot;}">
+								<span>Power BI</span>
+						</a>
+					</div>
+				<div class="cat-logo-button-cont x-hidden">
+						<button type="button" id="uhfCatLogoButton" class="c-cat-logo-button x-hidden" aria-expanded="false" aria-label="Power BI" data-m="{&quot;cN&quot;:&quot;Power BI_nonnav&quot;,&quot;id&quot;:&quot;nn7c3m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c3m1r1a1&quot;}">
+							Power BI
+						</button>
+				</div>
+
+
+
+			        <nav id="uhf-g-nav" aria-label="Contextual menu" class="c-uhfh-gnav" data-m="{&quot;cN&quot;:&quot;Category nav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c3m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c3m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                    <li class="single-link js-nav-menu x-hidden-none-mobile-vp uhf-menu-item">
+                        <a class="c-uhf-nav-link" href="https://powerbi.microsoft.com/" data-m="{&quot;cN&quot;:&quot;CatNav_Startseite_nav&quot;,&quot;id&quot;:&quot;n1c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}"> Startseite </a>
+                    </li>
+                                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_0" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Products_nonnav&quot;,&quot;id&quot;:&quot;nn2c8c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}" style="white-space:nowrap">Produkte</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Products_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;What is Power BI_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_1" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/what-is-power-bi/" data-m="{&quot;cN&quot;:&quot;CatNav_What is Power BI_nav&quot;,&quot;id&quot;:&quot;n1c1c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c3c8c3m1r1a1&quot;}">Was ist Power BI?</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c3c8c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_2" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/features/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI_nav&quot;,&quot;id&quot;:&quot;n1c2c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c3c8c3m1r1a1&quot;}">Power BI</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Desktop_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c8c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_3" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/desktop/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Desktop_nav&quot;,&quot;id&quot;:&quot;n1c3c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c3c8c3m1r1a1&quot;}">Power BI Desktop</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Premium_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c3c8c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_4" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/power-bi-premium/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Premium_nav&quot;,&quot;id&quot;:&quot;n1c4c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c3c8c3m1r1a1&quot;}">Power BI Premium</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Mobile_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c3c8c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_5" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/mobile/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Mobile_nav&quot;,&quot;id&quot;:&quot;n1c5c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c3c8c3m1r1a1&quot;}">Power BI - Mobilgeräte</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Embedded_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c3c8c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_6" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/power-bi-embedded/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Embedded_nav&quot;,&quot;id&quot;:&quot;n1c6c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c3c8c3m1r1a1&quot;}">Power BI Embedded</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Report Server_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c3c8c3m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_7" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/report-server/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Report Server_nav&quot;,&quot;id&quot;:&quot;n1c7c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c3c8c3m1r1a1&quot;}">Power BI-Berichtsserver</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Tour_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c3c8c3m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_8" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/tour/" data-m="{&quot;cN&quot;:&quot;CatNav_Tour_nav&quot;,&quot;id&quot;:&quot;n1c8c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c3c8c3m1r1a1&quot;}">Tour</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Pricing_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c3c8c3m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c3c8c3m1r1a1&quot;}">
+            <a id="pricingLink" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/pricing/" data-m="{&quot;cN&quot;:&quot;CatNav_Pricing_nav&quot;,&quot;id&quot;:&quot;n1c9c3c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c3c8c3m1r1a1&quot;}">Preise</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_10" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Solutions_nonnav&quot;,&quot;id&quot;:&quot;nn4c8c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}" style="white-space:nowrap">Lösungen</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Solutions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c8c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Partner Showcase_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c5c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_11" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/partner-showcase/" data-m="{&quot;cN&quot;:&quot;CatNav_Partner Showcase_nav&quot;,&quot;id&quot;:&quot;n1c1c5c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c5c8c3m1r1a1&quot;}">Partnershowcase</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Departments_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c5c8c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c5c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_12" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/departments/finance/" data-m="{&quot;cN&quot;:&quot;CatNav_Departments_nav&quot;,&quot;id&quot;:&quot;n1c2c5c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c5c8c3m1r1a1&quot;}">Abteilungen</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Industries_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c5c8c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c5c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_13" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/industries/" data-m="{&quot;cN&quot;:&quot;CatNav_Industries_nav&quot;,&quot;id&quot;:&quot;n1c3c5c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c5c8c3m1r1a1&quot;}">Branchen</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Solution Templates_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c5c8c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c5c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_14" class="js-subm-uhf-nav-link" href="https://appsource.microsoft.com/marketplace/apps?product=pbi-solutiontemplates" data-m="{&quot;cN&quot;:&quot;CatNav_Solution Templates_nav&quot;,&quot;id&quot;:&quot;n1c4c5c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c5c8c3m1r1a1&quot;}">Lösungsvorlagen</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Data Stories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c5c8c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c5c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_15" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/publishtoweb/" data-m="{&quot;cN&quot;:&quot;CatNav_Data Stories_nav&quot;,&quot;id&quot;:&quot;n1c5c5c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c5c8c3m1r1a1&quot;}">Geschichten zu Daten</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_16" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Partners_nonnav&quot;,&quot;id&quot;:&quot;nn6c8c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}" style="white-space:nowrap">Partner</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Partners_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c8c3m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Overview_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c7c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_17" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/partners/" data-m="{&quot;cN&quot;:&quot;CatNav_Overview_nav&quot;,&quot;id&quot;:&quot;n1c1c7c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c7c8c3m1r1a1&quot;}">Übersicht</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Partner Showcase_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c8c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_18" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/partner-showcase/" data-m="{&quot;cN&quot;:&quot;CatNav_Partner Showcase_nav&quot;,&quot;id&quot;:&quot;n1c2c7c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c8c3m1r1a1&quot;}">Partnershowcase</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Consulting Services_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c8c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c8c3m1r1a1&quot;}">
+            <a id="findConsultingServicesLink" class="js-subm-uhf-nav-link" href="https://aka.ms/pbicsoffers" data-m="{&quot;cN&quot;:&quot;CatNav_Consulting Services_nav&quot;,&quot;id&quot;:&quot;n1c3c7c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c8c3m1r1a1&quot;}">Consulting Services</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Find a Partner_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c8c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_20" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/find-a-partner/" data-m="{&quot;cN&quot;:&quot;CatNav_Find a Partner_nav&quot;,&quot;id&quot;:&quot;n1c4c7c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c8c3m1r1a1&quot;}">Finden Sie einen Partner</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Become a partner_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c8c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_21" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/become-a-partner/" data-m="{&quot;cN&quot;:&quot;CatNav_Become a partner_nav&quot;,&quot;id&quot;:&quot;n1c5c7c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c8c3m1r1a1&quot;}">Partner werden</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_22" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Learn_nonnav&quot;,&quot;id&quot;:&quot;nn8c8c3m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}" style="white-space:nowrap">Weitere Informationen</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Learn_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c8c3m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Guided Learning_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_23" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/guided-learning/" data-m="{&quot;cN&quot;:&quot;CatNav_Guided Learning_nav&quot;,&quot;id&quot;:&quot;n1c1c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c8c3m1r1a1&quot;}">Geführtes Lernen</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Documentation_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c8c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_24" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/documentation/powerbi-landing-page/" data-m="{&quot;cN&quot;:&quot;CatNav_Documentation_nav&quot;,&quot;id&quot;:&quot;n1c2c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c8c3m1r1a1&quot;}">Dokumentation</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c8c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_25" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/support/" data-m="{&quot;cN&quot;:&quot;CatNav_Support_nav&quot;,&quot;id&quot;:&quot;n1c3c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c8c3m1r1a1&quot;}">Support</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Community_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c8c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_26" class="js-subm-uhf-nav-link" href="http://community.powerbi.com/" data-m="{&quot;cN&quot;:&quot;CatNav_Community_nav&quot;,&quot;id&quot;:&quot;n1c4c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c8c3m1r1a1&quot;}">Community</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Give Feedback_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c8c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_27" class="js-subm-uhf-nav-link" href="https://ideas.powerbi.com/forums/265200-power-bi" data-m="{&quot;cN&quot;:&quot;CatNav_Give Feedback_nav&quot;,&quot;id&quot;:&quot;n1c5c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c8c3m1r1a1&quot;}">Geben Sie Feedback</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Webminars_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c9c8c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c9c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_28" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/documentation/powerbi-webinars/" data-m="{&quot;cN&quot;:&quot;CatNav_Webminars_nav&quot;,&quot;id&quot;:&quot;n1c6c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c9c8c3m1r1a1&quot;}">Webinars</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Blog_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c9c8c3m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c9c8c3m1r1a1&quot;}">
+            <a id="c-shellmenu_29" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/blog/" data-m="{&quot;cN&quot;:&quot;CatNav_Blog_nav&quot;,&quot;id&quot;:&quot;n1c7c9c8c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c9c8c3m1r1a1&quot;}">Blog</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>
+
+                <li id="overflow-menu" class="overflow-menu x-hidden uhf-menu-item">
+                        <div class="c-uhf-menu js-nav-menu">
+        <button data-m="{&quot;pid&quot;:&quot;Mehr&quot;,&quot;id&quot;:&quot;nn10c8c3m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}" type="button" aria-label="Mehr" aria-expanded="false" style="white-space:nowrap">Mehr</button>
+        <ul id="overflow-menu-list" aria-hidden="true" class="overflow-menu-list">
+        </ul>
+    </div>
+
+                </li>
+                    <li class="single-link js-nav-menu">
+                        <a id="uhfSignInButtonCategoryMenu" class="c-uhf-nav-link x-visible-vp1-block x-visible-vp2-block right-aligned-link" href="https://app.powerbi.com/?noSignUpCheck=1" data-m="{&quot;cN&quot;:&quot;CatNav_Sign in_nav&quot;,&quot;id&quot;:&quot;n11c8c3m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}">Anmelden</a>
+                    </li>
+                                    <li class="single-link js-nav-menu" id="c-uhf-nav-cta">
+                        <a id="uhfsignupfree" class="c-uhf-nav-link" href="https://powerbi.microsoft.com/get-started" data-m="{&quot;cN&quot;:&quot;CatNav_cta_Kostenlos registrieren_nav&quot;,&quot;id&quot;:&quot;n12c8c3m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c8c3m1r1a1&quot;}">Kostenlos registrieren</a>
+                    </li>
+            </ul>
+            
+        </nav>
+
+
+			<div class="c-uhfh-actions" data-m="{&quot;cN&quot;:&quot;Header actions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c3m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c3m1r1a1&quot;}">
+				<div class="wf-menu">        <nav id="uhf-c-nav" aria-label="All microsoft menu" data-m="{&quot;cN&quot;:&quot;GlobalNav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c3m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                <li>
+                    <div class="c-uhf-menu js-nav-menu">
+                        <button type="button" class="c-button-logo all-ms-nav" aria-label="Alle Microsoft-Angebote erweitern, um eine Liste der Microsoft-Produkte und -Dienste anzuzeigen" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_nonnav&quot;,&quot;id&quot;:&quot;nn1c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c3m1r1a1&quot;}" style="white-space: nowrap"> <span>Alles von Microsoft</span></button>
+                        <ul class="f-multi-column f-multi-column-6" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;More_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c1c9c3m1r1a1&quot;}">
+                                    <li class="c-w0-contr">
+            <ul class="c-w0">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Office_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_31" class="js-subm-uhf-nav-link" href="https://products.office.com/de-de/home" data-m="{&quot;cN&quot;:&quot;W0Nav_Office_nav&quot;,&quot;id&quot;:&quot;n1c1c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c2c1c9c3m1r1a1&quot;}">Office</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Windows_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_32" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/windows/" data-m="{&quot;cN&quot;:&quot;W0Nav_Windows_nav&quot;,&quot;id&quot;:&quot;n1c2c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c2c1c9c3m1r1a1&quot;}">Windows</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Surface_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_33" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/surface" data-m="{&quot;cN&quot;:&quot;W0Nav_Surface_nav&quot;,&quot;id&quot;:&quot;n1c3c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c2c1c9c3m1r1a1&quot;}">Surface</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Xbox_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_34" class="js-subm-uhf-nav-link" href="https://www.xbox.com/" data-m="{&quot;cN&quot;:&quot;W0Nav_Xbox_nav&quot;,&quot;id&quot;:&quot;n1c4c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c2c1c9c3m1r1a1&quot;}">Xbox</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Deals_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_35" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/store/b/sale" data-m="{&quot;cN&quot;:&quot;W0Nav_Deals_nav&quot;,&quot;id&quot;:&quot;n1c5c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c2c1c9c3m1r1a1&quot;}">Sonderangebote</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+            <a id="l1_support" class="js-subm-uhf-nav-link" href="https://support.microsoft.com/de-de" data-m="{&quot;cN&quot;:&quot;W0Nav_Support_nav&quot;,&quot;id&quot;:&quot;n1c6c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c2c1c9c3m1r1a1&quot;}">Support</a>
+            
+        </li>
+            </ul>
+        </li>
+
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c2c1c9c3m1r1a1&quot;}">Software</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_WindowsApps_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_39" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/windows/windows-10-apps" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_WindowsApps_nav&quot;,&quot;id&quot;:&quot;n1c2c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c2c1c9c3m1r1a1&quot;}">Windows-Apps</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneDrive_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_40" class="js-subm-uhf-nav-link" href="https://onedrive.live.com/about/de-de/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneDrive_nav&quot;,&quot;id&quot;:&quot;n1c3c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c2c1c9c3m1r1a1&quot;}">OneDrive</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Outlook_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_41" class="js-subm-uhf-nav-link" href="https://outlook.live.com/owa/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Outlook_nav&quot;,&quot;id&quot;:&quot;n1c4c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c2c1c9c3m1r1a1&quot;}">Outlook</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Skype_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_42" class="js-subm-uhf-nav-link" href="https://www.skype.com/de/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Skype_nav&quot;,&quot;id&quot;:&quot;n1c5c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c2c1c9c3m1r1a1&quot;}">Skype</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneNote_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c7c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_43" class="js-subm-uhf-nav-link" href="https://www.onenote.com/?omkt=de-DE" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneNote_nav&quot;,&quot;id&quot;:&quot;n1c6c7c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c7c2c1c9c3m1r1a1&quot;}">OneNote</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cN&quot;:&quot;PCsAndDevices_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_PCsAndDevices_nonnav&quot;,&quot;id&quot;:&quot;nn1c8c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2c1c9c3m1r1a1&quot;}">PCs und Geräte</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCsAndDevices_PCsAndTablets_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c8c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_45" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/windows/devices" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCsAndDevices_PCsAndTablets_nav&quot;,&quot;id&quot;:&quot;n1c2c8c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c8c2c1c9c3m1r1a1&quot;}">PCs &amp; Tablets</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCAndDevices_Accessories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_46" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/accessories/de-de" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCAndDevices_Accessories_nav&quot;,&quot;id&quot;:&quot;n1c3c8c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c2c1c9c3m1r1a1&quot;}">Zubehör</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2c1c9c3m1r1a1&quot;}">Unterhaltung</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_DevicesAndXbox_XboxAndGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_48" class="js-subm-uhf-nav-link" href="https://www.xbox.com/de-de/games/xbox-one?xr=shellnav" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_DevicesAndXbox_XboxAndGames_nav&quot;,&quot;id&quot;:&quot;n1c2c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c2c1c9c3m1r1a1&quot;}">Xbox-Spiele</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Entertainment_PCGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_49" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/windows/windows-10-games" data-m="{&quot;cN&quot;:&quot;GlobalNav_Entertainment_PCGames_nav&quot;,&quot;id&quot;:&quot;n1c3c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c2c1c9c3m1r1a1&quot;}">PC-Spiele</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_WindowsDigitalGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_50" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/store/games/windows?icid=TopNavWindowsGames" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_WindowsDigitalGames_nav&quot;,&quot;id&quot;:&quot;n1c4c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c2c1c9c3m1r1a1&quot;}">Windows-Spiele</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_MoviesAndTV_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_51" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/store/movies-and-tv?icid=TopNavMoviesAndTv" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_MoviesAndTV_nav&quot;,&quot;id&quot;:&quot;n1c5c9c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c2c1c9c3m1r1a1&quot;}">Filme &amp; TV</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">Unternehmen</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftAzure_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_53" class="js-subm-uhf-nav-link" href="https://azure.microsoft.com/de-de/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftAzure_nav&quot;,&quot;id&quot;:&quot;n1c2c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c10c2c1c9c3m1r1a1&quot;}">Microsoft Azure</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftDynamics365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_54" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/dynamics365/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftDynamics365_nav&quot;,&quot;id&quot;:&quot;n1c3c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c10c2c1c9c3m1r1a1&quot;}">Microsoft Dynamics 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Microsoft365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_55" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/microsoft-365/?omkt=de-DE" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Microsoft365_nav&quot;,&quot;id&quot;:&quot;n1c4c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c10c2c1c9c3m1r1a1&quot;}">Microsoft 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_Enterprise_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_56" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/enterprise" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_Enterprise_nav&quot;,&quot;id&quot;:&quot;n1c5c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c10c2c1c9c3m1r1a1&quot;}">Microsoft Industry</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_DataPlatform_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_57" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/sql-server/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_DataPlatform_nav&quot;,&quot;id&quot;:&quot;n1c6c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c10c2c1c9c3m1r1a1&quot;}">Datenplattform</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_MicrosoftAdvertising_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_58" class="js-subm-uhf-nav-link" href="https://go.microsoft.com/fwlink/?linkid=2026638" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_MicrosoftAdvertising_nav&quot;,&quot;id&quot;:&quot;n1c7c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c10c2c1c9c3m1r1a1&quot;}">Microsoft Advertising</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Licensing_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c10c2c1c9c3m1r1a1&quot;}">
+            <a id="Licensing" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/licensing/default" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Licensing_nav&quot;,&quot;id&quot;:&quot;n1c8c10c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c10c2c1c9c3m1r1a1&quot;}">Lizenzierung</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c11c2c1c9c3m1r1a1&quot;}">Entwickler &amp; IT</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_.Net_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c11c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_61" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/net/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_.Net_nav&quot;,&quot;id&quot;:&quot;n1c2c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c11c2c1c9c3m1r1a1&quot;}">.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DevelopersAndIT_VisualStudio_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c11c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_62" class="js-subm-uhf-nav-link" href="https://visualstudio.microsoft.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DevelopersAndIT_VisualStudio_nav&quot;,&quot;id&quot;:&quot;n1c3c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c11c2c1c9c3m1r1a1&quot;}">Visual Studio</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_ProductsandServices_WindowsServer_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c11c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_63" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/cloud-platform/windows-server" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_ProductsandServices_WindowsServer_nav&quot;,&quot;id&quot;:&quot;n1c4c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c11c2c1c9c3m1r1a1&quot;}">Windows Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_WindowsDevCenter_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c11c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_64" class="js-subm-uhf-nav-link" href="https://developer.microsoft.com/de-de/windows" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_WindowsDevCenter_nav&quot;,&quot;id&quot;:&quot;n1c5c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c11c2c1c9c3m1r1a1&quot;}">Windows-Apps entwickeln</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_Docs.microsoft.com_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c11c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_65" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/de-de/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_Docs.microsoft.com_nav&quot;,&quot;id&quot;:&quot;n1c6c11c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c11c2c1c9c3m1r1a1&quot;}">Dokumente</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c12c2c1c9c3m1r1a1&quot;}">Mehr
+</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Other_MicrosoftStore_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c12c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_67" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/store/b/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_Other_MicrosoftStore_nav&quot;,&quot;id&quot;:&quot;n1c2c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c12c2c1c9c3m1r1a1&quot;}">Microsoft Store</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Microsoft Rewards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c12c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_68" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/rewards" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Microsoft Rewards_nav&quot;,&quot;id&quot;:&quot;n1c3c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c12c2c1c9c3m1r1a1&quot;}">Microsoft Rewards </a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_SoftwareAndServices_FreeDownloadsAndSecurity_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c12c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_69" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/download/default.aspx" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_SoftwareAndServices_FreeDownloadsAndSecurity_nav&quot;,&quot;id&quot;:&quot;n1c4c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c12c2c1c9c3m1r1a1&quot;}">Download Center</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_ForStudentsAndEducators_Education_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c12c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_70" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/education?icid=CNavMSCOML0_Studentsandeducation" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_ForStudentsAndEducators_Education_nav&quot;,&quot;id&quot;:&quot;n1c5c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c12c2c1c9c3m1r1a1&quot;}">Bildungswesen</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Store_More_GiftCards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c12c2c1c9c3m1r1a1&quot;}">
+            <a id="shellmenu_71" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/de-de/store/b/gift-cards" data-m="{&quot;cN&quot;:&quot;GlobalNav_Store_More_GiftCards_nav&quot;,&quot;id&quot;:&quot;n1c6c12c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c12c2c1c9c3m1r1a1&quot;}">Geschenkkarten</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+                                                            <li class="f-multi-column-info">
+                                    <a data-m="{&quot;id&quot;:&quot;n13c2c1c9c3m1r1a1&quot;,&quot;sN&quot;:13,&quot;aN&quot;:&quot;c2c1c9c3m1r1a1&quot;}" href="https://www.microsoft.com/de-de/sitemap.aspx" aria-label="" class="c-glyph">Siteübersicht anzeigen</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+</div>
+		<form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://docs.microsoft.com/de-de/
+	search/" method="GET" title="Search" data-seautosuggest="{&quot;queryParams&quot;:{&quot;market&quot;:&quot;de-de&quot;,&quot;clientId&quot;:&quot;7F27B536-CF6B-4C65-8638-A0F8CBDFCA65&quot;,&quot;sources&quot;:&quot;Microsoft-Terms,Iris-Products,DCatAll-Products&quot;,&quot;filter&quot;:&quot;+ClientType:StoreWeb&quot;,&quot;counts&quot;:&quot;5,1,5&quot;},&quot;familyNames&quot;:{&quot;Apps&quot;:&quot;App&quot;,&quot;Books&quot;:&quot;Buch&quot;,&quot;Bundles&quot;:&quot;Paket&quot;,&quot;Devices&quot;:&quot;Gerät&quot;,&quot;Fees&quot;:&quot;Fee&quot;,&quot;Games&quot;:&quot;Spiel&quot;,&quot;MusicAlbums&quot;:&quot;Album&quot;,&quot;MusicTracks&quot;:&quot;Lied&quot;,&quot;MusicVideos&quot;:&quot;Video&quot;,&quot;MusicArtists&quot;:&quot;Künstler&quot;,&quot;OperatingSystem&quot;:&quot;Betriebssystem&quot;,&quot;Software&quot;:&quot;Software&quot;,&quot;Movies&quot;:&quot;Film&quot;,&quot;TV&quot;:&quot;TV&quot;,&quot;CSV&quot;:&quot;Geschenkgutschein&quot;,&quot;VideoActor&quot;:&quot;Schauspieler&quot;}}" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest" data-m="{&quot;cN&quot;:&quot;GlobalNav_Search_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c1c9c3m1r1a1&quot;}" aria-expanded="false">
+			<input id="cli_shellHeaderSearchInput" aria-label="search expanded" aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" aria-owns="universal-header-search-auto-suggest-ul" name="search" placeholder="Search" data-m="{&quot;cN&quot;:&quot;SearchBox_nav&quot;,&quot;id&quot;:&quot;n1c3c1c9c3m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c1c9c3m1r1a1&quot;}" type="search">
+			<button id="search" aria-label="Suchen" class="c-glyph" data-m="{&quot;cN&quot;:&quot;Search_nav&quot;,&quot;id&quot;:&quot;n2c3c1c9c3m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c1c9c3m1r1a1&quot;}" data-bi-dnt="true" data-bi-mto="true" aria-expanded="false">
+				<span role="presentation">Suchen</span>
+			</button>
+			<div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+				<ul class="c-menu" id="universal-header-search-auto-suggest-ul" aria-hidden="true" data-bi-dnt="true" data-bi-mto="true" data-js-auto-suggest-position="default" role="listbox" data-tel="jsll" data-m="{&quot;cN&quot;:&quot;search suggestions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c1c9c3m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c1c9c3m1r1a1&quot;}"></ul>
+			</div>
+			
+		<input name="scope" value="Power-BI" hidden=""><a class="search-scope" href="#" role="button" title="Der Suchfilter lautet „Power-BI“. Tippen Sie, um den Filter zu entfernen." style=""><span class="search-scope-text">Power-BI</span> <span class="docon docon-navigate-close"></span></a><input name="category" value="All" hidden=""></form>
+		<button data-m="{&quot;cN&quot;:&quot;cancel-search&quot;,&quot;pid&quot;:&quot;Cancel Search&quot;,&quot;id&quot;:&quot;nn4c1c9c3m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c1c9c3m1r1a1&quot;}" id="cancel-search" class="cancel-search" aria-label="Cancel Search">
+			<span>Abbrechen</span>
+		</button>
+				
+			</div>
+		</div>
+		
+		
+	</div>
+	
+</header>
+
+
+
+
+    </div>
+        </div>
+
+    </div>
+</div>
+	<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+		<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+		<!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/de-de/">
+				Docs
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/de-de/power-bi/">
+				Power BI
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/de-de/power-bi/developer/embedding">
+				Entwickler
+			</a>
+		</li><!---->
+	<!----></ul>
+		</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Inhalte</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Fokusmodus beenden</span>
+			</button>
+			
+		</div>
+		<div class="action-bar">
+			<ul class="action-list">
+						<li>
+							<a href="#feedback" class="button is-text is-small is-icon-only-touch" data-bi-name="comments">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="action-item-text is-hidden-portrait">Feedback</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/MicrosoftDocs/powerbi-docs.de-de/blob/live/powerbi-docs/developer/register-app.md" class="button is-text is-icon-only-touch is-small" title="Dieses Dokument bearbeiten" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/powerbi-docs-pr.de-DE/blob/live-sxs/powerbi-docs/developer/register-app.md" data-original_content_git_url_template="" data-pr_repo="" data-pr_branch="">
+									<span class="icon">
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="action-item-text is-hidden-portrait">Bearbeiten</span>
+								</a>
+							</li>
+				<li>
+					<div class="sharing dropdown has-caret" auto-align="">
+						<button class="dropdown-trigger button is-text is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Dieses Dokument freigeben" data-bi-name="share">
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-sharing"></span>
+							</span>
+							<span class="action-item-text is-hidden-portrait">Teilen</span>
+						</button>
+						<div class="dropdown-menu" id="sharing-menu">
+							<ul data-bi-name="share-links">
+								<li>
+									<a class="share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%3FWT.mc_id%3Dtwitter&amp;text=Registrieren%20einer%20App%20zum%20Einbetten%20von%20Power%20BI-Inhalten%20-%20Power%20BI%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%3FWT.mc_id%3Dtwitter">
+										<span class="icon">
+											<span class="docon docon-brand-twitter" aria-hidden="true"></span>
+										</span>
+										<span>Twitter</span>
+									</a>
+								</li>
+								<li>
+									<a class="share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%3FWT.mc_id%3Dlinkedin">
+										<span class="icon">
+											<span class="docon docon-brand-linkedin" aria-hidden="true"></span>
+										</span>
+										<span>LinkedIn</span>
+									</a>
+								</li>
+								<li>
+									<a class="share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%3FWT.mc_id%3Dfacebook">
+										<span class="icon">
+											<span class="docon docon-brand-facebook" aria-hidden="true"></span>
+										</span>
+										<span>Facebook</span>
+									</a>
+								</li>
+								<li>
+									<a class="share-email" data-bi-name="email" href="mailto:?subject=%5BFreigegebener%20Artikel%5D%20Registrieren%20einer%20App%20zum%20Einbetten%20von%20Power%20BI-Inhalten%20-%20Power%20BI%20%7C%20Microsoft%20Docs&amp;body=Registrieren%20einer%20App%20zum%20Einbetten%20von%20Power%20BI-Inhalten%20-%20Power%20BI%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%3FWT.mc_id%3Demail">
+										<span class="icon">
+											<span class="docon docon-mail-message-fill" aria-hidden="true"></span>
+										</span>
+										<span>E-Mail</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="is-unstyle-action-list-item">
+<div class="dropdown has-caret" auto-align="">
+	<button class="dropdown-trigger button is-text is-small is-icon-only-touch" aria-controls="theme-menu" aria-expanded="false" title="Design" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span class="action-item-text is-hidden-portrait">Design</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<div class="theme-selector has-padding-small">
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" role="menuitem" aria-selected="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Hell					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" role="menuitem" aria-selected="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Dunkel					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" role="menuitem" aria-selected="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Hoher Kontrast					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>				</li>
+				<li>
+					<div class="lang-toggle-container" style="display: flex;">
+						<label for="language-toggle" aria-hidden="true" tabindex="-1">Auf Englisch lesen</label>
+						<div class="checkbox-toggle-wrapper">
+							<input id="language-toggle" aria-label="Auf Englisch lesen" data-m="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}" type="checkbox">
+							<label for="language-toggle" class="switch"></label>
+						</div>
+					</div>
+				</li>
+				<li class="is-unstyled-action-list-item">
+					<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-text-primary is-small" href="#">Anmelden</a>
+					<div class="dropdown has-caret auth-status-determined authenticated" auto-align="">
+						<button class="dropdown-trigger button is-text is-small is-icon-only-touch has-inner-focus" aria-label="Ihr Konto" aria-controls="user-menu" aria-expanded="false">
+							<span class="icon" aria-hidden="true">
+								<span class="image">
+									<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+								</span>
+							</span>
+							<span class="is-truncated has-margin-left-small" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle has-margin-bottom-none">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="upn"></span>
+									</p>
+									<ul class="is-unstyled has-margin-none has-margin-top-small">
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profil</a></li>
+										<li><a class="docs-sign-out" href="#">Abmelden</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button" aria-label="Inhalte" data-bi-name="contents-expand-">
+				<span class="docon docon-editor-list-bullet"></span><span>Contents</span>
+			</button>
+		</div>
+	</div>
+
+		<div id="banner-holder" class="has-default-focus has-overflow-hidden">
+		</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<section data-dismissable="disappearing" class="uhf-container has-padding has-padding-top-small has-padding-bottom-small is-info alert is-banner">
+				<button data-dismiss="" type="button" class="delete is-absolute has-top-zero has-right-zero has-margin-extra-small is-large"><span class="visually-hidden">Warnung schließen</span></button>
+				<div class="columns">
+					<div class="column is-12">
+						<div class="level">
+							<div class="level-left has-flex-shrink">
+								<div class="level-item has-flex-shrink">
+									<p class="has-text-white-static disclaimer-title has-margin-top-extra-small has-margin-right-medium has-line-height-reset is-size-7-mobile">
+										<span class="icon">
+											<span class="docon docon-status-error-outline" aria-hidden="true"></span>
+										</span>
+										<span>Teile dieses Themas wurden möglicherweise maschinell 
+übersetzt. Sie können eine bessere Übersetzung vorschlagen, indem Sie 
+auf die Schaltfläche „Bearbeiten“ klicken. Anweisungen finden Sie im <a href="https://docs.microsoft.com/en-us/contribute/">Mitwirkungsleitfaden</a>.</span>
+									</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			</div>
+	</div>
+
+	<div class="mainContainer uhf-container  has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primär" style="width: 279.983px; top: 274.9px; bottom: 24px;" data-bi-name="left toc"><form action="javascript:" role="search" aria-label="Suche" class="is-full-width has-margin-bottom-small"><label class="visually-hidden" for="ax-0">Suche</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!---->
+		<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-0" class="autocomplete-input input is-small is-full-width" aria-expanded="false" aria-owns="ax-1-listbox" aria-activedescendant="" placeholder="Nach Titel filtern" type="text">
+
+		<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+
+		<ul class="autocomplete-suggestions has-margin-none is-vertically-scrollable" role="listbox" id="ax-1-listbox" hidden="">
+			
+		</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Inhaltsverzeichnis" data-bi-name="tree"><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI Desktop</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI-Dienst</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI Premium</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Paginierter Berichts-Generator in Power BI</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI für Entwickler</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/what-can-you-do">Welche Möglichkeiten bietet Power BI Entwicklern?</a></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Eingebettete Analysen</span><ul class="tree-group" role="group"><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Übersicht</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Lernprogramme</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Konzepte</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Vorgehensweise</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/embed-from-apps">Einbetten aus einer App</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/embed-auto-install-app">Automatisches Installieren von Apps</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/create-an-azure-active-directory-tenant">Erstellen eines Azure Active Directory-Mandanten</a></li><li role="none"><a class="tree-item is-leaf is-selected" role="treeitem" tabindex="0" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/register-app">Registrieren einer Anwendung</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/get-azuread-access-token">Abrufen eines Azure AD-Zugriffstokens</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/qanda">Einbetten von Q&amp;A</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/de-de/power-bi/developer/embedded-troubleshoot">Problembehandlung bei eingebetteten Anwendungen</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Verwalten von Kapazitäten in Azure</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Migrieren von Arbeitsbereichssammlungen</span></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Referenz</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Ressourcen</span></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Benutzerdefinierte Visuals</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Automatisierung</span></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI-Berichtsserver</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Gateways</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Verwaltung</span></li></ul><a class="button is-small is-text has-flex-justify-content-start has-inner-focus has-margin-top-small has-border-top has-border-bottom has-flex-shrink-none" href="https://docs.microsoft.com/de-de/power-bi/opbuildpdf/TOC.pdf?branch=live" data-bi-name="downloadPdf"><!---->
+		<span class="icon is-size-8 has-text-subtle">
+			<span aria-hidden="true" class="docon docon-arrow-down"></span>
+		</span>
+		<span><!---->PDF herunterladen<!----></span><!----></a></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" dir="ltr" lang="de-de">
+
+
+
+						<div class="columns">
+							<div class="column is-9-desktop is-12-tablet">
+
+						<h1 id="register-an-azure-ad-application-to-use-with-power-bi" sourcefile="developer/register-app.md" sourcestartlinenumber="19"><span data-ttu-id="c78fd-103">Registrieren einer Azure AD-Anwendung zur Verwendung mit Power BI-Inhalten</span><span class="sxs-lookup"><span data-stu-id="c78fd-103">Register an Azure AD application to use with Power BI</span></span></h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="de-de">
+							<li class="displayDate">
+								<time role="presentation" datetime="2019-04-02T00:00:00.000Z" data-article-date-source="ms.date">02.04.2019</time>
+							</li>
+								<li class="readingTime">6 Minuten Lesedauer</li>
+							<li class="contributors-holder">
+								<a class="has-inner-focus" href="https://github.com/MicrosoftDocs/powerbi-docs.de-de/blob/live/powerbi-docs/developer/register-app.md" title="2 Beitragende" aria-label="2 Beitragende">
+									<ul class="contributors" data-bi-name="contributors" aria-hidden="true">
+												<li><img src="contributor.svg" data-src="https://github.com/rkarlin.png?size=32" role="presentation"></li>
+												<li><img src="contributor.svg" data-src="https://github.com/olprod.png?size=32" role="presentation"></li>
+									</ul>
+								</a>
+							</li>
+
+						</ul>
+
+							</div>
+							<div class="column is-3 is-text-right is-hidden-tablet-only is-hidden-mobile">
+								<p class="has-margin-top-none has-margin-bottom-small is-size-7">Ist diese Seite hilfreich?</p>
+								<div class="buttons is-right">
+									<button class="button thumb-rating dislike expand-rating-menu has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="Nein" data-bi-name="rating-no" data-bi-sat="0">
+										<span class="icon docon docon-dislike" aria-hidden="true"></span>
+									</button>
+									<button class="button thumb-rating like has-margin-left-extra-small has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="Ja" data-bi-name="rating-yes" data-bi-sat="1">
+										<span class="icon docon docon-like" aria-hidden="true"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Artikelgliederung">
+							<h3>In diesem Artikel</h3>
+						<ol><li><a href="#register-with-the-power-bi-application-registration-tool">Registrieren mithilfe des Power BI-App-Registrierungs-Tools</a></li><li><a href="#register-with-the-azure-portal">Registrieren beim Azure-Portal</a></li><li><a href="#how-to-get-the-application-id">Abrufen der Anwendungs-ID</a></li><li><a href="#how-to-get-the-service-principal-object-id">Abrufen der Dienstprinzipalobjekt-ID</a></li><li><a href="#apply-permissions-to-your-application-within-azure-ad">Anwenden von Berechtigungen für die Anwendung in Azure AD</a></li><li><a href="#next-steps">Nächste Schritte</a></li></ol></nav>
+
+
+						<!-- <content> -->
+							
+<p><span data-ttu-id="c78fd-104">Erfahren Sie, wie Sie eine Anwendung 
+zum Einbetten von Power BI-Inhalten in Azure Active Directory (Azure AD)
+ registrieren können.</span><span class="sxs-lookup"><span data-stu-id="c78fd-104">Learn how to register an application within Azure Active Directory (Azure AD) for use with embedding Power BI content.</span></span></p>
+<p><span data-ttu-id="c78fd-105">Sie registrieren Ihre Anwendung bei Azure AD, um der Anwendung den Zugriff auf die <a href="https://docs.microsoft.com/rest/api/power-bi/" data-linktype="external">Power BI-REST-APIs</a> zu ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-105">You register your application with Azure AD to allow your application access to the <a href="https://docs.microsoft.com/rest/api/power-bi/" data-linktype="external">Power BI REST APIs</a>.</span></span> <span data-ttu-id="c78fd-106">Nach
+ dem Registrieren Ihrer Anwendung können Sie eine Identität für Ihre 
+Anwendung erstellen und Berechtigungen für Power BI-REST-Ressourcen 
+angeben.</span><span class="sxs-lookup"><span data-stu-id="c78fd-106">Once
+ you register your application, you can establish an identity for your 
+application and specify permissions to Power BI REST resources.</span></span></p>
+<div class="alert is-primary">
+<p class="alert-title"><span class="docon docon-status-info-outline" aria-hidden="true"></span> Wichtig</p>
+<p><span data-ttu-id="c78fd-107">Um eine Power BI-App zu registrieren, benötigen Sie einen <a href="https://docs.microsoft.com/de-de/power-bi/developer/create-an-azure-active-directory-tenant" data-linktype="relative-path">Azure Active Directory-Mandanten und einen Organisationsbenutzer</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-107">Before you register a Power BI app you need an <a href="https://docs.microsoft.com/de-de/power-bi/developer/create-an-azure-active-directory-tenant" data-linktype="relative-path">Azure Active Directory tenant and an organizational user</a>.</span></span> <span data-ttu-id="c78fd-108">Wenn
+ Sie sich mit einem Benutzer in Ihrem Mandanten noch nicht für Power BI 
+registriert haben, wird die Registrierung der App nicht ordnungsgemäß 
+abgeschlossen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-108">If you haven't signed up for Power BI with a user in your tenant, the app registration doesn't complete successfully.</span></span></p>
+</div>
+<p><span data-ttu-id="c78fd-109">Die Registrierung Ihrer Anwendung kann auf zweierlei Weise erfolgen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-109">There are two ways to register your application.</span></span> <span data-ttu-id="c78fd-110">Erstens mithilfe des <a href="https://dev.powerbi.com/apps/" data-linktype="external">Power BI-App-Registrierungstools</a>, zweitens direkt im Azure-Portal.</span><span class="sxs-lookup"><span data-stu-id="c78fd-110">The first is with the <a href="https://dev.powerbi.com/apps/" data-linktype="external">Power BI App Registration Tool</a>, or you can do it directly within the Azure portal.</span></span> <span data-ttu-id="c78fd-111">Das Power BI-App-Registrierungstool ist die einfachere Option, da nur wenige Felder ausgefüllt werden müssen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-111">The Power BI App Registration Tool is more convenient to use since there are just a few fields to complete.</span></span> <span data-ttu-id="c78fd-112">Wenn Sie Änderungen an der App vornehmen möchten, verwenden Sie das Azure-Portal.</span><span class="sxs-lookup"><span data-stu-id="c78fd-112">Use the Azure portal if you want to make changes to your app.</span></span></p>
+<h2 id="register-with-the-power-bi-application-registration-tool"><span data-ttu-id="c78fd-113">Registrieren mithilfe des Power BI-App-Registrierungs-Tools</span><span class="sxs-lookup"><span data-stu-id="c78fd-113">Register with the Power BI Application Registration Tool</span></span><a class="docon docon-link heading-anchor" href="#register-with-the-power-bi-application-registration-tool" aria-labelledby="register-with-the-power-bi-application-registration-tool"></a></h2>
+<p><span data-ttu-id="c78fd-114">Registrieren Sie Ihre Anwendung in <strong>Azure Active Directory</strong>, um eine Identität für Ihre Anwendung einzurichten und Berechtigungen für Power BI-REST-Ressourcen anzugeben.</span><span class="sxs-lookup"><span data-stu-id="c78fd-114">Register your application in <strong>Azure Active Directory</strong> to establish an identity for your application and specify permissions to Power BI REST resources.</span></span> <span data-ttu-id="c78fd-115">Wenn
+ Sie eine Anwendung registrieren, etwa eine Konsolenanwendung oder eine 
+Website, erhalten Sie einen Bezeichner, mit dem sich die Anwendung 
+gegenüber den Benutzern identifiziert, bei denen diese Berechtigungen 
+anfordert.</span><span class="sxs-lookup"><span data-stu-id="c78fd-115">When
+ you register an application, such as a console app or a website, you 
+receive an identifier, which is used by the application to identify 
+themselves to the users that they're requesting permissions.</span></span></p>
+<p><span data-ttu-id="c78fd-116">So registrieren Sie Ihre Anwendung mit dem Power BI-App-Registrierungs-Tool:</span><span class="sxs-lookup"><span data-stu-id="c78fd-116">Here's how to register your application with the Power BI App Registration Tool:</span></span></p>
+<ol>
+<li><p><span data-ttu-id="c78fd-117">Öffnen Sie die Seite <a href="https://dev.powerbi.com/apps" data-linktype="external">dev.powerbi.com/apps</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-117">Go to <a href="https://dev.powerbi.com/apps" data-linktype="external">dev.powerbi.com/apps</a>.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-118">Wählen Sie <strong>Mit vorhandenem Konto anmelden</strong> aus, und klicken Sie dann auf <strong>Weiter</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-118">Select <strong>Sign in</strong> with your existing account then select <strong>Next</strong>.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-119">Geben Sie einen <strong>Anwendungsnamen</strong> an.</span><span class="sxs-lookup"><span data-stu-id="c78fd-119">Provide an <strong>Application Name</strong>.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-120">Geben Sie einen <strong>Anwendungstyp</strong> an.</span><span class="sxs-lookup"><span data-stu-id="c78fd-120">Provide an <strong>Application Type</strong>.</span></span></p>
+<p><span data-ttu-id="c78fd-121">Im Folgenden werden unterschiedliche Gründe für die Auswahl zwischen den Anwendungstypen <strong>Nativ</strong> und <strong>Serverseitige Webanwendung</strong> aufgeführt.</span><span class="sxs-lookup"><span data-stu-id="c78fd-121">Here are the differences for why you choose <strong>Native</strong> versus <strong>Server-side web applications</strong> for an application type.</span></span></p>
+<p><span data-ttu-id="c78fd-122">Nativ:</span><span class="sxs-lookup"><span data-stu-id="c78fd-122">Native:</span></span></p>
+<ul>
+<li><span data-ttu-id="c78fd-123">Sie möchten eine Anwendung erstellen, die <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-customers" data-linktype="relative-path">für Ihre Benutzer entworfen ist</a>, für die ein Masterbenutzerkonto (eine Power BI Pro-Lizenz zur Anmeldung bei Power BI) zur Authentifizierung erforderlich ist.</span><span class="sxs-lookup"><span data-stu-id="c78fd-123">You plan on creating an application that is <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-customers" data-linktype="relative-path">designed for your customers</a> using a master user account (a Power BI Pro license used for signing in to Power BI) to authenticate.</span></span></li>
+</ul>
+<p><span data-ttu-id="c78fd-124">Serverseitige Webanwendung:</span><span class="sxs-lookup"><span data-stu-id="c78fd-124">Server-side web application:</span></span></p>
+<ul>
+<li><span data-ttu-id="c78fd-125">Sie möchten eine Anwendung erstellen, die <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-your-organization" data-linktype="relative-path">für Ihre Organisation entworfen ist</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-125">You plan on creating an application <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-your-organization" data-linktype="relative-path">designed for your organization</a>.</span></span></li>
+<li><span data-ttu-id="c78fd-126">Sie möchten eine Anwendung erstellen, die <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-customers" data-linktype="relative-path">für Ihre Benutzer entworfen ist</a>, für die einen Dienstprinzipal zur Authentifizierung erforderlich ist.</span><span class="sxs-lookup"><span data-stu-id="c78fd-126">You plan on creating an application <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-customers" data-linktype="relative-path">designed for your customers</a> using service principal to authenticate.</span></span></li>
+<li><span data-ttu-id="c78fd-127">Sie möchten Web-Apps oder Web-APIs erstellen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-127">You plan on creating web apps or web APIs.</span></span></li>
+</ul>
+<p><img src="register-app-new-design-app-type.png" alt="App-Typ" data-linktype="relative-path"></p>
+</li>
+<li><p><span data-ttu-id="c78fd-129">Wenn Sie den Anwendungstyp <strong>Serverseitige Web-Anwendung</strong> ausgewählt haben, geben Sie einen Wert für die Felder <strong>Homepage-URL</strong> und <strong>Umleitungs-URL</strong> ein.</span><span class="sxs-lookup"><span data-stu-id="c78fd-129">If you selected <strong>Server-side web application</strong> for the application type, then continue with entering a value for <strong>Home Page URL</strong> and <strong>Redirect URL</strong>.</span></span> <span data-ttu-id="c78fd-130">Die <strong>Umleitungs-URL</strong> funktioniert mit jedem gültigen URL und sollte mit der erstellten Anwendung entsprechen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-130">The <strong>Redirect URL</strong> works with any valid URL and should correspond with the application you've created.</span></span> <span data-ttu-id="c78fd-131">Wenn Sie den Anwendungstyp <strong>Nativ</strong> ausgewählt haben, fahren Sie mit Schritt 6 fort.</span><span class="sxs-lookup"><span data-stu-id="c78fd-131">If you selected <strong>Native</strong>, then continue to step 6.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-132">Wählen Sie die für Ihre Anwendung erforderlichen Power BI-APIs aus.</span><span class="sxs-lookup"><span data-stu-id="c78fd-132">Choose the Power BI APIs that your application needs.</span></span> <span data-ttu-id="c78fd-133">Weitere Informationen zu Power BI-Zugriffsberechtigungen finden Sie unter <a href="https://docs.microsoft.com/de-de/power-bi/developer/power-bi-permissions" data-linktype="relative-path">Power BI-Berechtigungen</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-133">For more information about Power BI access permissions, see <a href="https://docs.microsoft.com/de-de/power-bi/developer/power-bi-permissions" data-linktype="relative-path">Power BI Permissions</a>.</span></span> <span data-ttu-id="c78fd-134">Klicken Sie dann auf <strong>Registrieren</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-134">Then select <strong>Register</strong>.</span></span></p>
+<p><img src="register-app-new-app-registration-apis-register.png" alt="Zu registrierende APIs auswählen" data-linktype="relative-path"></p>
+<div class="alert is-primary">
+<p class="alert-title"><span class="docon docon-status-info-outline" aria-hidden="true"></span> Wichtig</p>
+<p><span data-ttu-id="c78fd-136">Sobald Sie die Verwendung von 
+Dienstprinzipalen für Power BI aktivieren, sind die Azure Active 
+Directory-Berechtigungen nicht länger wirksam.</span><span class="sxs-lookup"><span data-stu-id="c78fd-136">If you enable service principals to be used with Power BI, the Azure Active Directory permissions don't take effect anymore.</span></span> <span data-ttu-id="c78fd-137">Die Berechtigungen werden dann über das Power BI-Verwaltungsportal verwaltet.</span><span class="sxs-lookup"><span data-stu-id="c78fd-137">The permissions are managed through the Power BI admin portal.</span></span></p>
+</div>
+</li>
+<li><p><span data-ttu-id="c78fd-138">Auf Wunsch <strong>Native</strong> für den Anwendungstyp, dann sind dann eingegebene ein <strong>Anwendungs-ID</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-138">If you choose <strong>Native</strong> for the application type, then you're then provided an <strong>Application ID</strong>.</span></span> <span data-ttu-id="c78fd-139">Wenn Sie den Anwendungstyp <strong>Serverseitige Web-App</strong> auswählen, wird Ihnen eine <strong>Anwendungs-ID</strong> sowie ein <strong>Anwendungsgeheimnis</strong> bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="c78fd-139">If you select <strong>Server-side Web app</strong> for the application type, then you receive an <strong>Application ID</strong> and an <strong>Application secret</strong>.</span></span></p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Hinweis</p>
+<p><span data-ttu-id="c78fd-140">Die <strong>Anwendungs-ID</strong> kann bei Bedarf später aus dem Azure-Portal abgerufen werden.</span><span class="sxs-lookup"><span data-stu-id="c78fd-140">The <strong>Application ID</strong> can be retrieved from the Azure portal, at a later time, if needed.</span></span> <span data-ttu-id="c78fd-141">Wenn Sie das <strong>Anwendungsgeheimnis</strong> verlieren, müssen Sie im Azure-Portal ein neues erstellen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-141">If you lose the <strong>Application secret</strong>, you need to create a new one within the Azure portal.</span></span></p>
+</div>
+</li>
+</ol>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><span data-ttu-id="c78fd-142">Nativ</span><span class="sxs-lookup"><span data-stu-id="c78fd-142">Native</span></span></th>
+<th><span data-ttu-id="c78fd-143">Serverseitige Webanwendung</span><span class="sxs-lookup"><span data-stu-id="c78fd-143">Server-side web application</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td aria-label="Kein Wert"><img src="register-app-new-design-success-native.png" alt="Erfolgreiche Registrierung einer nativen Anwendung" data-linktype="relative-path"></td>
+<td aria-label="Kein Wert"><img src="register-app-new-design-success-server-side-web-app.png" alt="Erfolgreiche Registrierung einer serverseitigen Webanwendung" data-linktype="relative-path"></td>
+</tr>
+</tbody>
+</table></div>
+<p><span data-ttu-id="c78fd-146">Jetzt können Sie die registrierte 
+Anwendung als Teil Ihrer benutzerdefinierten Anwendung verwenden, um die
+ Interaktion mit dem Power BI-Dienst und Ihrer Power BI 
+Embedded-Anwendung zu implementieren.</span><span class="sxs-lookup"><span data-stu-id="c78fd-146">You
+ can now use the registered application as part of your custom 
+application to interact with the Power BI service and with your Power BI
+ Embedded application.</span></span></p>
+<h2 id="register-with-the-azure-portal"><span data-ttu-id="c78fd-147">Registrieren beim Azure-Portal</span><span class="sxs-lookup"><span data-stu-id="c78fd-147">Register with the Azure portal</span></span><a class="docon docon-link heading-anchor" href="#register-with-the-azure-portal" aria-labelledby="register-with-the-azure-portal"></a></h2>
+<p><span data-ttu-id="c78fd-148">Die andere Möglichkeit zum Registrieren Ihrer Anwendung besteht direkt im Azure-Portal.</span><span class="sxs-lookup"><span data-stu-id="c78fd-148">Your other option for registering your application is to do so directly in the Azure portal.</span></span> <span data-ttu-id="c78fd-149">Führen Sie die folgenden Schritte aus, um Ihre Anwendung zu registrieren.</span><span class="sxs-lookup"><span data-stu-id="c78fd-149">To register your application, follow these steps.</span></span></p>
+<ol>
+<li><p><span data-ttu-id="c78fd-150">Akzeptieren Sie die <a href="https://powerbi.microsoft.com/api-terms" data-linktype="external">Nutzungsbedingungen für die Microsoft Power BI-API</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-150">Accept the <a href="https://powerbi.microsoft.com/api-terms" data-linktype="external">Microsoft Power BI API Terms</a>.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-151">Melden Sie sich beim <a href="https://portal.azure.com/" data-linktype="external">Azure-Portal</a> an.</span><span class="sxs-lookup"><span data-stu-id="c78fd-151">Sign into the <a href="https://portal.azure.com/" data-linktype="external">Azure portal</a>.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-152">Wählen Sie Ihren Azure AD-Mandanten aus, indem Sie Ihr Konto in der oberen rechten Ecke der Seite auswählen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-152">Choose your Azure AD tenant by selecting your account in the top-right corner of the page.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-153">Navigieren Sie im linken Navigationsbereich zu <strong>alle Dienste</strong>Option <strong>App-Registrierungen</strong> und wählen Sie dann <strong>Registrierung einer neuen</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-153">In the left-hand navigation pane, go to <strong>All services</strong>, select <strong>App Registrations</strong> and then select <strong>New registration</strong>.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-154">Folgen Sie den Anweisungen, und erstellen Sie eine neue Anwendung .</span><span class="sxs-lookup"><span data-stu-id="c78fd-154">Follow the prompts and create a new application.</span></span></p>
+<p><span data-ttu-id="c78fd-155">Weitere Informationen zum Registrieren von Anwendungen in Azure Active Directory, finden Sie unter <a href="https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-register-an-app" data-linktype="external">Registrieren einer app in Azure Active Directory</a></span><span class="sxs-lookup"><span data-stu-id="c78fd-155">For more information about how to register applications in Azure Active Directory, see <a href="https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-register-an-app" data-linktype="external">Register an app with the Azure Active Directory</a></span></span></p>
+</li>
+</ol>
+<h2 id="how-to-get-the-application-id"><span data-ttu-id="c78fd-156">Abrufen der Anwendungs-ID</span><span class="sxs-lookup"><span data-stu-id="c78fd-156">How to get the Application ID</span></span><a class="docon docon-link heading-anchor" href="#how-to-get-the-application-id" aria-labelledby="how-to-get-the-application-id"></a></h2>
+<p><span data-ttu-id="c78fd-157">Beim Registrieren einer Anwendung erhalten Sie eine <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-customers#application-id" data-linktype="relative-path">Anwendungs-ID</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-157">When you register an application, you receive an <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-sample-for-customers#application-id" data-linktype="relative-path">Application ID</a>.</span></span>  <span data-ttu-id="c78fd-158">Diese <strong>Anwendungs-ID</strong> fordert die Benutzer auf, der Anwendung zu gestatten, sich bei ihnen zu identifizieren.</span><span class="sxs-lookup"><span data-stu-id="c78fd-158">The <strong>Application ID</strong> requests permissions to the users by the application to identify themselves.</span></span></p>
+<h2 id="how-to-get-the-service-principal-object-id"><span data-ttu-id="c78fd-159">Abrufen der Dienstprinzipalobjekt-ID</span><span class="sxs-lookup"><span data-stu-id="c78fd-159">How to get the service principal object ID</span></span><a class="docon docon-link heading-anchor" href="#how-to-get-the-service-principal-object-id" aria-labelledby="how-to-get-the-service-principal-object-id"></a></h2>
+<p><span data-ttu-id="c78fd-160">Stellen Sie sicher, dass Sie bei der Verwendung der <a href="https://docs.microsoft.com/rest/api/power-bi/" data-linktype="external">Power BI-APIs</a> Vorgänge mit der <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-service-principal#how-to-get-the-service-principal-object-id" data-linktype="relative-path">Dienstprinzipalobjekt-ID</a>
+ zum Referenzieren des Dienstprinzipals definieren, z.B. einen 
+Dienstprinzipal als Administrator für einen Arbeitsbereich festlegen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-160">When using the <a href="https://docs.microsoft.com/rest/api/power-bi/" data-linktype="external">Power BI APIs</a>, make sure to define operations using the <a href="https://docs.microsoft.com/de-de/power-bi/developer/embed-service-principal#how-to-get-the-service-principal-object-id" data-linktype="relative-path">service principal object ID</a> to reference the service principal - for example, applying a service principal as an admin to a workspace.</span></span></p>
+<h2 id="apply-permissions-to-your-application-within-azure-ad"><span data-ttu-id="c78fd-161">Anwenden von Berechtigungen für die Anwendung in Azure AD</span><span class="sxs-lookup"><span data-stu-id="c78fd-161">Apply permissions to your application within Azure AD</span></span><a class="docon docon-link heading-anchor" href="#apply-permissions-to-your-application-within-azure-ad" aria-labelledby="apply-permissions-to-your-application-within-azure-ad"></a></h2>
+<p><span data-ttu-id="c78fd-162">Aktivieren Sie neben den Einstellungen auf der App-Registrierungsseite zusätzliche Berechtigungen für die Anwendung.</span><span class="sxs-lookup"><span data-stu-id="c78fd-162">Enable additional permissions to your application in addition to what the app registration page provides.</span></span> <span data-ttu-id="c78fd-163">Dies ist über das Azure AD-Portal oder programmgesteuert möglich.</span><span class="sxs-lookup"><span data-stu-id="c78fd-163">You can accomplish this task through the Azure AD portal, or programmatically.</span></span></p>
+<p><span data-ttu-id="c78fd-164">Sie können sich entweder mit dem <em>Masterkonto</em> (zur Einbettung von Inhalten) oder einem globalen Administratorkonto anmelden.</span><span class="sxs-lookup"><span data-stu-id="c78fd-164">You want to be logged in with either the <em>master</em> account, used for embedding, or a Global admin account.</span></span></p>
+<h3 id="using-the-azure-ad-portal"><span data-ttu-id="c78fd-165">Über das Azure AD-Portal</span><span class="sxs-lookup"><span data-stu-id="c78fd-165">Using the Azure AD portal</span></span><a class="docon docon-link heading-anchor" href="#using-the-azure-ad-portal" aria-labelledby="using-the-azure-ad-portal"></a></h3>
+<ol>
+<li><p><span data-ttu-id="c78fd-166">Navigieren Sie im Azure-Portal zu <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ApplicationsListBlade" data-linktype="external">App-Registrierungen</a>, und wählen Sie die App aus, die Sie für die Einbettung verwenden.</span><span class="sxs-lookup"><span data-stu-id="c78fd-166">Browse to <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ApplicationsListBlade" data-linktype="external">App registrations</a> within the Azure portal and select the app that you're using for embedding.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-167">Wählen Sie <strong>API-Berechtigungen</strong> unter <strong>verwalten</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-167">Select <strong>API permissions</strong> under <strong>Manage</strong>.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-168">In <strong>API-Berechtigungen</strong>Option <strong>Hinzufügen einer Berechtigung</strong>, und wählen Sie dann <strong>Power BI-Dienst</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-168">Within <strong>API permissions</strong>, select <strong>Add a permission</strong>, then select <strong>Power BI Service</strong>.</span></span></p>
+<p><img src="powerbi-embedded-azuread-app-permissions03.png" alt="App-Berechtigungen 3" data-linktype="relative-path"></p>
+</li>
+<li><p><span data-ttu-id="c78fd-170">Wählen Sie die spezifischen Berechtigungen, die Sie unter benötigen <strong>delegierte Berechtigungen</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-170">Select the specific permissions you need under <strong>Delegated Permissions</strong>.</span></span> <span data-ttu-id="c78fd-171">Wählen sie die Berechtigungen einzeln aus, um die Auswahl zu speichern.</span><span class="sxs-lookup"><span data-stu-id="c78fd-171">Select them one by one to save the selections.</span></span> <span data-ttu-id="c78fd-172">Wählen Sie <strong>Speichern</strong> aus, wenn Sie fertig sind.</span><span class="sxs-lookup"><span data-stu-id="c78fd-172">Select <strong>Save</strong> when done.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-173">Wählen Sie <strong>Grant Zustimmung</strong>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-173">Select <strong>Grant Consent</strong>.</span></span></p>
+<p><span data-ttu-id="c78fd-174">Die <strong>Grant Zustimmung</strong> Aktion muss für die <em>Hauptkonto</em> um zu vermeiden, wird zur Zustimmung von Azure AD aufgefordert.</span><span class="sxs-lookup"><span data-stu-id="c78fd-174">The <strong>Grant Consent</strong> action needs for the <em>master account</em> to avoid being prompted for consent by Azure AD.</span></span> <span data-ttu-id="c78fd-175">Wenn
+ es sich beim Konto, das diese Aktion ausführt, um das Konto eines 
+globalen Administrators handelt, gewähren Sie allen Benutzern in der 
+Organisation Berechtigungen für diese Anwendung.</span><span class="sxs-lookup"><span data-stu-id="c78fd-175">If
+ the account performing this action is a Global Admin, you grant 
+permissions to all users within your organization for this application.</span></span> <span data-ttu-id="c78fd-176">Wenn das Konto, das diese Aktion ausführt, das <em>Masterkonto</em> und nicht das Konto des globalen Administrators ist, gewähren Sie für diese Anwendung lediglich dem <em>Masterkonto</em> Berechtigungen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-176">If the account performing this action is the <em>master account</em> and isn't a Global Admin, you grant permissions only to the <em>master account</em> for this application.</span></span></p>
+</li>
+</ol>
+<h3 id="applying-permissions-programmatically"><span data-ttu-id="c78fd-177">Programmgesteuertes Anwenden von Berechtigungen</span><span class="sxs-lookup"><span data-stu-id="c78fd-177">Applying permissions programmatically</span></span><a class="docon docon-link heading-anchor" href="#applying-permissions-programmatically" aria-labelledby="applying-permissions-programmatically"></a></h3>
+<ol>
+<li><p><span data-ttu-id="c78fd-178">Sie müssen die vorhandenen Dienstprinzipale (Benutzer) in Ihrem Mandanten abrufen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-178">You need to get the existing service principals (users) within your tenant.</span></span> <span data-ttu-id="c78fd-179">Informationen hierzu finden Sie unter <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta" data-linktype="external">ServicePrincipal</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-179">For information on how to do that, see <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta" data-linktype="external">servicePrincipal</a>.</span></span></p>
+<p><span data-ttu-id="c78fd-180">Sie können die API <em>Get servicePrincipal</em> ohne {ID} aufrufen. So werden alle Dienstprinzipale innerhalb des Mandanten abgerufen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-180">You can call the <em>Get servicePrincipal</em> API without {ID}, and it gets you all of the service principals within the tenant.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-181">Suchen Sie nach einem Dienstprinzipal mit der Anwendungs-ID Ihrer App als <strong>appId</strong>-Eigenschaft.</span><span class="sxs-lookup"><span data-stu-id="c78fd-181">Check for a service principal with your app application ID as <strong>appId</strong> property.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-182">Erstellen Sie einen neuen Serviceplan, wenn für Ihre App keiner vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="c78fd-182">Create a new service plan if missing from your app.</span></span></p>
+<pre tabindex="0" class="has-inner-focus"><code class="lang-json" data-author-content="Post https://graph.microsoft.com/beta/servicePrincipals
+Authorization: Bearer ey..qw
+Content-Type: application/json
+{
+&quot;accountEnabled&quot; : true,
+&quot;appId&quot; : &quot;{App_Client_ID}&quot;,
+&quot;displayName&quot; : &quot;{App_DisplayName}&quot;
+}
+">Post https://graph.microsoft.com/beta/servicePrincipals
+Authorization: Bearer ey..qw
+Content-Type: application/json
+{
+"accountEnabled" : true,
+"appId" : "{App_Client_ID}",
+"displayName" : "{App_DisplayName}"
+}
+</code></pre>
+</li>
+<li><p><span data-ttu-id="c78fd-183">Weisen Sie der Power BI-API App-Berechtigungen zu.</span><span class="sxs-lookup"><span data-stu-id="c78fd-183">Grant App Permissions to Power BI API</span></span></p>
+<p><span data-ttu-id="c78fd-184">Wenn Sie einen vorhandenen Mandanten 
+verwenden und nicht allen Mandantenbenutzern Berechtigungen erteilen 
+möchten, können Sie einem bestimmten Benutzer Berechtigungen gewähren, 
+indem Sie den Wert von <strong>consentType</strong> durch <strong>Principal</strong> ersetzen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-184">If
+ you're using an existing tenant, and not interested in granting 
+permissions on behalf of all tenant users, you can grant permissions to a
+ specific user by replacing the value of <strong>contentType</strong> to <strong>Principal</strong>.</span></span></p>
+<p><span data-ttu-id="c78fd-185">Der Wert für <strong>consentType</strong> kann entweder auf <strong>AllPrincipals</strong> oder <strong>Principal</strong> festgelegt werden.</span><span class="sxs-lookup"><span data-stu-id="c78fd-185">The value for <strong>consentType</strong> can supply either <strong>AllPrincipals</strong> or <strong>Principal</strong>.</span></span></p>
+<ul>
+<li><p><span data-ttu-id="c78fd-186">Nur Mandantenadministratoren können mit <strong>AllPrincipals</strong> im Namen aller Benutzer im Mandanten Berechtigungen erteilen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-186"><strong>AllPrincipals</strong> can only be used by a tenant admin to grant permissions on behalf of all users in the tenant.</span></span></p>
+</li>
+<li><p><span data-ttu-id="c78fd-187">Mit <strong>Principal</strong> werden Berechtigungen im Namen eines bestimmten Benutzers gewährt.</span><span class="sxs-lookup"><span data-stu-id="c78fd-187"><strong>Principal</strong> is used to grant permissions on behalf of a specific user.</span></span> <span data-ttu-id="c78fd-188">In diesem Fall sollte dem Anforderungstext eine zusätzliche Eigenschaft hinzugefügt werden: <em>principalId={User_ObjectId}</em> .</span><span class="sxs-lookup"><span data-stu-id="c78fd-188">In this case, an additional property should be added to the request's body - <em>principalId={User_ObjectId}</em>.</span></span></p>
+<p><span data-ttu-id="c78fd-189">Die Konfiguration über <em>Berechtigungen erteilen</em>
+ ist für das Masterkonto erforderlich, damit von Azure AD keine 
+Zustimmung abgefragt wird. Dies ist bei einer nicht interaktiven 
+Anmeldung nicht möglich.</span><span class="sxs-lookup"><span data-stu-id="c78fd-189">You need to <em>Grant permissions</em>
+ for the master account to avoid being prompted for consent by Azure AD,
+ which isn't possible when doing non-interactive sign-in.</span></span></p>
+<pre tabindex="0" class="has-inner-focus"><code class="lang-json" data-author-content="Post https://graph.microsoft.com/beta/OAuth2PermissionGrants
+Authorization: Bearer ey..qw
+Content-Type: application/json
+{
+&quot;clientId&quot;:&quot;{Service_Plan_ID}&quot;,
+&quot;consentType&quot;:&quot;AllPrincipals&quot;,
+&quot;resourceId&quot;:&quot;c78a3685-1ce7-52cd-95f7-dc5aea8ec98e&quot;,
+&quot;scope&quot;:&quot;Dataset.ReadWrite.All Dashboard.Read.All Report.Read.All Group.Read Group.Read.All Content.Create Metadata.View_Any Dataset.Read.All Data.Alter_Any&quot;,
+&quot;expiryTime&quot;:&quot;2018-03-29T14:35:32.4943409+03:00&quot;,
+&quot;startTime&quot;:&quot;2017-03-29T14:35:32.4933413+03:00&quot;
+}
+">Post https://graph.microsoft.com/beta/OAuth2PermissionGrants
+Authorization: Bearer ey..qw
+Content-Type: application/json
+{
+"clientId":"{Service_Plan_ID}",
+"consentType":"AllPrincipals",
+"resourceId":"c78a3685-1ce7-52cd-95f7-dc5aea8ec98e",
+"scope":"Dataset.ReadWrite.All Dashboard.Read.All Report.Read.All Group.Read Group.Read.All Content.Create Metadata.View_Any Dataset.Read.All Data.Alter_Any",
+"expiryTime":"2018-03-29T14:35:32.4943409+03:00",
+"startTime":"2017-03-29T14:35:32.4933413+03:00"
+}
+</code></pre>
+</li>
+</ul>
+<p><span data-ttu-id="c78fd-190">Der <strong>resourceId</strong>-Wert <em>c78a3685-1ce7-52cd-95f7-dc5aea8ec98e</em> ist nicht allgemeingültig, sondern abhängig vom Mandanten.</span><span class="sxs-lookup"><span data-stu-id="c78fd-190">The <strong>resourceId</strong> <em>c78a3685-1ce7-52cd-95f7-dc5aea8ec98e</em> isn't universal but it's tenant dependant.</span></span> <span data-ttu-id="c78fd-191">Dieser Wert entspricht dem objectId-Wert der Anwendung „Power BI-Dienst“ im AAD-Mandanten (Azure Active Directory).</span><span class="sxs-lookup"><span data-stu-id="c78fd-191">This value is the objectId of the “Power BI Service” application in the Azure Active Directory (AAD) tenant.</span></span></p>
+<p><span data-ttu-id="c78fd-192">Der Benutzer kann diesen Wert ganz einfach im Azure-Portal abrufen:</span><span class="sxs-lookup"><span data-stu-id="c78fd-192">The user can quickly get this value in the Azure portal:</span></span></p>
+<ol>
+<li><p><a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps" data-linktype="external">https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps</a></p>
+</li>
+<li><p><span data-ttu-id="c78fd-193">Suchen Sie über das Suchfeld nach „Power BI-Dienst“.</span><span class="sxs-lookup"><span data-stu-id="c78fd-193">Search for “Power BI Service” in the SearchBox</span></span></p>
+</li>
+</ol>
+</li>
+<li><p><span data-ttu-id="c78fd-194">Erteilen Sie Azure Active Directory (AAD) App-Berechtigungen.</span><span class="sxs-lookup"><span data-stu-id="c78fd-194">Grant App Permissions to Azure Active Directory (AAD)</span></span></p>
+<p><span data-ttu-id="c78fd-195">Der Wert für <strong>consentType</strong> kann entweder auf <strong>AllPrincipals</strong> oder <strong>Principal</strong> festgelegt werden.</span><span class="sxs-lookup"><span data-stu-id="c78fd-195">The value for <strong>consentType</strong> can supply either <strong>AllPrincipals</strong> or <strong>Principal</strong>.</span></span></p>
+<ul>
+<li><span data-ttu-id="c78fd-196"><strong>AllPrincipals</strong> kann nur vom mandantenadministrator zum Gewähren von Berechtigungen für alle Benutzer im Mandanten verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="c78fd-196"><strong>AllPrincipals</strong> can only be used by a tenant admin to grant permissions for all users in the tenant.</span></span></li>
+<li><span data-ttu-id="c78fd-197"><strong>Dienstprinzipal</strong> wird verwendet, um Berechtigungen für einen bestimmten Benutzer zu gewähren.</span><span class="sxs-lookup"><span data-stu-id="c78fd-197"><strong>Principal</strong> is used to grant permissions for a specific user.</span></span> <span data-ttu-id="c78fd-198">In diesem Fall sollte dem Anforderungstext eine zusätzliche Eigenschaft hinzugefügt werden: <em>principalId={User_ObjectId}</em> .</span><span class="sxs-lookup"><span data-stu-id="c78fd-198">In this case, an additional property should be added to the request's body - <em>principalId={User_ObjectId}</em>.</span></span></li>
+</ul>
+<p><span data-ttu-id="c78fd-199">Die Konfiguration über <em>Berechtigungen erteilen</em>
+ ist für das Masterkonto erforderlich, damit von Azure AD keine 
+Zustimmung abgefragt wird. Dies ist bei einer nicht interaktiven 
+Anmeldung nicht möglich.</span><span class="sxs-lookup"><span data-stu-id="c78fd-199">You need to <em>Grant permissions</em>
+ for the master account to avoid being prompted for consent by Azure AD,
+ which isn't possible when doing non-interactive sign-in.</span></span></p>
+<pre tabindex="0" class="has-inner-focus"><code class="lang-json" data-author-content="Post https://graph.microsoft.com/beta/OAuth2PermissionGrants
+Authorization: Bearer ey..qw
+Content-Type: application/json
+{ 
+&quot;clientId&quot;:&quot;{Service_Plan_ID}&quot;,
+&quot;consentType&quot;:&quot;AllPrincipals&quot;,
+&quot;resourceId&quot;:&quot;61e57743-d5cf-41ba-bd1a-2b381390a3f1&quot;,
+&quot;scope&quot;:&quot;User.Read Directory.AccessAsUser.All&quot;,
+&quot;expiryTime&quot;:&quot;2018-03-29T14:35:32.4943409+03:00&quot;,
+&quot;startTime&quot;:&quot;2017-03-29T14:35:32.4933413+03:00&quot;
+}
+">Post https://graph.microsoft.com/beta/OAuth2PermissionGrants
+Authorization: Bearer ey..qw
+Content-Type: application/json
+{ 
+"clientId":"{Service_Plan_ID}",
+"consentType":"AllPrincipals",
+"resourceId":"61e57743-d5cf-41ba-bd1a-2b381390a3f1",
+"scope":"User.Read Directory.AccessAsUser.All",
+"expiryTime":"2018-03-29T14:35:32.4943409+03:00",
+"startTime":"2017-03-29T14:35:32.4933413+03:00"
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="next-steps"><span data-ttu-id="c78fd-200">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="c78fd-200">Next steps</span></span><a class="docon docon-link heading-anchor" href="#next-steps" aria-labelledby="next-steps"></a></h2>
+<p><span data-ttu-id="c78fd-201">Sie haben Ihre Anwendung in Azure AD registriert und müssen jetzt Benutzer in der Anwendung authentifizieren.</span><span class="sxs-lookup"><span data-stu-id="c78fd-201">Now that you've registered your application within Azure AD, you need to authenticate users within your application.</span></span> <span data-ttu-id="c78fd-202">Weitere Informationen hierzu finden Sie unter <a href="https://docs.microsoft.com/de-de/power-bi/developer/get-azuread-access-token" data-linktype="relative-path">Authentifizieren von Benutzern und Abrufen eines Azure AD-Zugriffstokens für Ihre Power BI-App</a>.</span><span class="sxs-lookup"><span data-stu-id="c78fd-202">Have a look at <a href="https://docs.microsoft.com/de-de/power-bi/developer/get-azuread-access-token" data-linktype="relative-path">Authenticate users and get an Azure AD access token for your Power BI app</a> to learn more.</span></span></p>
+<p><span data-ttu-id="c78fd-203">Weitere Fragen?</span><span class="sxs-lookup"><span data-stu-id="c78fd-203">More questions?</span></span> <a href="http://community.powerbi.com/" data-linktype="external"><span data-ttu-id="c78fd-204">Stellen Sie Ihre Frage in der Power BI-Community.</span><span class="sxs-lookup"><span data-stu-id="c78fd-204">Try asking the Power BI Community</span></span></a></p>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- feedback section -->
+
+
+
+<section class="feedback-section" data-bi-name="feedback-section">
+	<div id="feedback-verbatim" class="has-border-top has-padding-top-small has-margin-top-medium has-margin-bottom-small" data-bi-name="rating">
+		<p class="has-margin-top-none has-margin-bottom-small">War diese Seite hilfreich?</p>
+		<button class="button thumb-rating dislike expand-rating-menu has-margin-right-extra-small has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="Nein" aria-haspopup="true" aria-controls="verbatim-input" data-bi-name="rating-no" data-bi-sat="0">
+			<span class="icon docon docon-dislike" aria-hidden="true"></span>
+		</button>
+		<button class="button thumb-rating like expand-rating-menu has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="Ja" aria-haspopup="true" aria-controls="verbatim-input" data-bi-name="rating-yes" data-bi-sat="1">
+			<span class="icon docon docon-like" aria-hidden="true"></span>
+		</button>
+		<form id="feedback-verbatim-form" class="is-hidden">
+			<div id="verbatim-textarea" class="box is-relative has-box-shadow-none has-border has-margin-top-medium has-padding-small is-size-7">
+				<label for="rating-feedback" class="visually-hidden">Teilen Sie uns Ihre Meinung mit.</label>
+				<textarea id="rating-feedback" rows="6" maxlength="999" placeholder="Teilen Sie uns Ihre Meinung mit." required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium">
+				<button id="skip-rating" class="button is-text is-link" type="button">Überspringen</button>
+				<button disabled="disabled" id="submit-rating" class="button is-primary" type="submit" data-bi-name="rating-verbatim">Übermitteln</button>
+			</div>
+		</form>
+		<div id="thankyou-rating" class="is-hidden">
+			<p>Vielen Dank für Ihr Feedback.</p>
+		</div>
+	</div>
+
+	<h2 id="feedback">Feedback</h2>
+
+	<div class="alert choose-feedback-type">
+		<p id="send-feedback-about" aria-hidden="true">Feedback senden zu</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" aria-label="Feedback zu diesem Produkt senden" href="https://ideas.powerbi.com/forums/265200-power-bi" data-bi-name="product-feedback">
+				<span>Dieses Produkt</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" aria-label="Feedback zu dieser Seite senden" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>Diese Seite</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger is-full-height" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm0" aria-label="Weitere Feedbackoptionen" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm0" class="dropdown-menu documentation-feedback-menu">
+						Sie können Ihr Feedback auch direkt auf <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/powerbi-docs.de-de/issues/new?title=&amp;body=%0A%0A%5BHier%20Feedback%20eingeben%5D%0A%0A%0A---%0A%23%23%23%23%20Dokumentdetails%0A%0A%E2%9A%A0%20*Bearbeiten%20Sie%20diesen%20Abschnitt%20nicht.%20Er%20ist%20f%C3%BCr%20die%20Verkn%C3%BCpfung%20von%20docs.microsoft.com%20zum%20GitHub-Artikel%20erforderlich.*%0A%0A*%20ID%3A%20edce6995-b777-06fc-49ee-b23eabf6a862%0A*%20Version%20Independent%20ID%3A%20ffd0c74b-4a05-1019-6897-804d60c13765%0A*%20Content%3A%20%5BRegistrieren%20einer%20App%20zum%20Einbetten%20von%20Power%20BI-Inhalten%20-%20Power%20BI%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%29%0A*%20Content%20Source%3A%20%5Bpowerbi-docs%2Fdeveloper%2Fregister-app.md%5D%28https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fpowerbi-docs.de-de%2Fblob%2Flive%2Fpowerbi-docs%2Fdeveloper%2Fregister-app.md%29%0A*%20Service%3A%20**powerbi**%0A*%20Sub-service%3A%20**powerbi-developer**%0A*%20GitHub%20Login%3A%20%40rkarlin%0A*%20Microsoft%20Alias%3A%20**rkarlin**">GitHub<span class="docon docon-navigate-external" aria-hidden="true"></span></a> eingeben.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+Diese Seite					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm1" aria-label="Weitere Feedbackoptionen" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm1" class="dropdown-menu documentation-feedback-menu">
+						Sie können Ihr Feedback auch direkt auf <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/powerbi-docs.de-de/issues/new?title=&amp;body=%0A%0A%5BHier%20Feedback%20eingeben%5D%0A%0A%0A---%0A%23%23%23%23%20Dokumentdetails%0A%0A%E2%9A%A0%20*Bearbeiten%20Sie%20diesen%20Abschnitt%20nicht.%20Er%20ist%20f%C3%BCr%20die%20Verkn%C3%BCpfung%20von%20docs.microsoft.com%20zum%20GitHub-Artikel%20erforderlich.*%0A%0A*%20ID%3A%20edce6995-b777-06fc-49ee-b23eabf6a862%0A*%20Version%20Independent%20ID%3A%20ffd0c74b-4a05-1019-6897-804d60c13765%0A*%20Content%3A%20%5BRegistrieren%20einer%20App%20zum%20Einbetten%20von%20Power%20BI-Inhalten%20-%20Power%20BI%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fde-de%2Fpower-bi%2Fdeveloper%2Fregister-app%29%0A*%20Content%20Source%3A%20%5Bpowerbi-docs%2Fdeveloper%2Fregister-app.md%5D%28https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fpowerbi-docs.de-de%2Fblob%2Flive%2Fpowerbi-docs%2Fdeveloper%2Fregister-app.md%29%0A*%20Service%3A%20**powerbi**%0A*%20Sub-service%3A%20**powerbi-developer**%0A*%20GitHub%20Login%3A%20%40rkarlin%0A*%20Microsoft%20Alias%3A%20**rkarlin**">GitHub<span class="docon docon-navigate-external" aria-hidden="true"></span></a> eingeben.					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" width="36" height="36">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Problemtitel</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" placeholder="Problemtitel" required="" pattern=".*[^\s]+.*" type="text">
+		</label>
+		<label>
+			<span class="visually-hidden">Kommentar hinterlassen</span>
+			<textarea name="body" placeholder="Kommentar hinterlassen" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Feedback übermitteln</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-loading">
+		<p>Feedback wird geladen...</p>
+	</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" data-bi-name="tab-group" hidden="">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" data-bi-name="tab" aria-selected="true" tabindex="0"></a>
+			</li>
+			<li role="presentation">
+				<a href="#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" data-bi-name="tab" aria-selected="false" tabindex="-1"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">Es gibt keine offenen Probleme.</div>
+			<ul class="github-issues-list" aria-label="Offene Probleme"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" aria-hidden="true" hidden="hidden">
+			<div class="no-issues-placeholder">Es gibt keine geschlossenen Probleme.</div>
+			<ul class="github-issues-list" aria-label="Geschlossene Probleme"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/MicrosoftDocs/powerbi-docs.de-de/issues?utf8=%E2%9C%93&amp;q=%22ffd0c74b-4a05-1019-6897-804d60c13765%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>Auf GitHub anzeigen</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>
+
+
+						<!-- end feedback section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/de-de/locale?target=https://docs.microsoft.com/de-de/power-bi/developer/register-app" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">Deutsch</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Vorherige Dokumentversionen</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Mitwirken</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Datenschutz &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/de-de/legal/termsofuse" data-bi-name="termsofuse">Nutzungsbedingungen</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Websitefeedback</a></li>
+			<li id="impressum-section"><a data-mscc-ic="false" id="impressum-link" href="https://www.microsoft.com/de-de/corporate/rechtliche-hinweise/impressum.aspx" data-bi-name="impressum">Impressum</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marken</a></li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div id="page-actions" class="right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Seitenaktionen">
+							<nav id="side-doc-outline" class="doc-outline is-fixed is-vertically-scrollable" data-bi-name="intopic toc" role="navigation" aria-label="Artikelgliederung" style="top: 274.9px; bottom: 24px;">
+								<h3>In diesem Artikel</h3>
+							<ol><li class="selected"><a href="#register-with-the-power-bi-application-registration-tool">Registrieren mithilfe des Power BI-App-Registrierungs-Tools</a></li><li><a href="#register-with-the-azure-portal">Registrieren beim Azure-Portal</a></li><li><a href="#how-to-get-the-application-id">Abrufen der Anwendungs-ID</a></li><li><a href="#how-to-get-the-service-principal-object-id">Abrufen der Dienstprinzipalobjekt-ID</a></li><li><a href="#apply-permissions-to-your-application-within-azure-ad">Anwenden von Berechtigungen für die Anwendung in Azure AD</a></li><li><a href="#next-steps">Nächste Schritte</a></li></ol></nav>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/de-de/locale?target=https://docs.microsoft.com/de-de/power-bi/developer/register-app" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">Deutsch</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Vorherige Dokumentversionen</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Mitwirken</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Datenschutz &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/de-de/legal/termsofuse" data-bi-name="termsofuse">Nutzungsbedingungen</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Websitefeedback</a></li>
+			<li id="impressum-section"><a data-mscc-ic="false" id="impressum-link" href="https://www.microsoft.com/de-de/corporate/rechtliche-hinweise/impressum.aspx" data-bi-name="impressum">Impressum</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marken</a></li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Aktionsbereich" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>

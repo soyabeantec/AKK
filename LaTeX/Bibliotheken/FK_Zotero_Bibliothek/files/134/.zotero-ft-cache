@@ -1,0 +1,158 @@
+pricing user guide plotly
+Dash Layout
+
+    This is the 2nd chapter of the Dash Tutorial . The previous chapter covered installation and the next chapter covers Dash callbacks.
+
+This tutorial will walk you through a fundamental aspect of Dash apps, the app layout , through 6 self-contained apps.
+
+Dash apps are composed of two parts. The first part is the " layout " of the app and it describes what the application looks like. The second part describes the interactivity of the application and will be covered in the next chapter .
+
+Dash provides Python classes for all of the visual components of the application. We maintain a set of components in the dash_core_components and the dash_html_components library but you can also build your own with JavaScript and React.js.
+To get started, create a file named `app.py` with the following code:
+
+ # -*- coding: utf-8 -*- import dash import dash_core_components as dcc import dash_html_components as html external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css' ] app = dash.Dash(__name__, external_stylesheets=external_stylesheets) app.layout = html.Div(children=[ html.H1(children= 'Hello Dash' ), html.Div(children= ''' Dash: A web application framework for Python. ''' ), dcc.Graph( id= 'example-graph' , figure={ 'data' : [ { 'x' : [ 1 , 2 , 3 ], 'y' : [ 4 , 1 , 2 ], 'type' : 'bar' , 'name' : 'SF' }, { 'x' : [ 1 , 2 , 3 ], 'y' : [ 2 , 4 , 5 ], 'type' : 'bar' , 'name' : u'Montréal' }, ], 'layout' : { 'title' : 'Dash Data Visualization' } } ) ]) if __name__ == '__main__' : app.run_server(debug= True ) 
+
+Run the app with
+
+ $ python app.py ...Running on http: / /127.0.0.1:8050/ (Press CTRL+C to quit) 
+
+and visit http:127.0.0.1:8050/ in your web browser. You should see an app that looks like this.
+Hello Dash
+Dash: A web application framework for Python.
+1 2 3 0 1 2 3 4 5
+SF Montréal Dash Data Visualization
+.cls-1 {fill: #119dff;} .cls-2 {fill: #25fefd;} .cls-3 {fill: #fff;} plotly-logomark
+
+Note:
+
+    The layout is composed of a tree of "components" like html.Div and dcc.Graph .
+    The dash_html_components library has a component for every HTML tag. The html.H1(children='Hello Dash') component generates a <h1>Hello Dash</h1> HTML element in your application.
+    Not all components are pure HTML. The dash_core_components describe higher-level components that are interactive and are generated with JavaScript, HTML, and CSS through the React.js library.
+    Each component is described entirely through keyword attributes. Dash is declarative : you will primarily describe your application through these attributes.
+    The children property is special. By convention, it's always the first attribute which means that you can omit it: html.H1(children='Hello Dash') is the same as html.H1('Hello Dash') . Also, it can contain a string, a number, a single component, or a list of components.
+    The fonts in your application will look a little bit different than what is displayed here. This application is using a custom CSS stylesheet to modify the default styles of the elements. You can learn more in the css tutorial , but for now you can initialize your app with
+
+ external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css' ] app = dash.Dash(__name__, external_stylesheets=external_stylesheets) 
+
+to get the same look and feel of these examples.
+Making your first change
+
+New in dash 0.30.0 and dash-renderer 0.15.0
+
+Dash includes "hot-reloading", this features is activated by default when you run your app with app.run_server(debug=True) . This means that Dash will automatically refresh your browser when you make a change in your code.
+
+Give it a try: change the title "Hello Dash" in your application or change the x or the y data. Your app should auto-refresh with your change.
+
+    Don't like hot-reloading? You can turn this off with app.run_server(dev_tools_hot_reload=False) . Learn more in Dash Dev Tools documentation Questions? See the community forum hot reloading discussion .
+
+More about HTML
+
+The dash_html_components library contains a component class for every HTML tag as well as keyword arguments for all of the HTML arguments.
+Let's customize the text in our app by modifying the inline styles of the components:
+
+ # -*- coding: utf-8 -*- import dash import dash_core_components as dcc import dash_html_components as html external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css' ] app = dash.Dash(__name__, external_stylesheets=external_stylesheets) colors = { 'background' : '#111111' , 'text' : '#7FDBFF' } app.layout = html.Div(style={ 'backgroundColor' : colors[ 'background' ]}, children=[ html.H1( children= 'Hello Dash' , style={ 'textAlign' : 'center' , 'color' : colors[ 'text' ] } ), html.Div(children= 'Dash: A web application framework for Python.' , style={ 'textAlign' : 'center' , 'color' : colors[ 'text' ] }), dcc.Graph( id= 'example-graph-2' , figure={ 'data' : [ { 'x' : [ 1 , 2 , 3 ], 'y' : [ 4 , 1 , 2 ], 'type' : 'bar' , 'name' : 'SF' }, { 'x' : [ 1 , 2 , 3 ], 'y' : [ 2 , 4 , 5 ], 'type' : 'bar' , 'name' : u'Montréal' }, ], 'layout' : { 'plot_bgcolor' : colors[ 'background' ], 'paper_bgcolor' : colors[ 'background' ], 'font' : { 'color' : colors[ 'text' ] } } } ) ]) if __name__ == '__main__' : app.run_server(debug= True ) 
+
+Hello Dash
+Dash: A web application framework for Python.
+1 2 3 0 1 2 3 4 5
+SF Montréal
+.cls-1 {fill: #119dff;} .cls-2 {fill: #25fefd;} .cls-3 {fill: #fff;} plotly-logomark
+
+In this example, we modified the inline styles of the html.Div and html.H1 components with the style property.
+
+html.H1('Hello Dash', style={'textAlign': 'center', 'color': '#7FDBFF'}) is rendered in the Dash application as <h1 style="text-align: center; color: #7FDBFF">Hello Dash</h1> .
+
+There are a few important differences between the dash_html_components and the HTML attributes:
+
+    The style property in HTML is a semicolon-separated string. In Dash, you can just supply a dictionary.
+    The keys in the style dictionary are camelCased . So, instead of text-align , it's textAlign .
+    The HTML class attribute is className in Dash.
+    The children of the HTML tag is specified through the children keyword argument. By convention, this is always the first argument and so it is often omitted.
+
+Besides that, all of the available HTML attributes and tags are available to you within your Python context.
+Reusable Components
+
+By writing our markup in Python, we can create complex reusable components like tables without switching contexts or languages.
+Here's a quick example that generates a `Table` from a Pandas dataframe.
+
+ import dash import dash_core_components as dcc import dash_html_components as html import pandas as pd df = pd.read_csv( 'https://gist.githubusercontent.com/chriddyp/' 'c78bf172206ce24f77d6363a2d754b59/raw/' 'c353e8ef842413cae56ae3920b8fd78468aa4cb2/' 'usa-agricultural-exports-2011.csv' ) def generate_table (dataframe, max_rows= 10 ) : return html.Table( # Header [html.Tr([html.Th(col) for col in dataframe.columns])] + # Body [html.Tr([ html.Td(dataframe.iloc[i][col]) for col in dataframe.columns ]) for i in range(min(len(dataframe), max_rows))] ) external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css' ] app = dash.Dash(__name__, external_stylesheets=external_stylesheets) app.layout = html.Div(children=[ html.H4(children= 'US Agriculture Exports (2011)' ), generate_table(df) ]) if __name__ == '__main__' : app.run_server(debug= True ) 
+
+US Agriculture Exports (2011)
+Unnamed: 0 	state 	total exports 	beef 	pork 	poultry 	dairy 	fruits fresh 	fruits proc 	total fruits 	veggies fresh 	veggies proc 	total veggies 	corn 	wheat 	cotton
+0 	Alabama 	1390.63 	34.4 	10.6 	481 	4.06 	8 	17.1 	25.11 	5.5 	8.9 	14.33 	34.9 	70 	317.61
+1 	Alaska 	13.31 	0.2 	0.1 	0 	0.19 	0 	0 	0 	0.6 	1 	1.56 	0 	0 	0
+2 	Arizona 	1463.17 	71.3 	17.9 	0 	105.48 	19.3 	41 	60.27 	147.5 	239.4 	386.91 	7.3 	48.7 	423.95
+3 	Arkansas 	3586.02 	53.2 	29.4 	562.9 	3.53 	2.2 	4.7 	6.88 	4.4 	7.1 	11.45 	69.5 	114.5 	665.44
+4 	California 	16472.88 	228.7 	11.1 	225.4 	929.95 	2791.8 	5944.6 	8736.4 	803.2 	1303.5 	2106.79 	34.6 	249.3 	1064.95
+5 	Colorado 	1851.33 	261.4 	66 	14 	71.94 	5.7 	12.2 	17.99 	45.1 	73.2 	118.27 	183.2 	400.5 	0
+6 	Connecticut 	259.62 	1.1 	0.1 	6.9 	9.49 	4.2 	8.9 	13.1 	4.3 	6.9 	11.16 	0 	0 	0
+7 	Delaware 	282.19 	0.4 	0.6 	114.7 	2.3 	0.5 	1 	1.53 	7.6 	12.4 	20.03 	26.9 	22.9 	0
+8 	Florida 	3764.09 	42.6 	0.9 	56.9 	66.31 	438.2 	933.1 	1371.36 	171.9 	279 	450.86 	3.5 	1.8 	78.24
+9 	Georgia 	2860.84 	31 	18.9 	630.4 	38.38 	74.6 	158.9 	233.51 	59 	95.8 	154.77 	57.8 	65.4 	1154.07
+More about Visualization
+
+The dash_core_components library includes a component called Graph .
+
+Graph renders interactive data visualizations using the open source plotly.js JavaScript graphing library. Plotly.js supports over 35 chart types and renders charts in both vector-quality SVG and high-performance WebGL.
+
+The figure argument in the dash_core_components.Graph component is the same figure argument that is used by plotly.py , Plotly's open source Python graphing library. Check out the plotly.py documentation and gallery to learn more.
+Here's an example that creates a scatter plot from a Pandas dataframe.
+
+ import dash import dash_core_components as dcc import dash_html_components as html import pandas as pd import plotly.graph_objs as go external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css' ] app = dash.Dash(__name__, external_stylesheets=external_stylesheets) df = pd.read_csv( 'https://gist.githubusercontent.com/chriddyp/' + '5d1ea79569ed194d432e56108a04d188/raw/' + 'a9f9e8076b837d541398e999dcbac2b2826a81f8/' + 'gdp-life-exp-2007.csv' ) app.layout = html.Div([ dcc.Graph( id= 'life-exp-vs-gdp' , figure={ 'data' : [ go.Scatter( x=df[df[ 'continent' ] == i][ 'gdp per capita' ], y=df[df[ 'continent' ] == i][ 'life expectancy' ], text=df[df[ 'continent' ] == i][ 'country' ], mode= 'markers' , opacity= 0.7 , marker={ 'size' : 15 , 'line' : { 'width' : 0.5 , 'color' : 'white' } }, name=i ) for i in df.continent.unique() ], 'layout' : go.Layout( xaxis={ 'type' : 'log' , 'title' : 'GDP Per Capita' }, yaxis={ 'title' : 'Life Expectancy' }, margin={ 'l' : 40 , 'b' : 40 , 't' : 10 , 'r' : 10 }, legend={ 'x' : 0 , 'y' : 1 }, hovermode= 'closest' ) } ) ]) if __name__ == '__main__' : app.run_server(debug= True ) 
+
+2 5 1000 2 5 10k 2 5 40 50 60 70 80
+Asia Europe Africa Americas Oceania GDP Per Capita Life Expectancy
+.cls-1 {fill: #119dff;} .cls-2 {fill: #25fefd;} .cls-3 {fill: #fff;} plotly-logomark
+
+These graphs are interactive and responsive. Hover over points to see their values, click on legend items to toggle traces, click and drag to zoom, hold down shift, and click and drag to pan.
+Markdown
+
+While Dash exposes HTML through the dash_html_components library, it can be tedious to write your copy in HTML. For writing blocks of text, you can use the Markdown component in the dash_core_components library.
+
+ import dash import dash_core_components as dcc import dash_html_components as html external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css' ] app = dash.Dash(__name__, external_stylesheets=external_stylesheets) markdown_text = ''' ### Dash and Markdown Dash apps can be written in Markdown. Dash uses the [CommonMark](http://commonmark.org/) specification of Markdown. Check out their [60 Second Markdown Tutorial](http://commonmark.org/help/) if this is your first introduction to Markdown! ''' app.layout = html.Div([ dcc.Markdown(children=markdown_text) ]) if __name__ == '__main__' : app.run_server(debug= True ) 
+
+Dash and Markdown
+
+Dash apps can be written in Markdown. Dash uses the CommonMark specification of Markdown. Check out their 60 Second Markdown Tutorial if this is your first introduction to Markdown!
+Core Components
+
+The dash_core_components includes a set of higher-level components like dropdowns, graphs, markdown blocks, and more.
+
+Like all Dash components, they are described entirely declaratively. Every option that is configurable is available as a keyword argument of the component.
+
+We'll see many of these components throughout the tutorial. You can view all of the available components in the Dash Core Components Gallery
+Here are a few of the available components:
+
+ # -*- coding: utf-8 -*- import dash import dash_core_components as dcc import dash_html_components as html external_stylesheets = [ 'https://codepen.io/chriddyp/pen/bWLwgP.css' ] app = dash.Dash(__name__, external_stylesheets=external_stylesheets) app.layout = html.Div([ html.Label( 'Dropdown' ), dcc.Dropdown( options=[ { 'label' : 'New York City' , 'value' : 'NYC' }, { 'label' : u'Montréal' , 'value' : 'MTL' }, { 'label' : 'San Francisco' , 'value' : 'SF' } ], value= 'MTL' ), html.Label( 'Multi-Select Dropdown' ), dcc.Dropdown( options=[ { 'label' : 'New York City' , 'value' : 'NYC' }, { 'label' : u'Montréal' , 'value' : 'MTL' }, { 'label' : 'San Francisco' , 'value' : 'SF' } ], value=[ 'MTL' , 'SF' ], multi= True ), html.Label( 'Radio Items' ), dcc.RadioItems( options=[ { 'label' : 'New York City' , 'value' : 'NYC' }, { 'label' : u'Montréal' , 'value' : 'MTL' }, { 'label' : 'San Francisco' , 'value' : 'SF' } ], value= 'MTL' ), html.Label( 'Checkboxes' ), dcc.Checklist( options=[ { 'label' : 'New York City' , 'value' : 'NYC' }, { 'label' : u'Montréal' , 'value' : 'MTL' }, { 'label' : 'San Francisco' , 'value' : 'SF' } ], value=[ 'MTL' , 'SF' ] ), html.Label( 'Text Input' ), dcc.Input(value= 'MTL' , type= 'text' ), html.Label( 'Slider' ), dcc.Slider( min= 0 , max= 9 , marks={i: 'Label {}' .format(i) if i == 1 else str(i) for i in range( 1 , 6 )}, value= 5 , ), ], style={ 'columnCount' : 2 }) if __name__ == '__main__' : app.run_server(debug= True ) 
+
+Dropdown
+Montréal
+×
+Multi-Select Dropdown
+× Montréal  
+× San Francisco  
+×
+Radio Items
+New York City Montréal San Francisco
+Checkboxes
+New York City Montréal San Francisco
+Text Input Slider
+Label 1 2 3 4 5
+Calling help
+
+Dash components are declarative: every configurable aspect of these components is set during instantiation as a keyword argument. Call help in your Python console on any of the components to learn more about a component and its available arguments.
+
+ > >> help (dcc.Dropdown) class Dropdown(dash.development.base_component.Component) | A Dropdown component. | Dropdown is an interactive dropdown element for selecting one or more | items. | The values and labels of the dropdown items are specified in the `options` | property and the selected item(s) are specified with the `value` property. | | Use a dropdown when you have many options (more than 5) or when you are | constrained for space. Otherwise, you can use RadioItems or a Checklist, | which have the benefit of showing the users all of the items at once. | | Keyword arguments: | - id (string; optional) | - className (string; optional) | - disabled (boolean; optional): If true, the option is disabled | - multi (boolean; optional): If true, the user can select multiple values | - options (list; optional) | - placeholder (string; optional): The grey, default text shown when no option is selected | - value (string | list; optional): The value of the input. If `multi` is false (the default) | then value is just a string that corresponds to the values | provided in the `options` property. If `multi` is true, then | multiple values can be selected at once, and `value` is an | array of items with values corresponding to those in the | `options` prop.``` 
+
+Summary
+
+The layout of a Dash app describes what the app looks like. The layout is a hierarchical tree of components. The dash_html_components library provides classes for all of the HTML tags and the keyword arguments describe the HTML attributes like style , className , and id . The dash_core_components library generates higher-level components like controls and graphs.
+
+For reference, see:
+
+    dash_core_components gallery
+    dash_html_components gallery
+
+The next part of the Dash tutorial covers how to make these apps interactive.
+Dash Tutorial Part 3: Basic Callbacks
+Back to the Table of Contents

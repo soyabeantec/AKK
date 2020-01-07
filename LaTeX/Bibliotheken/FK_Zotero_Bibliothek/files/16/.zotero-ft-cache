@@ -1,0 +1,472 @@
+Logz.io logo logz.io logo mobile
+FREE TRIAL
+
+    Product
+        Alerts
+        Application Insights
+        Cognitive Insights
+        Data Optimizer
+        ELK Apps
+        Live Tail
+        Log Parsing
+        Security Analytics
+        SOC 2 Compliance
+        Time Series Analytics
+    Solutions
+        AI-Accelerated DevOps
+        AI-Powered Log Analysis
+        AWS Analytics
+        Azure Analytics
+        Infrastructure Protection with ELK
+        IT Operations Analytics
+    Pricing
+    Company
+        Customers
+        Partners
+        Careers
+        Contact Us
+    Resources
+        Blog
+        Case Studies
+        The Complete ELK Stack Guide
+        Open Source
+        Community
+        Docs
+        Support
+    Free Trial
+    Request Demo
+    Search
+    Login
+
+    Product
+        Alerts
+        Application Insights
+        Cognitive Insights
+        Data Optimizer
+        ELK Apps
+        Live Tail
+        Log Parsing
+        Security Analytics
+        SOC 2 Compliance
+        Time Series Analytics
+    Solutions
+        AI-Accelerated DevOps
+        AI-Powered Log Analysis
+        AWS Analytics
+        Azure Analytics
+        Infrastructure Protection with ELK
+        IT Operations Analytics
+    Pricing
+    Company
+        Customers
+        Partners
+        Careers
+        Contact Us
+    Resources
+        Blog
+        Case Studies
+        The Complete ELK Stack Guide
+        Open Source
+        Community
+        Docs
+        Support
+    Free Trial
+    Request Demo
+    Search
+    Login
+
+    Cloud
+    Community
+    DevOps
+    ELK Stack
+    News
+
+Elasticsearch API 101
+Daniel Berman Daniel Berman
+Daniel Berman
+Oct 30th, 2017 | Write a comment |
+
+    Elasticsearch
+
+Elasticsearch API 101
+
+    Home
+    >
+    Blog
+    >
+    ELK Stack
+    >
+    Elasticsearch API 101
+
+One of the great things about Elasticsearch is its extensive REST API which allows you to integrate, manage and query the indexed data in countless different ways. Examples of using this API to integrate with Elasticsearch are abundant, spanning different companies and use cases.   
+
+Documentation on the various API calls is extensive, and for some, this wealth of information can be somewhat daunting:   
+
+Twitter Twitter
+
+This article will try and provide an overview of the main API calls that you should get acquainted with as you get started with Elasticsearch, and will add some usage examples and corresponding cURL commands. The API examples detailed below are Document API, Search API, Indices API, cat API and Cluster API.   
+
+This is by no means a full API guide  — this would be impossible and is covered in Elastic’s official documentation. Advanced users might find  this cheat sheet we put together  helpful as it contains some useful tips and best practices on the Elasticsearch Cluster API.  
+Document API  
+
+This category of APIs are used for handling documents in Elasticsearch. Using these APIs, for example, you will create documents in an index, update them, move them to another index, or remove them.   
+
+The APIs detailed below are for handling single documents, but you can also make use of certain multi-document APIs for performing bulk actions (e.g.  multi get ).    
+Category 	Description 	cURL
+index 	Add (or update) a document 	
+curl -XPUT 'localhost:9200/twitter/my_index/my_type/1?pretty' -H 'Content-Type: application/json' -d' { "field : "value", ... } '
+1
+2
+3
+4
+5
+6
+	
+curl - XPUT 'localhost:9200/twitter/my_index/my_type/1?pretty' - H 'Content-Type: application/json' - d '
+{
+   "field : "value",
+   ...
+}
+'
+get 	Retrieve a specific existing document 	
+curl -XGET 'localhost:9200/my_index/ my_type/0?pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/my_index/
+my_type/0?pretty'
+delete 	Delete a document 	
+curl -XDELETE 'localhost:9200/my_index/ my_type/0?pretty'
+1
+2
+3
+	
+curl - XDELETE
+'localhost:9200/my_index/
+my_type/0?pretty'
+reindex 	Copies a document from one index to another 	
+curl -XPOST 'localhost:9200/_reindex?pretty' -H 'Content-Type: application/json' -d' { "source": { "index": "old_index" }, "dest": { "index": "new_index" } } '
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+	
+curl - XPOST
+'localhost:9200/_reindex?pretty'
+- H 'Content-Type:
+application/json' - d '
+{
+"source": {
+   "index": "old_index"
+},
+"dest": {
+   "index": "new_index"
+}
+}
+'
+Search API  
+
+As its name implies, these API calls can be used to query indexed data for specific information. Search APIs can be applied globally, across all available indices and types, or more specifically within an index. Responses will contain matches to the specific query.   
+Category 	Description 	cURL
+Search 	Enter a search query and return hits matching the query 	
+curl -XGET 'localhost:9200/my_index/my_type/_count?q=field: value&pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/my_index/my_type/_count?q=field:
+value&pretty'
+Count 	See the number of matches for the query (can be executed across multiple indices and across one or more types.) 	
+curl -XGET 'localhost:9200/my_index/my_type/_count?q= field:value&pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/my_index/my_type/_count?q=
+field:value&pretty'
+Validate 	Validate a potentially heavy query without actually executing it 	
+curl -XGET 'localhost:9200/my_index/my_type/ _validate?q=field:value’
+1
+2
+3
+	
+curl - XGET
+' localhost : 9200 / my_index / my_type /
+_validate ? q = field : value ’
+Explain 	Calculate a score for a query for getting feedback on whether a document matches the query or not 	
+curl -XGET 'localhost:9200/my_index/my_type/0/ _explain?q=message:search’
+1
+2
+3
+	
+curl - XGET
+' localhost : 9200 / my_index / my_type / 0 /
+_explain ? q = message : search ’
+Indices API
+
+This type of Elasticsearch API allows users to manage indices, mappings, and templates. For example, you can use this API to create or delete a new index, check if a specific index exists or not, and define new mapping for an index.  
+Category 	Description 	cURL
+Index Management 	Create a new Elasticsearch index 	
+curl -XPUT 'localhost:9200/my_index?pretty' -H 'Content-Type: application/json' -d' { "settings" : { "index" : { ... } } } '
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+	
+curl - XPUT 'localhost:9200/my_index?pretty' - H
+'Content-Type: application/json' - d '
+{
+   "settings" : {
+   "index" : {
+      ...
+     }
+   }
+}
+'
+	Delete an index 	
+curl -XDELETE 'localhost: 9200/my_index?pretty'
+1
+2
+	
+curl - XDELETE 'localhost:
+9200/my_index?pretty'
+	Close/open an index 	
+curl -XPOST 'localhost:9200/my_index/ _close?pretty' curl -XPOST 'localhost:9200/my_index/ _open?pretty'
+1
+2
+3
+4
+5
+6
+7
+	
+curl - XPOST
+'localhost:9200/my_index/
+_close?pretty'
+ 
+curl - XPOST
+'localhost:9200/my_index/
+_open?pretty'
+Mapping Management 	Add a new type to existing mapping 	
+curl -XPUT 'localhost:9200/my_index/_mapping/user?pretty' -H 'Content-Type: application/json' -d' { "properties": { "name": { "type": "text" } } } '
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+	
+curl - XPUT
+'localhost:9200/my_index/_mapping/user?pretty' - H
+'Content-Type: application/json' - d '
+{
+  "properties": {
+    "name": {
+       "type": "text"
+     }
+   }
+}  
+'
+	Retrieve mapping for a specific field 	
+curl -XGET 'localhost:9200/my_index/_mapping/ my_type/field/my_field?pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/my_index/_mapping/
+my_type/field/my_field?pretty'
+ cat API  
+
+I personally love the cat API and use it whenever possible. The idea is to return data in a more user-friendly format as opposed to the normal JSON response. You can read about the various string parameters you can add to the cat commands  here .   
+Category 	Description 	cURL
+Cat Indices 	Gives us access to information and metrics regarding our indices 	
+curl -XGET 'localhost:9200/_cat/indices? v&health=red&pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/_cat/indices?
+v&health=red&pretty'
+Cat Health 	Provides an overview of the indices health 	
+curl -XGET 'localhost:9200/_cat/health? v&pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/_cat/health?
+v&pretty'
+Cat Nodes 	See information on your Elasticsearch nodes
+
+Tip: You can use headers to retrieve only relevant details on the nodes. Read here for more info.
+	
+
+curl -XGET 'localhost:9200/_cat/nodes ?v&pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/_cat/nodes
+?v&pretty'
+
+Cluster API  
+
+These are cluster-specific API calls that allow you to manage and monitor your Elasticsearch cluster. Most of the APIs allow you to define which Elasticsearch node to call using either the internal node ID, its name or its address.    
+
+For advanced usage of cluster APIs, read  this blog post .   
+Category 	Description 	cURL
+Cluster Health 	See an overview of the cluster health 	
+curl -XGET 'localhost:9200/_cluster/ health?pretty'
+1
+2
+3
+	
+curl - XGET
+'localhost:9200/_cluster/
+health?pretty'
+Cluster State 	See a detailed status report on your entire cluster. You can filter results by specifying parameters in the call URL. 	
+curl -XGET 'http://localhost:9200/_cluster/state' cluster
+1
+2
+	
+curl - XGET 'http://localhost:9200/_cluster/state'
+cluster
+Cluster Stats 	See basic index metrics (e.g. number of shards) and information about your nodes (e.g.memory usage). 	
+curl -XGET 'http://localhost:9200/_cluster/stats?my_node &pretty'
+1
+2
+3
+	
+curl - XGET
+'http://localhost:9200/_cluster/stats?my_node
+&pretty'
+Ending with some tips  
+
+It’s time to get your hands dirty! The best way to learn your way around these APIs is experimentation. There are plenty of resources which can help you with this, and a bunch of open source tools as well.   
+
+First, read through the API conventions before you start  here . These will help you learn about the different options that can be applied to the calls, how to construct the APIs and how to filter responses.   
+
+I also recommend using the built-in console for playing around with the APIs — just enter your API in the editor on the left, and see the response from Elasticsearch on the right.  
+
+Kibana Kibana
+
+A good thing to remember is that some APIs change and get deprecated from version to version, and it’s a good best practice to keep tabs on breaking changes.  
+
+Twitter API Twitter API
+
+The gradual removal of mapping types will affect the indexing and search APIs — you can see the effect of this change in the different versions  here .  
+
+The REST API is one of the main reasons why Elasticsearch, and the ELK stack as a whole, is so popular. The list above is merely the tip of the iceberg, but also a good reference point for getting started.   
+Logz.io API  
+
+Despite being a fully managed and hosted ELK solution, Logz.io provides a  public API  that is based on the Elasticsearch search API, albeit with some limitations. If you are using Logz.io, you can use this API to run search queries on the data you are shipping to your account. The query language used is Elasticsearch Search API DSL.
+More on the subject:
+
+    Elasticsearch Cluster Setup & Update: Read, Plan, and Test
+    Installing the Elastic Stack 5.0 Beta
+    How We Monitor Elasticsearch with Graphite and Grafana
+
+In addition, the  Alerts API  allows Logz.io users to create, delete and manage alerts. Again, there are some limitations that you should be aware of pertaining to the amount of concurrent APIs called.
+
+Looking for an auto-scaling Elasticsearch service?
+Try Logz.io!
+  
+
+ 
+
+ 
+
+ 
+
+ 
+Share
+Tweet
+Share
+18 Shares
+Related Posts
+DevOps News and Tips Straight to your Inbox
+By submitting you are accepting our Terms of Use and our Privacy Policy
+Thank you for Subscribing!
+
+    PRODUCT
+        Alerts
+        Application Insights
+        Cognitive Insights
+        Data Optimizer
+        Live Tail
+        Log Parsing
+        Security Analytics
+        SOC 2 Compliance
+        ELK Apps
+        Time Series Analytics
+    RESOURCES
+        Logz.io Open Source
+        Blog
+        Guides
+        Case Studies
+        Community
+        Docs
+        Support
+    PRICING
+        Plans
+        FAQs
+        Request Demo
+    ABOUT US
+        Our Customers
+        Newsroom
+        Logz.io in the Headlines
+        Partners
+        Contribute to Our Blog
+        Careers
+        Contact Us
+    Social
+
+logz-logo
+
+    Privacy Policy
+    Terms Of Use
+    All rights Reserved by Logz.io © 2019
+
+X
+Turn machine data into actionable insights with  ELK as a Service
+By submitting this form you are accepting our Terms of Use and our Privacy Policy
+
+X
+DevOps News and Tips to your inbox
+By submitting this form you are accepting our Terms of Use and our Privacy Policy
+
+We write about DevOps. Log Analytics, Elasticsearch and much more!
+logz.io logo white
+Get the latest posts on the ELK Stack, Devops and Log Analytics
+Thank you for Subscribing!
+× logz logo
+Use the field below to search Logz.io...
+Search Logz.io
+This website uses cookies. By continuing to browse this site, you agree to this use. Learn more. Okay, thanks

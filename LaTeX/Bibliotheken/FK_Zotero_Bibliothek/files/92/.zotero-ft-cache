@@ -1,0 +1,267 @@
+Skip to main content
+Skip to main content
+Microsoft
+Power BI
+Power BI
+Power BI
+
+    Home
+    Products
+        What is Power BI
+        Power BI
+        Power BI Desktop
+        Power BI Premium
+        Power BI Mobile
+        Power BI Embedded
+        Power BI Report Server
+        Tour
+        Pricing
+    Solutions
+        Partner Showcase
+        Departments
+        Industries
+        Solution Templates
+        Data Stories
+    Partners
+        Overview
+        Partner Showcase
+        Consulting Services
+        Find a Partner
+        Become a partner
+    Learn
+        Guided Learning
+        Documentation
+        Support
+        Community
+        Give Feedback
+        Webinars
+        Blog
+    More
+    Sign in
+    Sign up free
+
+    All Microsoft
+            Office
+            Windows
+            Surface
+            Xbox
+            Deals
+            Support
+        Software
+            Windows apps
+            OneDrive
+            Outlook
+            Skype
+            OneNote
+        PCs & Devices
+            PCs & tablets
+            Accessories
+        Entertainment
+            Xbox games
+            PC games
+            Windows digital games
+            Movies & TV
+            Books
+        Business
+            Microsoft Azure
+            Microsoft Dynamics 365
+            Microsoft 365
+            Microsoft Industry
+            Data platform
+            Microsoft Advertising
+            Licensing
+        Developer & IT
+            .NET
+            Visual Studio
+            Windows Server
+            Windows Dev Center
+            Docs
+        Other
+            Microsoft Store
+            Microsoft Rewards
+            Free downloads & security
+            Education
+            Store locations
+            Gift cards
+        View Sitemap
+
+Search
+
+Power-BI
+Cancel
+
+    Docs
+    Power BI
+    Developer
+
+Contents
+Exit focus mode
+
+    Feedback
+    Edit
+    Share
+        Twitter
+        LinkedIn
+        Facebook
+        Email
+    Theme
+    Light
+    Dark
+    High contrast
+    Sign in
+
+        Profile
+        Sign out
+
+Contents
+Search
+
+    Power BI Desktop
+    Power BI service
+    Power BI Premium
+    Power BI Paginated Report Builder
+    Power BI for developers
+        What can developers do with Power BI
+        Embedded Analytics
+        Custom Visuals
+        Automation
+            Overview
+            Tutorials
+                Push data into a dataset
+                Get an authentication access token
+                Create a dataset
+                Get a dataset to add rows
+                Add rows to a table
+            Concepts
+            How to
+            Reference
+            Resources
+    Power BI Report Server
+    Gateways
+    Administration
+
+Download PDF
+Push data into a Power BI dataset
+
+    05/22/2019
+    2 minutes to read
+        +2
+
+Is this page helpful?
+In this article
+
+    Steps to push data into a dataset
+    Power BI API operations to push data
+    Power BI table data types
+    Learn more about pushing data into Power BI
+    Next steps
+
+The Power BI API lets you push data into a Power BI dataset. In this article, we show you how to push a Sales Marketing dataset containing a Product table into an existing dataset.
+
+Before getting started, you need an Azure Active Directory (Azure AD) and a Power BI account .
+Steps to push data into a dataset
+
+    Step 1: Register an app with Azure AD
+    Step 2: Get an authentication access token
+    Step 3: Create a dataset in Power BI
+    Step 4: Get a dataset to add rows into a Power BI table
+    Step 5: Add rows to a Power BI table
+
+The next section is a general discussion of Power BI API operations that push data.
+Power BI API operations to push data
+
+With the Power BI REST API, you can push data sources to Power BI. When an app adds rows to a dataset, dashboard tiles update automatically with the new data. To push data, use the PostDataset and PostRows operations. To find a dataset, use the Get Datasets operation. You can pass a group ID to work with a group for any of these operations. To get a group ID list, use the Get Groups operation.
+
+Here are the operations to push data into a dataset:
+
+    PostDataset
+    Get Datasets
+    Post Rows
+    Get Groups
+
+You create a dataset in Power BI by passing a JavaScript Object Notation (JSON) string to the Power BI service. To learn more about JSON, see Introducing JSON .
+
+The JSON string for a dataset has the following format:
+
+Power BI Dataset JSON object
+
+ {"name": "dataset_name", "tables": [{"name": "", "columns": [{ "name": "column_name1", "dataType": "data_type"}, { "name": "column_name2", "dataType": "data_type"}, { ... } ] } ] }  
+
+For our Sales Marketing dataset example, you would pass a JSON string as shown below. In this example, SalesMarketing is the dataset name, and Product is the table name. After defining the table, you define the table schema. For the SalesMarketing dataset, the table schema has these columns: ProductID, Manufacturer, Category, Segment, Product, and IsCompete.
+
+Example dataset object JSON
+
+ { "name": "SalesMarketing", "tables": [ { "name": "Product", "columns": [ { "name": "ProductID", "dataType": "int" }, { "name": "Manufacturer", "dataType": "string" }, { "name": "Category", "dataType": "string" }, { "name": "Segment", "dataType": "string" }, { "name": "Product", "dataType": "string" }, { "name": "IsCompete", "dataType": "bool" } ] } ] }  
+
+For a Power BI table schema, you can use the following data types.
+Power BI table data types
+Data type 	Restrictions
+Int64 	Int64.MaxValue and Int64.MinValue not allowed.
+Double 	Double.MaxValue and Double.MinValue values not allowed. NaN not supported.+Infinity and -Infinity not supported in some functions (for example, Min, Max).
+Boolean 	None
+Datetime 	During data loading, we quantize values with day fractions to whole multiples of 1/300 seconds (3.33 ms).
+String 	Currently allows up to 128 K characters.
+Learn more about pushing data into Power BI
+
+To get started pushing data into a dataset, see Step 1: Register an app with Azure AD in the left navigation pane.
+
+Next Step >
+Next steps
+
+Sign up for Power BI
+Introducing JSON
+Overview of Power BI REST API
+More questions? Try the Power BI Community
+
+Was this page helpful?
+Tell us what you think.
+Skip Submit
+
+Thank you for your feedback.
+Feedback
+
+Send feedback about
+This product
+This page
+You may also leave feedback directly on GitHub .
+This page
+You may also leave feedback directly on GitHub .
+Avatar Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.
+Issue Title Leave a comment
+Submit feedback
+
+Loading feedback...
+
+There are no open issues
+
+There are no closed issues
+
+View on GitHub
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+
+In this article
+
+    Steps to push data into a dataset
+    Power BI API operations to push data
+    Power BI table data types
+    Learn more about pushing data into Power BI
+    Next steps
+
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+

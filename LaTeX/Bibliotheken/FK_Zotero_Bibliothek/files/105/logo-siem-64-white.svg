@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon / product-logo / 64x64px / security / white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-/-product-logo-/-64x64px-/-security-/-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(9.000000, 5.000000)" fill="#FFFFFF">
+            <path d="M46,46.458 C46,48.665 44.56,50.606 42.447,51.245 C38.564,52.419 31.718,54 23,54 C14.282,54 7.436,52.419 3.553,51.245 C1.44,50.606 0,48.665 0,46.458 L0,23 L46,23 L46,46.458 Z" id="Fill-1"></path>
+            <path d="M23,0 C15.268,0 9,6.268 9,14 L9,18 L37,18 L37,14 C37,6.268 30.732,0 23,0" id="Fill-3"></path>
+        </g>
+    </g>
+</svg>

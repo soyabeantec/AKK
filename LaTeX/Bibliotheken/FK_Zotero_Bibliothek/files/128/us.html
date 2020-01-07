@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html class="tablesaw-enhanced" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script async="" src="gtm.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"c282725ade","applicationID":"91267404","transactionName":"MgYGYRFZWRIEAExeWwtMKWMgF2QIEQZbWEYAIAtbF0pYDQkGShh9CwcBTQ==","queueTime":0,"applicationTime":171,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgcBWVBQDxAJVVNUAAUHUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(18),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(19),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(21)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(21)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(21)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(21)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(){var t=window.NREUM,n=t.info.accountID||null,e=t.info.agentID||null,r=t.info.trustKey||null,i="btoa"in window&&"function"==typeof window.btoa;if(!n||!e||!i)return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:e,id:o.generateCatId(),tr:o.generateCatId(),ti:Date.now()}};return r&&n!==r&&(a.d.tk=r),btoa(JSON.stringify(a))}var o=t(16);n.exports={generateTraceHeader:r}},{}],11:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(l[r],this.listener,!1);n.aborted||(e.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):a(this,t),e.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[n,e,this.startTime]))}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return w(r)}function i(t,n){var e=f(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}function a(t,n){t.params.status=n.status;var e=o(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(12),u=t(10).generateTraceHeader,d=t("ee"),l=["load","error","abort","timeout"],p=l.length,h=t("id"),m=t(15),w=t(14),v=window.XMLHttpRequest;s.features.xhr=!0,t(9),d.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){a(n,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(e=!!NREUM.init.distributed_tracing.enabled),e&&this.sameOrigin){var r=u();r&&n.setRequestHeader("newrelic",r)}}),d.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=w(r);i&&(e.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{d.emit("internal-error",[e])}catch(r){}}};for(var a=0;a<p;a++)n.addEventListener(l[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),d.on("xhr-load-added",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],n)}),d.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],n)}),d.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,n){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,n],n)})}},{}],12:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],13:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(18),s=t(19),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],14:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],15:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],16:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],17:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],18:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],19:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],20:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],21:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(19),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(18),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(18),u=t("ee"),d=t(17),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:x,userAgent:d};t(13),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(20)},{}]},{},["loader",2,11,4,3]);</script>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<link rel="canonical" href="https://www.qlik.com/us">
+<title>Data Analytics for Modern Business Intelligence | Qlik</title>
+
+
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="/assets/css/ie6.1.1.css" media="screen, projection">
+<![endif]-->
+<!--[if (IE 9)]>
+<link href="assets/css/ie9.min.css" rel="stylesheet" type="text/css"></link>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="assets/js/html5shiv.min.js" type="text/javascript"></script>
+<![endif]-->
+<link href="common-combined.css" rel="stylesheet" type="text/css">
+
+<link media="print" href="print.css" rel="stylesheet" type="text/css">
+
+<script src="jquery.js" type="text/javascript"></script>
+
+    <script async="" src="picturefill.js" type="text/javascript"></script>
+    <script async="" defer="defer" src="common-combined.js" type="text/javascript"></script>
+        <script src="8309000582.js"></script>
+
+<meta name="description" content="Discover the only end-to-end data management and analytics platform built to transform your entire business. Trusted by over 48,000 customers worldwide.">
+<meta name="twitter:card" content="TwitterCard">
+<meta property="og:title" content="Data Analytics for Modern Business Intelligence">
+<meta property="og:image" content="https://www.qlik.com/us/-/media/images/global/homepage/2018/og-homepage.jpg">
+<meta property="og:description" content="Discover the only end-to-end data management and analytics platform built to transform your entire business. Trusted by over 48,000 customers worldwide.">
+
+<link rel="shortcut icon" type="image/ico" href="https://www.qlik.com/favicon.ico">
+
+<link rel="alternate" hreflang="en" href="https://www.qlik.com/us"><link rel="alternate" hreflang="zh-CN" href="https://www.qlik.com/zh-cn"><link rel="alternate" hreflang="fr-FR" href="https://www.qlik.com/fr-fr"><link rel="alternate" hreflang="de-DE" href="https://www.qlik.com/de-de"><link rel="alternate" hreflang="it-IT" href="https://www.qlik.com/it-it"><link rel="alternate" hreflang="ja-JP" href="https://www.qlik.com/ja-jp"><link rel="alternate" hreflang="ko-KR" href="https://www.qlik.com/ko-kr"><link rel="alternate" hreflang="pt-BR" href="https://www.qlik.com/pt-br"><link rel="alternate" hreflang="ru-RU" href="https://www.qlik.com/ru-ru"><link rel="alternate" hreflang="es-ES" href="https://www.qlik.com/es-es"><link rel="alternate" hreflang="sv-SE" href="https://www.qlik.com/sv-se">
+    
+    <link href="core.css" rel="stylesheet" type="text/css">
+<style>
+@media all and ( min-width: 1020px ) {
+
+.flexColumnContainer { 
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	max-width: 100%;
+}
+</style><style>
+  .featured-header { border: 0 !important; };
+  
+  /*** BEGIN FONT SMOOTHING ***/
+  
+  * {
+  font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.005);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important; 
+  }
+  
+  /*** END FONT SMOOTHING ***/
+  
+  /*** BEGIN AI-SPECIFIC TWEAKS ***/
+  
+  /* TODO: Thread in letter spacing for all divs, for the future */
+  h6, .h6, .heading6 { letter-spacing: 1px !important }
+  
+  .columnContainer.rightColumnExtended > div:nth-child(1) { padding-left: 5vw; }
+  .columnContainer.rightColumnExtended > div:nth-child(2) > img { max-height: 650px; width: auto; }
+  
+  .columnContainer.leftColumnExtended > div:nth-child(2) { padding-right: 5vw; }
+  .columnContainer.leftColumnExtended > div:nth-child(1) > img { max-height: 650px; width: auto; }
+  
+  
+  @media all and (min-width: 1020px) {
+    .columnContainer.rightColumnExtended > div:nth-child(1) { min-width: 600px !important }
+    .columnContainer.rightColumnExtended > div:nth-child(2) { min-width: 1400px !important }
+  
+    .columnContainer.leftColumnExtended > div:nth-child(2) { min-width: 600px !important }
+    .columnContainer.leftColumnExtended > div:nth-child(1) { min-width: 1400px !important }
+  
+  /*  .columnContainer.rightColumnExtended > div:nth-child(2), .columnContainer.rightColumnExtended > div:nth-child(2) > img { min-width: 1400px !important } */
+  
+  }
+  
+  @media all and (max-width: 1019px) and (min-width: 601px) {
+    .columnContainer.rightColumnExtended  > div:nth-child(1) { min-width: 350px !important }
+    .columnContainer.rightColumnExtended > div:nth-child(2) { min-width: 1000px !important }
+  
+    .columnContainer.leftColumnExtended > div:nth-child(2) { min-width: 350px !important }
+    .columnContainer.leftColumnExtended > div:nth-child(1) { min-width: 1000px !important }
+  }
+  
+  @media all and (max-width: 600px) {
+    .columnContainer.rightColumnExtended { display: block; width: 100% !important }
+    .columnContainer.rightColumnExtended > div { display: block; margin: 0 !important; width: 100% !important }
+  
+    .columnContainer.leftColumnExtended { display: block; width: 100% !important }
+    .columnContainer.leftColumnExtended > div { display: block; margin: 0 !important; width: 100% !important }
+  }
+  
+  /*** END AI-SPECIFIC TWEAKS ***/
+  
+  /*** BEGIN TESTIMONIAL ROTATOR ***/
+  .testimonialRotator .testimonialLogo {
+      position:relative;
+  }
+  .testimonialRotator .testimonialLogo:after {
+      content:'';
+      width: 0; 
+      height: 0; 
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;   
+      border-top: 20px solid #fff;
+      position:absolute;
+      left:50%;
+      top:95%;
+      transform:translatex(-50%);
+  }
+  
+  .arrowCircleLeft:hover,
+  .arrowCircleRight:hover {
+      color: #006937 !important;
+  }
+  
+  .arrowCircleLeft {
+      color: #009844 !important;
+      position: absolute;
+      left: 5%;
+      top: 30%;
+      font: normal normal normal 2em FontAwesome !important;
+  }
+  
+  .arrowCircleRight {
+      display: inline-block;
+      color: #009844 !important;
+      position: absolute;
+      right: 5%;
+      top: 30%;
+      font: normal normal normal 2em FontAwesome !important;
+  }
+  
+  /*** END TESTIMONIAL ROTATOR ***/
+  
+  /*** BEGIN BUBBLE CARDS ***/
+      .bubbleCard {
+          height: 100%;
+          max-width: 450px;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+          border: 1px solid #E5E5E5;
+          border-radius: 3px;
+          background-color: #FFFFFF;        
+          text-align: center;
+      }
+      
+      .bubbleCard > :first-child {
+          margin-top: 25px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      
+      .bubbleCard > :not(:first-child) {
+          margin-left: 30px;
+          margin-right: 30px;
+      }
+      .bubbleCard {
+          .padding-bottom: 25px !important;
+      }
+  
+      .bubbleCard > div:nth-child(3) {
+          .margin-top: 10px; 
+      }
+  
+  
+  /*** END BUBBLE CARDS ***/
+  
+  /*** BEGIN PRODUCT CARDS ***/
+.productCard {
+  height: 100%;
+  position: relative;
+  border: 1px solid rgba(159,161,164, 0.3);
+  background-color: #FFFFFF;
+  padding: 32px 30px 32px;
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  background-size: 176px 40px;
+}
+
+.productCard > .label {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 1.0);
+
+/*  white-space: nowrap; */
+
+  margin-top: -1px;
+  top: -18px;
+  left: -2px;
+  padding-top: 0px;
+  padding-left: 4px;
+  padding-right: 24px;
+  padding-bottom: 4px;
+
+  font-size: 24px;
+  font-size: 1.3333rem;
+  line-height: 1.5;
+  font-weight: 600;
+
+  font-family: SourceSansPro,Helvetica,Roboto,Arial,sans-serif;
+
+  color: #4B4B4B;
+}
+
+@media all and (max-width: 750px) {
+  [class*="Container"] > .productCard + .productCard, [class*="Container"] > div + div > .productCard { margin-top: 3vh !important; }
+}
+
+/*** END PRODUCT CARDS ***/
+  
+  .fancybox-close {
+      top: 5%;
+      right: 5%;
+      background-image: unset;
+      background-position: unset;
+      height: 32px;
+      width: 32px;
+  }
+  
+  .fancybox-close:before{
+      content: "\f057";
+      font-family: FontAwesome;
+      font-size: 2em;
+      color: #fff;
+  }
+  
+  .fancybox-close:hover{
+      text-decoration: none;
+  }
+  
+  .bannerButtonsRight > :nth-child(2), .bannerButtonsRight * .button {
+      float: right; 
+  }
+  
+  @media all and (max-width: 750px){
+      .bannerButtonsRight > :nth-child(2) {
+        float: left !important; 
+      }
+      .bannerButtonsRight * .button {
+        float: left !important; 
+      }
+      .bannerButtonsRight * .button:first-child {
+        margin-left: 0px !important; 
+      }
+  }
+  
+  </style><!-- BEGIN PAGE-SPECIFIC INCLUDE -->
+<script>
+   /*** BEGIN TESTIMONIAL ROTATOR ***/
+   
+   var testimonial;
+   
+   var videoOverlay;
+   
+   function VideoOverlay(){
+   	var overlayContainer;
+   	var overlayWrap;
+   	var overlayVideo;
+   };
+   
+   VideoOverlay.prototype.showVideoOverlay = function(videoId){
+   	this.overlayContainer[0].style.display = "block";
+   	this.overlayWrap[0].style.display = "block";
+        this.overlayVideo = document.getElementById(videoId);
+        this.overlayVideo.style.display = "block";
+   	this.overlayVideo.play();
+   };
+   
+   VideoOverlay.prototype.hideVideoOverlay = function(){
+   	this.overlayVideo.pause();
+        this.overlayVideo.style.display = "none";
+   	this.overlayContainer[0].style.display = "none";
+   	this.overlayWrap[0].style.display = "none";
+   };
+      
+   function Testimonial() {
+       this.index = 1;
+   };
+   
+   Testimonial.prototype.plusDivs = function(n) {
+       testimonial.showOnlyCurrentSlideIndex(this.index += n);
+   };
+   
+   Testimonial.prototype.selectLogo = function(n) {
+       this.index += 1;
+       var x = document.getElementsByClassName("myImages");
+       var y = document.getElementsByClassName("myTextContents");
+       for (i = 0; i < x.length; i++) {
+           if (i != n) {
+               x[i].style.opacity = "0.2";
+               x[i].classList.remove("testimonialLogo");
+               y[i].style.display = "none";
+           }
+       }
+       x[n].style.opacity = "1";
+       x[n].classList.add("testimonialLogo");
+       y[n].style.display = "block";
+   };
+   
+   Testimonial.prototype.showDivs = function(n) {
+       var i;
+       var x = document.getElementsByClassName("myImages");
+       var y = document.getElementsByClassName("myTextContents");
+       if (n > x.length) {
+           this.index = 1
+       }
+       if (n < 1) {
+           this.index = x.length
+       }
+       for (i = 0; i < x.length; i++) {
+           x[i].style.opacity = "0.2";
+           x[i].style.display = "inline-block";
+           y[i].style.display = "none";
+       }
+       x[this.index - 1].style.opacity = "1";
+       x[this.index - 1].classList.add("testimonialLogo");
+       y[this.index - 1].style.display = "block";
+   };
+   
+   Testimonial.prototype.showOnlyCurrentSlideIndex = function(n) {
+       var i;
+       var x = document.getElementsByClassName("myImages");
+       var y = document.getElementsByClassName("myTextContents");
+       if (n > x.length) {
+           this.index = 1
+       }
+       if (n < 1) {
+           this.index = x.length
+       }
+       for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+           x[i].classList.remove("testimonialLogo");
+           y[i].style.display = "none";
+       }
+       x[this.index - 1].style.display = "inline-block";
+       x[this.index - 1].style.opacity = "1";
+       x[this.index - 1].classList.add("testimonialLogo");
+       y[this.index - 1].style.display = "inline-block";
+   };
+   
+   Testimonial.prototype.hideSliderButtons = function() {
+       document.getElementsByClassName("sliderButtonLeft")[0].style.display = "none";
+       document.getElementsByClassName("sliderButtonRight")[0].style.display = "none";
+   };
+   
+   Testimonial.prototype.showLeftRightButtons = function() {
+       this.showOnlyCurrentSlideIndex(this.index);
+       document.getElementsByClassName("sliderButtonLeft")[0].style.display = "block";
+       document.getElementsByClassName("sliderButtonRight")[0].style.display = "block";
+   };
+   /*** END TESTIMONIAL ROTATOR ***/
+   
+   $(function () {
+       testimonial = new Testimonial();
+       var x = document.getElementsByClassName("myImages");
+       var y = document.getElementsByClassName("myTextContents");
+       if( x.length > 0 && y.length > 0){
+           testimonial.showDivs(testimonial.index);
+           testimonial.hideSliderButtons();
+           if($(window).width() < 1320) {
+               testimonial.showLeftRightButtons();
+           }
+   
+   		$(window).resize(function () {
+   			if ($(window).width() < 1320) {
+   				testimonial.showLeftRightButtons();
+   			}
+   			else {
+   				testimonial.hideSliderButtons();
+   				testimonial.showDivs(testimonial.index);
+   			}
+   		});
+   	};
+
+   	videoOverlay = new VideoOverlay();
+   	videoOverlay.overlayContainer = document.getElementsByClassName("fancybox-overlay");
+   	videoOverlay.overlayWrap = document.getElementsByClassName("fancybox-wrap");
+   });
+   
+   //    $('.card').on('click', buyersJourney.FindFirstAnchor);  
+   
+</script>
+<!-- END PAGE-SPECIFIC INCLUDE -->
+
+
+<link rel="stylesheet" href="https://s3-eu-west-1.amazonaws.com/qliklivechat/live/livechat.css" type="text/css"><script async="" src="https://d.la1-c1-lon.salesforceliveagent.com/content/g/js/42.0/deployment.js?_=1562767199252"></script></head>
+
+<body>
+    
+
+<script type="text/javascript">var dataLayer = [{'site':'www'}];</script>
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-P7VJSX"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P7VJSX');</script>
+<!-- End Google Tag Manager -->
+
+
+    <div class="container header-nav-max-height">
+        <div class="mobile-nav-transition-wrap">
+            
+
+<!-- Header -->
+<!-- Start SharedHeader-HeaderFrame -->
+<div class="SharedHeader-HeaderFrame">
+    <div class="inner">
+        <!-- Start mobile header -->
+        <div class="mobile-header clearfix">
+            <div class="left">
+                <a class="company-logo" href="https://www.qlik.com/us">
+                    <img src="qlik-logo-2x.png" alt="Qlik">
+                </a>
+            </div>
+            <div class="right">
+<a href="https://www.qlik.com/us/try-or-buy/buy-now" class="toggle-button toggle-disabled">                        <img src="icon-mobile-contact.png" alt="Contact">
+                        <span>Contact</span>
+</a>                <a class="toggle-button" data-details=".details-country" href="#">
+                    <img src="icon-mobile-globe.png" alt="English">
+                    <span>English</span>
+                </a>
+<a href="https://www.qlik.com/sso/saml" class="toggle-button" data-details=".details-logon">                            <img src="icon-mobile-logon.png" alt="Log In">
+                            <span>Log In</span>
+</a>                <a class="toggle-button" data-details=".details-menu" href="#">
+                    <img src="icon-mobile-menu.png" alt="Menu">
+                    <span>Menu</span>
+                </a>
+            </div>
+        </div>
+        <!-- End mobile header -->
+        <!-- Start mobile details -->
+        <div class="mobile-details">
+            <div class="details details-country clearfix">
+                <button class="close">X</button>
+                <ul>
+                            <li><a href="https://www.qlik.com/us" class="is-active">English</a></li>
+                            <li><a href="https://www.qlik.com/de-de" class="">Deutsch</a></li>
+                            <li><a href="https://www.qlik.com/es-es" class="">Español</a></li>
+                            <li><a href="https://www.qlik.com/fr-fr" class="">Français</a></li>
+                            <li><a href="https://www.qlik.com/it-it" class="">Italiano</a></li>
+                            <li><a href="https://www.qlik.com/pt-br" class="">Português</a></li>
+                            <li><a href="https://www.qlik.com/ru-ru" class="">Pусский</a></li>
+                            <li><a href="https://www.qlik.com/sv-se" class="">Svenska</a></li>
+                            <li><a href="https://www.qlik.com/zh-cn" class="">简体中文</a></li>
+                            <li><a href="https://www.qlik.com/ja-jp" class="">日本語</a></li>
+                            <li><a href="https://www.qlik.com/ko-kr" class="">한국어</a></li>
+                </ul>
+            </div>
+            <div class="details details-logon">
+                <button class="close">X</button>
+                <ul>
+                            <li>
+                                <a href="https://www.qlik.com/sso/saml">Qlik.com</a>
+                            </li>
+                            <li>
+                                <a href="https://qlikcloud.com/login">Qlik Sense® Cloud</a>
+                            </li>
+                            <li>
+                                <a href="https://qlikid.qlik.com/portal/community">Qlik Community</a>
+                            </li>
+                            <li>
+                                <a href="https://qliksupport.force.com/qs_home_page">Support Portal</a>
+                            </li>
+                            <li>
+                                <a href="https://qcc.qlik.com/">Qlik Continuous Classroom</a>
+                            </li>
+                            <li>
+                                <a href="https://partners.qlik.com/">Partner Portal</a>
+                            </li>
+                </ul>
+            </div>
+            <div class="details details-menu">
+                
+
+<form action="/us/search" method="get" class="search-form">
+    <span class="search-inner">
+        <input name="q" placeholder="Search" type="text">
+        <input value=" " type="submit"> 
+    </span>
+</form>
+
+                <button class="close">X</button>
+                    <ul class="mobile-secondary-nav">
+                        
+
+		<!-- Start outer links -->
+			<li>
+				
+					<span class="accordion">
+						Products&nbsp;
+						<span class="fa fa-caret-down"></span>
+					</span>
+					<!-- Start middle links -->
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Analytics</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/products/analytics-products">All Products</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/qlik-sense">Qlik Sense</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/qlikview">QlikView</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/analytics-products#ValueAddedProducts">Value Added Products</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/pricing">Pricing</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/try-or-buy">Free Trial</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Data Integration</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/products/data-integration-products">All Products</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/attunity-replicate">Attunity Replicate</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/attunity-compose-data-lakes">Attunity Compose for Data Lakes</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/attunity-compose-data-warehouse">Attunity Compose for Data Warehouse</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/attunity-enterprise-manager">Attunity Enterprise Manager</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/qlik-data-catalyst">Qlik Data Catalyst</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Developer Platforms</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/products/analytics-development-platform">All Products</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/qlik-core">Qlik Core</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/products/qlik-analytics-platform">Qlik Analytics Platform</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<a href="https://www.qlik.com/us/products/why-qlik-is-different">Why Qlik</a>
+											</li>
+											<li>
+												<a href="https://www.qlik.com/us/products/technology">Technology</a>
+											</li>
+											<li>
+												<span class="accordion">
+													<span>BI Trends</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/bi/augmented-intelligence-and-analytics">Augmented Intelligence</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/bi/big-data">Big Data</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/bi/data-literacy">Data Literacy</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/bi/embedded-analytics">Embedded Analytics</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/bi/internet-of-things">Internet of Things</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+					<!-- End middle links -->
+			</li>
+			<li>
+				
+					<span class="accordion">
+						Solutions&nbsp;
+						<span class="fa fa-caret-down"></span>
+					</span>
+					<!-- Start middle links -->
+							<ul>
+											<li>
+												<a href="https://www.qlik.com/us/solutions" target="_self">Solutions Overview</a>
+											</li>
+											<li>
+												<span class="accordion">
+													<span>Customers</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/customers/customer-stories" target="_self">Customer Stories</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/customers/qlik-luminaries" target="_self">Qlik Luminaries</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Industries</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/healthcare">Healthcare</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/financial-services">Financial Services</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/retail" target="_self">Retail</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/manufacturing" target="_self">Manufacturing</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/high-tech" target="_self">High Tech</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/public-sector" target="_self">Public Sector</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/energy-and-utilities" target="_self">Energy and Utilities</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/communications" target="_self">Communications</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/life-sciences">Life Sciences</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/industries/consumer-products" target="_self">Consumer Products</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Functions</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/functions/finance" target="_self">Finance</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/functions/it" target="_self">IT</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/functions/hr" target="_self">HR</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/functions/marketing" target="_self">Marketing</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/functions/sales" target="_self">Sales</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/solutions/functions/supply-chain-management" target="_self">Supply Chain Management</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+					<!-- End middle links -->
+			</li>
+			<li>
+				
+					<span class="accordion">
+						Learn&nbsp;
+						<span class="fa fa-caret-down"></span>
+					</span>
+					<!-- Start middle links -->
+							<ul>
+											<li>
+												<a href="https://community.qlik.com/welcome">Community</a>
+											</li>
+											<li>
+												<a href="https://demos.qlik.com/">Demos</a>
+											</li>
+											<li>
+												<a href="https://www.qlik.com/us/resource-library">Resource Library</a>
+											</li>
+											<li>
+												<a href="https://blog.qlik.com/">Blog</a>
+											</li>
+											<li>
+												<a href="https://www.qlik.com/us/company/events/webinars">Webinars</a>
+											</li>
+											<li>
+												<a href="https://www.qlik.com/us/company/events" target="_self">Events</a>
+											</li>
+											<li>
+												<a href="https://www.qlikqonnections.com/">Qonnections Conference</a>
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Training</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/services/training" target="_self">Training Overview</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/skills-assessment" target="_self">Skills Assessment</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/continuous-classroom" target="_self">Continuous Classroom</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/qlik-sense-training" target="_self">Qlik Sense Training</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/qlikview-training" target="_self">QlikView Training</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/data-literacy-program">Data Literacy Program</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/certifications-and-qualifications">Qlik Certifications and Qualifications</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/custom-application-training" target="_self">Custom Application Training</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/training-faqs" target="_self">FAQs</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training/training-contacts" target="_self">Contacts</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+					<!-- End middle links -->
+			</li>
+			<li>
+				
+					<span class="accordion">
+						Support&nbsp;
+						<span class="fa fa-caret-down"></span>
+					</span>
+					<!-- Start middle links -->
+							<ul>
+											<li>
+												<a href="https://community.qlik.com/welcome">Community</a>
+											</li>
+											<li>
+												<a href="https://qliksupport.force.com/apex/QS_Home_Page">Support Portal</a>
+											</li>
+											<li>
+												<a href="https://qlikid.qlik.com/portal/download">Product Downloads &amp; Upgrades</a>
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Services</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/services" target="_self">Services Overview</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/qlik-consulting" target="_self">Consulting Services</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/support">Support</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/services/training">Training</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+					<!-- End middle links -->
+			</li>
+			<li>
+				
+					<span class="accordion">
+						Partners&nbsp;
+						<span class="fa fa-caret-down"></span>
+					</span>
+					<!-- Start middle links -->
+							<ul>
+											<li>
+												<a href="https://www.qlik.com/us/partners" target="_self">Partners Overview</a>
+											</li>
+											<li>
+												<a href="https://www.qlik.com/us/partners/find-a-partner">Find A Partner</a>
+											</li>
+											<li>
+												<span class="accordion">
+													<span>Partner Programs</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/partners/partner-programs/qlik-partners">Qlik Partners</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/partners/partner-programs/oem-partners" target="_self">OEM Partners</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/partners/partner-programs/managed-service-providers">Managed Service Providers</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/partners/partner-programs/technology-partners" target="_self">Technology Partners</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/partners/partner-programs/system-integrators-business-consultants">System Integrators and Consultants</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<a href="https://www.qlik.com/us/partners/become-a-partner">Become a Partner</a>
+											</li>
+											<li>
+												<a href="https://partners.qlik.com/">Partner Portal</a>
+											</li>
+							</ul>
+					<!-- End middle links -->
+			</li>
+			<li>
+				
+					<span class="accordion">
+						Company&nbsp;
+						<span class="fa fa-caret-down"></span>
+					</span>
+					<!-- Start middle links -->
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>About Qlik</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/company" target="_self">Company Overview</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/company/leadership" target="_self">Leadership</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/company/awards" target="_self">Awards</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/company/academic-program" target="_self">Academic Program</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/company/corporate-responsibility">Corporate Responsibility</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+											<li>
+												<span class="accordion">
+													<span>Careers</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/company/careers" target="_self">Careers</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/company/careers/job-listings" target="_self">Job Listings</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+							</ul>
+							<ul>
+											<li>
+												<span class="accordion">
+													<span>Press Room</span>
+													<span class="fa fa-caret-down"></span>
+												</span>
+
+												<!-- Start inner links -->
+												<ul>
+														<li>
+															<a href="https://www.qlik.com/us/company/press-room" target="_self">Press Room</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/company/press-room/in-the-news" target="_self">In the News</a>
+														</li>
+														<li>
+															<a href="https://www.qlik.com/us/company/press-room/press-releases" target="_self">Press Releases</a>
+														</li>
+												</ul>
+												<!-- End inner links -->
+											</li>
+											<li>
+												<a href="https://www.qlik.com/us/contact">Global Offices</a>
+											</li>
+							</ul>
+					<!-- End middle links -->
+			</li>
+		<!-- End outer links -->
+
+
+                    </ul>
+                <ul class="extra-links">
+                    <li>
+<a href="https://www.qlik.com/us/try-or-buy" class="try-buy">Try for Free</a>                    </li>
+                        <li>
+                            <a href="https://community.qlik.com/">Community</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.qlik.com/">Blog</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End mobile details -->
+        <!-- Start desktop header -->
+        <div class="desktop-header">
+            <!-- Start global nav -->
+            <nav class="global-nav clearfix">
+                <ul class="left">
+                        <!-- Start outer links -->
+        <li class="link-container menu-container  ">
+            <a href="https://community.qlik.com/">Community</a>
+
+        </li>
+        <li class="link-container menu-container  ">
+            <a href="https://blog.qlik.com/">Blog</a>
+
+        </li>
+    <!-- End outer links -->
+
+
+
+                </ul>
+                <ul class="right">
+                    <li class="link-container menu-container country">
+                        <a href="#" class="country">English (change)</a>
+                                <div class="menu-rollover">
+                                    <div class="menu-marker"><div class="marker"></div></div>
+                                    <div class="clearfix">
+                                            <div class="menu-section">
+                                                    <ul>
+                                                            <li><a href="https://www.qlik.com/us" class="is-active">English</a></li>
+                                                            <li><a href="https://www.qlik.com/de-de" class="">Deutsch</a></li>
+                                                            <li><a href="https://www.qlik.com/es-es" class="">Español</a></li>
+                                                            <li><a href="https://www.qlik.com/fr-fr" class="">Français</a></li>
+                                                            <li><a href="https://www.qlik.com/it-it" class="">Italiano</a></li>
+                                                            <li><a href="https://www.qlik.com/pt-br" class="">Português</a></li>
+                                                            <li><a href="https://www.qlik.com/ru-ru" class="">Pусский</a></li>
+                                                            <li><a href="https://www.qlik.com/sv-se" class="">Svenska</a></li>
+                                                            <li><a href="https://www.qlik.com/zh-cn" class="">简体中文</a></li>
+                                                            <li><a href="https://www.qlik.com/ja-jp" class="">日本語</a></li>
+                                                            <li><a href="https://www.qlik.com/ko-kr" class="">한국어</a></li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                                </div>
+
+                    </li>
+                    <li class="link-container menu-container contact">
+<a href="https://www.qlik.com/us/try-or-buy/buy-now" class="contact">Contact</a>                    </li>
+                    <li class="logon link-container menu-container">
+<a href="https://www.qlik.com/sso/saml">Log In</a>                            <div class="menu-rollover">
+                                <div class="menu-marker"><div class="marker"></div></div>
+                                <div class="clearfix">
+                                    <div class="menu-section">
+                                        <ul>
+                                                <li><a href="https://www.qlik.com/sso/saml">Qlik.com</a></li>
+                                                <li><a href="https://qlikcloud.com/login">Qlik Sense® Cloud</a></li>
+                                                <li><a href="https://qlikid.qlik.com/portal/community">Qlik Community</a></li>
+                                                <li><a href="https://qliksupport.force.com/qs_home_page">Support Portal</a></li>
+                                                <li><a href="https://qcc.qlik.com/">Qlik Continuous Classroom</a></li>
+                                                <li><a href="https://partners.qlik.com/">Partner Portal</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="link-container search">
+                        <a href="#" class="search-collapsed">Search</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End global nav -->
+            <!-- Start desktop search form -->
+            <div class="search-expanded">
+                
+
+<form action="/us/search" method="get" class="search-form">
+    <span class="search-inner">
+        <input name="q" placeholder="Search" type="text">
+        <input value=" " type="submit"> 
+    </span>
+</form>
+
+                <button class="close-search">X Close</button>
+            </div>
+            <!-- End desktop search form -->
+            <!-- Start desktop primary nav -->
+            <nav class="primary-nav clearfix">
+                <ul class="left">
+                    <li class="link-container company-logo">
+                        <a href="https://www.qlik.com/us">
+<img src="qlik-logo-2x.png" alt="Qlik">                        </a>
+                    </li>
+    <!-- Start outer links -->
+        <li class="link-container menu-container  ">
+            <a href="https://www.qlik.com/us/products">Products</a>
+
+
+<div class="menu-rollover">
+	<div class="menu-marker"><div class="marker"></div></div>
+	<div class="clearfix">
+
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Analytics
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/analytics-products">All Products</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/qlik-sense">Qlik Sense</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/qlikview">QlikView</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/analytics-products#ValueAddedProducts">Value Added Products</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/pricing">Pricing</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/try-or-buy">Free Trial</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Data Integration
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/data-integration-products">All Products</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/attunity-replicate">Attunity Replicate</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/attunity-compose-data-lakes">Attunity Compose for Data Lakes</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/attunity-compose-data-warehouse">Attunity Compose for Data Warehouse</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/attunity-enterprise-manager">Attunity Enterprise Manager</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/qlik-data-catalyst">Qlik Data Catalyst</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Developer Platforms
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/analytics-development-platform">All Products</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/qlik-core">Qlik Core</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/products/qlik-analytics-platform">Qlik Analytics Platform</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/products/why-qlik-is-different">Why Qlik</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/products/technology">Technology</a>
+	                                </li>
+	                            <li class="section-head">
+	                                <span>
+										BI Trends
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/bi/augmented-intelligence-and-analytics">Augmented Intelligence</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/bi/big-data">Big Data</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/bi/data-literacy">Data Literacy</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/bi/embedded-analytics">Embedded Analytics</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/bi/internet-of-things">Internet of Things</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	</div>
+</div>
+        </li>
+        <li class="link-container menu-container  ">
+            <a href="https://www.qlik.com/us/solutions">Solutions</a>
+
+
+<div class="menu-rollover">
+	<div class="menu-marker"><div class="marker"></div></div>
+	<div class="clearfix">
+
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/solutions" target="_self">Solutions Overview</a>
+	                                </li>
+	                            <li class="section-head">
+	                                <span>
+										Customers
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/customers/customer-stories" target="_self">Customer Stories</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/customers/qlik-luminaries" target="_self">Qlik Luminaries</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Industries
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/healthcare">Healthcare</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/financial-services">Financial Services</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/retail" target="_self">Retail</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/manufacturing" target="_self">Manufacturing</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/high-tech" target="_self">High Tech</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/public-sector" target="_self">Public Sector</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/energy-and-utilities" target="_self">Energy and Utilities</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/communications" target="_self">Communications</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/life-sciences">Life Sciences</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/industries/consumer-products" target="_self">Consumer Products</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Functions
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/functions/finance" target="_self">Finance</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/functions/it" target="_self">IT</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/functions/hr" target="_self">HR</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/functions/marketing" target="_self">Marketing</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/functions/sales" target="_self">Sales</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/solutions/functions/supply-chain-management" target="_self">Supply Chain Management</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	</div>
+</div>
+        </li>
+        <li class="link-container menu-container  ">
+            <a href="https://www.qlik.com/us/services/training">Learn</a>
+
+
+<div class="menu-rollover">
+	<div class="menu-marker"><div class="marker"></div></div>
+	<div class="clearfix">
+
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                                <li>
+	                                    <a href="https://community.qlik.com/welcome">Community</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://demos.qlik.com/">Demos</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/resource-library">Resource Library</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://blog.qlik.com/">Blog</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/company/events/webinars">Webinars</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/company/events" target="_self">Events</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://www.qlikqonnections.com/">Qonnections Conference</a>
+	                                </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Training
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training" target="_self">Training Overview</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/skills-assessment" target="_self">Skills Assessment</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/continuous-classroom" target="_self">Continuous Classroom</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/qlik-sense-training" target="_self">Qlik Sense Training</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/qlikview-training" target="_self">QlikView Training</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/data-literacy-program">Data Literacy Program</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/certifications-and-qualifications">Qlik Certifications and Qualifications</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/custom-application-training" target="_self">Custom Application Training</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/training-faqs" target="_self">FAQs</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training/training-contacts" target="_self">Contacts</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	</div>
+</div>
+        </li>
+        <li class="link-container menu-container  ">
+            <a href="https://www.qlik.com/us/services">Support</a>
+
+
+<div class="menu-rollover">
+	<div class="menu-marker"><div class="marker"></div></div>
+	<div class="clearfix">
+
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                                <li>
+	                                    <a href="https://community.qlik.com/welcome">Community</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://qliksupport.force.com/apex/QS_Home_Page">Support Portal</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://qlikid.qlik.com/portal/download">Product Downloads &amp; Upgrades</a>
+	                                </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Services
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services" target="_self">Services Overview</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/qlik-consulting" target="_self">Consulting Services</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/support">Support</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/services/training">Training</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	</div>
+</div>
+        </li>
+        <li class="link-container menu-container  ">
+            <a href="https://www.qlik.com/us/partners">Partners</a>
+
+
+<div class="menu-rollover">
+	<div class="menu-marker"><div class="marker"></div></div>
+	<div class="clearfix">
+
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/partners" target="_self">Partners Overview</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/partners/find-a-partner">Find A Partner</a>
+	                                </li>
+	                            <li class="section-head">
+	                                <span>
+										Partner Programs
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/partners/partner-programs/qlik-partners">Qlik Partners</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/partners/partner-programs/oem-partners" target="_self">OEM Partners</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/partners/partner-programs/managed-service-providers">Managed Service Providers</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/partners/partner-programs/technology-partners" target="_self">Technology Partners</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/partners/partner-programs/system-integrators-business-consultants">System Integrators and Consultants</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/partners/become-a-partner">Become a Partner</a>
+	                                </li>
+	                                <li>
+	                                    <a href="https://partners.qlik.com/">Partner Portal</a>
+	                                </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	</div>
+</div>
+        </li>
+        <li class="link-container menu-container  ">
+            <a href="https://www.qlik.com/us/company">Company</a>
+
+
+<div class="menu-rollover">
+	<div class="menu-marker"><div class="marker"></div></div>
+	<div class="clearfix">
+
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										About Qlik
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company" target="_self">Company Overview</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/leadership" target="_self">Leadership</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/awards" target="_self">Awards</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/academic-program" target="_self">Academic Program</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/corporate-responsibility">Corporate Responsibility</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                            <li class="section-head">
+	                                <span>
+										Careers
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/careers" target="_self">Careers</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/careers/job-listings" target="_self">Job Listings</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	        <!-- Start menu section -->
+	        <div class="menu-section">
+
+	                <ul>
+	                            <li class="section-head">
+	                                <span>
+										Press Room
+									</span>
+	                            </li>
+	                            <li>
+	                                <ul class="submenu">
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/press-room" target="_self">Press Room</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/press-room/in-the-news" target="_self">In the News</a>
+	                                        </li>
+	                                        <li>
+	                                            <a href="https://www.qlik.com/us/company/press-room/press-releases" target="_self">Press Releases</a>
+	                                        </li>
+	                                </ul>
+	                            </li>
+	                                <li>
+	                                    <a href="https://www.qlik.com/us/contact">Global Offices</a>
+	                                </li>
+	                </ul>
+
+	        </div>
+	        <!-- End menu section -->
+	</div>
+</div>
+        </li>
+    <!-- End outer links -->
+
+
+                </ul>
+                <ul class="right">
+                    <li class="try-buy">
+<a href="https://www.qlik.com/us/try-or-buy" class="try-buy">Try for Free</a>                    </li>
+                </ul>
+            </nav>
+            <!-- End desktop primary nav -->
+            
+        </div>
+        <!-- End desktop header -->
+    </div>
+</div>
+<!-- End SharedHeader-HeaderFrame -->
+
+<!-- /Header -->
+
+
+
+<!-- Start - Hero -->
+<style>
+  .jumbotron.inline1 {
+    background-color: #601148;
+  }
+  .jumbotron-image.inline1 {
+    background-image:url('-/media/06607EC5B7BA4D8BA8CDA27DBA72531A.ashx');
+    background-color: #601148;
+  }
+
+  .jumbotron.inline2 {
+    background-color: #0a243d;
+  }
+  .jumbotron-image.inline2 {
+    background-image:url('-/media/62E57B00F2C94B5F8D0A71D4AB85AD24.ashx');
+    background-color: #0a243d;
+  }
+
+  .jumbotron.inline3 {
+    background-color: #105f5c;
+  }
+  .jumbotron-image.inline3 {
+    background-image:url('-/media/6D9FF91484B546D89C76E54168AFF647.ashx');
+    background-color: #105f5c;
+  }
+  @media (-webkit-min-device-pixel-ratio:1.33), (min--moz-device-pixel-ratio:1.33), (-o-min-device-pixel-ratio:3 / 2), (min-device-pixel-ratio:1.33) {
+    .jumbotron-image.inline1 { background-image:url('-/media/60664CB4284E427796913D67C08FA07A.ashx'); }
+    .jumbotron-image.inline2 { background-image:url('-/media/B8FE3E228167473BA725D8959F0754B9.ashx'); }
+    .jumbotron-image.inline3 { background-image:url('-/media/72AC703E41D84AB5B66E3B1095B08939.asxh'); }
+  }
+</style>
+<div class="jumbotron pull js-randomizer inline3" data-randomizer="[{&quot;backgroundImage&quot;: &quot;/assets/img/fpo/jumbotron.jpg&quot;,&quot;backgroundColor&quot;: &quot;#601148&quot;},{&quot;backgroundImage&quot;: &quot;/assets/img/fpo/jumbotron2.jpg&quot;,&quot;backgroundColor&quot;: &quot;#0a243d&quot;},{&quot;backgroundImage&quot;: &quot;/assets/img/fpo/jumbotron3.jpg&quot;,&quot;backgroundColor&quot;: &quot;#105f5c&quot;}];">
+  <div class="jumbotron-row">
+    <div class="jumbotron-main">
+      <div class="jumbotron-wrapperLayout">
+        <div class="jumbotron-content">
+          <div class="jumbotron-body">
+            <div class="jumbotron-panel">
+              <div class="contentSection">
+                <div class="contentSection-row">
+                  <h1 class="alternate1Heading1 headingWeightLight headingFill headingSpacedFlat">Lead with data.</h1>
+                </div>
+                <div class="contentSection-row spaced-x4">
+                  <div class="fontSizeLargeChildren textLightChildren defaultTheme featuredColorChildren textTall">
+                    <p>Blaze trails daily – with the only end-to-end data management and analytics platform built to transform your entire business.</p>
+                  </div>
+                </div>
+                <div class="contentSection-row">
+                  <ul class="horizontalList">
+                    <li class="horizontalList-item">
+                      <div class="defaultTheme">
+                        <a class="button buttonSpacedFlat sizeLarge" onclick="showVideoOverlay({ 'videoTitle': 'Digital%20Transformation%20Promo%20Video', 'videoSources': 'https://qvmedia.s3.amazonaws.com/videos/Digital%20Transformation%20Promo%20Video.mp4' });">Watch Video</a>
+                      </div>
+                    </li>
+                    <li class="horizontalList-item">
+                      <div class="alternate2Theme">
+                        <a class="button buttonSpacedFlat sizeLarge" href="https://www.qlik.com/us/try-or-buy?ga-link=bjp-hp-hero">Free Trial</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron-bg">
+    <div class="jumbotron-image js-randomizer-image inline3"></div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    function randomizeHero($element, data) {
+      var randomizedData = shuffle(data);
+      var $randomizerItem;
+      var $randomizerItemImage;
+      var i;
+      var j;
+
+      for(i=0; i < $element.length; i++) {
+        $randomizerItem = $element[i];
+        $randomizerItemImage = $randomizerItem.querySelectorAll('.js-randomizer-image');
+
+        addClass($randomizerItem, randomizedData[0]);
+
+        for(j=0; j < $randomizerItemImage.length; j++) {
+          addClass($randomizerItemImage[j], randomizedData[0]);
+        }
+
+        // Remove invisiblity class now that all the styles are set
+        // This prevents a flash change on load when the randomization occurs
+        removeClass($randomizerItem, 'is-invisible');
+      }
+    }
+
+    function shuffle(o) {
+      for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+      return o;
+    };
+
+    function hasClass(ele,cls) {
+      return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+    }
+
+    function addClass(ele,cls) {
+      if (!hasClass(ele,cls)) ele.className += " "+cls;
+    }
+
+    function removeClass(elements, myClass) {
+      // if there are no elements, we're done
+      if (!elements) { return; }
+
+      // if we have a selector, get the chosen elements
+      if (typeof(elements) === 'string') {
+        elements = document.querySelectorAll(elements);
+      }
+
+      // if we have a single DOM element, make it an array to simplify behavior
+      else if (elements.tagName) { elements=[elements]; }
+
+      // create pattern to find class name
+      var reg = new RegExp('(^| )'+myClass+'($| )','g');
+
+      // remove class from all chosen elements
+      for (var i=0; i<elements.length; i++) {
+        elements[i].className = elements[i].className.replace(reg,' ');
+      }
+    }
+
+    var randomizerData = ['inline1', 'inline2', 'inline3'];
+
+    randomizeHero(document.getElementsByClassName("js-randomizer"), randomizerData);
+  })();
+</script>
+<!-- End - Hero  -->
+
+<!-- Start - 2up Promo -->
+<div class="rowLayout spaced-top-x4 spaced-bottom-x4">
+  <div class="wrapperLayout">
+    <div class="gridLayout divided equal-height">
+      <div class="gridLayout-column size-6of12">
+        <div class="gridLayout-panel">
+          <a href="https://www.qlik.com/us/gartner-magic-quadrant-business-intelligence?ga-link=hp-tb1-gartnermq-us" class="bigLink">
+            <div class="contentSection">
+              <div class="contentSection-row spaced-compact align-center">
+                <span class="defaultH5 headingFill headingSpacedFlat">Qlik Named a Leader</span>
+              </div>
+              <div class="contentSection-row align-center">
+                <div class="defaultTheme">
+                  <span class="link cta">2019 Gartner Magic Quadrant for Analytics and BI Platforms</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="gridLayout-column size-6of12">
+        <div class="gridLayout-panel">
+          <a href="https://www.qlik.com/us/products/attunity-acquisition?ga-link=hp-tb2-attunity-us" class="bigLink">
+            <div class="contentSection">
+              <div class="contentSection-row spaced-compact align-center">
+                <span class="defaultH5 headingFill headingSpacedFlat">Acquisition</span>
+              </div>
+              <div class="contentSection-row align-center">
+                <div class="defaultTheme">
+                  <span class="link cta">Qlik acquires Attunity to offer enterprise data <br>integration and enable real-time analytics</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- End - 2up Promo  -->
+
+
+<!-- Start - Why Qlik -->
+<div class="rowLayout spaced-top-x8 spaced-bottom-x9 bg-grey">
+  <div class="wrapperLayout">
+    <div class="contentSection">
+      <div class="contentSection-row spaced-x8 align-center">
+        <h2 class="defaultH2 headingFill headingSpacedFlat">Get ready to own the digital era.</h2>
+      </div>
+      <div class="contentSection-row spaced-x6">
+        <div class="blocksLayout gutter spaced size-3up@desktop">
+          <div class="blocksLayout-item">
+            <div class="contentSection">
+              <div class="contentSection-row spaced-x2 align-center">
+                <img src="B3A0B72BE4014DC0A843C39CF425E55D" srcset="-/media/B3A0B72BE4014DC0A843C39CF425E55D.ashx 1x, -/media/997F95A251474AA39A21CA04E66D98CF.ashx 2x" alt="">
+              </div>
+              <div class="contentSection-row spaced align-center">
+                <h2 class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">All your data for all your people</h2>
+              </div>
+              <div class="contentSection-row align-center">
+                <p>Combine all your data – yes, all – and make it analysis-ready for everyone to freely explore.</p>
+              </div>
+            </div>
+          </div>
+          <div class="blocksLayout-item">
+            <div class="contentSection">
+              <div class="contentSection-row spaced-x2 align-center">
+                <img src="65DA6697C93743698FECA6267A3BF381" srcset="-/media/65DA6697C93743698FECA6267A3BF381.ashx 1x, -/media/5730FC54DF554F73A8707C003C417DB4.ashx 2x" alt="">
+              </div>
+              <div class="contentSection-row spaced align-center">
+                <h2 class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">A new breed of AI</h2>
+              </div>
+              <div class="contentSection-row align-center">
+                <p>Amplify human brainpower with machine intelligence for faster, smarter, and bolder discoveries.</p>
+              </div>
+            </div>
+          </div>
+          <div class="blocksLayout-item">
+            <div class="contentSection">
+              <div class="contentSection-row spaced-x2 align-center">
+                <img src="02AC55EF32884995AE83A55325A637AE" srcset="-/media/02AC55EF32884995AE83A55325A637AE.ashx 1x, -/media/396D3F597A4441BA88C6F2193B9D25E5.ashx 2x" alt="">
+              </div>
+              <div class="contentSection-row spaced align-center">
+                <h2 class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">Analytics throughout your business</h2>
+              </div>
+              <div class="contentSection-row align-center">
+                <p>Bring analytics into every decision – with the only platform that extends to every team, process, application and device.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contentSection-row align-center">
+        <div class="defaultTheme">
+          <a class="button buttonSpacedFlat" href="https://www.qlik.com/us/products/why-qlik-is-different?ga-link=HP_WhyQlik_US">Why Qlik</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End - Why Qlik  -->
+
+
+<!-- Start - Audiences -->
+<div class="rowLayout spaced-top-x9 spaced-bottom-x9 bg-blue">
+  <div class="wrapperLayout">
+    <div class="gridLayout">
+      <div class="gridLayout-column spaced@med size-4of12@lg">
+        <div class="gridLayout-panel">
+          <div class="contentSection">
+            <div class="contentSection-row spaced-x3">
+              <h2 class="alternate1Heading2 headingFill headingSpacedFlat">Your entire data and analytics strategy. All right here.</h2>
+            </div>
+            <div class="contentSection-row">
+              <!-- featuredColor -->
+              <div class="fontSizeLargeChildren textLightChildren defaultTheme featuredColorChildren">
+                <p>From managing your data to building custom apps, Qlik gives you all the solutions you need.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gridLayout-column spaced@med size-8of12@lg">
+        <div class="gridLayout-panel">
+          <div class="blocksLayout gutter spaced spaced-x1dot5@desktop size-2up@desktop">
+            <div class="blocksLayout-item">
+              <a href="https://www.qlik.com/us/products/qlik-sense?ga-link=HP_Mid1_US" class="bigLink">
+                <div class="contentSection">
+                  <div class="contentSection-row">
+                    <img src="8665845899664503A1B184CA103765AD" srcset="-/media/8665845899664503A1B184CA103765AD.ashx 1x, -/media/E8DFE8AFE52844A1A8D412DE90A71BEE.ashx 2x" alt="">
+                  </div>
+                  <div class="contentSection-row">
+                    <div class="inverseTheme">
+                      <span class="link cta fontSizeLarge">BI &amp; Analytics Platform</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="blocksLayout-item">
+              <a href="https://www.qlik.com/us/bi/embedded-analytics?ga-link=HP_Mid2_US" class="bigLink">
+                <div class="contentSection">
+                  <div class="contentSection-row">
+                    <img src="682DADB4DEE84DB3852D36A84C920EC4" srcset="-/media/682DADB4DEE84DB3852D36A84C920EC4.ashx 1x, -/media/E463FFDD3EB24FCE9679EB6F3EC52BBD.ashx 2x" alt="">
+                  </div>
+                  <div class="contentSection-row">
+                    <div class="inverseTheme">
+                      <span class="link cta fontSizeLarge">Embedded Analytics</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="blocksLayout-item">
+              <a href="https://www.qlik.com/us/products/data-integration-products?ga-link=HP_Mid3_US" class="bigLink">
+                <div class="contentSection">
+                  <div class="contentSection-row">
+                    <img src="8BF96819845C4E17ADC9F92CF2275B1A" srcset="-/media/8BF96819845C4E17ADC9F92CF2275B1A.ashx 1x, -/media/9C6B0073BF18490EAEAD2B45C4972FCD.ashx 2x" alt="">
+                  </div>
+                  <div class="contentSection-row">
+                    <div class="inverseTheme">
+                      <span class="link cta fontSizeLarge">Data Integration Platform</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="blocksLayout-item">
+              <a href="https://www.qlik.com/us/products/analytics-development-platform?ga-link=HP_Mid4_US" class="bigLink">
+                <div class="contentSection">
+                  <div class="contentSection-row">
+                    <img src="060C485565CE47E691FE7062ECEF623F" srcset="-/media/060C485565CE47E691FE7062ECEF623F.ashx 1x, -/media/E01EDEA0C0CF453796E053E60D5C51AC.ashx 2x" alt="">
+                  </div>
+                  <div class="contentSection-row">
+                    <div class="inverseTheme">
+                      <span class="link cta fontSizeLarge">Developer Platforms</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End - Audiences  -->
+
+
+<!-- Start - Promo -->
+<div class="rowLayout spaced-top-x4 spaced-bottom-x4 bg-grey">
+  <div class="wrapperLayout">
+    <a href="https://www.qlik.com/us/gartner-magic-quadrant-business-intelligence?ga-link=hp-lb-gartnermq-us" class="promoBox">
+      <div class="promoBox-row">
+        <div class="promoBox-media">
+          <style>
+            .promoBox-image.inline1 { background-image:url('-/media/57097C5833564D64A188FE79CEFB0514.ashx'); }
+            @media (-webkit-min-device-pixel-ratio:1.33), (min--moz-device-pixel-ratio:1.33), (-o-min-device-pixel-ratio:3 / 2), (min-device-pixel-ratio:1.33) {
+              .promoBox-image.inline1 { background-image:url('-/media/DA53F688F0E346EFB4EFC9678407B315.ashx'); }
+            }
+          </style>
+          <div class="promoBox-image inline1"></div>
+        </div>
+        <div class="promoBox-body">
+          <div class="promoBox-panel">
+            <div class="contentSection">
+              <div class="contentSection-row spaced-x3">
+                <div class="contentSection">
+                  <div class="contentSection-row">
+                      <span class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">Gartner’s choice for a Magic Quadrant Leader. Your choice for leading with data.</span>
+                  </div>
+                  <div class="contentSection-row">
+                    <p>Qlik has been named a Leader in the Gartner Magic
+ Quadrant for Analytics and Business Intelligence Platforms for the 9th 
+year in a row.</p>
+                  </div>
+                </div>
+
+              </div>
+              <div class="contentSection-row">
+                <div class="defaultTheme">
+                  <span class="button buttonSpacedFlat sizeLarge">Get Report</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+<!-- End - Promo  -->
+
+
+<!-- Start - Customers -->
+<div class="rowLayout bg-grey">
+  <div class="wrapperLayout">
+    <div class="blocksLayout gutter spaced flexible-2up equal-height">
+      <div class="blocksLayout-item">
+        <a onclick="showVideoOverlay({ 'videoTitle': 'hp-cust-lrg1-benmoore-us', 'videoSources': 'https://qvmedia.s3.amazonaws.com/videos/customers/QLIK-16235-Benjamin%20Moore-ME2b.mp4' });" class="contentFeatured">
+          <div class="contentFeatured-main">
+            <div class="contentFeatured-logo">
+              <img src="04DA64395BAB4EEE958ADC41E9312FA2" srcset="-/media/04DA64395BAB4EEE958ADC41E9312FA2.ashx 1x, -/media/0EC16456A2784B2AAAC066D570A99F9D.ashx 2x" alt="">
+            </div>
+            <div class="contentFeatured-body">
+              <div class="contentSection">
+                <div class="contentSection-row spaced-x2">
+                  <h2 class="alternate1Heading2 headingWeightSemi headingFill headingSpacedFlat">Digital transformation enables Benjamin Moore to move from a product-centric enterprise to a customer-centric enterprise.</h2>
+                </div>
+                <div class="contentSection-row">
+                  <div class="inverseTheme">
+                    <span class="trigger">
+                      <span class="trigger-icon">
+                          <img src="58C4EC82D5AE4A80B6B127F10EED5993" srcset="-/media/58C4EC82D5AE4A80B6B127F10EED5993.ashx 1x, -/media/D2E64E322BA346F0BBC76AB10271F140.ashx 2x" class="img" alt="">
+                      </span>
+                      <span class="trigger-headline">
+                        Watch Video
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contentFeatured-media">
+            <style>
+              .contentFeatured-image.inline1 { background-image:url('-/media/1A836D8579E7487985E0019EBD7CF1E8.ashx'); }
+              @media (-webkit-min-device-pixel-ratio:1.33), (min--moz-device-pixel-ratio:1.33), (-o-min-device-pixel-ratio:3 / 2), (min-device-pixel-ratio:1.33) {
+                .contentFeatured-image.inline1 { background-image:url('-/media/A9B7C95370AD4AF7BA977F4F5D2DE3A0.ashx'); }
+              }
+            </style>
+            <div class="contentFeatured-image inline1"></div>
+          </div>
+        </a>
+      </div>
+      <div class="blocksLayout-item">
+        <div class="shelfLayout">
+          <div class="shelfLayout-top">
+            <div class="shelfLayout-panel">
+              <a onclick="showVideoOverlay({ 'videoTitle': 'hp-cust-med1-avonsom-us', 'videoSources': 'https://qvmedia.s3.amazonaws.com/videos/QLIK-Avon%20somerset%20Police-CRV-ME3b.mp4' });" class="contentBrick">
+                <div class="contentBrick-media">
+                  <div class="contentBrick-logo">
+                      <img src="8DF4F23E0AA846E894A05D4B02B98925" srcset="-/media/8DF4F23E0AA846E894A05D4B02B98925.ashx 1x, -/media/9EAA92AFCCE84AD799168E36A983CC2A.ashx 2x" alt="">
+                  </div>
+                  <style>
+                    .contentBrick-image.inline1 { background-image:url('-/media/D164045D1EDD4820B5E5DFEC1BDB87B6.ashx'); }
+                    @media (-webkit-min-device-pixel-ratio:1.33), (min--moz-device-pixel-ratio:1.33), (-o-min-device-pixel-ratio:3 / 2), (min-device-pixel-ratio:1.33) {
+                      .contentBrick-image.inline1 { background-image:url('-/media/5422A0DBCC0E4F33B6C64AEEB6892012.ashx'); }
+                    }
+                  </style>
+                  <div class="contentBrick-image inline1"></div>
+                </div>
+                <div class="contentBrick-main bg-blue">
+                  <div class="contentBrick-body">
+                    <div class="contentSection">
+                      <div class="contentSection-row">
+                        <div class="textLightChildren defaultTheme featuredColorChildren">
+                          <p>“We want to make choices today that will prevent the crime from happening in the first place.”</p>
+                        </div>
+                      </div>
+                      <div class="contentSection-row">
+                        <div class="inverseTheme">
+                          <span class="trigger">
+                            <span class="trigger-icon">
+                                <img src="58C4EC82D5AE4A80B6B127F10EED5993" srcset="-/media/58C4EC82D5AE4A80B6B127F10EED5993.ashx 1x, -/media/D2E64E322BA346F0BBC76AB10271F140.ashx 2x" class="img" alt="">
+                            </span>
+                            <span class="trigger-headline">
+                              Watch Video
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="shelfLayout-bottom">
+            <div class="shelfLayout-panel">
+              <a onclick="showVideoOverlay({ 'videoTitle': 'hp-cust-med2-condenaste-us', 'videoSources': 'https://qvmedia.s3.amazonaws.com/videos/107459_QLK_Conde-Longform_012b.mp4' });" class="contentBrick direction-reverse">
+                <div class="contentBrick-media">
+                  <div class="contentBrick-logo">
+                      <img src="828B208CF2C74BD79BA8A6AD6D06F5E0" srcset="-/media/828B208CF2C74BD79BA8A6AD6D06F5E0.ashx 1x, -/media/33D12DADD9024944B13F6E2365B97013.ashx 2x" alt="">
+                  </div>
+                  <style>
+                    .contentBrick-image.inline2 {
+                      background-image:url('-/media/9B5F7874BFCA4A6AB626EEFAF9128C2D.ashx');
+                      background-position: top center;
+                    }
+                    @media (-webkit-min-device-pixel-ratio:1.33), (min--moz-device-pixel-ratio:1.33), (-o-min-device-pixel-ratio:3 / 2), (min-device-pixel-ratio:1.33) {
+                      .contentBrick-image.inline2 { background-image:url('-/media/13CF73059BFD44B0A9FE3B220DA57C3E.ashx'); }
+                    }
+                  </style>
+                  <div class="contentBrick-image inline2"></div>
+                </div>
+                <div class="contentBrick-main">
+                  <div class="contentBrick-body">
+                    <div class="contentSection">
+                      <div class="contentSection-row">
+                        <div>
+                          <p>Creating stickier content and more effective ad operations with data-driven insights.</p>
+                        </div>
+                      </div>
+                      <div class="contentSection-row">
+                        <div>
+                          <div class="defaultTheme">
+                           <span class="trigger">
+                            <span class="trigger-icon">
+                                <img src="09F0793074904924A41FE9B480753422" srcset="-/media/09F0793074904924A41FE9B480753422.ashx 1x, -/media/7DFA6002FBB44DD2930F9BD58F07D733.ashx 2x" class="img" alt="">
+                            </span>
+                            <span class="trigger-headline">
+                              Watch Video
+                            </span>
+                          </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End - Customers  -->
+
+
+<!-- Start - Resources -->
+<div class="rowLayout spaced-top-x7 spaced-bottom-x9 bg-grey">
+  <div class="wrapperLayout">
+    <div class="blocksLayout gutter spaced-x1dot5 flexible-4up">
+      <div class="blocksLayout-item">
+        <a href="https://www.qlik.com/us/gartner-magic-quadrant-business-intelligence?ga-link=hp-bp1-gartnermq-us" class="bigLink">
+          <div class="contentSection">
+            <div class="contentSection-row spaced-x3">
+              <img src="D316E0ADFB8D422EBEA3375FB51EAEDA" srcset="-/media/D316E0ADFB8D422EBEA3375FB51EAEDA.ashx 1x, -/media/80E6FF076E3A44E5B59F12B1640068DC.ashx 2x" alt="">
+
+
+            </div>
+            <div class="contentSection-row spaced-compact">
+              <span class="defaultH5 headingFill headingSpacedFlat">Analyst Report</span>
+            </div>
+            <div class="contentSection-row  spaced-compact">
+              <h3 class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">2019 Gartner Magic Quadrant Report: Qlik is named a Leader for the 9th time.</h3>
+            </div>
+            <div class="contentSection-row">
+              <div class="defaultTheme">
+                <span class="link cta">Get Report</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blocksLayout-item">
+        <a href="https://go.qlik.com/The-DX-Files?sourceID1=DX_Web_homepage&amp;ga-link=hp-bp2-dxwebinar-us" class="bigLink">
+          <div class="contentSection">
+            <div class="contentSection-row spaced-x3">
+              <img src="F1CB8FAD0BB44A34ABE9C2FEC1C2E3DD" srcset="-/media/F1CB8FAD0BB44A34ABE9C2FEC1C2E3DD.ashx 1x, -/media/0995B773CF924DFFA8304B7C78E86579.ashx 2x" alt="">
+            </div>
+            <div class="contentSection-row spaced-compact">
+              <span class="defaultH5 headingFill headingSpacedFlat">Webinar Series</span>
+            </div>
+            <div class="contentSection-row  spaced-compact">
+              <h3 class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">When it comes to Digital Transformation, the truth isn’t out there – it’s in here.</h3>
+            </div>
+            <div class="contentSection-row">
+              <div class="defaultTheme">
+                <span class="link cta">Register Now</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blocksLayout-item">
+        <a href="https://go.qlik.com/2019-Virtual-Forum.html?sourceID1=web_homepage&amp;ga-link=hp-bp3-vforum-us" class="bigLink">
+          <div class="contentSection">
+            <div class="contentSection-row spaced-x3">
+              <img src="F1CB8FAD0BB44A34ABE9C2FEC1C2E3DD" srcset="-/media/F1CB8FAD0BB44A34ABE9C2FEC1C2E3DD.ashx 1x, -/media/0995B773CF924DFFA8304B7C78E86579.ashx 2x" alt="">
+            </div>
+            <div class="contentSection-row spaced-compact">
+              <span class="defaultH5 headingFill headingSpacedFlat">On-Demand Webinar</span>
+            </div>
+            <div class="contentSection-row  spaced-compact">
+              <h3 class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">Make Your Data Dance – Virtual Forum 2019</h3>
+            </div>
+            <div class="contentSection-row">
+              <div class="defaultTheme">
+                <span class="link cta">Register Now</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blocksLayout-item">
+        <a href="https://www.qlik.com/bi/trends?ga-link=hp-bp4-bitrends-us" class="bigLink">
+          <div class="contentSection">
+            <div class="contentSection-row spaced-x3">
+              <img src="A967E592F05E4E11BA82343EA076571B" srcset="-/media/A967E592F05E4E11BA82343EA076571B.ashx 1x, -/media/B499D062F85C4746B0339C8731A9C5E5.ashx 2x" alt="">
+            </div>
+            <div class="contentSection-row spaced-compact">
+              <span class="defaultH5 headingFill headingSpacedFlat">Resource</span>
+            </div>
+            <div class="contentSection-row  spaced-compact">
+              <h3 class="defaultH4 headingWeightSemi headingFill headingSpacedFlat">Top 10 BI Trends of 2019:<br>
+See what's big this year – and what it means for you.</h3>
+            </div>
+            <div class="contentSection-row">
+              <div class="defaultTheme">
+                <span class="link cta">Learn More</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End - Resources  -->
+
+
+<!-- Start - Prefooter -->
+<div class="rowLayout spaced-top-x7 spaced-bottom-x7 bg-green">
+  <div class="wrapperLayout">
+    <div class="mediaLayout stacked@mobile">
+      <div class="mediaLayout-body">
+        <h2 class="alternate1Heading3 headingWeightHeavy headingFill headingSpacedFlat">Get ready to transform your entire business with data.</h2>
+      </div>
+      <div class="mediaLayout-media">
+        <div class="alternate1Theme">
+          <a class="button buttonSpacedFlat sizeLarge" href="https://www.qlik.com/us/try-or-buy?ga-link=hp_footer_US">Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End - Prefooter  -->
+
+
+
+<!-- BackToTop -->
+
+<section class="section  back-to-top" data-controller="back-to-top">
+    <div class="grid-construct">
+        <button class="js-back-top-trigger  back-to-top__icon">Back To Top</button>
+    </div>
+    <!--/grid-construct-->
+</section>
+<!--/back-top-top-->
+
+<!-- /BackToTop -->
+
+<!-- Footer -->
+
+<footer role="contentinfo" class="footer  footer--main">
+    <div class="grid-construct">
+        <div class="footer__content">
+            <nav role="navigation" class="footer__nav">
+                <div class="footer__group  md--isogrid-3of6  lg--isogrid-3of12">
+                    <dl class="footer__group-list">
+                        <dt class="footer__group-title">Products</dt>
+                            <dd><a href="https://www.qlik.com/us/products">All Products</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/qlik-sense">Qlik Sense</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/qlikview">QlikView</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/attunity-replicate">Attunity Replicate</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/attunity-compose-data-lakes">Attunity Compose for Data Lakes</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/attunity-compose-data-warehouse">Attunity Compose for Data Warehouse</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/attunity-enterprise-manager">Attunity Enterprise Manager</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/qlik-data-catalyst">Qlik Data Catalyst</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/qlik-core">Qlik Core</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/qlik-analytics-platform">Qlik Analytics Platform</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/why-qlik-is-different">Why Qlik</a></dd>
+                            <dd><a href="https://www.qlik.com/us/products/technology">Technology</a></dd>
+                    </dl>
+                </div><!--/footer__group-->
+
+                <div class="footer__group  md--isogrid-3of6  lg--isogrid-3of12">
+                    <dl class="footer__group-list">
+                        <dt class="footer__group-title">Resources</dt>
+                            <dd><a href="https://www.qlik.com/us/resource-library">Resource Library</a></dd>
+                            <dd><a href="https://www.qlik.com/us/partners">Qlik Partners</a></dd>
+                            <dd><a href="https://www.qlik.com/us/solutions/developers">For Developers</a></dd>
+                            <dd><a href="https://www.qlik.com/us/services/training">Training</a></dd>
+                            <dd><a href="https://www.qlik.com/us/services/support">Support</a></dd>
+                    </dl>
+                </div><!--/footer__group-->
+
+                <div class="footer__group  md--isogrid-3of6  lg--isogrid-3of12">
+                    <dl class="footer__group-list">
+                        <dt class="footer__group-title">Company</dt>
+                            <dd><a href="https://www.qlik.com/us/company" title="About QQlik">About Qlik</a></dd>
+                            <dd><a href="https://www.qlik.com/us/company/press-room">Press Room</a></dd>
+                            <dd><a href="https://www.qlik.com/us/company/careers">Careers</a></dd>
+                        <dd class="footer__extra-option"></dd>
+                            <dd><a href="https://www.qlik.com/us/contact">Global Offices</a></dd>
+                            <dd><a href="https://www.qlik.com/us/try-or-buy/buy-now">Contact Sales</a></dd>
+                        <dd>+1 (866) 616-4960</dd>
+                        <dd class="footer__extra-option">
+<a href="https://community.qlik.com/" class="footer__extra-option">Qlik Community</a>                        </dd>
+                        <dd>
+                            <ul class="social-links__list">
+                                    <li class="social-links__list-item"><a href="https://twitter.com/qlik?ga-link=footer" class="icon  icon-social-twitter-green  ir" target="_blank">Twitter</a></li>
+                                    <li class="social-links__list-item"><a href="https://www.linkedin.com/company/qlik?ga-link=footer" class="icon  icon-social-linkedin-green  ir" target="_blank">LinkedIn</a></li>
+                                    <li class="social-links__list-item"><a href="https://www.facebook.com/qlik?ga-link=footer" class="icon  icon-social-facebook-green  ir" target="_blank">Facebook</a></li>
+                                    <li class="social-links__list-item"><a href="https://plus.google.com/+QlikOfficial/posts?ga-link=footer" class="icon  icon-social-google-plus-green  ir" target="_blank">Google+</a></li>
+                                    <li class="social-links__list-item"><a href="https://www.qlik.com/us/try-or-buy/buy-now" class="icon  icon-social-email-green  ir" target="Active Browser">Try or Buy</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div><!--/footer__group-->
+
+                <div class="footer__group  md--isogrid-3of6  lg--isogrid-3of12">
+                    <dl class="footer__group-list">
+                        <dt class="footer__group-title">Legal</dt>
+                        <dd class="footer__copyright">© 1993-2019 QlikTech International AB, All Rights Reserved</dd>
+                        <dd class="footer__extra-option"></dd>
+                            <dd><a href="https://www.qlik.com/us/legal/legal-policies">Legal Policies</a></dd>
+                            <dd><a href="https://www.qlik.com/us/legal/trademarks">Trademarks</a></dd>
+                            <dd><a href="https://www.qlik.com/us/legal/terms-of-use">Terms of Use</a></dd>
+                            <dd><a href="https://www.qlik.com/us/legal/license-terms">License Terms</a></dd>
+                            <dd><a href="https://www.qlik.com/us/legal/product-terms">Product Terms</a></dd>
+                    </dl>
+
+                </div><!--/footer__group-->
+            </nav><!--/footer__nav-->
+        </div><!--/footer__content-->
+    </div><!--/grid-construct-->
+</footer><!--/footer-->
+<!-- /Footer -->
+
+            
+        </div>
+    </div>
+
+        <script async="" defer="defer" src="require.js" type="text/javascript"></script>
+    <script async="" defer="defer" src="main.js" type="text/javascript"></script>
+        <script async="" defer="defer" src="livechatproactive.js"></script>
+
+<script type="text/javascript">
+    jQuery(".grid-construct").filter(function() {
+        return jQuery(this).attr("id") !== "result" &&
+            !jQuery(this).hasClass("scrolling-feature__screenshot") &&
+            jQuery(this).children().length === 0;
+    }).parent("section").remove();
+
+	jQuery('.js-search-submit').click(function (e) {
+	    window.location.href = "/us?q=" + jQuery(this).parent().find(".search-global__input").val();
+	    return false;
+    });
+
+    jQuery(".product-feature__item, .product-feature-small__item").click(function (event) {
+        if (event.target.tagName.toLowerCase() != "a") {
+            jQuery(this).find("a")[0].click();
+        }
+    });
+</script>
+
+    
+
+    
+
+
+
+
+<iframe src="https://a8189053417.cdn.optimizely.com/client_storage/a8189053417.html" aria-hidden="true" tabindex="-1" title="Optimizely Internal Frame" style="display: none;" width="0" hidden="" height="0"></iframe><div id="liveagent-tab"><div class="liveagent" style="display:none;"><p class="qvs_liveagent"></p></div></div></body></html>

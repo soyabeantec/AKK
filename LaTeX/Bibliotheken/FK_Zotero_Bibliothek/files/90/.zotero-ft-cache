@@ -1,0 +1,242 @@
+Skip to main content
+Skip to main content
+Microsoft
+Power BI
+Power BI
+Power BI
+
+    Home
+    Products
+        What is Power BI
+        Power BI
+        Power BI Desktop
+        Power BI Premium
+        Power BI Mobile
+        Power BI Embedded
+        Power BI Report Server
+        Tour
+        Pricing
+    Solutions
+        Partner Showcase
+        Departments
+        Industries
+        Solution Templates
+        Data Stories
+    Partners
+        Overview
+        Partner Showcase
+        Consulting Services
+        Find a Partner
+        Become a partner
+    Learn
+        Guided Learning
+        Documentation
+        Support
+        Community
+        Give Feedback
+        Webinars
+        Blog
+    More
+    Sign in
+    Sign up free
+
+    All Microsoft
+            Office
+            Windows
+            Surface
+            Xbox
+            Deals
+            Support
+        Software
+            Windows apps
+            OneDrive
+            Outlook
+            Skype
+            OneNote
+        PCs & Devices
+            PCs & tablets
+            Accessories
+        Entertainment
+            Xbox games
+            PC games
+            Windows digital games
+            Movies & TV
+            Books
+        Business
+            Microsoft Azure
+            Microsoft Dynamics 365
+            Microsoft 365
+            Microsoft Industry
+            Data platform
+            Microsoft Advertising
+            Licensing
+        Developer & IT
+            .NET
+            Visual Studio
+            Windows Server
+            Windows Dev Center
+            Docs
+        Other
+            Microsoft Store
+            Microsoft Rewards
+            Free downloads & security
+            Education
+            Store locations
+            Gift cards
+        View Sitemap
+
+Search
+
+Cancel
+
+    Docs
+    Power BI
+    Developer
+
+Contents
+Exit focus mode
+
+    Feedback
+    Edit
+    Share
+        Twitter
+        LinkedIn
+        Facebook
+        Email
+    Theme
+    Light
+    Dark
+    High contrast
+    Sign in
+
+        Profile
+        Sign out
+
+Contents
+Search
+
+    Power BI Desktop
+    Power BI service
+    Power BI Premium
+    Power BI Paginated Report Builder
+    Power BI for developers
+        What can developers do with Power BI
+        Embedded Analytics
+        Custom Visuals
+        Automation
+            Overview
+                What can I do with the Power BI API?
+            Tutorials
+            Concepts
+            How to
+            Reference
+            Resources
+    Power BI Report Server
+    Gateways
+    Administration
+
+Download PDF
+What can developers do with the Power BI API?
+
+    03/25/2019
+    2 minutes to read
+        +2
+
+Is this page helpful?
+In this article
+
+    API Developer tools
+    Push data into Power BI
+    GitHub repositories
+    Next Steps
+
+Using Power BI REST API, you can create apps that integrate with Power BI reports, dashboards, and tiles.
+
+With Power BI REST API, it is possible to perform management tasks on Power BI objects like reports, datasets, and workspaces.
+
+Here are some of the things you can do with the Power BI APIs.
+To learn more 	Reference this information
+Embed reports, dashboards, and tiles for Power BI users and Non-Power BI users. 	How to embed your Power BI dashboards, reports, and tiles
+Perform management tasks on Power BI objects. 	Power BI REST API reference
+Extend an existing business workflow to push key data into a Power BI dashboard. 	Push data into a dashboard
+Authenticate to Power BI. 	Authenticate to Power BI
+
+Note
+
+The Power BI APIs still refer to app workspaces as groups. Any references to groups mean that you are working with app workspaces.
+API Developer tools
+Tool(s) 	Description 		
+Playground tool 	Experience a full sample of using the Power BI JavaScript APIs. This tool is also a quick way to play with different types of Power BI Embedded samples. 		
+Power BI JavaScript wiki 	To get more Information about the Power BI JavaScript APIs. 		
+Postman 	Run requests, test, debug, monitor, run automated tests and more. 		
+Push data into Power BI
+
+You can use the Power BI API to push data into a dataset . This feature allows you to add a row to a table within a dataset. The new data is then reflected in tiles on a dashboard and within visuals within your report.
+
+Push data sample
+GitHub repositories
+
+    Power BI Developer samples
+    .NET SDK
+    JavaScript API
+
+Next Steps
+
+    Push data into a dataset
+    Developing a Power BI custom visual
+    Power BI REST API Reference
+    Power BI REST APIs
+
+More questions? Try asking the Power BI Community
+
+Was this page helpful?
+Tell us what you think.
+Skip Submit
+
+Thank you for your feedback.
+Feedback
+
+Send feedback about
+This product
+This page
+You may also leave feedback directly on GitHub .
+This page
+You may also leave feedback directly on GitHub .
+Avatar Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.
+Issue Title Leave a comment
+Submit feedback
+
+Loading feedback...
+
+There are no open issues
+
+There are no closed issues
+
+View on GitHub
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+
+In this article
+
+    API Developer tools
+    Push data into Power BI
+    GitHub repositories
+    Next Steps
+
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+

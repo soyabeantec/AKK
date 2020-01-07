@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon-sql-64-white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-sql-64-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Stroke-1" fill="#FFFFFF" fill-rule="nonzero" points="35 20 35 17 50 17 50 20"></polygon>
+        <polygon id="Stroke-2" fill="#FFFFFF" fill-rule="nonzero" points="14 20 14 17 29 17 29 20"></polygon>
+        <polygon id="Stroke-3" fill="#FFFFFF" fill-rule="nonzero" points="14 29 14 26 29 26 29 29"></polygon>
+        <polygon id="Stroke-4" fill="#FFFFFF" fill-rule="nonzero" points="35 29 35 26 50 26 50 29"></polygon>
+        <polygon id="Stroke-5" fill="#FFFFFF" fill-rule="nonzero" points="14 38 14 35 29 35 29 38"></polygon>
+        <polygon id="Stroke-6" fill="#FFFFFF" fill-rule="nonzero" points="35 38 35 35 50 35 50 38"></polygon>
+        <polygon id="Stroke-7" fill="#FFFFFF" fill-rule="nonzero" points="35 47 35 44 50 44 50 47"></polygon>
+        <polygon id="Stroke-8" fill="#FFFFFF" fill-rule="nonzero" points="14 47 14 44 29 44 29 47"></polygon>
+        <path d="M53.5,56 C54.3285729,56 55,55.3285729 55,54.5 L55,9.5 C55,8.67142712 54.3285729,8 53.5,8 L10.5,8 C9.67142712,8 9,8.67142712 9,9.5 L9,54.5 C9,55.3285729 9.67142712,56 10.5,56 L53.5,56 Z M53.5,59 L10.5,59 C8.01457288,59 6,56.9854271 6,54.5 L6,9.5 C6,7.01457288 8.01457288,5 10.5,5 L53.5,5 C55.9854271,5 58,7.01457288 58,9.5 L58,54.5 C58,56.9854271 55.9854271,59 53.5,59 Z" id="Stroke-9" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

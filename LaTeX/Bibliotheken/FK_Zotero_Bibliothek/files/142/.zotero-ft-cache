@@ -1,0 +1,545 @@
+    Home
+    Sectors
+        Banking / Finance
+        Retail / eCom
+        Travel / Hospitality
+        Privacy / Security
+        Marketing
+        Media & Entertainment
+        Telecommunications
+        Crime / Law
+        Sports
+        Health / Pharma
+        Education
+        Human Resource
+    Tech & Tools
+        Analytics
+        Data Science
+        Business Intelligence
+        Digital Personalization
+        Machine Learning
+        Artificial Intelligence
+        Visualization
+        Hadoop
+        Data Mining
+        SQL
+        NoSQL
+    Resources
+        Interviews
+        Tutorials
+        Infographics
+        Videos
+    Products
+    Events
+    Write for us
+    Get in touch
+        Advertise
+        Partnerships
+        Contact us
+
+Big Data Made Simple
+Crayon Data
+
+    Home
+    Sectors
+        Banking / Finance
+        Retail / eCom
+        Travel / Hospitality
+        Privacy / Security
+        Marketing
+        Media & Entertainment
+        Telecommunications
+        Crime / Law
+        Sports
+        Health / Pharma
+        Education
+        Human Resource
+    Tech & Tools
+        Analytics
+        Data Science
+        Business Intelligence
+        Digital Personalization
+        Machine Learning
+        Artificial Intelligence
+        Visualization
+        Hadoop
+        Data Mining
+        SQL
+        NoSQL
+    Resources
+        Interviews
+        Tutorials
+        Infographics
+        Videos
+    Products
+    Events
+    Write for us
+    Get in touch
+        Advertise
+        Partnerships
+        Contact us
+
+Visualization
+Review of 20 best big data visualization tools
+Posted on Sep 19, 2017 Jan 5, 2019 Author Edoardo L’Astorina
+
+B ig Data is amazing. It describes our everyday behavior, keeps track of the places we go, stores what we like to do and how much time we spend doing our favorite activities. Big Data is made of numbers, and I think we all agree when we say:
+
+Numbers are difficult to look at.
+
+Enter Big Data  visualization .
+
+Google ,  Facebook ,  Amazon ,  Apple ,  Twitter  and  Netflix  all ask better questions of their data – and make better business decisions – by using data visualization.
+
+It gets better:
+
+Data visualization lets you  interact  with data. It goes beyond analysis. Visualization brings a presentation to life. It keeps your audience’s eyes on the screen. And gets people interested.
+
+You might be wondering:
+
+How do I get a clean and engaging visualization for all my data? Will it be time consuming? Am I going to spend months preparing everything?
+
+Here’s the deal:
+
+There are tools that help you visualize all your data in  minutes . They are already out there. All you need to do is pick the right tool that suits your needs.
+
+Whether you’re looking to wow your audience at your next presentation or you are a developer looking for a practical way to visualize large sets of data, there are amazing tools out there for both parties. So many that it’s hard to find the right tool for your project.
+
+Want to know the best part?
+
+We made everything easy for you and prepared a series of reviews that cover all the features of the best data visualization tools out there. And we divided our reviews in two sections: data visualization tools for presentations and data visualization tools for developers.
+
+Here are reviews of our 20 best tools for Big Data visualization.
+For Presentations: Zero Coding Required
+
+Your data is all in a spreadsheet. Ready to go. All you want is to visualize it beautifully and maybe add a few smart interactions. And make a killer presentation. If this is you read on and enjoy our list of amazing data visualization tools for presentations.
+Tableau
+
+Tableau
+
+Tableau is  the  big data visualization tool for corporate. Tableau lets you create charts, graphs, maps and many other graphics. A desktop app is available for visual analytics. Don’t want – or can’t – install software on your desktop? A server solution lets you visualize reports online and on mobile. A cloud hosted service is also an option for those who want the server solution… but don’t want to set it up manually. Customers of Tableau include Barclays ,  Pandora  and  Citrix .
+Infogram
+
+Infogram
+
+Infogram lets you link their visualizations and infographics to  real time  big data. And that’s a big plus. A simple 3-step process lets you choose among many templates, personalize them with additional visualizations like charts, map, images and even videos, and you are ready to share your visualization. Infogram supports team accounts for media publishers and for journalists, branded designs for companies and classroom accounts for educational projects.
+ChartBlocks
+
+ChartBlocks
+
+ChartBlocks is an easy-to-use online tool that requires no coding, and builds visualizations from spreadsheets, databases… and live feeds. A chart building wizard does all the magic for you. Your chart will be created under the hood in HTML5 by using the powerful JavaScript library D3.js – read our developers review of D3.js below – and your visualizations will be responsive and compatible with any screen size and device. You will also be able to embed your charts in any web page and share it on Twitter and Facebook.
+Datawrapper
+
+Datawrapper
+
+Datawrapper is aimed squarely at publishers and journalists and is adopted by  The Washington Post ,  The Guardian ,  Vox ,  BuzzFeed ,  The Wall Street Journal  and Twitter – among the many. Datawrapper is easy and requires zero coding. Upload your data and easily create and publish a chart or even a map. Custom layouts to integrate your visualizations perfectly on your site and access to local area maps are also available.
+Plotly
+
+Plotly
+
+Plotly will help you create a sharp and slick chart in just a few minutes, starting from a simple spreadsheet. Plotlyis used by none other than the guys at Google and also by  The U.S. Air Force ,  Goji  and  The New York University . Plotly is a very user-friendly web tool that gets you started in minutes. If you have a team of developers that wants to have a crack, an API is available for languages that include JavaScript and  Python .
+RAW
+
+raw
+
+RAW boasts on its homepage to be “the missing link between spreadsheets and vector graphics”. Your Big Data can come from Microsoft Excel, Google Docs, Apple Numbers or a simple comma-separated list. The kicker here is that you can export your visualization easily and have a designer make it look sharp as RAW is compatiple with Adobe Illustrator, Sketch and Inkscape. Easy to use and quick to get results.
+Visual.ly
+
+Visual.ly
+
+Visual.ly is a visual content service. I decided to include it because they do have a  dedicated big data visualization service  and their portfolio is impressive: it includes work for  VISA ,  Nike , Twitter,  The Huffington Post ,  Ford  and  The National Geographic . If you want to entirely outsource your visualizations to a third-party you can do it through a streamlined online process where you describe your project and are connected with a creative team that will stay with you for the entire duration of the project. Visual.ly send you email notifications for all the milestones you are hitting, and will also let you give constant feedback to your creative team. Visual.ly also offer their distribution network for showcasing your project once it’s completed.
+
+For Developers: JavaScript libraries
+
+And here is our developers list. This is for when all your data is in JSON or XML. You love APIs. You want to create gorgeous interactive data visualizations, put them on a web page and let the world see. JavaScript knowledge is highly recommended to make it through our developers list of extraordinary data visualization libraries.
+D3.js
+
+d3js
+
+The best data visualization library there is, D3.js runs on JavaScript and uses HTML, CSS and SVG. D3.js is open-source and applies data-driven transformation to a webpage and – as you can see from their examples – allows for beautiful and fast visualizations. D3.js is also the absolute best to add data-driven real-time interactivity. Warning: this library is as powerful as it is cutting-edge, so it comes with no pre-built charts and only IE9+ is supported.
+Ember Charts
+
+Ember Charts
+
+Ember Charts is – as the name suggests – based on the  Ember.js  framework and uses D3.js under the hood.Ember Charts features time series, bar, pie and scatter charts. It’s very elegant and easy to extend. The team behind Ember Charts – the same that created Ember.js – put a lot of focus on best practices and interactivity. Error handling is graceful and your app will not crash when fed bad data.
+NVD3
+
+NVD3
+
+NVD3 runs on top of D3.js – surprise surprise – and aims to build re-usable charts and components. The goal of the project is to keep all your charts neat and customizable. NVD3 is a simpler interface on top of D3.js and keeps all its powerful features under the hood. NVD3 is developed by the front end engineers at  Novus Partners  and uses their insight in charting technology.
+Google Charts
+
+Google Charts
+
+Google Charts runs on HTML5 and SVG and aims at  Android ,  iOS  and total cross-browser compatibility, including older  Internet Explorer  versions supported via VML. All the charts you will create are interactive and some are even zoomable. Google Charts is very user friendly and their site features  a really nice and comprehensive gallery  where you can see the kind of visualizations – and interactions – at your disposal.
+FusionCharts
+
+FusionCharts is – according to their site – the most comprehensive JavaScript charting library, and includes over 90 charts and 900 maps. If you aren’t particularly fond of JavaScript, FusionCharts integrates easily with libraries like  jQuery , frameworks like  AngularJS  and  React , and languages like  ASP.NET  and  PHP . FusionCharts supportsJSON and XML data, and is able to export your charts in a multitude of formats: PNG, JPEG, SVG and PDF. Among their products an  out-of-the-box business dashboard  is worth having a good look at.
+Highcharts
+
+Highcharts
+
+Highcharts is a JavaScript API that integrates easily with jQuery and boasts being used by 61 out of the world’s 100 largest companies. Charts are rendered in SVG and a VML fallback is available for older browsers. It offers two specialzed chart types on top: Highstock and Highmaps, and also comes bundled with a wide range of plugins. You can use it for free on your non-commercial projects or pay for a license if you’re interested in building a paid for application. Also, check out their  Highcharts cloud service .
+Chart.js
+
+chartjs
+
+For a small chart project, Chart.js is your go-to place. Open source, tiny – ships at only 11kb – fast, easy to use, it supports six chart types: doughnut, pie, polar, line, bar and radar. What’s more, you can add and remove any of these 6 types to reduce your footprint. Chart.js uses HTML5 Canvas and ships with polyfills for IE6/7 support. The  Chart.js GitHub page  is skyrocketing in popularity and is definitely worth keeping an eye on if you decide that simple and fast charts are what your project needs.
+Leaflet
+
+leaflet
+
+Are you after a specialized Big Data map solution? No need for pie-charts and bar graphs? Leafleft leverages OpenStreetMap  data and adds HTML5/CSS3 visualizations and interactivity on top to ensure everything is responsive and mobile ready. You can use their  extensive plugin repository  to add heatmaps , masks and animated markers. Leaflet is open source and ships at only 33kb.
+Chartist.js
+
+Chartis.js is born out of a community effort to blow all other JavaScript charting libraries out of the water. It leverages  Sass  and styles are fully customizable, there is complete separation of concerns between CSS styles and JavaScript functions, and its SVG output is responsive – media query based – and DPI independent. And you can intergrate Chartist.js easily with AngularJS, React,  Meteor , Ember and  WordPress  through a wide range of wrapper libraries – find out more on the  Chartist.js homepage .
+n3-charts
+
+n3-charts
+
+n3-charts is for the AngularJS lovers out there. It’s built on top of D3.js and helps your data visualization come to life with simple and interactive charts. n3-charts is for a niche of AngularJS developers who want minimal, easy and elegant chart visualizations. Bear in mind that for a large project you are going to want to look elsewhere. If simplicity is your goal, go for n3-charts.
+Sigma JS
+
+Sigma JS
+
+Sigma JS is what you want for interactivity. It comes out-of-the-box with mouse and touch support, refreshing and rescaling, and renders on  WebGL  by default with an HTML5 Canvas fallback. The two data formats of choice are JSON and GEXF. Their  plugin assortment for interactivity is massive . Sigma JS is a rendering engine specialized on drawing networks and graphs on web pages with a customizability that is unparalleled. If representing Big Data networks is your goal, use Sigma JS and don’t look back.
+Polymaps
+
+Polymaps
+
+Polymaps visualizes…. you guessed it: maps. Polymaps is a JavaScript library that uses SVG to represent geographical data from country-wide level all the way down to your local street. You use CSS rules to style your visualization and your data can be easily interpreted by Polymaps via the  GeoJSON  standard. This is the best tool there is if you’re after creating heatmaps. All the maps you create can be interactive. And you can visualize cartography from OpenStreetMap,  CloudMade ,  Bing  and many other maps providers.
+Processing.js
+
+ProcessingJS
+
+Processing.js is a JavaScript library that sits on top of the  Processing  visual programming language. As everyJavaSript library is, Processing.js is web oriented and lets you bring the Processing power to your web pages. This is the smartest visual interactive library there is. Processing.js requires an HTML5-compatible browser to do the magic. Do check out  the exhibition page  to see what this incredible JavaScript library is capable of.
+Now it’s your turn
+
+I just presented you with the best Big Data visualization tools out there. Go and grab one. Make your presentation smarter and impress everybody in the room with an interactive visualization.  If you’re a developer, make your app stand out with data that responds to a user’s actions. All these tools are here at your disposal.
+
+This artcile originally appeared here . Republished with permission. Submit your copyright complaints here .
+
+Edoardo L’Astorina
+
+Edoardo L’Astorina has 8 years of experience in software development. He has had a major role in the new Transport for London site and has developed sites and apps for JPC, The Crocodile and Miura. Edoardo started Blu Frame to help companies develop sites that stand out, load fast and are easy for users to access. Edoardo is passionate about risotto, Terrence Malick movies, Oasis songs and rowing. Edoardo is the founder of  Blu Frame .
+
+Preview post
+
+Top 15 ways to prevent data and security breaches
+Next post
+
+Preventing sports injuries with wearable tech and data analysis
+59 Comments
+
+    anti seoyu kes orospu çocugu 5 months ago
+    Reply
+
+    anti seoyu kes orospu çocugu
+    instagram takipçi satın al 5 months ago
+    Reply
+
+    İnstagram takipçi satın almanın tek merkezi uzmantakipçi instagram beğeni satın al
+    https://www.modabakim.com 5 months ago
+    Reply
+
+    https://www.modabakim.com sitesi ağırlıklı olarak giyim, stil, aksesuar, makyaj, cilt bakımı gibi genel olarak moda kategorisinde içerik üretir. Bu nedenle çoğunlukla kadın okuyucu kitlesine sahiptir. Modaya yön veren son trendleri birbirinden özgün bir şekilde yayınladığı yazılarıyla takipçilerine aktarır. Moda dışında ev dekorasyonu, sağlıklı yaşam, anne ve çocuk gibi kategorileri de vardır. Bu alanlarda da güncel bilgileri yayınlamaya özen gösterir.
+    https://www.dinamikhaber.com 5 months ago
+    Reply
+
+    https://www.dinamikhaber.com gündem, politika, ekonomi, spor gibi alanlarda haber içeriği üreten ulusal bir haber sitedir. Paylaşmış olduğu son dakika haberlerini yazarken gündemi yakından takip eder ve gerekli düzenlemeleri ona göre yapar. Böylece içeriğini oluşturan yazılarda en son gelişmeleri baz alarak okuyucuya doğru ve yeni bilgi aktarımında bulunur. Bu kriterle yayıncılık anlayışını sürdürdüğü için rakiplerinin her daim ilerisinde yer alır.
+    instagram takipçi satın al 5 months ago
+    Reply
+
+    Türkiye’nin Sosyal Medya Hizmetleri konusunda lider firması olan Crovu’yu seçmeniz için birçok sebebiniz var. Bunlardan en temelleri, sunduğumuz hizmetlerdeki hızlı teslimatımız ve tabii ki güvenilirliğimiz. Türkiye’nin Sosyal Medya Hizmetleri konusundaki ilk tercihi olan Crovu’yu seçerseniz,
+    https://www.ashaber.com 5 months ago
+    Reply
+
+    https://www.ashaber.com politika, ekonomi, dizi, kadın gibi birçok kategorileri de yayın yapan ulusal haber partalıdır. Yayıncılık ilkesi gereği sadece doğru ve gerçek bilgiler kullanarak okuyucularına ulaşır. Geniş bir içeriğe sahip olduğu için güncel konuları dikkatli bir şekilde takip eder. Böylece son dakika gelişmelerini çok hızlı bir şekilde yayınlar. Gündemdeki en yeni konuları ve gelişmeleri çok hızlı paylaştığı için birçok okuyucu haber konusunda sitesini tercih eder.
+    https://www.sagliklimutlu.com 5 months ago
+    Reply
+
+    Sağlıkla ilgili son gelişmeleri, en doğru bilgileri arıyorsanız https://www.sagliklimutlu.com sitesinin tam size göre bir site olduğunu rahatça söyleyebilirim. Sağlıkla ilgili ürettiği güncel ve doğru bilgilerden oluşan içerikler gündelik yaşamınıza rahatça uygulanabilir. Böylece siz de bir sürü site arasında bilgi karmaşasında kalmaktan kurtulmuş olursunuz. Sağlık kategorisinin yanı sıra anne-çocuk, diyet, teknoloji, güzellik konularıyla da güncel yazılarıyla hizmet vermektedir
+    iptv test 5 months ago
+    Reply
+
+    Facebook Üzerinden TEST Talep Edebilirsiniz.
+    Instagram Takipçi Satın Al 5 months ago
+    Reply
+
+    Sosyal medya başarınızı kat ve kat artırmak, postlarınız ve hesaplarınızla Instagram başlıca gönderilerde yer almak için takipçi sayınızın çok yüksek olması, etkileşiminizin fazla olması gerekir. Siz de sosyal medyada başarılı olmak, satışlarınızı artırmak istiyorsanız Instagramda takipçi satın almak için Crovu’yu tercih edin. https://crovu.co/instagram-takipci-satin-al/
+    instagram takipçi satın al 5 months ago
+    Reply
+
+    instagram takipçi satın al
+    Instagram Takipçi Satın Al 5 months ago
+    Reply
+
+    Instagram Takipçi Satın Al
+    Cheap Followers 4 months ago
+    Reply
+
+    Google sikecek sizi!
+    ip tv test 3 months ago
+    Reply
+
+    https://www.iptvsatislari.com/iptv-test-talebi/
+    Couperose 3 months ago
+    Reply
+
+    Enjoyed the post.
+    Huidverbetering 3 months ago
+    Reply
+
+    Keep up the good work! Thanks.
+    Gclub 3 months ago
+    Reply
+
+    This is really an amazing blog. Your blog is really good and your article has always good thank you for information.
+    Gclub-Royal1688 3 months ago
+    Reply
+
+    Hey there ! i come here for the fist time ! and i impressed with your writing and your blog
+    download 2 months ago
+    Reply
+
+    Amazing blog layout here. Was it hard creating a nice looking website like this?
+    https://www.takip2018.com 2 months ago
+    Reply
+
+    Pretty! This was a really wonderful article. Thank you for supplying this info.
+    drink 2 months ago
+    Reply
+
+    I just want to tell you that I am newbie to weblog and definitely savored your page. More than likely I’m likely to bookmark your blog . You really come with awesome writings. Thanks a lot for sharing with us your website.
+    Life Experience Degree 2 months ago
+    Reply
+
+    I love it when folks come together and share views.
+    Great blog, stick with it!
+    gamefly free trial 1 month ago
+    Reply
+
+    If some one needs to be updated with newest technologies afterward he must be visit this site and be up to date every day.
+    taht 1 month ago
+    Reply
+
+    Only wanna tell that this is extremely helpful, Thanks for taking your time to write this.
+    mehmet bilir 1 month ago
+    Reply
+
+    mehmetbilir.info
+    tatto 4 weeks ago
+    Reply
+
+    Thanks-a-mundo for the blog.Really looking forward to read more. Awesome.
+    kurusu 3 weeks ago
+    Reply
+
+    I just want to mention I’m all new to blogs and certainly savored you’re web site. More than likely I’m want to bookmark your site . You surely have good writings. Appreciate it for sharing your web page.
+    pempe panter 3 weeks ago
+    Reply
+
+    You made some respectable points there. I seemed on the web for the issue and found most people will go together with along with your website.
+    akedemisyen 3 weeks ago
+    Reply
+
+    I just want to say I am very new to blogs and truly savored you’re web site. More than likely I’m likely to bookmark your website . You amazingly come with superb articles and reviews. Regards for sharing your webpage.
+    zeypek 3 weeks ago
+    Reply
+
+    You made some respectable points there. I seemed on the web for the issue and found most people will go together with along with your website.
+    direk 3 weeks ago
+    Reply
+
+    I just want to say I am very new to blogs and truly savored you’re web site. More than likely I’m likely to bookmark your website . You amazingly come with superb articles and reviews. Regards for sharing your webpage.
+    wo 3 weeks ago
+    Reply
+
+    I just want to say I am very new to blogs and truly savored you’re web site. More than likely I’m likely to bookmark your website . You amazingly come with superb articles and reviews. Regards for sharing your webpage.
+    laikliks 3 weeks ago
+    Reply
+
+    Amazing blog layout here. Was it hard creating a nice looking website like this?
+    kundolf 3 weeks ago
+    Reply
+
+    thank you web site admin
+    kundolf 2 weeks ago
+    Reply
+
+    thank you web site admin
+    var 2 weeks ago
+    Reply
+
+    thank you web site admin
+    tik 2 weeks ago
+    Reply
+
+    I just want to mention I’m all new to blogs and certainly savored you’re web site. More than likely I’m want to bookmark your site . You surely have good writings. Appreciate it for sharing your web page.
+    pk 2 weeks ago
+    Reply
+
+    I just want to mention I’m all new to blogs and certainly savored you’re web site. More than likely I’m want to bookmark your site . You surely have good writings. Appreciate it for sharing your web page.
+    dat 2 weeks ago
+    Reply
+
+    Amazing blog layout here. Was it hard creating a nice looking website like this?
+    sul 2 weeks ago
+    Reply
+
+    Amazing blog layout here. Was it hard creating a nice looking website like this?
+    de 2 weeks ago
+    Reply
+
+    You made some respectable points there. I seemed on the web for the issue and found most people will go together with along with your website.
+    pik 2 weeks ago
+    Reply
+
+    thank you web site admin
+    pik 2 weeks ago
+    Reply
+
+    thank you web site admin
+    kiktok 2 weeks ago
+    Reply
+
+    I just want to mention I’m all new to blogs and certainly savored you’re web site. More than likely I’m want to bookmark your site . You surely have good writings. Appreciate it for sharing your web page.
+    z 2 weeks ago
+    Reply
+
+    I am not very superb with English but I find this very easygoing to translate.
+    childds 2 weeks ago
+    Reply
+
+    Amazing blog layout here. Was it hard creating a nice looking website like this?
+    starcild 2 weeks ago
+    Reply
+
+    I just want to mention I’m all new to blogs and certainly savored you’re web site. More than likely I’m want to bookmark your site . You surely have good writings. Appreciate it for sharing your web page.
+    kold childs 1 week ago
+    Reply
+
+    I just want to say I am very new to blogs and truly savored you’re web site. More than likely I’m likely to bookmark your website . You amazingly come with superb articles and reviews. Regards for sharing your webpage.
+    indir child 1 week ago
+    Reply
+
+    I just want to mention I’m all new to blogs and certainly savored you’re web site. More than likely I’m want to bookmark your site . You surely have good writings. Appreciate it for sharing your web page.
+    childse 1 week ago
+    Reply
+
+    I just want to mention I’m all new to blogs and certainly savored you’re web site. More than likely I’m want to bookmark your site . You surely have good writings. Appreciate it for sharing your web page.
+    eroin 1 week ago
+    Reply
+
+    thank you web site admin
+    prevartif 1 week ago
+    Reply
+
+    thank you web site admin
+    kondom 1 week ago
+    Reply
+
+    thank you web site admin
+    lilika 1 week ago
+    Reply
+
+    thank you web site admin
+    direksiyon 6 days ago
+    Reply
+
+    Only wanna tell that this is extremely helpful, Thanks for taking your time to write this.
+    cilds prn 5 days ago
+    Reply
+
+    I just want to say I am very new to blogs and truly savored you’re web site. More than likely I’m likely to bookmark your website . You amazingly come with superb articles and reviews. Regards for sharing your webpage.
+    sari childs 5 days ago
+    Reply
+
+    thank you web site admin
+    kulk childs 2 days ago
+    Reply
+
+    You made some respectable points there. I seemed on the web for the issue and found most people will go together with along with your website.
+    korn childs 2 days ago
+    Reply
+
+    thank you web site admin
+    korn childs 2 days ago
+    Reply
+
+    thank you web site admin
+
+Leave a Comment Cancel reply
+
+Your email address will not be published.
+
+You may also like
+post-image
+10 basic data visualization tips all designers should follow
+Posted on Jul 30, 2014 Nov 30, 2018 Author Guest
+Data visualization is the graphical representation of data. It provides an easy way to understand trends, outliers, and patterns in data by using visual...
+Read More
+post-image
+Top 3 trends in data visualization
+Posted on Aug 21, 2013 Feb 4, 2019 Author Guest
+Data visualization is core to business intelligence (BI), as it’s the means by which data is communicated to the user. Results, alerts suggestions, or...
+Read More
+post-image
+Dos and don’ts of designing an efficient Tableau dashboard
+Posted on Jan 9, 2019 Author Guest
+Dashboard to its user is what an assistant is his boss. While an assistant helps in managing multiple tasks for his boss, dashboard helps...
+Read More
+post-image
+Big data meets design – Visual communication in big data
+Posted on Oct 10, 2017 Dec 23, 2018 Author I Vijaya Kumar
+The Big Data landscape is defined by four Vs – volume, velocity, veracity, and variety. It also includes interactive data visuals that convey insights...
+Read More
+post-image
+How Data Visualization Helped Me Run Faster
+Posted on Jun 15, 2014 Nov 6, 2018 Author Guest
+Could you use a data visualization lift in your life and work? I never thought I’d be that guy who tracks his fitness data....
+Read More
+post-image
+9 golden rules of data visualization – Infographic
+Posted on Oct 3, 2017 Dec 2, 2018 Author Baiju NT
+Data visualization is the presentation of data in a pictorial or graphical format. It enables decision makers to see analytics presented visually, so they...
+Read More
+Our channels
+
+    About us
+    Events
+    Newsletter
+    Advertise with us
+    Write for us
+    Author guidelines
+    Contact us
+    Partnerships
+    Privacy Policy
+    RSS feed
+
+Testimonials
+One stop resource
+
+Great effort from team BDMS and Crayon Data to put up a portal like this. Great work.
+Diana Bhathena
+Contributor
+Something unique
+
+Big Data Made Simple is one of the best big data content portals that I know. Great resource. Keep it up.
+Manu Jeevan Prakash
+Big Data Blogger
+Our Event Partners
+Subscribe
+Subscribe to our newsletter to get regular updates on latest tech trends, news etc...
+Name
+Email *
+
+
+Copyright © 2018 Crayon Data. All rights reserved.
+Pin It on Pinterest
+
+    …
+    …
+    …
+
+ 

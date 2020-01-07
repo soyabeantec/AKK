@@ -1,0 +1,396 @@
+Logz.io logo logz.io logo mobile
+FREE TRIAL
+
+    Product
+        Alerts
+        Application Insights
+        Cognitive Insights
+        Data Optimizer
+        ELK Apps
+        Live Tail
+        Log Parsing
+        Security Analytics
+        SOC 2 Compliance
+        Time Series Analytics
+    Solutions
+        AI-Accelerated DevOps
+        AI-Powered Log Analysis
+        AWS Analytics
+        Azure Analytics
+        Infrastructure Protection with ELK
+        IT Operations Analytics
+    Pricing
+    Company
+        Customers
+        Partners
+        Careers
+        Contact Us
+    Resources
+        Blog
+        Case Studies
+        The Complete ELK Stack Guide
+        Open Source
+        Community
+        Docs
+        Support
+    Free Trial
+    Request Demo
+    Search
+    Login
+
+    Product
+        Alerts
+        Application Insights
+        Cognitive Insights
+        Data Optimizer
+        ELK Apps
+        Live Tail
+        Log Parsing
+        Security Analytics
+        SOC 2 Compliance
+        Time Series Analytics
+    Solutions
+        AI-Accelerated DevOps
+        AI-Powered Log Analysis
+        AWS Analytics
+        Azure Analytics
+        Infrastructure Protection with ELK
+        IT Operations Analytics
+    Pricing
+    Company
+        Customers
+        Partners
+        Careers
+        Contact Us
+    Resources
+        Blog
+        Case Studies
+        The Complete ELK Stack Guide
+        Open Source
+        Community
+        Docs
+        Support
+    Free Trial
+    Request Demo
+    Search
+    Login
+
+    Cloud
+    Community
+    DevOps
+    ELK Stack
+    News
+
+Installing the ELK Stack on Docker
+Daniel Berman Daniel Berman
+Daniel Berman
+Feb 8th, 2018 | 3 comments |
+
+    Docker
+    ELK Installation
+
+install elk stack on docker
+
+    Home
+    >
+    Blog
+    >
+    ELK Stack
+    >
+    Installing the ELK Stack on Docker
+
+ 
+
+The ELK Stack ( Elasticsearch , Logstash and Kibana ) can be installed on a variety of different operating systems and in various different setups. While the most common installation setup is Linux and other Unix-based systems, a less-discussed scenario is using Docker .
+
+One of the reasons for this could be a contradiction between what is required from a data pipeline architecture — persistence, robustness, security — and the ephemeral and distributed nature of Docker. Having said that, and as demonstrated in the instructions below — Docker can be an extremely easy way to set up the stack.
+
+Just a few words on my environment before we begin — I’m using a recent version of Docker for Mac.
+
+Docker Docker
+Running our Dockerized ELK
+
+There are various ways to install the stack with Docker. You can pull Elastic’s individual images and run the containers separately or use Docker Compose to build the stack from a variety of available images on the Docker Hub.
+
+For this tutorial, I am using a Dockerized ELK Stack that results in: three Docker containers running in parallel, for Elasticsearch, Logstash and Kibana, port forwarding set up, and a data volume for persisting Elasticsearch data.
+
+To clone the repository:
+git clone https://github.com/deviantony/docker-elk.git remote: Counting objects: 1112, done. remote: Total 1112 (delta 0), reused 0 (delta 0), pack-reused 1112 Receiving objects: 100% (1112/1112), 234.87 KiB | 84.00 KiB/s, done. Resolving deltas: 100% (414/414), done. Checking connectivity... done.
+1
+2
+3
+4
+5
+6
+7
+	
+git clone https : //github.com/deviantony/docker-elk.git
+ 
+remote : Counting objects : 1112 , done .
+remote : Total 1112 ( delta 0 ) , reused 0 ( delta 0 ) , pack - reused 1112
+Receiving objects : 100 % ( 1112 / 1112 ) , 234.87 KiB | 84.00 KiB / s , done .
+Resolving deltas : 100 % ( 414 / 414 ) , done .
+Checking connectivity . . . done .
+
+You can tweak the docker-compose.yml file or the Logstash configuration file if you like before running the stack, but for the initial testing, the default settings should suffice.  
+
+To run the stack, simply use:
+cd /docker-elk docker-compose up -d
+1
+2
+	
+cd / docker - elk
+docker - compose up - d
+
+Verifying the installation
+
+It might take a while before the entire stack is pulled, built and initialized. After a few minutes, you can begin to verify that everything is running as expected.
+
+Start with listing your containers:
+docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES a1a00714081a dockerelk_kibana "/bin/bash /usr/loca…" 54 seconds ago Up 53 seconds 0.0.0.0:5601->5601/tcp dockerelk_kibana_1 91ca160f606f dockerelk_logstash "/usr/local/bin/dock…" 54 seconds ago Up 53 seconds 5044/tcp, 0.0.0.0:5000->5000/tcp, 9600/tcp dockerelk_logstash_1 de7e3368aa0c dockerelk_elasticsearch "/usr/local/bin/dock…" 55 seconds ago Up 54 seconds 0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp dockerelk_elasticsearch_1
+1
+2
+3
+4
+5
+6
+	
+docker ps
+ 
+CONTAINER ID         IMAGE                             COMMAND                   CREATED             STATUS               PORTS                                             NAMES
+a1a00714081a         dockerelk _ kibana                    "/bin/bash /usr/loca…"    54 seconds ago       Up 53 seconds        0.0.0.0 : 5601 -> 5601 / tcp                           dockerelk_kibana _ 1
+91ca160f606f          dockerelk _ logstash                  "/usr/local/bin/dock…"    54 seconds ago       Up 53 seconds        5044 / tcp , 0.0.0.0 : 5000 -> 5000 / tcp , 9600 / tcp       dockerelk_logstash_1
+de7e3368aa0c         dockerelk _ elasticsearch            "/usr/local/bin/dock…"    55 seconds ago       Up 54 seconds        0.0.0.0 : 9200 -> 9200 / tcp , 0.0.0.0 : 9300 -> 9300 / tcp   dockerelk_elasticsearch_1
+
+You’ll notice that ports on my localhost have been mapped to the default ports used by Elasticsearch (9200/9300), Kibana (5601) and Logstash (5000/5044).
+
+You can now query Elasticsearch using:
+curl http://localhost:9200 { "name" : "VO32TCU", "cluster_name" : "docker-cluster", "cluster_uuid" : "pFgIXMErShCm1R1cd3JgTg", "version" : { "number" : "6.1.0", "build_hash" : "c0c1ba0", "build_date" : "2017-12-12T12:32:54.550Z", "build_snapshot" : false, "lucene_version" : "7.1.0", "minimum_wire_compatibility_version" : "5.6.0", "minimum_index_compatibility_version" : "5.0.0" }, "tagline" : "You Know, for Search" }
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+	
+curl http : //localhost:9200
+{
+   "name" : "VO32TCU" ,
+   "cluster_name" : "docker-cluster" ,
+   "cluster_uuid" : "pFgIXMErShCm1R1cd3JgTg" ,
+   "version" : {
+     "number" : "6.1.0" ,
+     "build_hash" : "c0c1ba0" ,
+     "build_date" : "2017-12-12T12:32:54.550Z" ,
+     "build_snapshot" : false ,
+     "lucene_version" : "7.1.0" ,
+     "minimum_wire_compatibility_version" : "5.6.0" ,
+     "minimum_index_compatibility_version" : "5.0.0"
+   } ,
+   "tagline" : "You Know, for Search"
+}
+
+And finally, access Kibana by entering: http://localhost:5601 in your browser.
+
+Welcome to Kibana Welcome to Kibana
+Shipping data into the Dockerized ELK Stack
+
+Our next step is to forward some data into the stack. By default, the stack will be running Logstash with the default Logstash configuration file . You can configure that file to suit your purposes and ship any type of data into your Dockerized ELK and then restart the container.
+More on the subject:
+
+    Looking Forward to DockerCon 2018
+    Docker Logging with the ELK Stack – Part One
+    Installing the ELK Stack on Alibaba Cloud: Step by Step Guide
+
+Alternatively, you could install Filebeat — either on your host machine or as a container and have Filebeat forward logs into the stack. I highly recommend reading up on using Filebeat on the project’s documentation site .
+
+I am going to install Metricbeat and have it ship data directly to our Dockerized Elasticsearch container (the instructions below show the process for Mac).
+
+First, I will download and install Metricbeat:
+curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.1 .2-darwin-x86_64.tar.gz tar xzvf metricbeat-6.1.2-darwin-x86_64.tar.gz
+1
+2
+3
+4
+5
+	
+curl - L - O
+https : //artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.1
+. 2 - darwin - x86_64 . tar . gz
+ 
+tar xzvf metricbeat - 6.1.2 - darwin - x86_64 . tar . gz
+
+Next, I’m going to configure the metricbeat.yml file to collect metrics on my operating system and ship them to the Elasticsearch container:
+cd metricbeat-6.1.2-darwin-x86_64 sudo vim metricbeat.yml
+1
+2
+	
+cd metricbeat - 6.1.2 - darwin - x86_64
+sudo vim metricbeat . yml
+
+The configurations:
+metricbeat.modules: - module: system metricsets: - cpu - filesystem - memory - network - process enabled: true period: 10s processes: ['.*'] cpu_ticks: false fields: env: dev output.elasticsearch: # Array of hosts to connect to. hosts: ["localhost:9200"]
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+	
+metricbeat . modules :
+- module : system
+   metricsets :
+     - cpu
+     - filesystem
+     - memory
+     - network
+     - process
+   enabled : true
+   period : 10s
+   processes : [ '.*' ]
+   cpu_ticks : false
+ 
+fields :
+   env : dev
+ 
+output . elasticsearch :
+   # Array of hosts to connect to.
+   hosts : [ "localhost:9200" ]
+
+Last but not least, to start Metricbeat (again, on Mac only):
+sudo chown root metricbeat.yml sudo chown root modules.d/system.yml sudo ./metricbeat -e -c metricbeat.yml -d "publish"
+1
+2
+3
+	
+sudo chown root metricbeat . yml
+sudo chown root modules . d / system . yml
+sudo . / metricbeat - e - c metricbeat . yml - d "publish"
+
+After a second or two, you will see a Metricbeat index created in Elasticsearch, and it’s pattern identified in Kibana.
+curl -XGET 'localhost:9200/_cat/indices?v&pretty' health status index uuid pri rep docs.count docs.deleted store.size pri.store.size yellow open .kibana XPHh2YDCSKKyz7PtmHyrMw 1 1 2 1 67kb 67kb yellow open metricbeat-6.1.2-2018.01.25 T_8jrMFoRYqL3IpZk1zU4Q 1 1 15865 0 3.4mb 3.4mb
+1
+2
+3
+4
+5
+	
+curl - XGET 'localhost:9200/_cat/indices?v&pretty'
+ 
+health status index                       uuid                   pri rep docs . count docs . deleted store . size pri . store . size
+yellow open    . kibana                     XPHh2YDCSKKyz7PtmHyrMw    1    1            2              1        67kb            67kb
+yellow open   metricbeat - 6.1.2 - 2018.01.25 T _ 8jrMFoRYqL3IpZk1zU4Q    1    1        15865              0        3.4mb            3.4mb
+
+Create Index Pattern Create Index Pattern
+
+Define the index pattern, and on the next step select the @timestamp field as your Time Filter.
+
+timestamp timestamp
+
+Creating the index pattern, you will now be able to analyze your data on the Kibana Discover page.
+
+bar graph bar graph
+Endnotes
+
+For a sandbox environment used for development and testing, Docker is one of the easiest and most efficient ways to set up the stack. Perhaps surprisingly, ELK is being increasingly used on Docker for production environments as well, as reflected in this survey I conducted a while ago:
+
+twitter twitter
+
+Of course, a production ELK stack entails a whole set of different considerations that involve cluster setups, resource configurations, and various other architectural elements.
+Looking for a scalable ELK solution for your Dockerized environment? Check out Logz.io!
+Start your Free Trial
+
+ 
+Share
+Tweet
+Share
+8 Shares
+Related Posts
+DevOps News and Tips Straight to your Inbox
+*
+Subscribe
+By submitting you are accepting our Terms of Use and our Privacy Policy
+Thank you for Subscribing!
+
+    PRODUCT
+        Alerts
+        Application Insights
+        Cognitive Insights
+        Data Optimizer
+        Live Tail
+        Log Parsing
+        Security Analytics
+        SOC 2 Compliance
+        ELK Apps
+        Time Series Analytics
+    RESOURCES
+        Logz.io Open Source
+        Blog
+        Guides
+        Case Studies
+        Community
+        Docs
+        Support
+    PRICING
+        Plans
+        FAQs
+        Request Demo
+    ABOUT US
+        Our Customers
+        Newsroom
+        Logz.io in the Headlines
+        Partners
+        Contribute to Our Blog
+        Careers
+        Contact Us
+    Social
+
+logz-logo
+
+    Privacy Policy
+    Terms Of Use
+    All rights Reserved by Logz.io © 2019
+
+X
+Turn machine data into actionable insights with  ELK as a Service
+By submitting this form you are accepting our Terms of Use and our Privacy Policy
+
+X
+DevOps News and Tips to your inbox
+*
+Subscribe
+By submitting this form you are accepting our Terms of Use and our Privacy Policy
+
+We write about DevOps. Log Analytics, Elasticsearch and much more!
+logz.io logo white
+Get the latest posts on the ELK Stack, Devops and Log Analytics
+*
+Subscribe
+Thank you for Subscribing!
+× logz logo
+Use the field below to search Logz.io...
+Search Logz.io
+This website uses cookies. By continuing to browse this site, you agree to this use. Learn more. Okay, thanks

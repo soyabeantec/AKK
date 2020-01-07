@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>logo-maps-24-color</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="-0.0004 0.005 13.9996 0.005 13.9996 11.3498 -0.0004 11.3498"></polygon>
+        <polygon id="path-3" points="0 0.1475 23.9996 0.1475 23.9996 11 0 11"></polygon>
+    </defs>
+    <g id="logo-maps-24-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-9" transform="translate(0.000000, -1.000000)">
+            <path d="M12,16.4185 C12,16.4185 15.119,14.8425 17.193,12.3385 L15.477,11.0515 C13.416,9.5055 10.584,9.5055 8.523,11.0515 L6.807,12.3385 C8.881,14.8425 12,16.4185 12,16.4185" id="Fill-1" fill="#353535"></path>
+            <g id="Group-5" transform="translate(5.000000, 0.995100)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-4"></g>
+                <path d="M1.8066,11.3438 L3.5236,10.0558 C5.5836,8.5108 8.4156,8.5108 10.4766,10.0558 L12.1936,11.3438 L12.1876,11.3498 C13.2206,10.1048 13.9996,8.6338 13.9996,7.0048 C13.9996,3.1388 10.8666,0.0048 6.9996,0.0048 C3.1336,0.0048 -0.0004,3.1388 -0.0004,7.0048 C-0.0004,8.6338 0.7796,10.1048 1.8126,11.3498 L1.8066,11.3438 Z" id="Fill-3" fill="#22A7F3" mask="url(#mask-2)"></path>
+            </g>
+            <g id="Group-8" transform="translate(0.000000, 13.995100)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Clip-7"></g>
+                <path d="M19.5986,0.1475 C17.2376,3.0655 13.9096,4.8215 13.3476,5.1035 L11.9996,5.7805 L10.6526,5.1035 C10.0906,4.8215 6.7626,3.0655 4.4016,0.1475 L-0.0004,3.4485 L8.5236,9.8405 C10.5836,11.3865 13.4156,11.3865 15.4766,9.8405 L23.9996,3.4485 L19.5986,0.1475 Z" id="Fill-6" fill="#FA744E" mask="url(#mask-4)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

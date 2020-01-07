@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" lang="en-us"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="51-6d3a1e.css"><link rel="stylesheet" href="override.css"><meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="What can I do with the Power BI API - Power BI">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/en-us/power-bi/developer/overview-of-power-bi-rest-api">
+		<meta property="og:description" content="What can I do with the Power BI API">
+		<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+		<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+		<meta name="breadcrumb_path" content="/power-bi/breadcrumb/toc.json">
+<meta name="uhfHeaderId" content="MSDocsHeader-MSPowerBI">
+<meta name="author" content="rkarlin">
+<meta name="description" content="What can I do with the Power BI API">
+<meta name="ms.author" content="rkarlin">
+<meta name="manager" content="kfile">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.service" content="powerbi">
+<meta name="ms.date" content="03/25/2019">
+<meta name="ms.subservice" content="powerbi-developer">
+<meta name="ms.reviewer" content="">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="powerbi-docs">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="MSDN">
+<meta name="depot_name" content="MSDN.powerbi-docs">
+<meta name="updated_at" content="2019-04-22 10:37 PM">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/powerbi-docs-pr/blob/7a49cc1bf711c1fd9474a67f909c9af9fb87e968/powerbi-docs/developer/overview-of-power-bi-rest-api.md">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/powerbi-docs-pr/blob/live/powerbi-docs/developer/overview-of-power-bi-rest-api.md">
+<meta name="document_id" content="e2ad3e3b-a1d3-12ce-1a1d-e006b4311f05">
+<meta name="document_version_independent_id" content="6c2de130-8184-bd0c-a671-bb23c50dea7a">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../TOC.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/MSDN.powerbi-docs/{branchName}{pdfName}">
+<meta name="word_count" content="294">
+
+	<meta name="scope" content="Power-BI">
+<link href="https://docs.microsoft.com/en-us/power-bi/developer/overview-of-power-bi-rest-api" rel="canonical">
+	<title>What can I do with the Power BI API - Power BI | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="1a12d9b5.css">
+
+	<link rel="stylesheet" href="cd54db8b.css">
+
+
+	<script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			azureHeaderLocale: 'en-us',
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/powerbi-docs',
+			feedbackProductUrl: 'https://ideas.powerbi.com/forums/265200-power-bi',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/powerbi-docs/blob/live/powerbi-docs/developer/overview-of-power-bi-rest-api.md',
+		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: false,
+			enableUHFPPE: false
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="https://static.docs.com/ui/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/fetch/2.0.3/fetch.min.js" integrity="sha384-H3LQq82b6Mm80GYRHtRSlTwO9DoXctmYCVEYk9M8mp97lRzs6DuSrHVUg3SBP9w0" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof HTMLTemplateElement === 'undefined') {
+		document.write('<script src="https://static.docs.com/ui/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof URL !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"><\/script>');
+	}
+	</script>
+
+	<script src="jquery-3.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="dcb5e6fd.js"></script><style></style><script src="jsll-4.js" async="" defer="defer"></script>
+
+<script src="https://statics-uhf-wus.akamaized.net/shell/_scrf/js/themes=default/54-af9f9f/c0-247156/de-099401/e1-a50eee/e7-954872/d8-97d509/f0-251fe2/46-be1318/77-04a268/7f-652c90/63-077520/a4-34de62/75-71ddfc/db-bc0148/dc-7e9864/78-4c7d22/9f-d154ca/e4-8302f6/cd-23d3b0/6d-1e7ed0/b7-cadaa7/ca-40b7b0/4e-ee3a55/3e-f5c39b/c3-6454d7/f9-7592d3/92-10345d/79-499886/7e-cda2d3/32-6dafa3/93-283c2d/e0-3c9860/91-97a04f/1f-100dea/33-abe4df/18-d72213?ver=2.0&amp;iife=1" defer="defer"></script></head>
+
+<body dir="ltr" class="js-focus-visible" lang="en-us">
+<div class="header-holder has-default-focus">
+	<a href="#main" class="skip-to-main-link visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Skip to main content</a>
+		<div id="headerAreaHolder" data-bi-name="header">    <div id="headerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+        
+
+
+
+
+
+		<a id="uhfSkipToMain" class="m-skip-to-main" href="#main" tabindex="0" style="z-index:3000002" data-m="{&quot;cN&quot;:&quot;Skip to content_nonnav&quot;,&quot;id&quot;:&quot;nn1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}">Skip to main content</a>
+
+
+<header role="banner" class="c-uhfh context-uhf no-js c-sgl-stck c-category-header f-transparent" itemscope="itemscope" data-header-footprint="/MSDocs/MSDocsHeader-MSPowerBI, fromService: True" data-magict="true" itemtype="http://schema.org/Organization">
+	<div class="js-global-head f-closed global-head-cont theme-light" data-m="{&quot;cN&quot;:&quot;Universal Header_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+		<div class="c-uhfh-gcontainer-st">
+			<button type="button" class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="All Microsoft expand to see list of Microsoft products and services" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Mobile menu button_nonnav&quot;,&quot;id&quot;:&quot;nn1c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			<button type="button" class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Close search" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Close Search_nonnav&quot;,&quot;id&quot;:&quot;nn2c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+					<a id="uhfLogo" class="c-logo c-sgl-stk-uhfLogo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" data-m="{&quot;cN&quot;:&quot;GlobalNav_Logo_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+						<img alt="" itemprop="logo" itemscope="itemscope" class="c-image" src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" role="presentation" aria-hidden="true">
+						<span role="presentation" aria-hidden="true">Microsoft</span>
+					</a>
+			<div class="f-mobile-title">
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-left" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile back button_nonnav&quot;,&quot;id&quot;:&quot;nn4c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+				<span data-global-title="Microsoft home" class="js-mobile-title">Power BI</span>
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-right" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile forward button_nonnav&quot;,&quot;id&quot;:&quot;nn5c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			</div>
+					<div class="c-show-pipe x-hidden-vp-mobile-st">
+						<a id="uhfCatLogo" class="c-logo c-cat-logo" href="https://powerbi.microsoft.com/" aria-label="Power BI" itemprop="url" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI_nav&quot;,&quot;id&quot;:&quot;n6c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+								<span>Power BI</span>
+						</a>
+					</div>
+				<div class="cat-logo-button-cont x-hidden">
+						<button type="button" id="uhfCatLogoButton" class="c-cat-logo-button x-hidden" aria-expanded="false" aria-label="Power BI" data-m="{&quot;cN&quot;:&quot;Power BI_nonnav&quot;,&quot;id&quot;:&quot;nn7c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+							Power BI
+						</button>
+				</div>
+
+
+
+			        <nav id="uhf-g-nav" aria-label="Contextual menu" class="c-uhfh-gnav" data-m="{&quot;cN&quot;:&quot;Category nav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                    <li class="single-link js-nav-menu x-hidden-none-mobile-vp uhf-menu-item">
+                        <a class="c-uhf-nav-link" href="https://powerbi.microsoft.com/" data-m="{&quot;cN&quot;:&quot;CatNav_Home_nav&quot;,&quot;id&quot;:&quot;n1c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}"> Home </a>
+                    </li>
+                                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_0" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Products_nonnav&quot;,&quot;id&quot;:&quot;nn2c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" style="white-space:nowrap">Products</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Products_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;What is Power BI_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_1" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/what-is-power-bi/" data-m="{&quot;cN&quot;:&quot;CatNav_What is Power BI_nav&quot;,&quot;id&quot;:&quot;n1c1c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c3c8c2m1r1a1&quot;}">What is Power BI</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c3c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_2" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/features/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI_nav&quot;,&quot;id&quot;:&quot;n1c2c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c3c8c2m1r1a1&quot;}">Power BI</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Desktop_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_3" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/desktop/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Desktop_nav&quot;,&quot;id&quot;:&quot;n1c3c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c3c8c2m1r1a1&quot;}">Power BI Desktop</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Premium_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c3c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_4" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/power-bi-premium/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Premium_nav&quot;,&quot;id&quot;:&quot;n1c4c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c3c8c2m1r1a1&quot;}">Power BI Premium</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Mobile_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c3c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_5" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/mobile/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Mobile_nav&quot;,&quot;id&quot;:&quot;n1c5c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c3c8c2m1r1a1&quot;}">Power BI Mobile</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Embedded_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c3c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_6" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/power-bi-embedded/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Embedded_nav&quot;,&quot;id&quot;:&quot;n1c6c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c3c8c2m1r1a1&quot;}">Power BI Embedded</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Power BI Report Server_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c3c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_7" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/report-server/" data-m="{&quot;cN&quot;:&quot;CatNav_Power BI Report Server_nav&quot;,&quot;id&quot;:&quot;n1c7c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c3c8c2m1r1a1&quot;}">Power BI Report Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Tour_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c3c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_8" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/tour/" data-m="{&quot;cN&quot;:&quot;CatNav_Tour_nav&quot;,&quot;id&quot;:&quot;n1c8c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c3c8c2m1r1a1&quot;}">Tour</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Pricing_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c3c8c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c3c8c2m1r1a1&quot;}">
+            <a id="pricingLink" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/pricing/" data-m="{&quot;cN&quot;:&quot;CatNav_Pricing_nav&quot;,&quot;id&quot;:&quot;n1c9c3c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c3c8c2m1r1a1&quot;}">Pricing</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_10" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Solutions_nonnav&quot;,&quot;id&quot;:&quot;nn4c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" style="white-space:nowrap">Solutions</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Solutions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Partner Showcase_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c5c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_11" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/partner-showcase/" data-m="{&quot;cN&quot;:&quot;CatNav_Partner Showcase_nav&quot;,&quot;id&quot;:&quot;n1c1c5c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c5c8c2m1r1a1&quot;}">Partner Showcase</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Departments_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c5c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c5c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_12" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/departments/finance/" data-m="{&quot;cN&quot;:&quot;CatNav_Departments_nav&quot;,&quot;id&quot;:&quot;n1c2c5c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c5c8c2m1r1a1&quot;}">Departments</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Industries_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c5c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c5c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_13" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/industries/" data-m="{&quot;cN&quot;:&quot;CatNav_Industries_nav&quot;,&quot;id&quot;:&quot;n1c3c5c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c5c8c2m1r1a1&quot;}">Industries</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Solution Templates_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c5c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c5c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_14" class="js-subm-uhf-nav-link" href="https://appsource.microsoft.com/marketplace/apps?product=pbi-solutiontemplates" data-m="{&quot;cN&quot;:&quot;CatNav_Solution Templates_nav&quot;,&quot;id&quot;:&quot;n1c4c5c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c5c8c2m1r1a1&quot;}">Solution Templates</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Data Stories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c5c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c5c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_15" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/publishtoweb/" data-m="{&quot;cN&quot;:&quot;CatNav_Data Stories_nav&quot;,&quot;id&quot;:&quot;n1c5c5c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c5c8c2m1r1a1&quot;}">Data Stories</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_16" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Partners_nonnav&quot;,&quot;id&quot;:&quot;nn6c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" style="white-space:nowrap">Partners</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Partners_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Overview_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_17" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/partners/" data-m="{&quot;cN&quot;:&quot;CatNav_Overview_nav&quot;,&quot;id&quot;:&quot;n1c1c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c7c8c2m1r1a1&quot;}">Overview</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Partner Showcase_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_18" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/partner-showcase/" data-m="{&quot;cN&quot;:&quot;CatNav_Partner Showcase_nav&quot;,&quot;id&quot;:&quot;n1c2c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c8c2m1r1a1&quot;}">Partner Showcase</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Consulting Services_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="findConsultingServicesLink" class="js-subm-uhf-nav-link" href="https://aka.ms/pbicsoffers" data-m="{&quot;cN&quot;:&quot;CatNav_Consulting Services_nav&quot;,&quot;id&quot;:&quot;n1c3c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c8c2m1r1a1&quot;}">Consulting Services</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Find a Partner_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_20" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/find-a-partner/" data-m="{&quot;cN&quot;:&quot;CatNav_Find a Partner_nav&quot;,&quot;id&quot;:&quot;n1c4c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c8c2m1r1a1&quot;}">Find a Partner</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Become a partner_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_21" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/become-a-partner/" data-m="{&quot;cN&quot;:&quot;CatNav_Become a partner_nav&quot;,&quot;id&quot;:&quot;n1c5c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c8c2m1r1a1&quot;}">Become a partner</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_22" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_Learn_nonnav&quot;,&quot;id&quot;:&quot;nn8c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" style="white-space:nowrap">Learn</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;Learn_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c8c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Guided Learning_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_23" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/guided-learning/" data-m="{&quot;cN&quot;:&quot;CatNav_Guided Learning_nav&quot;,&quot;id&quot;:&quot;n1c1c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c8c2m1r1a1&quot;}">Guided Learning</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Documentation_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_24" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/documentation/powerbi-landing-page/" data-m="{&quot;cN&quot;:&quot;CatNav_Documentation_nav&quot;,&quot;id&quot;:&quot;n1c2c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c8c2m1r1a1&quot;}">Documentation</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_25" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/support/" data-m="{&quot;cN&quot;:&quot;CatNav_Support_nav&quot;,&quot;id&quot;:&quot;n1c3c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c8c2m1r1a1&quot;}">Support</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Community_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_26" class="js-subm-uhf-nav-link" href="http://community.powerbi.com/" data-m="{&quot;cN&quot;:&quot;CatNav_Community_nav&quot;,&quot;id&quot;:&quot;n1c4c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c8c2m1r1a1&quot;}">Community</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Give Feedback_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_27" class="js-subm-uhf-nav-link" href="https://ideas.powerbi.com/forums/265200-power-bi" data-m="{&quot;cN&quot;:&quot;CatNav_Give Feedback_nav&quot;,&quot;id&quot;:&quot;n1c5c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c8c2m1r1a1&quot;}">Give Feedback</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Webinars_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c9c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c9c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_28" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/documentation/powerbi-webinars/" data-m="{&quot;cN&quot;:&quot;CatNav_Webinars_nav&quot;,&quot;id&quot;:&quot;n1c6c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c9c8c2m1r1a1&quot;}">Webinars</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Blog_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c9c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c9c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_29" class="js-subm-uhf-nav-link" href="https://powerbi.microsoft.com/blog/" data-m="{&quot;cN&quot;:&quot;CatNav_Blog_nav&quot;,&quot;id&quot;:&quot;n1c7c9c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c9c8c2m1r1a1&quot;}">Blog</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>
+
+                <li id="overflow-menu" class="overflow-menu x-hidden uhf-menu-item">
+                        <div class="c-uhf-menu js-nav-menu">
+        <button data-m="{&quot;pid&quot;:&quot;More&quot;,&quot;id&quot;:&quot;nn10c8c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" type="button" aria-label="More" aria-expanded="false" style="white-space:nowrap">More</button>
+        <ul id="overflow-menu-list" aria-hidden="true" class="overflow-menu-list">
+        </ul>
+    </div>
+
+                </li>
+                    <li class="single-link js-nav-menu">
+                        <a id="uhfSignInButtonCategoryMenu" class="c-uhf-nav-link x-visible-vp1-block x-visible-vp2-block right-aligned-link" href="https://app.powerbi.com/?noSignUpCheck=1" data-m="{&quot;cN&quot;:&quot;CatNav_Sign in_nav&quot;,&quot;id&quot;:&quot;n11c8c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Sign in</a>
+                    </li>
+                                    <li class="single-link js-nav-menu" id="c-uhf-nav-cta">
+                        <a id="uhfsignupfree" class="c-uhf-nav-link" href="https://powerbi.microsoft.com/get-started" data-m="{&quot;cN&quot;:&quot;CatNav_cta_Sign up free_nav&quot;,&quot;id&quot;:&quot;n12c8c2m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Sign up free</a>
+                    </li>
+            </ul>
+            
+        </nav>
+
+
+			<div class="c-uhfh-actions" data-m="{&quot;cN&quot;:&quot;Header actions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+				<div class="wf-menu">        <nav id="uhf-c-nav" aria-label="All microsoft menu" data-m="{&quot;cN&quot;:&quot;GlobalNav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                <li>
+                    <div class="c-uhf-menu js-nav-menu">
+                        <button type="button" class="c-button-logo all-ms-nav" aria-label="All Microsoft expand to see list of Microsoft products and services" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_nonnav&quot;,&quot;id&quot;:&quot;nn1c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" style="white-space: nowrap"> <span>All Microsoft</span></button>
+                        <ul class="f-multi-column f-multi-column-6" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;More_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}">
+                                    <li class="c-w0-contr">
+            <ul class="c-w0">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Office_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_31" class="js-subm-uhf-nav-link" href="https://products.office.com/en-us/home" data-m="{&quot;cN&quot;:&quot;W0Nav_Office_nav&quot;,&quot;id&quot;:&quot;n1c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c2c1c9c2m1r1a1&quot;}">Office</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Windows_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_32" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/" data-m="{&quot;cN&quot;:&quot;W0Nav_Windows_nav&quot;,&quot;id&quot;:&quot;n1c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c2c1c9c2m1r1a1&quot;}">Windows</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Surface_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_33" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/surface" data-m="{&quot;cN&quot;:&quot;W0Nav_Surface_nav&quot;,&quot;id&quot;:&quot;n1c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c2c1c9c2m1r1a1&quot;}">Surface</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Xbox_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_34" class="js-subm-uhf-nav-link" href="https://www.xbox.com/" data-m="{&quot;cN&quot;:&quot;W0Nav_Xbox_nav&quot;,&quot;id&quot;:&quot;n1c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c2c1c9c2m1r1a1&quot;}">Xbox</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Deals_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_35" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/sale?icid=gm_nav_L0_salepage" data-m="{&quot;cN&quot;:&quot;W0Nav_Deals_nav&quot;,&quot;id&quot;:&quot;n1c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c2c1c9c2m1r1a1&quot;}">Deals</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="l1_support" class="js-subm-uhf-nav-link" href="https://support.microsoft.com/en-us" data-m="{&quot;cN&quot;:&quot;W0Nav_Support_nav&quot;,&quot;id&quot;:&quot;n1c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c2c1c9c2m1r1a1&quot;}">Support</a>
+            
+        </li>
+            </ul>
+        </li>
+
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">Software</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_WindowsApps_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_39" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-apps" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_WindowsApps_nav&quot;,&quot;id&quot;:&quot;n1c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;}">Windows apps</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneDrive_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_40" class="js-subm-uhf-nav-link" href="https://onedrive.live.com/about/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneDrive_nav&quot;,&quot;id&quot;:&quot;n1c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;}">OneDrive</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Outlook_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_41" class="js-subm-uhf-nav-link" href="https://outlook.live.com/owa/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Outlook_nav&quot;,&quot;id&quot;:&quot;n1c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;}">Outlook</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Skype_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_42" class="js-subm-uhf-nav-link" href="https://www.skype.com/en/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Skype_nav&quot;,&quot;id&quot;:&quot;n1c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;}">Skype</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneNote_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_43" class="js-subm-uhf-nav-link" href="https://www.onenote.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneNote_nav&quot;,&quot;id&quot;:&quot;n1c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;}">OneNote</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cN&quot;:&quot;PCsAndDevices_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_PCsAndDevices_nonnav&quot;,&quot;id&quot;:&quot;nn1c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">PCs &amp; Devices  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCsAndDevices_PCsAndTablets_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_45" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/devices" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCsAndDevices_PCsAndTablets_nav&quot;,&quot;id&quot;:&quot;n1c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;}">PCs &amp; tablets</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCAndDevices_Accessories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_46" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/accessories/en-us" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCAndDevices_Accessories_nav&quot;,&quot;id&quot;:&quot;n1c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;}">Accessories</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">Entertainment</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_DevicesAndXbox_XboxAndGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_48" class="js-subm-uhf-nav-link" href="https://www.xbox.com/en-us/games/xbox-one?xr=shellnav" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_DevicesAndXbox_XboxAndGames_nav&quot;,&quot;id&quot;:&quot;n1c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;}">Xbox games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Entertainment_PCGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_49" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-games" data-m="{&quot;cN&quot;:&quot;GlobalNav_Entertainment_PCGames_nav&quot;,&quot;id&quot;:&quot;n1c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;}">PC games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_WindowsDigitalGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_50" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/games/windows?icid=TopNavWindowsGames" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_WindowsDigitalGames_nav&quot;,&quot;id&quot;:&quot;n1c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;}">Windows digital games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_MoviesAndTV_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_51" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/movies-and-tv?icid=TopNavMoviesAndTv" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_MoviesAndTV_nav&quot;,&quot;id&quot;:&quot;n1c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;}">Movies &amp; TV</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_Books_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_52" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/books" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_Books_nav&quot;,&quot;id&quot;:&quot;n1c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;}">Books</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">Business</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftAzure_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_54" class="js-subm-uhf-nav-link" href="https://azure.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftAzure_nav&quot;,&quot;id&quot;:&quot;n1c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;}">Microsoft Azure</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftDynamics365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_55" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/dynamics365/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftDynamics365_nav&quot;,&quot;id&quot;:&quot;n1c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;}">Microsoft Dynamics 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Microsoft365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_56" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/microsoft-365/?omkt=en-US" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Microsoft365_nav&quot;,&quot;id&quot;:&quot;n1c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;}">Microsoft 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_Enterprise_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_57" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/enterprise" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_Enterprise_nav&quot;,&quot;id&quot;:&quot;n1c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;}">Microsoft Industry</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_DataPlatform_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_58" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/sql-server/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_DataPlatform_nav&quot;,&quot;id&quot;:&quot;n1c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;}">Data platform</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_MicrosoftAdvertising_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_59" class="js-subm-uhf-nav-link" href="https://go.microsoft.com/fwlink/?linkid=2026638" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_MicrosoftAdvertising_nav&quot;,&quot;id&quot;:&quot;n1c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;}">Microsoft Advertising</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Licensing_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="Licensing" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/licensing/default" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Licensing_nav&quot;,&quot;id&quot;:&quot;n1c8c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c10c2c1c9c2m1r1a1&quot;}">Licensing</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">Developer &amp; IT  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_.Net_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_62" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/net/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_.Net_nav&quot;,&quot;id&quot;:&quot;n1c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;}">.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DevelopersAndIT_VisualStudio_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_63" class="js-subm-uhf-nav-link" href="https://visualstudio.microsoft.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DevelopersAndIT_VisualStudio_nav&quot;,&quot;id&quot;:&quot;n1c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;}">Visual Studio</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_ProductsandServices_WindowsServer_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_64" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/cloud-platform/windows-server" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_ProductsandServices_WindowsServer_nav&quot;,&quot;id&quot;:&quot;n1c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;}">Windows Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_WindowsDevCenter_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_65" class="js-subm-uhf-nav-link" href="https://developer.microsoft.com/en-us/windows" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_WindowsDevCenter_nav&quot;,&quot;id&quot;:&quot;n1c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;}">Windows Dev Center</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_Docs.microsoft.com_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_66" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_Docs.microsoft.com_nav&quot;,&quot;id&quot;:&quot;n1c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;}">Docs</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">Other</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Other_MicrosoftStore_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_68" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_Other_MicrosoftStore_nav&quot;,&quot;id&quot;:&quot;n1c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;}">Microsoft Store</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Microsoft Rewards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_69" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/rewards" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Microsoft Rewards_nav&quot;,&quot;id&quot;:&quot;n1c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;}">Microsoft Rewards </a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_SoftwareAndServices_FreeDownloadsAndSecurity_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_70" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/download/default.aspx" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_SoftwareAndServices_FreeDownloadsAndSecurity_nav&quot;,&quot;id&quot;:&quot;n1c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;}">Free downloads &amp; security</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_ForStudentsAndEducators_Education_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_71" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/education?icid=CNavMSCOML0_Studentsandeducation" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_ForStudentsAndEducators_Education_nav&quot;,&quot;id&quot;:&quot;n1c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;}">Education</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Store_Locations_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_72" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/locations/find-a-store?icid=TopNavStoreLocations" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Store_Locations_nav&quot;,&quot;id&quot;:&quot;n1c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;}">Store locations</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Store_More_GiftCards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_73" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/gift-cards" data-m="{&quot;cN&quot;:&quot;GlobalNav_Store_More_GiftCards_nav&quot;,&quot;id&quot;:&quot;n1c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;}">Gift cards</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+                                                            <li class="f-multi-column-info">
+                                    <a data-m="{&quot;id&quot;:&quot;n13c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:13,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}" href="https://www.microsoft.com/en-us/sitemap.aspx" aria-label="" class="c-glyph">View Sitemap</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+</div>
+		<form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://docs.microsoft.com/search" method="GET" title="Search" data-seautosuggest="{&quot;queryParams&quot;:{&quot;market&quot;:&quot;en-us&quot;,&quot;clientId&quot;:&quot;7F27B536-CF6B-4C65-8638-A0F8CBDFCA65&quot;,&quot;sources&quot;:&quot;Microsoft-Terms,Iris-Products,DCatAll-Products&quot;,&quot;filter&quot;:&quot;+ClientType:StoreWeb&quot;,&quot;counts&quot;:&quot;5,1,5&quot;},&quot;familyNames&quot;:{&quot;Apps&quot;:&quot;App&quot;,&quot;Books&quot;:&quot;Book&quot;,&quot;Bundles&quot;:&quot;Bundle&quot;,&quot;Devices&quot;:&quot;Device&quot;,&quot;Fees&quot;:&quot;Fee&quot;,&quot;Games&quot;:&quot;Game&quot;,&quot;MusicAlbums&quot;:&quot;Album&quot;,&quot;MusicTracks&quot;:&quot;Song&quot;,&quot;MusicVideos&quot;:&quot;Video&quot;,&quot;MusicArtists&quot;:&quot;Artist&quot;,&quot;OperatingSystem&quot;:&quot;Operating System&quot;,&quot;Software&quot;:&quot;Software&quot;,&quot;Movies&quot;:&quot;Movie&quot;,&quot;TV&quot;:&quot;TV&quot;,&quot;CSV&quot;:&quot;Gift Card&quot;,&quot;VideoActor&quot;:&quot;Actor&quot;}}" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest" data-m="{&quot;cN&quot;:&quot;GlobalNav_Search_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" aria-expanded="false">
+			<input id="cli_shellHeaderSearchInput" aria-label="search expanded" aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" aria-owns="universal-header-search-auto-suggest-ul" name="search" placeholder="Search" data-m="{&quot;cN&quot;:&quot;SearchBox_nav&quot;,&quot;id&quot;:&quot;n1c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" type="search">
+			<button id="search" aria-label="Search" class="c-glyph" data-m="{&quot;cN&quot;:&quot;Search_nav&quot;,&quot;id&quot;:&quot;n2c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" data-bi-dnt="true" data-bi-mto="true" aria-expanded="false">
+				<span role="presentation">Search</span>
+			</button>
+			<div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+				<ul class="c-menu" id="universal-header-search-auto-suggest-ul" aria-hidden="true" data-bi-dnt="true" data-bi-mto="true" data-js-auto-suggest-position="default" role="listbox" data-tel="jsll" data-m="{&quot;cN&quot;:&quot;search suggestions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}"></ul>
+			</div>
+			
+		</form>
+		<button data-m="{&quot;cN&quot;:&quot;cancel-search&quot;,&quot;pid&quot;:&quot;Cancel Search&quot;,&quot;id&quot;:&quot;nn4c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" id="cancel-search" class="cancel-search" aria-label="Cancel Search">
+			<span>Cancel</span>
+		</button>
+				
+			</div>
+		</div>
+		
+		
+	</div>
+	
+</header>
+
+
+
+
+    </div>
+        </div>
+
+    </div>
+</div>
+	<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+		<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+		<!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/">
+				Docs
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/power-bi/">
+				Power BI
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/power-bi/developer/embedding">
+				Developer
+			</a>
+		</li><!---->
+	<!----></ul>
+		</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+			
+		</div>
+		<div class="action-bar">
+			<ul class="action-list">
+						<li>
+							<a href="#feedback" class="button is-text is-small is-icon-only-touch" data-bi-name="comments">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="action-item-text is-hidden-portrait">Feedback</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/MicrosoftDocs/powerbi-docs/blob/live/powerbi-docs/developer/overview-of-power-bi-rest-api.md" class="button is-text is-icon-only-touch is-small" title="Edit This Document" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/powerbi-docs-pr/blob/live/powerbi-docs/developer/overview-of-power-bi-rest-api.md" data-original_content_git_url_template="" data-pr_repo="" data-pr_branch="">
+									<span class="icon">
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="action-item-text is-hidden-portrait">Edit</span>
+								</a>
+							</li>
+				<li>
+					<div class="sharing dropdown has-caret" auto-align="">
+						<button class="dropdown-trigger button is-text is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-sharing"></span>
+							</span>
+							<span class="action-item-text is-hidden-portrait">Share</span>
+						</button>
+						<div class="dropdown-menu" id="sharing-menu">
+							<ul data-bi-name="share-links">
+								<li>
+									<a class="share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpower-bi%2Fdeveloper%2Foverview-of-power-bi-rest-api%3FWT.mc_id%3Dtwitter&amp;text=What%20can%20I%20do%20with%20the%20Power%20BI%20API%20-%20Power%20BI%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpower-bi%2Fdeveloper%2Foverview-of-power-bi-rest-api%3FWT.mc_id%3Dtwitter">
+										<span class="icon">
+											<span class="docon docon-brand-twitter" aria-hidden="true"></span>
+										</span>
+										<span>Twitter</span>
+									</a>
+								</li>
+								<li>
+									<a class="share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpower-bi%2Fdeveloper%2Foverview-of-power-bi-rest-api%3FWT.mc_id%3Dlinkedin">
+										<span class="icon">
+											<span class="docon docon-brand-linkedin" aria-hidden="true"></span>
+										</span>
+										<span>LinkedIn</span>
+									</a>
+								</li>
+								<li>
+									<a class="share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpower-bi%2Fdeveloper%2Foverview-of-power-bi-rest-api%3FWT.mc_id%3Dfacebook">
+										<span class="icon">
+											<span class="docon docon-brand-facebook" aria-hidden="true"></span>
+										</span>
+										<span>Facebook</span>
+									</a>
+								</li>
+								<li>
+									<a class="share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20What%20can%20I%20do%20with%20the%20Power%20BI%20API%20-%20Power%20BI%20%7C%20Microsoft%20Docs&amp;body=What%20can%20I%20do%20with%20the%20Power%20BI%20API%20-%20Power%20BI%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpower-bi%2Fdeveloper%2Foverview-of-power-bi-rest-api%3FWT.mc_id%3Demail">
+										<span class="icon">
+											<span class="docon docon-mail-message-fill" aria-hidden="true"></span>
+										</span>
+										<span>Email</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="is-unstyle-action-list-item">
+<div class="dropdown has-caret" auto-align="">
+	<button class="dropdown-trigger button is-text is-small is-icon-only-touch" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span class="action-item-text is-hidden-portrait">Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<div class="theme-selector has-padding-small">
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" role="menuitem" aria-selected="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" role="menuitem" aria-selected="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" role="menuitem" aria-selected="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>				</li>
+				<li class="is-unstyled-action-list-item">
+					<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-text-primary is-small" href="#">Sign in</a>
+					<div class="dropdown has-caret auth-status-determined authenticated" auto-align="">
+						<button class="dropdown-trigger button is-text is-small is-icon-only-touch has-inner-focus" aria-label="Your Account" aria-controls="user-menu" aria-expanded="false">
+							<span class="icon" aria-hidden="true">
+								<span class="image">
+									<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+								</span>
+							</span>
+							<span class="is-truncated has-margin-left-small" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle has-margin-bottom-none">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="upn"></span>
+									</p>
+									<ul class="is-unstyled has-margin-none has-margin-top-small">
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profile</a></li>
+										<li><a class="docs-sign-out" href="#">Sign out</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button" aria-label="Contents" data-bi-name="contents-expand-">
+				<span class="docon docon-editor-list-bullet"></span><span>Contents</span>
+			</button>
+		</div>
+	</div>
+
+		<div id="banner-holder" class="has-default-focus has-overflow-hidden">
+		</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"></div>
+	</div>
+
+	<div class="mainContainer uhf-container  has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primary" style="width: 279.983px; top: 119.5px; bottom: 24px;" data-bi-name="left toc"><form action="javascript:" role="search" aria-label="Search" class="is-full-width has-margin-bottom-small"><label class="visually-hidden" for="ax-0">Search</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!---->
+		<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-0" class="autocomplete-input input is-small is-full-width" aria-expanded="false" aria-owns="ax-1-listbox" aria-activedescendant="" placeholder="Filter by title" type="text">
+
+		<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+
+		<ul class="autocomplete-suggestions has-margin-none is-vertically-scrollable" role="listbox" id="ax-1-listbox" hidden="">
+			
+		</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Table of contents" data-bi-name="tree"><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI Desktop</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI service</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI Premium</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI Paginated Report Builder</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI for developers</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/power-bi/developer/what-can-you-do">What can developers do with Power BI</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Embedded Analytics</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Custom Visuals</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Automation</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Overview</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf is-selected" role="treeitem" tabindex="0" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/power-bi/developer/overview-of-power-bi-rest-api">What can I do with the Power BI API?</a></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tutorials</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Concepts</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>How to</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Reference</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Resources</span></li></ul></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Power BI Report Server</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Gateways</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Administration</span></li></ul><a class="button is-small is-text has-flex-justify-content-start has-inner-focus has-margin-top-small has-border-top has-border-bottom has-flex-shrink-none" href="https://docs.microsoft.com/en-us/power-bi/opbuildpdf/TOC.pdf?branch=live" data-bi-name="downloadPdf"><!---->
+		<span class="icon is-size-8 has-text-subtle">
+			<span aria-hidden="true" class="docon docon-arrow-down"></span>
+		</span>
+		<span><!---->Download PDF<!----></span><!----></a></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" dir="ltr" lang="en-us">
+
+
+
+						<div class="columns">
+							<div class="column is-9-desktop is-12-tablet">
+
+						<h1 id="what-can-developers-do-with-the-power-bi-api" sourcefile="developer/overview-of-power-bi-rest-api.md" sourcestartlinenumber="14">What can developers do with the Power BI API?</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
+							<li class="displayDate">
+								<time role="presentation" datetime="2019-03-25T00:00:00.000Z" data-article-date-source="ms.date">03/25/2019</time>
+							</li>
+								<li class="readingTime">2 minutes to read</li>
+							<li class="contributors-holder">
+								<a class="has-inner-focus" href="https://github.com/MicrosoftDocs/powerbi-docs/blob/live/powerbi-docs/developer/overview-of-power-bi-rest-api.md" title="7 Contributors" aria-label="7 Contributors">
+									<ul class="contributors" data-bi-name="contributors" aria-hidden="true">
+												<li><img src="contributor.svg" data-src="https://github.com/rkarlin.png?size=32" role="presentation"></li>
+												<li><img src="contributor.svg" data-src="https://github.com/markingmyname.png?size=32" role="presentation"></li>
+												<li><img src="contributor.svg" data-src="https://github.com/mgblythe.png?size=32" role="presentation"></li>
+												<li><img src="contributor.svg" data-src="https://github.com/ZakharBorodin.png?size=32" role="presentation"></li>
+												<li><img src="contributor.svg" data-src="https://github.com/ktoliver.png?size=32" role="presentation"></li>
+										<li><span class="is-size-8 has-text-subtle has-margin-right-small">+2</span></li>
+									</ul>
+								</a>
+							</li>
+
+						</ul>
+
+							</div>
+							<div class="column is-3 is-text-right is-hidden-tablet-only is-hidden-mobile">
+								<p class="has-margin-top-none has-margin-bottom-small is-size-7">Is this page helpful?</p>
+								<div class="buttons is-right">
+									<button class="button thumb-rating dislike expand-rating-menu has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="No" data-bi-name="rating-no" data-bi-sat="0">
+										<span class="icon docon docon-dislike" aria-hidden="true"></span>
+									</button>
+									<button class="button thumb-rating like has-margin-left-extra-small has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="Yes" data-bi-name="rating-yes" data-bi-sat="1">
+										<span class="icon docon docon-like" aria-hidden="true"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+							<h3>In this article</h3>
+						<ol><li><a href="#api-developer-tools">API Developer tools</a></li><li><a href="#push-data-into-power-bi">Push data into Power BI</a></li><li><a href="#github-repositories">GitHub repositories</a></li><li><a href="#next-steps">Next Steps</a></li></ol></nav>
+
+
+						<!-- <content> -->
+							
+<p>Using Power BI REST API, you can create apps that integrate with Power BI reports, dashboards, and tiles.</p>
+<p>With Power BI REST API, it is possible to perform management tasks on Power BI objects like reports, datasets, and workspaces.</p>
+<p>Here are some of the things you can do with the Power BI APIs.</p>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th><strong>To learn more</strong></th>
+<th><strong>Reference this information</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embed reports, dashboards, and tiles for Power BI users and Non-Power BI users.</td>
+<td><a href="https://docs.microsoft.com/en-us/power-bi/developer/embedding-content" data-linktype="relative-path">How to embed your Power BI dashboards, reports, and tiles </a></td>
+</tr>
+<tr>
+<td>Perform management tasks on Power BI objects.</td>
+<td><a href="https://docs.microsoft.com/rest/api/power-bi/" data-linktype="external">Power BI REST API reference</a></td>
+</tr>
+<tr>
+<td>Extend an existing business workflow to push key data into a Power BI dashboard.</td>
+<td><a href="https://docs.microsoft.com/en-us/power-bi/developer/walkthrough-push-data" data-linktype="relative-path">Push data into a dashboard </a></td>
+</tr>
+<tr>
+<td>Authenticate to Power BI.</td>
+<td><a href="https://docs.microsoft.com/en-us/power-bi/developer/get-azuread-access-token" data-linktype="relative-path">Authenticate to Power BI </a></td>
+</tr>
+</tbody>
+</table></div>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>The Power BI APIs still refer to app workspaces as groups. Any 
+references to groups mean that you are working with app workspaces.</p>
+</div>
+<h2 id="api-developer-tools">API Developer tools<a class="docon docon-link heading-anchor" href="#api-developer-tools" aria-labelledby="api-developer-tools"></a></h2>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th>Tool(s)</th>
+<th>Description</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://microsoft.github.io/PowerBI-JavaScript/demo" data-linktype="external">Playground tool</a></td>
+<td>Experience a full sample of using the Power BI JavaScript APIs. This
+ tool is also a quick way to play with different types of Power BI 
+Embedded samples.</td>
+<td aria-label="No value"></td>
+<td aria-label="No value"></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Microsoft/powerbi-javascript/wiki" data-linktype="external">Power BI JavaScript wiki</a></td>
+<td>To get more Information about the Power BI JavaScript APIs.</td>
+<td aria-label="No value"></td>
+<td aria-label="No value"></td>
+</tr>
+<tr>
+<td><a href="https://www.getpostman.com/" data-linktype="external">Postman</a></td>
+<td>Run requests, test, debug, monitor, run automated tests and more.</td>
+<td aria-label="No value"></td>
+<td aria-label="No value"></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="push-data-into-power-bi">Push data into Power BI<a class="docon docon-link heading-anchor" href="#push-data-into-power-bi" aria-labelledby="push-data-into-power-bi"></a></h2>
+<p>You can use the Power BI API to <a href="https://docs.microsoft.com/en-us/power-bi/developer/walkthrough-push-data" data-linktype="relative-path">push data into a dataset</a>.
+ This feature allows you to add a row to a table within a dataset. The 
+new data is then reflected in tiles on a dashboard and within visuals 
+within your report.</p>
+<p><img src="powerbi-push-data.png" alt="Push data sample" data-linktype="relative-path"></p>
+<h2 id="github-repositories">GitHub repositories<a class="docon docon-link heading-anchor" href="#github-repositories" aria-labelledby="github-repositories"></a></h2>
+<ul>
+<li><a href="https://github.com/Microsoft/PowerBI-Developer-Samples" data-linktype="external">Power BI Developer samples</a></li>
+<li><a href="https://github.com/Microsoft/PowerBI-CSharp" data-linktype="external">.NET SDK</a></li>
+<li><a href="https://github.com/Microsoft/PowerBI-JavaScript" data-linktype="external">JavaScript API</a></li>
+</ul>
+<h2 id="next-steps">Next Steps<a class="docon docon-link heading-anchor" href="#next-steps" aria-labelledby="next-steps"></a></h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/power-bi/developer/walkthrough-push-data" data-linktype="relative-path">Push data into a dataset</a></li>
+<li><a href="https://docs.microsoft.com/en-us/power-bi/developer/custom-visual-develop-tutorial" data-linktype="relative-path">Developing a Power BI custom visual</a></li>
+<li><a href="https://docs.microsoft.com/en-us/power-bi/developer/rest-api-reference" data-linktype="relative-path">Power BI REST API Reference</a></li>
+<li><a href="https://docs.microsoft.com/rest/api/power-bi/" data-linktype="external">Power BI REST APIs</a></li>
+</ul>
+<p>More questions? <a href="http://community.powerbi.com/" data-linktype="external">Try asking the Power BI Community</a></p>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- feedback section -->
+
+
+
+<section class="feedback-section" data-bi-name="feedback-section">
+	<div id="feedback-verbatim" class="has-border-top has-padding-top-small has-margin-top-medium has-margin-bottom-small" data-bi-name="rating">
+		<p class="has-margin-top-none has-margin-bottom-small">Was this page helpful?</p>
+		<button class="button thumb-rating dislike expand-rating-menu has-margin-right-extra-small has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="No" aria-haspopup="true" aria-controls="verbatim-input" data-bi-name="rating-no" data-bi-sat="0">
+			<span class="icon docon docon-dislike" aria-hidden="true"></span>
+		</button>
+		<button class="button thumb-rating like expand-rating-menu has-padding-extra-small is-icon-only is-secondary is-outlined is-rounded" title="Yes" aria-haspopup="true" aria-controls="verbatim-input" data-bi-name="rating-yes" data-bi-sat="1">
+			<span class="icon docon docon-like" aria-hidden="true"></span>
+		</button>
+		<form id="feedback-verbatim-form" class="is-hidden">
+			<div id="verbatim-textarea" class="box is-relative has-box-shadow-none has-border has-margin-top-medium has-padding-small is-size-7">
+				<label for="rating-feedback" class="visually-hidden">Tell us what you think.</label>
+				<textarea id="rating-feedback" rows="6" maxlength="999" placeholder="Tell us what you think." required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium">
+				<button id="skip-rating" class="button is-text is-link" type="button">Skip</button>
+				<button disabled="disabled" id="submit-rating" class="button is-primary" type="submit" data-bi-name="rating-verbatim">Submit</button>
+			</div>
+		</form>
+		<div id="thankyou-rating" class="is-hidden">
+			<p>Thank you for your feedback.</p>
+		</div>
+	</div>
+
+	<h2 id="feedback">Feedback</h2>
+
+	<div class="alert choose-feedback-type">
+		<p id="send-feedback-about" aria-hidden="true">Send feedback about</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" aria-label="Send feedback about this product" href="https://ideas.powerbi.com/forums/265200-power-bi" data-bi-name="product-feedback">
+				<span>This product</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" aria-label="Send feedback about this page" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>This page</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger is-full-height" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm0" aria-label="Additional feedback options" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm0" class="dropdown-menu documentation-feedback-menu">
+						You may also leave feedback directly on <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/powerbi-docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20e2ad3e3b-a1d3-12ce-1a1d-e006b4311f05%0A*%20Version%20Independent%20ID%3A%206c2de130-8184-bd0c-a671-bb23c50dea7a%0A*%20Content%3A%20%5BWhat%20can%20I%20do%20with%20the%20Power%20BI%20API%20-%20Power%20BI%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpower-bi%2Fdeveloper%2Foverview-of-power-bi-rest-api%29%0A*%20Content%20Source%3A%20%5Bpowerbi-docs%2Fdeveloper%2Foverview-of-power-bi-rest-api.md%5D%28https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fpowerbi-docs%2Fblob%2Flive%2Fpowerbi-docs%2Fdeveloper%2Foverview-of-power-bi-rest-api.md%29%0A*%20Service%3A%20**powerbi**%0A*%20Sub-service%3A%20**powerbi-developer**%0A*%20GitHub%20Login%3A%20%40rkarlin%0A*%20Microsoft%20Alias%3A%20**rkarlin**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+This page					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm1" aria-label="Additional feedback options" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm1" class="dropdown-menu documentation-feedback-menu">
+						You may also leave feedback directly on <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/powerbi-docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20e2ad3e3b-a1d3-12ce-1a1d-e006b4311f05%0A*%20Version%20Independent%20ID%3A%206c2de130-8184-bd0c-a671-bb23c50dea7a%0A*%20Content%3A%20%5BWhat%20can%20I%20do%20with%20the%20Power%20BI%20API%20-%20Power%20BI%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpower-bi%2Fdeveloper%2Foverview-of-power-bi-rest-api%29%0A*%20Content%20Source%3A%20%5Bpowerbi-docs%2Fdeveloper%2Foverview-of-power-bi-rest-api.md%5D%28https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fpowerbi-docs%2Fblob%2Flive%2Fpowerbi-docs%2Fdeveloper%2Foverview-of-power-bi-rest-api.md%29%0A*%20Service%3A%20**powerbi**%0A*%20Sub-service%3A%20**powerbi-developer**%0A*%20GitHub%20Login%3A%20%40rkarlin%0A*%20Microsoft%20Alias%3A%20**rkarlin**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" width="36" height="36">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Issue Title</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" placeholder="Issue Title" required="" pattern=".*[^\s]+.*" type="text">
+		</label>
+		<label>
+			<span class="visually-hidden">Leave a comment</span>
+			<textarea name="body" placeholder="Leave a comment" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Submit feedback</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-loading">
+		<p>Loading feedback...</p>
+	</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" data-bi-name="tab-group" hidden="">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" data-bi-name="tab" aria-selected="true" tabindex="0"></a>
+			</li>
+			<li role="presentation">
+				<a href="#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" data-bi-name="tab" aria-selected="false" tabindex="-1"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">There are no open issues</div>
+			<ul class="github-issues-list" aria-label="Open Issues"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" aria-hidden="true" hidden="hidden">
+			<div class="no-issues-placeholder">There are no closed issues</div>
+			<ul class="github-issues-list" aria-label="Closed Issues"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/MicrosoftDocs/powerbi-docs/issues?utf8=%E2%9C%93&amp;q=%226c2de130-8184-bd0c-a671-bb23c50dea7a%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>View on GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>
+
+
+						<!-- end feedback section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/power-bi/developer/overview-of-power-bi-rest-api" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div id="page-actions" class="right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+							<nav id="side-doc-outline" class="doc-outline is-fixed is-vertically-scrollable" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline" style="top: 119.5px; bottom: 24px;">
+								<h3>In this article</h3>
+							<ol><li><a href="#api-developer-tools">API Developer tools</a></li><li><a href="#push-data-into-power-bi">Push data into Power BI</a></li><li><a href="#github-repositories">GitHub repositories</a></li><li><a href="#next-steps">Next Steps</a></li></ol></nav>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/power-bi/developer/overview-of-power-bi-rest-api" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>

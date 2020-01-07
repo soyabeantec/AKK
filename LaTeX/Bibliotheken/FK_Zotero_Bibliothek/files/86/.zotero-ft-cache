@@ -1,0 +1,413 @@
+Page protected with pending changes
+Representational state transfer
+From Wikipedia, the free encyclopedia
+This is the current revision of this page, as edited by SpicyMilkBoy ( talk | contribs ) at 14:06, 13 July 2019 (Reverted 1 pending edit by 107.77.205.72 to revision 903925652 by Milgner: Restore hatnote) . The present address (URL) is a permanent link to this version.
+Revision as of 14:06, 13 July 2019 by SpicyMilkBoy ( talk | contribs ) (Reverted 1 pending edit by 107.77.205.72 to revision 903925652 by Milgner: Restore hatnote)
+( diff ) ← Previous revision | Latest revision (diff) | Newer revision → (diff)
+Jump to navigation Jump to search
+An accepted version of this page, accepted on 13 July 2019 , was based on this revision.
+Software architectural style that defines a set of constraints to be used for creating Web services
+
+"REST" redirects here. For other uses, see REST (disambiguation) .
+
+Representational State Transfer ( REST ) is a software architectural style that defines a set of constraints to be used for creating Web services . Web services that conform to the REST architectural style, called RESTful Web services (RWS), provide interoperability between computer systems on the Internet . RESTful Web services allow the requesting systems to access and manipulate textual representations of Web resources by using a uniform and predefined set of stateless operations. Other kinds of Web services, such as SOAP Web services, expose their own arbitrary sets of operations. [1]
+
+"Web resources" were first defined on the World Wide Web as documents or files identified by their URLs . However, today they have a much more generic and abstract definition that encompasses every thing or entity that can be identified, named, addressed, or handled, in any way whatsoever, on the Web. In a RESTful Web service, requests made to a resource's URI will elicit a response with a payload formatted in HTML , XML , JSON , or some other format. The response can confirm that some alteration has been made to the stored resource, and the response can provide hypertext links to other related resources or collections of resources. When HTTP is used, as is most common, the operations ( HTTP methods ) available are GET, HEAD, POST, PUT, PATCH, DELETE, CONNECT, OPTIONS and TRACE. [2]
+
+By using a stateless protocol and standard operations, RESTful systems aim for fast performance, reliability, and the ability to grow by reusing components that can be managed and updated without affecting the system as a whole, even while it is running.
+
+The term representational state transfer was introduced and defined in 2000 by Roy Fielding in his doctoral dissertation. [3] [4] Fielding's dissertation explained the REST principles that were known as the "HTTP object model" beginning in 1994, and were used in designing the HTTP 1.1 and Uniform Resource Identifiers (URI) standards. [5] [6] The term is intended to evoke an image of how a well-designed Web application behaves: it is a network of Web resources (a virtual state-machine) where the user progresses through the application by selecting resource identifiers such as http://www.example.com/articles/21 and resource operations such as GET or POST (application state transitions), resulting in the next resource's representation (the next application state) being transferred to the end user for their use.
+Contents
+
+    1 History
+    2 Architectural properties
+    3 Architectural constraints
+        3.1 Client-server architecture
+        3.2 Statelessness
+        3.3 Cacheability
+        3.4 Layered system
+        3.5 Code on demand (optional)
+        3.6 Uniform interface
+    4 Applied to Web services
+        4.1 Relationship between URI and HTTP methods
+    5 See also
+    6 References
+    7 Further reading
+
+History [ edit ]
+Roy Fielding speaking at OSCON 2008.
+
+Roy Fielding defined REST in his 2000 PhD dissertation "Architectural Styles and the Design of Network-based Software Architectures" at UC Irvine . [3] He developed the REST architectural style in parallel with HTTP 1.1 of 1996–1999, based on the existing design of HTTP 1.0 [7] of 1996.
+
+In a retrospective look at the development of REST, Fielding said:
+“ 	Throughout the HTTP standardization process, I was called on to defend the design choices of the Web. That is an extremely difficult thing to do within a process that accepts proposals from anyone on a topic that was rapidly becoming the center of an entire industry. I had comments from well over 500 developers, many of whom were distinguished engineers with decades of experience, and I had to explain everything from the most abstract notions of Web interaction to the finest details of HTTP syntax. That process honed my model down to a core set of principles, properties, and constraints that are now called REST. [7] 	”
+Architectural properties [ edit ]
+
+The constraints of the REST architectural style affect the following architectural properties: [3] [8]
+
+    performance in component interactions, which can be the dominant factor in user-perceived performance and network efficiency; [9]
+    scalability allowing the support of large numbers of components and interactions among components. Roy Fielding describes REST's effect on scalability as follows:
+
+“ 	REST's client-server separation of concerns simplifies component implementation, reduces the complexity of connector semantics, improves the effectiveness of performance tuning, and increases the scalability of pure server components. Layered system constraints allow intermediaries— proxies , gateways , and firewalls —to be introduced at various points in the communication without changing the interfaces between components, thus allowing them to assist in communication translation or improve performance via large-scale, shared caching. REST enables intermediate processing by constraining messages to be self-descriptive: interaction is stateless between requests, standard methods and media types are used to indicate semantics and exchange information, and responses explicitly indicate cacheability . [3] 	”
+
+    simplicity of a uniform interface;
+    modifiability of components to meet changing needs (even while the application is running);
+    visibility of communication between components by service agents;
+    portability of components by moving program code with the data;
+    reliability in the resistance to failure at the system level in the presence of failures within components, connectors, or data. [9]
+
+Architectural constraints [ edit ]
+
+Six guiding constraints define a RESTful system. [8] [10] These constraints restrict the ways that the server can process and respond to client requests so that, by operating within these constraints, the system gains desirable non-functional properties , such as performance, scalability, simplicity, modifiability, visibility, portability, and reliability. [3] If a system violates any of the required constraints, it cannot be considered RESTful.
+
+The formal REST constraints are as follows:
+Client-server architecture [ edit ]
+See also: Client–server model
+
+The principle behind the client-server constraints is the separation of concerns. Separating the user interface concerns from the data storage concerns improves the portability of the user interfaces across multiple platforms. It also improves scalability by simplifying the server components. Perhaps most significant to the Web, however, is that the separation allows the components to evolve independently, thus supporting the Internet-scale requirement of multiple organizational domains. [3]
+Statelessness [ edit ]
+See also: Stateless protocol
+
+The client-server communication is constrained by no client context being stored on the server between requests. Each request from any client contains all the information necessary to service the request, and the session state is held in the client. The session state can be transferred by the server to another service such as a database to maintain a persistent state for a period and allow authentication. The client begins sending requests when it is ready to make the transition to a new state. While one or more requests are outstanding, the client is considered to be in transition . The representation of each application state contains links that can be used the next time the client chooses to initiate a new state-transition. [11]
+Cacheability [ edit ]
+See also: Web cache
+
+As on the World Wide Web, clients and intermediaries can cache responses. Responses must therefore, implicitly or explicitly, define themselves as cacheable or not to prevent clients from getting stale or inappropriate data in response to further requests. Well-managed caching partially or completely eliminates some client-server interactions, further improving scalability and performance.
+Layered system [ edit ]
+See also: Layered system
+
+A client cannot ordinarily tell whether it is connected directly to the end server, or to an intermediary along the way. Intermediary servers can improve system scalability by enabling load balancing and by providing shared caches. They can also enforce security policies.
+Code on demand (optional) [ edit ]
+See also: Client-side scripting
+
+Servers can temporarily extend or customize the functionality of a client by transferring executable code: for example, compiled components such as Java applets , or client-side scripts such as JavaScript .
+Uniform interface [ edit ]
+
+The uniform interface constraint is fundamental to the design of any RESTful system. [3] It simplifies and decouples the architecture, which enables each part to evolve independently. The four constraints for this uniform interface are:
+
+Resource identification in requests
+    Individual resources are identified in requests, for example using URIs in RESTful Web services. The resources themselves are conceptually separate from the representations that are returned to the client. For example, the server could send data from its database as HTML , XML or as JSON —none of which are the server's internal representation.
+
+Resource manipulation through representations
+    When a client holds a representation of a resource, including any metadata attached, it has enough information to modify or delete the resource.
+
+Self-descriptive messages
+    Each message includes enough information to describe how to process the message. For example, which parser to invoke can be specified by a media type . [3] 
+
+Hypermedia as the engine of application state ( HATEOAS )
+    Having accessed an initial URI for the REST application—analogous to a human Web user accessing the home page of a website—a REST client should then be able to use server-provided links dynamically to discover all the available actions and resources it needs. As access proceeds, the server responds with text that includes hyperlinks to other actions that are currently available. There is no need for the client to be hard-coded with information regarding the structure or dynamics of the application. [12] 
+
+Applied to Web services [ edit ]
+
+Web service APIs that adhere to the REST architectural constraints are called RESTful APIs. [13] HTTP-based RESTful APIs are defined with the following aspects: [14]
+
+    a base URI , such as http://api.example.com/collection/ ;
+    standard HTTP methods (e.g., GET, POST, PUT, PATCH and DELETE);
+    a media type that defines state transition data elements (e.g., Atom, microformats, application/vnd.collection+json, [14] : 91–99 etc.). The current representation tells the client how to compose requests for transitions to all the next available application states. This could be as simple as a URI or as complex as a Java applet. [15]
+
+Relationship between URI and HTTP methods [ edit ]
+	
+This section needs additional citations for verification . Please help improve this article by adding citations to reliable sources . Unsourced material may be challenged and removed.
+Find sources:   "Representational state transfer"  –  news   · newspapers   · books   · scholar   · JSTOR ( May 2019 ) ( Learn how and when to remove this template message )
+
+The following table shows how HTTP methods are typically used in a RESTful API:
+HTTP methods URI 	Collection resource, such as https://api.example.com/collection/ 	Member resource, such as https://api.example.com/collection/item3
+GET 	Retrieve the URIs of the member resources of the collection resource in the response body. 	Retrieve representation of the member resource in the response body.
+POST 	Create a member resource in the collection resource using the instructions in the request body. The URI of the created member resource is automatically assigned and returned in the response Location header field. 	Create a member resource in the member resource using the instructions in the request body. The URI of the created member resource is automatically assigned and returned in the response Location header field.
+PUT 	Replace all the representations of the member resources of the collection resource with the representation in the request body, or create the collection resource if it does not exist. 	Replace all the representations of the member resource or create the member resource if it does not exist, with the representation in the request body.
+PATCH 	Update all the representations of the member resources of the collection resource using the instructions in the request body, or may create the collection resource if it does not exist. 	Update all the representations of the member resource, or may create the member resource if it does not exist, using the instructions in the request body.
+DELETE 	Delete all the representations of the member resources of the collection resource. 	Delete all the representations of the member resource.
+
+The GET method is safe , meaning that applying it to a resource does not result in a state change of the resource (read-only semantics). [2] : §4.2.1 The GET, PUT and DELETE methods are idempotent , meaning that applying them multiple times to a resource result in the same state change of the resource as applying them once, though the response might differ. [2] : §4.2.2 The GET and POST methods are cacheable , meaning that responses to them are allowed to be stored for future reuse. [2] : §4.2.3
+
+Unlike SOAP -based Web services, there is no "official" standard for RESTful Web APIs. This is because REST is an architectural style, while SOAP is a protocol. REST is not a standard in itself, but RESTful implementations make use of standards, such as HTTP , URI , JSON , and XML . Many developers also describe their APIs as being RESTful, even though these APIs actually don't fulfill all of the architectural constraints described above (especially the uniform interface constraint). [15]
+See also [ edit ]
+
+    Atomicity, consistency, isolation, durability (ACID)
+    Clean URLs
+    Create, read, update and delete (CRUD)
+    Domain Application Protocol (DAP)
+    Microservices
+    Overview of RESTful API Description Languages
+        OpenAPI Specification (formerly Swagger) – specification for defining interfaces
+        OData – Protocol for REST APIs
+        RAML
+        RSDL (RESTful Service Description Language)
+    Resource-oriented architecture (ROA)
+    Resource-oriented computing (ROC)
+    Service-oriented architecture (SOA)
+    Web-oriented architecture (WOA)
+
+References [ edit ]
+
+    ^ "Web Services Architecture" . World Wide Web Consortium. 11 February 2004. 3.1.3 Relationship to the World Wide Web and REST Architectures . Retrieved 29 September 2016 .
+    ^ a b c d Fielding, Roy (June 2014). "Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content, Section 4" . IETF . Internet Engineering Task Force (IETF). RFC   7231 . Retrieved 2018-02-14 .
+    ^ a b c d e f g h Fielding, Roy Thomas (2000). "Chapter 5: Representational State Transfer (REST)" . Architectural Styles and the Design of Network-based Software Architectures (Ph.D.). University of California, Irvine. " This chapter introduced the Representational State Transfer (REST) architectural style for distributed hypermedia systems. REST provides a set of architectural constraints that, when applied as a whole, emphasizes scalability of component interactions, the generality of interfaces, independent deployment of components, and intermediary components to reduce interaction latency, enforce security, and encapsulate legacy systems."
+    ^ "Fielding discussing the definition of the REST term" . groups.yahoo.com . Retrieved 2017-08-08 .
+    ^ Fielding, Roy; Gettys, Jim; Mogul, Jeffrey; Frystyk, Henrik; Masinter, Larry; Leach, Paul; Berners-Lee, Tim (June 1999). "Hypertext Transfer Protocol -- HTTP/1.1" . IETF . Internet Engineering Task Force (IETF). RFC   2616 . Retrieved 2018-02-14 .
+    ^ Fielding, Roy Thomas (2000). "Chapter 6: Experience and Evaluation" . Architectural Styles and the Design of Network-based Software Architectures (Ph.D.). University of California, Irvine. " Since 1994, the REST architectural style has been used to guide the design and development of the architecture for the modern Web. This chapter describes the experience and lessons learned from applying REST while authoring the Internet standards for the Hypertext Transfer Protocol (HTTP) and Uniform Resource Identifiers (URI), the two specifications that define the generic interface used by all component interactions on the Web, as well as from the deployment of these technologies in the form of the libwww-perl client library, the Apache HTTP Server Project, and other implementations of the protocol standards."
+    ^ a b "Fielding discusses the development of the REST style" . Tech.groups.yahoo.com. Archived from the original on November 11, 2009 . Retrieved 2014-09-14 .
+    ^ a b Erl, Thomas; Carlyle, Benjamin; Pautasso, Cesare; Balasubramanian, Raj (2012). "5.1". SOA with REST: Principles, Patterns & Constraints for Building Enterprise Solutions with REST . Upper Saddle River, New Jersey: Prentice Hall. ISBN   978-0-13-701251-0 .
+    ^ a b Fielding, Roy Thomas (2000). "Chapter 2: Network-based Application Architectures" . Architectural Styles and the Design of Network-based Software Architectures (Ph.D.). University of California, Irvine.
+    ^ Richardson, Leonard; Ruby, Sam (2007). RESTful Web Services . Sebastopol, California: O'Reilly Media. ISBN   978-0-596-52926-0 .
+    ^ "Fielding talks about application states" . Tech.groups.yahoo.com . Retrieved 2013-02-07 .
+    ^ "REST HATEOAS" . RESTfulAPI.net.
+    ^ "What is REST API" . RESTful API Tutorial . Retrieved 29 September 2016 .
+    ^ a b Richardson, Leonard; Amundsen, Mike (2013), RESTful Web APIs , O'Reilly Media, ISBN   978-1-449-35806-8
+    ^ a b Roy T. Fielding (2008-10-20). "REST APIs must be hypertext driven" . roy.gbiv.com . Retrieved 2016-07-06 .
+
+Further reading [ edit ]
+
+    Pautasso, Cesare; Wilde, Erik; Alarcon, Rosa (2014), REST: Advanced Research Topics and Practical Applications , Springer, ISBN   9781461492986
+    Pautasso, Cesare; Zimmermann, Olaf; Leymann, Frank (April 2008), "RESTful Web Services vs. Big Web Services: Making the Right Architectural Decision" , 17th International World Wide Web Conference (WWW2008)
+    Ferreira, Otavio (Nov 2009), Semantic Web Services: A RESTful Approach , IADIS, ISBN   978-972-8924-93-5
+    Fowler, Martin (2010-03-18). "Richardson Maturity Model: steps towards the glory of REST" . martinfowler.com . Retrieved 2017-06-26 .
+
+    v
+    t
+    e
+
+Cloud computing
+As a service 	
+
+    Content as a service
+    Software as a service
+    Platform as a service
+    Function as a service
+    Infrastructure as a service
+    Desktop as a service
+    Data as a service
+    Mobile backend as a service
+    Network as a service
+    Security as a service
+
+Technologies 	
+
+    Cloud database
+    Cloud storage
+    Data centers
+    Distributed file system for cloud
+    Hardware virtualization
+    Internet
+    Networking
+    Security
+    Structured storage
+    Virtual appliance
+    Web APIs
+    Virtual private cloud
+
+Applications 	
+
+    Box
+    Google
+        G Suite
+        Docs, Sheets and Slides
+    HP Cloud (closed)
+    Microsoft Online
+    Oracle Cloud
+    Rackspace
+    Salesforce
+    Workday
+    Zoho
+
+Platforms 	
+
+    Alpha7
+    Amazon Web Services
+    AppScale
+    Box
+    Bluemix
+    CloudBolt
+    Cloud Foundry
+    Cocaine (PaaS)
+    Engine Yard
+    Helion
+    GE Predix
+    Google App Engine
+    GreenQloud
+    Heroku
+    Inktank
+    Jelastic
+    Mendix
+    Microsoft Azure
+    MindSphere
+    Netlify
+    Oracle Cloud
+    OutSystems
+    openQRM
+    OpenShift
+    PythonAnywhere
+    RightScale
+    Scalr
+    Force.com
+    SAP Cloud Platform
+    VMware vCloud Air
+    WaveMaker
+
+Infrastructure 	
+
+    Amazon
+    Abiquo Enterprise Edition
+    CloudStack
+    Citrix Cloud
+    CtrlS
+    DigitalOcean
+    EMC Atmos
+    Eucalyptus
+    Fujitsu
+    GoGrid
+    Google Cloud Platform
+    GreenButton
+    GreenQloud
+    IBM Cloud
+    iland
+    Joyent
+    Lunacloud
+    Mirantis
+    Nimbula
+    Nimbus
+    OpenIO
+    OpenNebula
+    OpenStack
+    Oracle Cloud
+    OrionVM
+    Rackspace Cloud
+    Safe Swiss Cloud
+    SoftLayer
+    Zadara Storage
+    libvirt
+    libguestfs
+    OVirt
+    Virtual Machine Manager
+    Wakame-vdc
+    Virtual Private Cloud OnDemand
+
+    Category Category
+    Commons page Commons
+
+Authority control Edit this at Wikidata 	
+
+    GND : 7592728-7
+    LCCN : sh2009000706
+
+Retrieved from " https://en.wikipedia.org/w/index.php?title=Representational_state_transfer&oldid=906081643 "
+Categories :
+
+    Cloud standards
+    Hypertext Transfer Protocol
+    Software architecture
+    Web 2.0 neologisms
+
+Hidden categories:
+
+    Articles with short description
+    Wikipedia pending changes protected pages
+    Articles needing additional references from May 2019
+    All articles needing additional references
+    Wikipedia articles with GND identifiers
+    Wikipedia articles with LCCN identifiers
+
+Navigation menu
+Personal tools
+
+    Not logged in
+    Talk
+    Contributions
+    Create account
+    Log in
+
+Namespaces
+
+    Article
+    Talk
+
+Variants
+
+Views
+
+    Read
+    Edit
+    View history
+
+More
+
+Search
+Navigation
+
+    Main page
+    Contents
+    Featured content
+    Current events
+    Random article
+    Donate to Wikipedia
+    Wikipedia store
+
+Interaction
+
+    Help
+    About Wikipedia
+    Community portal
+    Recent changes
+    Contact page
+
+Tools
+
+    What links here
+    Related changes
+    Upload file
+    Special pages
+    Permanent link
+    Page information
+    Wikidata item
+    Cite this page
+
+Print/export
+
+    Create a book
+    Download as PDF
+    Printable version
+
+Languages
+
+    العربية
+    Azərbaycanca
+    Български
+    Català
+    Čeština
+    Deutsch
+    Eesti
+    Español
+    Français
+    한국어
+    Bahasa Indonesia
+    Italiano
+    עברית
+    Magyar
+    Nederlands
+    日本語
+    Polski
+    Português
+    Русский
+    Simple English
+    Suomi
+    Svenska
+    Türkçe
+    Українська
+    中文
+
+Edit links
+
+    This page was last edited on 13 July 2019, at 14:06  (UTC) .
+    Text is available under the Creative Commons Attribution-ShareAlike License ; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy . Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc. , a non-profit organization.
+
+    Privacy policy
+    About Wikipedia
+    Disclaimers
+    Contact Wikipedia
+    Developers
+    Cookie statement
+    Mobile view
+
+    Wikimedia Foundation
+    Powered by MediaWiki
+

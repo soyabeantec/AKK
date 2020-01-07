@@ -1,0 +1,194 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>
+      SWAPI - The Star Wars API
+    </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="bootstrap.css">
+<link href="bootstrap_002.css" rel="stylesheet">
+<link href="custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://swapi.co/static/favicon.ico">
+
+<script async="" src="analytics.js"></script><script id="twitter-wjs" src="widgets.js"></script><script src="jquery-2.js" type="text/javascript"></script>
+<script src="bootstrap.js" type="text/javascript"></script>
+
+<link type="text/css" rel="stylesheet" href="button-qpwW2WfkB0oGWVWIASjIOQ.css"><script charset="utf-8" src="button.js"></script></head>
+<body data-gr-c-s-loaded="true">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div class="navbar-brand" href="#"><iframe id="twitter-widget-1" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 60px; height: 20px;" title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.ed954039b4da87657c2de914fe37d022.en.html#dnt=true&amp;id=twitter-widget-1&amp;lang=en&amp;original_referer=https%3A%2F%2Fswapi.co%2F&amp;related=phalt_&amp;size=m&amp;text=SWAPI%20-%20the%20Star%20Wars%20API%20&amp;time=1563198344182&amp;type=share&amp;url=https%3A%2F%2Fswapi.co&amp;via=phalt_" data-url="https://swapi.co" frameborder="0"></iframe>
+<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://swapi.co/">Home</a></li>
+<li><a href="https://swapi.co/about">About</a></li>
+<li><a href="https://swapi.co/documentation">Documentation</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container-fluid" style="margin-top: 60px;">
+<div class="row center yellow">
+<div class="jumbotron">
+<h1>SWAPI</h1>
+<p class="lead">The Star Wars API</p>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-3">
+</div>
+<div class="col-lg-6 center">
+<p>All the Star Wars data you've ever wanted:</p>
+<p><b>Planets, Spaceships, Vehicles, People, Films and Species</b></p>
+<p>From all <b>SEVEN</b> Star Wars films</p>
+<p></p><h4>Now with The Force Awakens data!</h4><p></p>
+</div>
+<div class="col-lg-3">
+</div>
+</div>
+<div class="row">
+<hr>
+<div class="col-sm-2 col-lg-2 col-md-2">
+</div>
+<div class="col-lg-8 col-md-8 col-sm-8">
+<h1 class="center">
+Try it now!
+</h1>
+<div class="input-group">
+<span class="input-group-addon">https://swapi.co/api/</span>
+<input id="interactive" class="form-control" placeholder="people/1/" type="text">
+<span class="input-group-btn"><button onclick="if (!window.__cfRLUnblockHandlers) return false; interactive_call();return false;" class="btn btn-primary">request</button></span>
+</div>
+<small>Need a hint? try <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; update('people/1/');return false;"><i>people/1/</i></a> or <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; update('planets/3/');return false;"><i>planets/3/</i></a> or <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; update('starships/9/');return false;"><i>starships/9/</i></a></small>
+<p class="lead pad_top">Result:</p>
+<div class="well">
+<pre id="interactive_output" class="pre-scrollable">{
+	"name": "Luke Skywalker",
+	"height": "172",
+	"mass": "77",
+	"hair_color": "blond",
+	"skin_color": "fair",
+	"eye_color": "blue",
+	"birth_year": "19BBY",
+	"gender": "male",
+	"homeworld": "https://swapi.co/api/planets/1/",
+	"films": [
+		"https://swapi.co/api/films/2/",
+		"https://swapi.co/api/films/6/",
+		"https://swapi.co/api/films/3/",
+		"https://swapi.co/api/films/1/",
+		"https://swapi.co/api/films/7/"
+	],
+	"species": [
+		"https://swapi.co/api/species/1/"
+	],
+	"vehicles": [
+		"https://swapi.co/api/vehicles/14/",
+		"https://swapi.co/api/vehicles/30/"
+	],
+	"starships": [
+		"https://swapi.co/api/starships/12/",
+		"https://swapi.co/api/starships/22/"
+	],
+	"created": "2014-12-09T13:50:51.644000Z",
+	"edited": "2014-12-20T21:17:56.891000Z",
+	"url": "https://swapi.co/api/people/1/"
+}
+          </pre>
+</div>
+</div>
+<div class="col-sm-2 col-lg-2 col-md-2">
+</div>
+</div>
+<div class="row pad_bot">
+<div class="col-sm-1 col-lg-1 col-md-1">
+</div>
+<div class="col-sm-3 col-lg-3 col-md-3">
+<h4 class="center">What is this?</h4>
+<p>The Star Wars API, or "swapi" (Swah-pee) is the world's first 
+quantified and programmatically-accessible data source for all the data 
+from the Star Wars canon universe!</p>
+<p>We've taken all the rich contextual stuff from the universe and 
+formatted into something easier to consume with software. Then we went 
+and stuck an API on the front so you can access it all!</p>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+<h4 class="center">How can I use it?</h4>
+<p>All the data is accessible through our HTTP web API. Consult our <a href="https://swapi.co/documentation">documentation</a> if you'd like to get started.</p>
+<p>Helper libraries for popular programming languages are also provided 
+so you can consume swapi in your favourite programming language, in a 
+style that suits you.</p>
+</div>
+<div class="col-sm-3 col-lg-3 col-md-3">
+<h4 class="center">How can I support this?</h4>
+<p>With small donations we can keep swapi running for free, please 
+consider throwing us some beer money to say thank you. With every $10 we
+ can keep the site up for another month!</p>
+<p></p><form action="/stripe/donation" method="POST">
+<script src="checkout.js" class="stripe-button active" data-key="pk_live_YW9Tb4E41PcwrEOlOkdNuYTc" data-image="https://i.imgur.com/PqkJzx4s.png" data-name="swapi.co" data-description="Donate and keep swapi alive!" data-amount="1000" data-panel-label="Donate" type="text/javascript">
+          </script><button type="submit" class="stripe-button-el" style="visibility: visible;"><span style="display: block; min-height: 30px;">Pay with Card</span></button>
+</form><p></p>
+<p>This project is open source and you can contribute <a href="https://github.com/phalt/swapi">on GitHub</a>.</p>
+</div>
+<div class="col-sm-1 col-lg-1 col-md-1">
+</div>
+</div>
+<hr>
+<script type="text/javascript">
+    function update(call){
+        jQuery('#interactive').val(call);
+        interactive_call();
+    }
+
+    function interactive_call(){
+        var content = jQuery('#interactive').val()
+        if(content == ''){
+            content = 'people/1/';
+        }
+        var call_url = 'api/' + content;
+        jQuery.ajax({
+      dataType: 'json',
+      url: call_url,
+      context: document.body
+    }).complete(function(data) {
+        if(data['status'] == 200){
+            var d = jQuery.parseJSON(data['responseText']);
+            jQuery('#interactive_output').text(JSON.stringify(d, null, '\t'));
+        }
+        else if (data['status'] == 404) {
+            jQuery('#interactive_output').text(data['status'] + ' ' + data['statusText']);
+        }
+    });
+    }
+    </script>
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53299289-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+<div class="row">
+<div class="col-lg-12 footer">
+<a href="https://phalt.co/?ref=swapi" target="_blank">© Paul Hallett <script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script>2019</a>
+<span class="pull-right">
+<iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" style="position: static; visibility: visible; width: 63px; height: 20px;" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.ed954039b4da87657c2de914fe37d022.en.html#dnt=true&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=phalt_&amp;show_count=false&amp;show_screen_name=false&amp;size=m&amp;time=1563198344180" frameborder="0"></iframe><a href="https://twitter.com/phalt_" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true" data-twitter-extracted-i156319834403322032="true">Follow me on twitter</a>
+<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<iframe src="//ghbtns.com/github-btn.html?user=phalt&amp;type=follow" allowtransparency="false" scrolling="0" width="132" frameborder="0" height="20"></iframe></span><p></p>
+</div>
+</div>
+
+
+</div><iframe scrolling="no" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.ed954039b4da87657c2de914fe37d022.html?origin=https%3A%2F%2Fswapi.co" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><iframe allowtransparency="true" src="https://checkout.stripe.com/m/v3/index-3f0dc197837628f45156bf4f7ed0f6ad.html?distinct_id=01e42b99-bf9e-b553-151d-30d109ceb31c" name="stripe_checkout_app" class="stripe_checkout_app" style="z-index: 2147483647; display: none; background: rgba(0, 0, 0, 0.004); border: 0px none transparent; overflow: hidden auto; visibility: hidden; margin: 0px; padding: 0px; -webkit-tap-highlight-color: transparent; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%;" frameborder="0"></iframe></body></html>

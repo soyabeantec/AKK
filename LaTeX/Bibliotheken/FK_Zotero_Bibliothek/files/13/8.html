@@ -1,0 +1,3187 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://github.githubassets.com/">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-8B5lvNq1b88YJg2eQ7wXcWwl490xeelSavDDj7NEOtpEK7m0tKkmFi9BDX+S+nYyh/teAumil+CjK/AscuQrdg==" rel="stylesheet" href="frameworks-081940cf9af751b35bb9fd062060601a.css">
+  <link crossorigin="anonymous" media="all" integrity="sha512-vozupRTrzo7k2NwiAgC37o0fUpxqBtSeDrVyaxH6I+ed18h/6awTfjJ5uRMyNRb/2rOxZtsTi8FKLv7DVZMZwg==" rel="stylesheet" href="site-c24aa206cdd4fb0b962ca6e303f5faca.css">
+    <link crossorigin="anonymous" media="all" integrity="sha512-BAvnqRwucwWnBla6fIkGbian4NEGcCmR+oiU16iOu3AcTyd+gZt1wV1nkCnPnHZV/31NXGPJeFeEsjPX3o5ghA==" rel="stylesheet" href="github-af574a5a8a7115d94451e1fe6e773b70.css">
+    
+    
+    
+    
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Cannot start service web: OCI runtime create failed · Issue #8 · friendica/docker · GitHub</title>
+    <meta name="description" content="By using the docker-compose example for &quot;Base version - FPM&quot; I got an error while firing up the containers: ERROR: for friendica_web_1 Cannot start service web: OCI runtime create failed: container_linux.go:348: starting container proces...">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://avatars2.githubusercontent.com/u/1176581?s=400&amp;v=4"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Cannot start service web: OCI runtime create failed · Issue #8 · friendica/docker"><meta name="twitter:description" content="By using the docker-compose example for &amp;amp;quot;Base version - FPM&amp;amp;quot; I got an error while firing up the containers: ERROR: for friendica_web_1 Cannot start service web: OCI runtime create...">
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/1176581?s=400&amp;v=4"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="Cannot start service web: OCI runtime create failed · Issue #8 · friendica/docker"><meta property="og:url" content="https://github.com/friendica/docker/issues/8"><meta property="og:description" content="By using the docker-compose example for &amp;quot;Base version - FPM&amp;quot; I got an error while firing up the containers: ERROR: for friendica_web_1 Cannot start service web: OCI runtime create failed:...">
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  
+  <meta name="pjax-timeout" content="1000">
+  
+  <meta name="request-id" content="F745:2184E:5D2670:8E8E3C:5D419F2D" data-pjax-transient="">
+
+    <meta name="hovercard-subject-tag" content="issue:325668339" data-pjax-transient="">
+
+  
+
+  <meta name="selected-link" value="repo_issues" data-pjax-transient="">
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+  <meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="github"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event"><meta name="octolytics-dimension-request_id" content="F745:2184E:5D2670:8E8E3C:5D419F2D"><meta name="octolytics-dimension-region_edge" content="ams"><meta name="octolytics-dimension-region_render" content="iad">
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/issues/show" data-pjax-transient="true">
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+
+<meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="MzgwNTM5NWNkODRkNzNjZGQ2YjhmMTllZjVhNDM0NjExMjkyZDUzNDkyZTJkYzVhODA3OTY0ZTdhNjM3NmM3M3x7InJlbW90ZV9hZGRyZXNzIjoiODMuMTY0LjE0MS41MSIsInJlcXVlc3RfaWQiOiJGNzQ1OjIxODRFOjVEMjY3MDo4RThFM0M6NUQ0MTlGMkQiLCJ0aW1lc3RhbXAiOjE1NjQ1ODE2OTAsImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+    <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS">
+
+  <meta name="html-safe-nonce" content="e1033d5e08966ce47d5975ee90ee184a3c030878">
+
+  <meta http-equiv="x-pjax-version" content="6a6c0e8b9b8b18fc8eba8553ac2ffb6b">
+  
+
+      <link href="https://github.com/friendica/docker/commits/master.atom" rel="alternate" title="Recent Commits to docker:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/friendica/docker git https://github.com/friendica/docker.git">
+
+  <meta name="octolytics-dimension-user_id" content="1176581"><meta name="octolytics-dimension-user_login" content="friendica"><meta name="octolytics-dimension-repository_id" content="133494535"><meta name="octolytics-dimension-repository_nwo" content="friendica/docker"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="133494535"><meta name="octolytics-dimension-repository_network_root_nwo" content="friendica/docker"><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false">
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+
+
+  <link rel="manifest" href="https://github.com/manifest.json" crossorigin="use-credentials">
+
+  </head>
+
+  <body class="logged-out env-production min-width-lg">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="px-2 py-4 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+        <header class="Header-old header-logged-out  position-relative f4 py-2" role="banner">
+  <div class="container-lg d-flex px-3">
+    <div class="d-flex flex-justify-between flex-items-center">
+        <a class="mr-4" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+          <svg height="32" class="octicon octicon-mark-github text-white" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        </a>
+    </div>
+
+    <div class="HeaderMenu HeaderMenu--logged-out d-flex flex-justify-between flex-items-center flex-auto">
+      <div class="d-none">
+        <button class="btn-link js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <svg height="24" class="octicon octicon-x text-gray" viewBox="0 0 12 16" version="1.1" width="18" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+        </button>
+      </div>
+
+        <nav class="mt-0" aria-label="Global">
+          <ul class="d-flex list-style-none">
+              <li class=" mr-3 mr-lg-3 edge-item-fix position-relative flex-wrap flex-justify-between d-flex flex-items-center ">
+                <details class="HeaderMenu-details details-overlay details-reset width-full">
+                  <summary class="HeaderMenu-summary HeaderMenu-link px-0 py-3 border-0 no-wrap  d-inline-block">
+                    Why GitHub?
+                    <svg x="0px" y="0px" viewBox="0 0 14 8" xml:space="preserve" fill="none" class="icon-chevon-down-mktg position-relative">
+                      <path d="M1,1l6.2,6L13,1"></path>
+                    </svg>
+                  </summary>
+                  <div class="dropdown-menu flex-auto rounded-1 bg-white px-0 mt-0  p-4 left-n4 position-absolute">
+                    <a href="https://github.com/features" class="py-2 lh-condensed-ultra d-block link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Features">Features <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a>
+                    <ul class="list-style-none f5 pb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/features/code-review/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Code review">Code review</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/project-management/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Project management">Project management</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/integrations" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Integrations">Integrations</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/actions" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Actions">Actions</a>
+                          </li><li class="edge-item-fix"><a href="https://github.com/features/package-registry" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Package Registry">Package registry</a>
+                      </li><li class="edge-item-fix"><a href="https://github.com/features#team-management" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Team management">Team management</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features#social-coding" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Social coding">Social coding</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features#documentation" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Documentation">Documentation</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features#code-hosting" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Code hosting">Code hosting</a></li>
+                    </ul>
+
+                    <ul class="list-style-none mb-0 border-lg-top pt-lg-3">
+                      <li class="edge-item-fix"><a href="https://github.com/customer-stories" class="py-2 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Customer stories">Customer stories <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/security" class="py-2 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Security">Security <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+              <li class=" mr-3 mr-lg-3">
+                <a href="https://github.com/enterprise" class="HeaderMenu-link no-underline py-3 d-block d-lg-inline-block" data-ga-click="(Logged out) Header, go to Enterprise">Enterprise</a>
+              </li>
+
+              <li class=" mr-3 mr-lg-3 edge-item-fix position-relative flex-wrap flex-justify-between d-flex flex-items-center ">
+                <details class="HeaderMenu-details details-overlay details-reset width-full">
+                  <summary class="HeaderMenu-summary HeaderMenu-link px-0 py-3 border-0 no-wrap  d-inline-block">
+                    Explore
+                    <svg x="0px" y="0px" viewBox="0 0 14 8" xml:space="preserve" fill="none" class="icon-chevon-down-mktg position-relative">
+                      <path d="M1,1l6.2,6L13,1"></path>
+                    </svg>
+                  </summary>
+
+                  <div class="dropdown-menu flex-auto rounded-1 bg-white px-0 pt-2 pb-0 mt-0  p-4 left-n4 position-absolute">
+                    <ul class="list-style-none mb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/explore" class="py-2 lh-condensed-ultra d-block link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Explore">Explore GitHub <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                    </ul>
+
+                    <h4 class="text-gray-light text-normal text-mono f5 mb-2  border-top pt-3">Learn &amp; contribute</h4>
+                    <ul class="list-style-none mb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/topics" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Topics">Topics</a></li>
+                        <li class="edge-item-fix"><a href="https://github.com/collections" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Collections">Collections</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/trending" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Trending">Trending</a></li>
+                      <li class="edge-item-fix"><a href="https://lab.github.com/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Learning lab">Learning Lab</a></li>
+                      <li class="edge-item-fix"><a href="https://opensource.guide/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Open source guides">Open source guides</a></li>
+                    </ul>
+
+                    <h4 class="text-gray-light text-normal text-mono f5 mb-2  border-top pt-3">Connect with others</h4>
+                    <ul class="list-style-none mb-0">
+                      <li class="edge-item-fix"><a href="https://github.com/events" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Events">Events</a></li>
+                      <li class="edge-item-fix"><a href="https://github.community/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Community forum">Community forum</a></li>
+                      <li class="edge-item-fix"><a href="https://education.github.com/" class="py-2 pb-0 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to GitHub Education">GitHub Education</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+
+              <li class=" mr-3 mr-lg-3">
+                <a href="https://github.com/marketplace" class="HeaderMenu-link no-underline py-3 d-block d-lg-inline-block" data-ga-click="(Logged out) Header, go to Marketplace">Marketplace</a>
+              </li>
+
+              <li class=" mr-3 mr-lg-3 edge-item-fix position-relative flex-wrap flex-justify-between d-flex flex-items-center ">
+                <details class="HeaderMenu-details details-overlay details-reset width-full">
+                  <summary class="HeaderMenu-summary HeaderMenu-link px-0 py-3 border-0 no-wrap  d-inline-block">
+                    Pricing
+                    <svg x="0px" y="0px" viewBox="0 0 14 8" xml:space="preserve" fill="none" class="icon-chevon-down-mktg position-relative">
+                       <path d="M1,1l6.2,6L13,1"></path>
+                    </svg>
+                  </summary>
+
+                  <div class="dropdown-menu flex-auto rounded-1 bg-white px-0 pt-2 pb-4 mt-0  p-4 left-n4 position-absolute">
+                    <a href="https://github.com/pricing" class="pb-2 lh-condensed-ultra d-block link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Pricing">Plans <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a>
+
+                    <ul class="list-style-none mb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/pricing#feature-comparison" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Compare plans">Compare plans</a></li>
+                      <li class="edge-item-fix"><a href="https://enterprise.github.com/contact" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Contact Sales">Contact Sales</a></li>
+                    </ul>
+
+                    <ul class="list-style-none mb-0  border-top pt-3">
+                      <li class="edge-item-fix"><a href="https://github.com/nonprofit" class="py-2 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Nonprofits">Nonprofit <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                      <li class="edge-item-fix"><a href="https://education.github.com/" class="py-2 pb-0 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Education">Education <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+          </ul>
+        </nav>
+
+      <div class="d-flex flex-items-center px-0 text-center text-left">
+          <div class="d-lg-flex ">
+            <div class="header-search mr-3 scoped-search site-scoped-search js-site-search position-relative js-jump-to" role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox" aria-expanded="false">
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-site-search-form" role="search" aria-label="Site" data-scope-type="Repository" data-scope-id="133494535" data-scoped-search-url="/friendica/docker/search" data-unscoped-search-url="/search" action="/friendica/docker/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+      <label class="form-control input-sm header-search-wrapper p-0 header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input class="form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" data-hotkey="s,/" name="q" placeholder="Search" data-unscoped-placeholder="Search GitHub" data-scoped-placeholder="Search" autocapitalize="off" aria-autocomplete="list" aria-controls="jump-to-results" aria-label="Search" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=36VhfXUJmIuvyEjjriY2VxR9rBG/+LZzTy9PVY4UlySVx1HPHVMP+sTr8WcmGmC8eUgx3WSh1rkMDhRbd8FTEQ==" spellcheck="false" autocomplete="off" type="text">
+          <input class="js-site-search-type-field" name="type" type="hidden">
+            <img src="search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              
+<ul class="d-none js-jump-to-suggestions-template-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+</ul>
+
+<ul class="d-none js-jump-to-no-results-template-container">
+  <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
+    <span class="text-gray">No suggested jump to results</span>
+  </li>
+</ul>
+
+<ul id="jump-to-results" role="listbox" class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+
+</ul>
+
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+          </div>
+
+        <a href="https://github.com/login?return_to=%2Ffriendica%2Fdocker%2Fissues%2F8" class="HeaderMenu-link no-underline mr-3" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="54c98769d421cfb875a58dac8ba972d17f6f4e56775bb41354f62a35faae1724" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">
+          Sign&nbsp;in
+        </a>
+          <a href="https://github.com/join" class="HeaderMenu-link d-inline-block no-underline border border-gray-dark rounded-1 px-2 py-1" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="54c98769d421cfb875a58dac8ba972d17f6f4e56775bb41354f62a35faae1724" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">
+            Sign&nbsp;up
+          </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+    <div id="js-flash-container">
+
+</div>
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled="">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <main id="js-repo-pjax-container" data-pjax-container="">
+      
+  
+
+
+
+
+
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+
+
+
+
+  <li>
+    
+  <a class="tooltipped tooltipped-s btn btn-sm btn-with-count" aria-label="You must be signed in to watch a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="69f29587acdfe1a60b1a39b6feb606e3b367e3289d7a62c4730a4d7b43f443d0" href="https://github.com/login?return_to=%2Ffriendica%2Fdocker">
+    <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+    Watch
+</a>    <a class="social-count" href="https://github.com/friendica/docker/watchers" aria-label="6 users are watching this repository">
+      6
+    </a>
+
+  </li>
+
+  <li>
+        <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="ba93bcc1963a8d867e270b4720e3cf1260c86f1aaea72824cf8323962c56b135" href="https://github.com/login?return_to=%2Ffriendica%2Fdocker">
+      <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+      Star
+</a>
+    <a class="social-count js-social-count" href="https://github.com/friendica/docker/stargazers" aria-label="13 users starred this repository">
+      13
+    </a>
+
+  </li>
+
+  <li>
+      <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to fork a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;repo details fork button&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="40c8d00234d4d08825f7a18cb0605e1b6967d72cf900d1fe1dc8d943a2727f17" href="https://github.com/login?return_to=%2Ffriendica%2Fdocker">
+        <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+        Fork
+</a>
+    <a href="https://github.com/friendica/docker/network/members" class="social-count" aria-label="3 users forked this repository">
+      3
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+    <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=1176581" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/friendica">friendica</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="https://github.com/friendica/docker">docker</a></strong>
+  
+
+</h1>
+
+    </div>
+    
+<nav class="hx_reponav reponav js-repo-nav js-sidenav-container-pjax container" itemscope="" itemtype="http://schema.org/BreadcrumbList" aria-label="Repository" data-pjax="#js-repo-pjax-container">
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /friendica/docker" href="https://github.com/friendica/docker">
+      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item selected reponav-item" aria-current="page" data-selected-links="repo_issues repo_labels repo_milestones /friendica/docker/issues" href="https://github.com/friendica/docker/issues">
+        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">7</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /friendica/docker/pulls" href="https://github.com/friendica/docker/pulls">
+      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /friendica/docker/projects" href="https://github.com/friendica/docker/projects">
+      <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"></path></svg>
+      Projects
+      <span class="Counter">0</span>
+</a>
+
+
+    <a data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy /friendica/docker/security/advisories" href="https://github.com/friendica/docker/security/advisories">
+      <svg class="octicon octicon-shield" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2l7-2 7 2v6.02C14 12.69 8.69 16 7 16c-1.69 0-7-3.31-7-7.98V2zm1 .75L7 1l6 1.75v5.268C13 12.104 8.449 15 7 15c-1.449 0-6-2.896-6-6.982V2.75zm1 .75L7 2v12c-1.207 0-5-2.482-5-5.985V3.5z"></path></svg>
+      Security
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse people /friendica/docker/pulse" href="https://github.com/friendica/docker/pulse">
+      <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg>
+      Insights
+</a>
+
+</nav>
+
+
+  </div>
+<div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  px-3">
+  <div class="repository-content ">
+
+    
+    
+  <div class="js-check-all-container" data-pjax="">
+    
+        <div class="signup-prompt-bg rounded-1">
+      <div class="signup-prompt p-4 text-center mb-4 rounded-1">
+        <div class="position-relative">
+          <!-- '"` --><!-- </textarea></xmp> --><form action="/prompt_dismissals/signup" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="ozvRS6yPc0lDNRZycS4wt+37fJLDmLCBHc7ZnQm8eoYJKuHROgc9TpGbB4y0Pp/ZcMVOHIps7Xgfmc/1kzM3SQ==" type="hidden">
+            <button type="submit" class="position-absolute top-0 right-0 btn-link link-gray" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss">
+              Dismiss
+            </button>
+</form>          <h3 class="pt-2">Join GitHub today</h3>
+          <p class="col-6 mx-auto">GitHub is home to over 36 million 
+developers working together to host and review code, manage projects, 
+and build software together.</p>
+          <a class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;files signup prompt&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="e7b4010b54d97bd1337409ae0652dd86951b6e58e5966df8aeda81ceb277fe99" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up" href="https://github.com/join?source=prompt-issue-show">Sign up</a>
+        </div>
+      </div>
+    </div>
+
+
+  <div id="show_issue" class="js-issues-results js-socket-channel js-updatable-content" data-channel="issue:325668339:timeline">
+
+    
+  <div id="partial-discussion-header" class="gh-header js-details-container Details js-socket-channel js-updatable-content issue" data-channel="issue:325668339" data-url="/friendica/docker/issues/8/show_partial?partial=issues%2Ftitle&amp;sticky=true" data-gid="MDU6SXNzdWUzMjU2NjgzMzk=">
+  <div class="gh-header-show ">
+      <div class="gh-header-actions">
+
+          
+<details class="details-reset details-overlay details-overlay-dark float-right">
+  <summary class="btn btn-sm btn-primary" aria-haspopup="dialog" data-ga-click="Issues, create new issue, view:issue_show location:issue_header style:button logged_in:false">
+    
+    New issue
+  </summary>
+  <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast overflow-auto" aria-label="Sign up for GitHub">
+    <button class="position-absolute p-4 right-0 btn-link muted-link" type="button" aria-label="Close dialog" data-close-dialog="">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    <div class="p-4 d-flex flex-column">
+            <div class="mt-3 mb-2 text-center">
+  <svg height="60" class="octicon octicon-comment-discussion text-blue" viewBox="0 0 16 16" version="1.1" width="60" aria-hidden="true"><path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z"></path></svg>
+</div>
+
+<div class="px-4">
+  <p class="text-center mb-4">
+  <strong>Have a question about this project?</strong> Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+  </p>
+
+  <form class="js-signup-form" autocomplete="off" action="/join?return_to=%2Ffriendica%2Fdocker%2Fissues%2Fnew" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="m/ppHzmLSx1GrPZqaJpurBgA8YU/SY51/VR663qQy4KmRnB6QJCQAy1fZf3noZtA0avVxB4JjdIkFn2viOoAfQ==" type="hidden">    <auto-check src="/signup_check/username" csrf="cHnCaw1PLTzLadV/LehaT8MFZgkK35Y5XDr39mUJed3/9ev4I8EZtb2XcD0fpe0l4CUFr1xRqmCYZwbc1eWrrg==">
+      <dl class="form-group"><dt class="input-label"><label name="user[login]" autocapitalize="off" autofocus="autofocus" for="user_login_issues">Pick a username</label></dt><dd><input name="user[login]" autocapitalize="off" autofocus="autofocus" class="form-control" id="user_login_issues" type="text"></dd></dl>
+    </auto-check>
+
+    <auto-check src="/signup_check/email" csrf="Q6H4HUdTJYG4Pj1gcDVqpmjYXCBqPMDW7DsHsA9pRSEm/IMQNQjPjNzfXV2AoEL6vteLNH+xeyoJbDmxqqIUPQ==">
+      <dl class="form-group"><dt class="input-label"><label name="user[email]" autocapitalize="off" for="user_email_issues">Email Address</label></dt><dd><input name="user[email]" autocapitalize="off" class="form-control" id="user_email_issues" type="text"></dd></dl>
+    </auto-check>
+
+    <dl class="form-group"><dt class="input-label"><label name="user[password]" for="user_password_issues">Password</label></dt><dd><input name="user[password]" class="form-control" id="user_password_issues" type="password"></dd></dl>
+
+    <input name="source" class="js-signup-source" value="modal-issues" type="hidden">
+    <input name="required_field_6dcb" id="required_field_6dcb" class="form-control" hidden="hidden" type="text">
+<input name="timestamp" value="1564581690491" class="form-control" type="hidden">
+<input name="timestamp_secret" value="e75af7c85909d73a7e32f984d5253715c14f857b8cc819afe2c7a3cdcea9f6a6" class="form-control" type="hidden">
+
+
+    <button class="btn btn-primary mt-2 btn-block" type="submit" data-ga-click="(Logged out) New issue modal, clicked Sign up, text:sign-up">Sign up for GitHub</button>
+</form>
+  <p class="mt-4 text-gray text-center">By clicking “Sign up for GitHub”, you agree to our <a href="https://help.github.com/terms" target="_blank">terms of service</a> and
+  <a href="https://help.github.com/privacy" target="_blank">privacy statement</a>. We’ll occasionally send you account related emails.</p>
+  <p class="mt-4 text-gray text-center">
+    Already on GitHub?
+    <a data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;new issue modal&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f210b10cba8eceb16d2ab1ea4766846b68d486c31760e490e81b83191289a798" data-ga-click="(Logged out) New issue modal, clicked Sign in, text:sign-in" href="https://github.com/login?return_to=%2Ffriendica%2Fdocker%2Fissues%2Fnew">Sign in</a>
+    to your account
+  </p>
+</div>
+
+</div>
+  </details-dialog>
+</details>
+      </div>
+
+    <h1 class="gh-header-title">
+      <span class="js-issue-title">
+        Cannot start service web: OCI runtime create failed
+      </span>
+      <span class="gh-header-number">#8</span>
+    </h1>
+  </div>
+
+  <div class="TableObject gh-header-meta">
+    <div class="TableObject-item">
+        <span class="State State--red  " title="Status: Closed">
+  
+  <svg height="16" class="octicon octicon-issue-closed" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 10h2v2H7v-2zm2-6H7v5h2V4zm1.5 1.5l-1 1L12 9l4-4.5-1-1L12 7l-1.5-1.5zM8 13.7A5.71 5.71 0 0 1 2.3 8c0-3.14 2.56-5.7 5.7-5.7 1.83 0 3.45.88 4.5 2.2l.92-.92A6.947 6.947 0 0 0 8 1C4.14 1 1 4.14 1 8s3.14 7 7 7 7-3.14 7-7l-1.52 1.52c-.66 2.41-2.86 4.19-5.48 4.19v-.01z"></path></svg> Closed
+
+</span>
+
+    </div>
+    <div class="TableObject-item TableObject-item--primary">
+        <a class="author text-bold link-gray" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>  opened this issue
+<relative-time datetime="2018-05-23T11:44:23Z">May 23, 2018</relative-time>
+· 13 comments
+
+
+    </div>
+  </div>
+
+
+    <div class="js-sticky js-sticky-offset-scroll top-0 gh-header-sticky" aria-hidden="true">
+      <div class="sticky-content">
+        <div class="d-flex flex-items-center flex-justify-between mt-2">
+          <div class="d-flex flex-row flex-items-center min-width-0">
+            <div class="mr-2 flex-shrink-0">
+                <span class="State State--red  " title="Status: Closed">
+  
+  <svg height="16" class="octicon octicon-issue-closed" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 10h2v2H7v-2zm2-6H7v5h2V4zm1.5 1.5l-1 1L12 9l4-4.5-1-1L12 7l-1.5-1.5zM8 13.7A5.71 5.71 0 0 1 2.3 8c0-3.14 2.56-5.7 5.7-5.7 1.83 0 3.45.88 4.5 2.2l.92-.92A6.947 6.947 0 0 0 8 1C4.14 1 1 4.14 1 8s3.14 7 7 7 7-3.14 7-7l-1.52 1.52c-.66 2.41-2.86 4.19-5.48 4.19v-.01z"></path></svg> Closed
+
+</span>
+
+            </div>
+            <div class="min-width-0">
+              <h1 class="text-bold f5">
+  <a class="js-issue-title css-truncate css-truncate-target link-gray-dark" href="#" style="max-width: 48em">Cannot start service web: OCI runtime create failed</a>
+  <span class="gh-header-number text-gray-light pr-1">#8</span>
+</h1>
+
+              <div class="meta text-gray-light css-truncate css-truncate-target d-block" style="max-width: none">
+                  <a class="author text-bold link-gray" data-hovercard-z-index-override="111" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>  opened this issue
+<relative-time datetime="2018-05-23T11:44:23Z">May 23, 2018</relative-time>
+· 13 comments
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gh-header-shadow box-shadow"></div>
+</div>
+
+
+    <h2 class="sr-only">Comments</h2>
+    <div id="discussion_bucket" class="d-flex">
+      <div class="col-9">
+        <div class="discussion-timeline js-quote-selection-container width-full" data-quote-markdown=".js-comment-body" data-issue-and-pr-hovercards-enabled="" data-team-hovercards-enabled="">
+
+          <div class="js-discussion js-socket-channel" data-channel="marked-as-read:issue:325668339">
+
+            
+<div class="timeline-comment-wrapper js-comment-container mt-0 js-socket-channel" data-gid="MDU6SXNzdWUzMjU2NjgzMzk=" data-url="/_render_node/MDU6SXNzdWUzMjU2NjgzMzk=/issues/body" data-channel="issue:325668339">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar rounded-1" alt="@jaltek" src="359552_002.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issue-325668339">
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="85e4b4987c76002cc95afcb42ba4b251" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="IQFZ9s01sLACPGG2L4HQNrtWC/LEW4sYupiqAG2eA2pLduFrVWWWcaWzZ2jup24H0rOlX0JmftXnZrsuStaPjQ==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issue-325668339-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issue-325668339" id="issue-325668339-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-23T11:44:23Z">May 23, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>By using the docker-compose example for "Base version - FPM" I got an error while firing up the containers:</p>
+<p><code>ERROR: for friendica_web_1  Cannot start service web: OCI 
+runtime create failed: container_linux.go:348: starting container 
+process caused "process_linux.go:402: container init caused 
+\"rootfs_linux.go:58: mounting \\\"/srv/docker/friendica/nginx.conf\\\" 
+to rootfs \\\"/var/lib/docker/overlay2/***UUID***/merged\\\" at 
+\\\"/var/lib/docker/overlay2/***UUID***/merged/etc/nginx/nginx.conf\\\" 
+caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a 
+directory onto a file (or vice-versa)? Check if the specified host path 
+exists and is the expected type</code></p>
+<p>docker-compose created an empty folder <code>nginx.conf</code> inside the directory of the docker-compose.yml file during startup.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+            
+
+  <div id="js-timeline-progressive-loader" data-timeline-item-src="friendica/docker/timeline?id=MDU6SXNzdWUzMjU2NjgzMzk%3D&amp;variables%5Bafter%5D=Y3Vyc29yOnYyOpPPAAABa2B9UVACqTk1ODc5NDAwMQ%3D%3D&amp;variables%5Bfirst%5D=60"></div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMxOTkxOQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMxOTkxOQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MTMxOTkxOQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar rounded-1" alt="@nupplaphil" src="379654_002.jfif" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-391319919">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="9bc121621b7ba4c0512371e278c22a44">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="9bc121621b7ba4c0512371e278c22a44" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="Sci/ugKiA/J/dUVbut9sFDAQfumV4H2fl1xnu2V0jWAjvwcnmvIlM9j6Q4V7+dIlWfXQRBPdiFLKonaVQjwBhw==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-391319919-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has been invited to collaborate on the docker repository.">
+      Collaborator
+    </span>
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-391319919" id="issuecomment-391319919-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-23T11:55:13Z">May 23, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>Did you create a local <code>nginx.conf</code> before starting?</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMyMDY1MA==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMyMDY1MA==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MTMyMDY1MA==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar rounded-1" alt="@jaltek" src="359552_002.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-391320650">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="f33023420a24ea234a4fa67f66c418f8">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="f33023420a24ea234a4fa67f66c418f8" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="E1rokaVSG44Z8K58JSvOM3C8fZxEc2G3FdGatYxtKRN5LVAMPQI9T75/qKLkDXACGVnTMcJOlHpIL4ubqyWl9A==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-391320650-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the author of this issue.">
+  Author
+</span>
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-391320650" id="issuecomment-391320650-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-23T11:58:16Z">May 23, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>No (I figured that's where the mistake was). If this is a prerequisite maybe it should be mentioned in the README :)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMyMjgwOQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMyMjgwOQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MTMyMjgwOQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar rounded-1" alt="@nupplaphil" src="379654_002.jfif" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-391322809">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="6fade16a19cc9831c23263e3fb12ca63">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="6fade16a19cc9831c23263e3fb12ca63" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="P6KrNqkfvM7JuhgGZEDPa/km5TNLG4ftOzpSyaS1BK5V1ROrMU+aD241HtilZnFakMNLns0mciBmxEPng/2ISQ==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-391322809-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has been invited to collaborate on the docker repository.">
+      Collaborator
+    </span>
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-391322809" id="issuecomment-391322809-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-23T12:06:45Z">May 23, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>Hm.. There is a sentence about looking for examples in the examples folder.</p>
+<p>But I will write it more clear / prominent :-)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMyMzc0NQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MTMyMzc0NQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MTMyMzc0NQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar rounded-1" alt="@jaltek" src="359552_002.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-391323745">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="6937620a14b56193b8eef6f7761ac228">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="6937620a14b56193b8eef6f7761ac228" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="rqC+dmg8gzhz4ugnBiBJe4DS2ldhkcSkylTALZRzImTE1wbr8Gyl+dRt7vnHBvdK6Td0+uesMWmXqtEDszuugw==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-391323745-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the author of this issue.">
+  Author
+</span>
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-391323745" id="issuecomment-391323745-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-23T12:10:31Z">May 23, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>Well - I first assumed it will run out of the box like the apache example without any further configuration.<br>
+A docker compose example YAML file tempts you to try it out quickly :)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOkxhYmVsZWRFdmVudDE2NDE2MzMzNDQ=">
+  
+        <div class="discussion-item discussion-item-labeled" data-team-hovercards-enabled="">
+  <h3 class="discussion-item-header f5 text-normal" id="event-1641633344">
+
+    <span class="discussion-item-icon">
+      <svg class="octicon octicon-tag" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.73 1.73C7.26 1.26 6.62 1 5.96 1H3.5C2.13 1 1 2.13 1 3.5v2.47c0 .66.27 1.3.73 1.77l6.06 6.06c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 0 0 0-1.41L7.73 1.73zM2.38 7.09c-.31-.3-.47-.7-.47-1.13V3.5c0-.88.72-1.59 1.59-1.59h2.47c.42 0 .83.16 1.13.47l6.14 6.13-4.73 4.73-6.13-6.15zM3.01 3h2v2H3V3h.01z"></path></svg>
+    </span>
+
+    
+
+        <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=925415" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/MrPetovan"><img class="avatar" alt="@MrPetovan" src="925415_002.png" width="16" height="16"></a>
+  <a class="author text-inherit" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=925415" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/MrPetovan">MrPetovan</a>
+  
+
+
+      
+
+  added
+  the 
+<span class="IssueLabel d-inline-block v-align-middle" title="Something isn't working" style="background-color: #e11d21;">
+  <a class="lh-condensed-ultra" href="https://github.com/friendica/docker/labels/Bug" style="color: #ffffff;">Bug</a>
+</span>
+ label
+
+
+    <a href="#event-1641633344" class="timestamp"><relative-time datetime="2018-05-23T12:16:23Z">May 23, 2018</relative-time></a>
+
+  </h3>
+</div>
+
+
+
+
+</div>
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjAxNzI5Nw==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjAxNzI5Nw==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MjAxNzI5Nw==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar rounded-1" alt="@jaltek" src="359552_002.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-392017297">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="1633a32a0b89568971042a79287372e7">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="1633a32a0b89568971042a79287372e7" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="bXh3QbSsJ9BltJuGR00jHC/fBmggc2+AV1Pz/aKtKTYHD8/cLPwBEcI7nViGa50tRjqoxaZOmk0KreLTheWl0Q==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-392017297-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the author of this issue.">
+  Author
+</span>
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-392017297" id="issuecomment-392017297-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-25T10:55:06Z">May 25, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>If you are going to edit the README because of the nginx-fpm example maybe you should replace the</p>
+<pre><code>links:
+      - app
+</code></pre>
+<p>flag in flavor of version 3 of the compose file.<br>
+Quote:</p>
+<blockquote>
+<p>The --link flag is a legacy feature of Docker. It may eventually be 
+removed. Unless you absolutely need to continue using it, we recommend 
+that you use user-defined networks to facilitate communication between 
+two containers instead of using --link. One feature that user-defined 
+networks do not support that you can do with --link is sharing 
+environmental variables between containers. However, you can use other 
+mechanisms such as volumes to share environment variables between 
+containers in a more controlled way.</p>
+</blockquote>
+<p>Ref: <a rel="nofollow" href="https://docs.docker.com/compose/compose-file/#links">https://docs.docker.com/compose/compose-file/#links</a></p>
+<p>Maybe something like:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">version</span>: <span class="pl-s"><span class="pl-pds">'</span>3<span class="pl-pds">'</span></span>
+
+<span class="pl-ent">services</span>:
+  <span class="pl-ent">db</span>:
+    <span class="pl-ent">image</span>: <span class="pl-s">mariadb</span>
+    <span class="pl-ent">restart</span>: <span class="pl-s">always</span>
+    <span class="pl-ent">volumes</span>:
+      - <span class="pl-s">db:/var/lib/mysql</span>
+    <span class="pl-ent">environment</span>:
+      - <span class="pl-s">MYSQL_USER=friendica</span>
+      - <span class="pl-s">MYSQL_PASSWORD=</span>
+      - <span class="pl-s">MYSQL_DATABASE=friendica</span>
+      - <span class="pl-s">MYSQL_RANDOM_ROOT_PASSWORD=yes</span>
+    <span class="pl-ent">networks</span>:
+      <span class="pl-ent">main</span>:
+        <span class="pl-ent">aliases</span>:
+          - <span class="pl-s">db</span>
+
+  <span class="pl-ent">app</span>:
+    <span class="pl-ent">image</span>: <span class="pl-s">friendica/server:fpm</span>
+    <span class="pl-ent">restart</span>: <span class="pl-s">always</span>
+    <span class="pl-ent">volumes</span>:
+      - <span class="pl-s">friendica:/var/www/html    </span>
+    <span class="pl-ent">environment</span>:
+      - <span class="pl-s">MYSQL_HOST=db</span>
+      - <span class="pl-s">MYSQL_PORT=3306</span>
+      - <span class="pl-s">MYSQL_USER=friendica</span>
+      - <span class="pl-s">MYSQL_PASSWORD=</span>
+      - <span class="pl-s">MYSQL_DATABASE=friendica</span>
+      - <span class="pl-s">MAILNAME=root@friendica.local</span>
+    <span class="pl-ent">hostname</span>: <span class="pl-s">friendica.local</span>
+    <span class="pl-ent">depends_on</span>:
+      - <span class="pl-s">db</span>
+    <span class="pl-ent">networks</span>:
+      <span class="pl-ent">main</span>:
+        <span class="pl-ent">aliases</span>:
+          - <span class="pl-s">app</span>
+
+  <span class="pl-ent">web</span>:
+    <span class="pl-ent">image</span>: <span class="pl-s">nginx</span>
+    <span class="pl-ent">ports</span>:
+      - <span class="pl-c1">8080:80</span>
+    <span class="pl-ent">volumes</span>:
+      - <span class="pl-s">./nginx.conf:/etc/nginx/nginx.conf:ro</span>
+    <span class="pl-ent">volumes_from</span>:
+      - <span class="pl-s">app</span>
+    <span class="pl-ent">restart</span>: <span class="pl-s">always</span>
+    <span class="pl-ent">networks</span>:
+      <span class="pl-ent">main</span>:
+        <span class="pl-ent">aliases</span>:
+          - <span class="pl-s">web</span>
+
+<span class="pl-ent">volumes</span>:
+  <span class="pl-ent">db</span>:
+  <span class="pl-ent">friendica</span>:
+
+<span class="pl-ent">networks</span>:
+  <span class="pl-ent">main</span>:</pre></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions has-reactions js-reactions-container ">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-pick-reaction" action="/users/friendica/reactions" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="USDRLVmc9kTGia6FmQqSfOh3Uc4SAGtJH7J6NCpLxDhBXSkPOcT1XMvzK1pKqjb2dGPKCAZx344EX6capXRRUg==" type="hidden">
+      <input name="input[subjectId]" value="MDEyOklzc3VlQ29tbWVudDM5MjAxNzI5Nw==" type="hidden">
+
+      <div class="comment-reactions-options">
+          <button disabled="disabled" class="btn-link reaction-summary-item tooltipped tooltipped-se tooltipped-multiline " name="input[content]" type="submit" value="THUMBS_UP react" aria-label="nupplaphil reacted with thumbs up emoji">
+            <g-emoji alias="+1" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png" class="emoji mr-1">👍</g-emoji>
+            1
+          </button>
+      </div>
+</form></div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjE0MzQxOA==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjE0MzQxOA==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MjE0MzQxOA==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar rounded-1" alt="@nupplaphil" src="379654_002.jfif" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-392143418">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="457240187c62ee280382876c6fd81cc1">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="457240187c62ee280382876c6fd81cc1" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="IMtD/3zOJnOw2sVoE2BzxyPBcyLst9lNwPoJDlpftVVKvPti5J4AshdVw7bSRs32SiTdj2qKLICdBBggfRc5sg==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-392143418-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has been invited to collaborate on the docker repository.">
+      Collaborator
+    </span>
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-392143418" id="issuecomment-392143418-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-25T18:30:20Z">May 25, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>I will change the link to the custom network linking, but I
+ don't want to change the version to "3" because there are currently a 
+lot of version 2 docker-compose configs out there.</p>
+<p>When you make a nginx.conf file with the help of one of the examples 
+and start it with the given docker-compose file, is the docker 
+environment working?</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDIwOkNyb3NzUmVmZXJlbmNlZEV2ZW50Njg2OTIwNTQ2">
+  
+        <div class="discussion-item">
+        <h3 class="discussion-item-header f5 text-normal" id="ref-pullrequest-326747262">
+      <span class="discussion-item-icon">
+        <svg class="octicon octicon-bookmark" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9 0H1C.27 0 0 .27 0 1v15l5-3.09L10 16V1c0-.73-.27-1-1-1zm-.78 4.25L6.36 5.61l.72 2.16c.06.22-.02.28-.2.17L5 6.6 3.12 7.94c-.19.11-.25.05-.2-.17l.72-2.16-1.86-1.36c-.17-.16-.14-.23.09-.23l2.3-.03.7-2.16h.25l.7 2.16 2.3.03c.23 0 .27.08.09.23h.01z"></path></svg>
+      </span>
+        <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar" alt="@nupplaphil" src="379654.jfif" width="16" height="16"></a>
+  <a class="author text-inherit" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+        referenced this issue
+      <a class="timestamp" href="#ref-pullrequest-326747262">
+        <relative-time datetime="2018-05-26T15:43:47Z">May 26, 2018</relative-time>
+      </a>
+    </h3>
+
+  
+      <span class="State State--purple State--small float-right ml-1" title="Status: Merged">
+  
+  <svg height="14" class="octicon octicon-git-merge" viewBox="0 0 12 16" version="1.1" width="10" aria-hidden="true"><path fill-rule="evenodd" d="M10 7c-.73 0-1.38.41-1.73 1.02V8C7.22 7.98 6 7.64 5.14 6.98c-.75-.58-1.5-1.61-1.89-2.44A1.993 1.993 0 0 0 2 .99C.89.99 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2a1.993 1.993 0 0 0 1-3.72V7.67c.67.7 1.44 1.27 2.3 1.69.86.42 2.03.63 2.97.64v-.02c.36.61 1 1.02 1.73 1.02 1.11 0 2-.89 2-2 0-1.11-.89-2-2-2zm-6.8 6c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm8 6c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg> Merged
+
+</span>
+
+
+
+    
+      <h4 class="discussion-item-ref-title">
+        <a href="https://github.com/friendica/docker/pull/11" class="title-link" data-hovercard-type="pull_request" data-hovercard-url="/friendica/docker/pull/11/hovercard">
+          Adding examples for docker-compose
+          <span class="issue-num">#11</span>
+</a>      </h4>
+    
+
+    
+
+
+  
+
+</div>
+
+
+
+</div>
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjI3NTE5MQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjI3NTE5MQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MjI3NTE5MQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar rounded-1" alt="@nupplaphil" src="379654_002.jfif" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-392275191">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="6c7f7f11bf636e9274edb3b1eb9ddf9a">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="6c7f7f11bf636e9274edb3b1eb9ddf9a" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="6G6ai6MD5Dpacb3ndpakkG6/ZjB68WWAE4JZj0/Y2NqCGSIWO1PC+/3+uzm3sBqhB1rInfzMkE1OfEihaJBUPQ==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-392275191-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has been invited to collaborate on the docker repository.">
+      Collaborator
+    </span>
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-392275191" id="issuecomment-392275191-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-26T17:15:06Z">May 26, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>There is a new description in the README for using this example.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjI3OTM1Mg==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5MjI3OTM1Mg==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5MjI3OTM1Mg==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar rounded-1" alt="@jaltek" src="359552_002.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-392279352">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="f8a598bd54bf99d0ee64f86a151921e4">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="f8a598bd54bf99d0ee64f86a151921e4" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="fWxeUL07pkjdV+tGaPeiXg/cEkzx93CoDIZbvObv4IEXG+bNJWuAiXrY7Zip0RxvZjm84XfKhWVReEqSwadsZg==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-392279352-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the author of this issue.">
+  Author
+</span>
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+      <span class="comment-type-icon tooltipped tooltipped-n" aria-label="This comment left via email reply.">
+        <svg class="octicon octicon-mail-read" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 5H4V4h2v1zm3 1H4v1h5V6zm5-.48V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V5.52c0-.33.16-.63.42-.81L2 3.58V3c0-.55.45-1 1-1h1.2L7 0l2.8 2H11c.55 0 1 .45 1 1v.58l1.58 1.13c.27.19.42.48.42.81zM3 7.5L7 10l4-2.5V3H3v4.5zm-2 6l4.5-3-4.5-3v6zm11 .5l-5-3-5 3h10zm1-6.5l-4.5 3 4.5 3v-6z"></path></svg>
+      </span>
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-392279352" id="issuecomment-392279352-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-05-26T18:29:37Z">May 26, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body email-format js-comment-body">
+          <div class="email-fragment">Hi,
+
+as I wrote you via Mastodon/Friendica I'm currently on vacation. I will
+test it in a week :)
+
+
+
+Am 26. Mai 2018 19:15:11 schrieb Philipp &lt;notifications@github.com&gt;:</div>
+<span class="email-hidden-toggle"><a href="#">…</a></span><div class="email-hidden-reply">
+<div class="email-quoted-reply"> There is a new description in the README for using this example.
+ —
+ You are receiving this because you authored the thread.
+ Reply to this email directly, view it on GitHub, or mute the thread.</div>
+<div class="email-fragment"></div>
+</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions has-reactions js-reactions-container ">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-pick-reaction" action="/users/friendica/reactions" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="NIaUwjx88KYXOF/oXNBUwXevC8fjKoYmLlGb0X5zNjwk+2zgXCTzvhpC2jePcPBL67uQAfdbMuE1vEb/8UyjVg==" type="hidden">
+      <input name="input[subjectId]" value="MDEyOklzc3VlQ29tbWVudDM5MjI3OTM1Mg==" type="hidden">
+
+      <div class="comment-reactions-options">
+          <button disabled="disabled" class="btn-link reaction-summary-item tooltipped tooltipped-se tooltipped-multiline " name="input[content]" type="submit" value="THUMBS_UP react" aria-label="nupplaphil reacted with thumbs up emoji">
+            <g-emoji alias="+1" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png" class="emoji mr-1">👍</g-emoji>
+            1
+          </button>
+      </div>
+</form></div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5NDMxOTAzMQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5NDMxOTAzMQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5NDMxOTAzMQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar rounded-1" alt="@jaltek" src="359552_002.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-394319031">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="1bd13641d7438062a694a1b7f4390925">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="1bd13641d7438062a694a1b7f4390925" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="cTT9/T6fEvcPq3Vb8haz8Ynx30sehekwmBod9ytJkjkbQ0Vgps80Nqgkc4UzMA3A4BRx5pi4HP3F5AzZDAEe3g==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-394319031-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the author of this issue.">
+  Author
+</span>
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-394319031" id="issuecomment-394319031-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-06-04T11:14:33Z">Jun 4, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>Works perfect :)</p>
+<p>But the compose example from README differs from <code>.examples/docker-compose/insecure/mariadb-cron-smtp/fpm/docker-compose.yml</code> or was that on purpose?</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5NTE3ODUxNA==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5NTE3ODUxNA==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5NTE3ODUxNA==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar rounded-1" alt="@nupplaphil" src="379654_002.jfif" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-395178514">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="7e35a6e40b69e972abe518492dd93e13">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="7e35a6e40b69e972abe518492dd93e13" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="6F85MA2KMvYpOjlC40Eb586ElsrZxGCshBaTNjgSt82CKIGtldoUN461P5wiZ6XWp2E4Z1/5lWHZ6IIYH1o7Kg==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-395178514-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has been invited to collaborate on the docker repository.">
+      Collaborator
+    </span>
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-395178514" id="issuecomment-395178514-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-06-06T19:02:18Z">Jun 6, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>Thanks for the feedback :-)</p>
+<p>Yes, because the example-files are more like a "template" for 
+everybody. So there are more environment variables to consider and the 
+db-credentials are in a separated file.</p>
+<p>The docker-compose examples in the README are for "quick&amp;dirty" setups.</p>
+<p>In the near future, I will make docker-compose files with traefik as a
+ ACME(Let's encrypt) and Reverse Proxy (=&gt; secure docker-compose 
+files ;-) )</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5OTY0OTg0OQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5OTY0OTg0OQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5OTY0OTg0OQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar rounded-1" alt="@nupplaphil" src="379654_002.jfif" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-399649849">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="4567621948b59dd9fd664a63056b0fa1">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="4567621948b59dd9fd664a63056b0fa1" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="kq71kV56lUXjV2GhM9A1OHoL7j6wTLqyU+y13TFMutD42U0MxiqzhETYZ3/y9osJE+5AkzZxT38OEqTzFgQ2Nw==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-399649849-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has been invited to collaborate on the docker repository.">
+      Collaborator
+    </span>
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-399649849" id="issuecomment-399649849-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-06-23T08:01:33Z">Jun 23, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p><a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">@jaltek</a> Can I close this issue? Is the answer for the README suitable for you?</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5OTg1MTAwOQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDM5OTg1MTAwOQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDM5OTg1MTAwOQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar rounded-1" alt="@jaltek" src="359552_002.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-399851009">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="7f11a34d68a38b8ae0c49548d9327e4b">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="7f11a34d68a38b8ae0c49548d9327e4b" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="jZRsJbg9/yacRgraY6201zuPOSisMWQ6b3oEOwiEi+3n49S4IG3Z5zvJDASiiwrmUmqXhSoMkfcyhBUVL8wHCg==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-399851009-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the author of this issue.">
+  Author
+</span>
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-399851009" id="issuecomment-399851009-permalink" class="timestamp js-timestamp"><relative-time datetime="2018-06-25T06:55:55Z">Jun 25, 2018</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>IMHO yes. Thx!</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions has-reactions js-reactions-container ">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-pick-reaction" action="/users/friendica/reactions" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="mN59jzLdyIqDplgvvUSLPrWNVLWpNfFYkYg3b5UlZPuIo4WtUoXLko7c3fBu5C+0KZnPc71ERZ+KZepBGhrxkQ==" type="hidden">
+      <input name="input[subjectId]" value="MDEyOklzc3VlQ29tbWVudDM5OTg1MTAwOQ==" type="hidden">
+
+      <div class="comment-reactions-options">
+          <button disabled="disabled" class="btn-link reaction-summary-item tooltipped tooltipped-se tooltipped-multiline " name="input[content]" type="submit" value="THUMBS_UP react" aria-label="nupplaphil reacted with thumbs up emoji">
+            <g-emoji alias="+1" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png" class="emoji mr-1">👍</g-emoji>
+            1
+          </button>
+      </div>
+</form></div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDExOkNsb3NlZEV2ZW50MTY5ODEzNzAwOA==">
+  
+        <div class="discussion-item discussion-item-closed" data-team-hovercards-enabled="">
+  <h3 class="discussion-item-header f5 text-normal" id="event-1698137008">
+
+    <span class="discussion-item-icon">
+      <svg class="octicon octicon-circle-slash" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 1.3c1.3 0 2.5.44 3.47 1.17l-8 8A5.755 5.755 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zm0 11.41c-1.3 0-2.5-.44-3.47-1.17l8-8c.73.97 1.17 2.17 1.17 3.47 0 3.14-2.56 5.7-5.7 5.7z"></path></svg>
+    </span>
+
+    
+
+        <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek"><img class="avatar" alt="@jaltek" src="359552_003.png" width="16" height="16"></a>
+  <a class="author text-inherit" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">jaltek</a>
+  
+
+
+      
+closed this
+
+
+    <a href="#event-1698137008" class="timestamp"><relative-time datetime="2018-06-25T06:55:55Z">Jun 25, 2018</relative-time></a>
+
+  </h3>
+</div>
+
+  <div class="closed-banner"></div>
+
+
+
+</div>
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDEyOklzc3VlQ29tbWVudDQ5ODUwMzI0MQ==">
+  
+    
+<div class="timeline-comment-wrapper js-comment-container" data-gid="MDEyOklzc3VlQ29tbWVudDQ5ODUwMzI0MQ==" data-url="/_render_node/MDEyOklzc3VlQ29tbWVudDQ5ODUwMzI0MQ==/timeline/issue_comment">
+
+  
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=51347576" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pianic26"><img class="avatar rounded-1" alt="@pianic26" src="51347576.png" width="44" height="44"></a>
+
+</div>
+
+
+  
+<div class="timeline-comment-group js-minimizable-comment-group js-targetable-comment" id="issuecomment-498503241">
+    <div class="minimized-comment d-none ">
+      
+
+  
+
+<details class="Details-element details-reset border rounded-1 bg-white" data-body-version="99918c03620c316f5e2b43e47cb84a52">
+    <summary class="bg-gray border-bottom-0 py-0 px-2">
+      <div class="d-flex flex-justify-between flex-items-center">
+        <h3 class="timeline-comment-header-text f5 text-gray text-normal text-italic">
+              This comment has been minimized.
+
+        </h3>
+        <div class="text-gray text-small">
+          <a rel="nofollow" class="link-gray" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;minimized comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a2cf92160b55ce89e6abb0094abaedad31ad801602812b840459a79daf02bbb0" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to view</a>
+        </div>
+      </div>
+    </summary>
+</details>
+
+
+    </div>
+  <div class="unminimized-comment comment previewable-edit js-task-list-container js-comment timeline-comment " data-body-version="99918c03620c316f5e2b43e47cb84a52" data-unfurl-hide-url="/content_reference_attachments/hide" data-unfurl-authenticity-token="hH29O6jcu4wbIp7A+dz0Ca8HtxKpuvhH71oJq7FGvH7uCgWmMIydTbytmB44+ko4xuIZvy+HDYqypBiFlg4wmQ==">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions js-timeline-comment-actions">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details class="details-overlay details-reset position-relative d-inline-block ">
+  <summary class="btn-link timeline-comment-action">
+    <svg aria-label="Show options" class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw show-more-popover text-gray-dark anim-scale-in" style="width:185px">
+        <clipboard-copy class="dropdown-item btn-link" for="issuecomment-498503241-permalink" role="menuitem">
+    Copy link
+  </clipboard-copy>
+
+        <button type="button" class="dropdown-item btn-link d-none js-comment-quote-reply" role="menuitem">
+    Quote reply
+  </button>
+
+      
+  </details-menu>
+</details>
+
+  </div>
+
+
+    
+
+
+  
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+
+    <strong class="css-truncate expandable">
+      
+
+  <a class="author text-inherit css-truncate-target" show_full_name="false" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=51347576" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pianic26">pianic26</a>
+  
+
+    </strong>
+
+    commented
+
+
+      <a href="#issuecomment-498503241" id="issuecomment-498503241-permalink" class="timestamp js-timestamp"><relative-time datetime="2019-06-04T03:15:12Z">Jun 4, 2019</relative-time></a>
+
+
+    <span class="js-comment-edit-history">
+    </span>
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide js-edit-comment-hide">
+
+      
+<task-lists disabled="" sortable="">
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <p>I have the same problem; I'm new with docker and I don't how to fix please help<br>
+ERROR: for firstproject-webserver  Cannot start service webserver: OCI 
+runtime create failed: container_linux.go:345: starting container 
+process caused "process_linux.go:424: container init caused 
+"rootfs_linux.go:58: mounting 
+\"/c/firstproject/phpdocker/nginx/nginx.conf\" to rootfs 
+\"/mnt/sda1/var/lib/docker/overlay2/ccb70cb832f49a81d583eb3e389371e01865cb6ab9ae7dd4a923d4f434a9361c/merged\"
+ at 
+\"/mnt/sda1/var/lib/docker/overlay2/ccb70cb832f49a81d583eb3e389371e01865Creating
+ firstproject-php-fpm   ... done<br>
+u trying to mount a directory onto a file (or vice-versa)? Check if the 
+specified host path exists and is the expected tCreating 
+firstproject-mysql     ... done<br>
+<a href="https://github.com/friendica/docker/files/3250344/docker-compose.txt">docker-compose.txt</a></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</task-lists>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container ">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+  
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDIwOkNyb3NzUmVmZXJlbmNlZEV2ZW50OTU4Nzk0MDAx">
+  
+        <div class="discussion-item">
+        <h3 class="discussion-item-header f5 text-normal" id="ref-issue-456642037">
+      <span class="discussion-item-icon">
+        <svg class="octicon octicon-bookmark" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9 0H1C.27 0 0 .27 0 1v15l5-3.09L10 16V1c0-.73-.27-1-1-1zm-.78 4.25L6.36 5.61l.72 2.16c.06.22-.02.28-.2.17L5 6.6 3.12 7.94c-.19.11-.25.05-.2-.17l.72-2.16-1.86-1.36c-.17-.16-.14-.23.09-.23l2.3-.03.7-2.16h.25l.7 2.16 2.3.03c.23 0 .27.08.09.23h.01z"></path></svg>
+      </span>
+        <a class="d-inline-block" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil"><img class="avatar" alt="@nupplaphil" src="379654.jfif" width="16" height="16"></a>
+  <a class="author text-inherit" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">nupplaphil</a>
+  
+
+        referenced this issue
+      <a class="timestamp" href="#ref-issue-456642037">
+        <relative-time datetime="2019-06-16T13:32:34Z">Jun 16, 2019</relative-time>
+      </a>
+    </h3>
+
+  
+      <span class="State State--green State--small float-right ml-1" title="Status: Open">
+  
+  <svg height="14" class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg> Open
+
+</span>
+
+
+
+    
+      <h4 class="discussion-item-ref-title">
+        <a href="https://github.com/friendica/docker/issues/65" class="title-link" data-hovercard-type="issue" data-hovercard-url="/friendica/docker/issues/65/hovercard">
+          Cannot start service webserver: OCI runtime create failed
+          <span class="issue-num">#65</span>
+</a>      </h4>
+    
+
+    
+
+
+  
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- Rendered timeline since 2019-06-16 06:32:34 -->
+<div class="js-timeline-marker js-socket-channel js-updatable-content" id="partial-timeline" data-channel="issue:325668339" data-url="/_render_node/MDU6SXNzdWUzMjU2NjgzMzk=/issues/unread_timeline?variables%5BhasFocusedReviewComment%5D=false&amp;variables%5BhasFocusedReviewThread%5D=false&amp;variables%5BsyntaxHighlightingEnabled%5D=true&amp;variables%5BtimelinePageSize%5D=30&amp;variables%5BtimelineSince%5D=2019-06-16T13%3A32%3A34Z" data-last-modified="Sun, 16 Jun 2019 13:32:34 GMT" data-gid="MDU6SXNzdWUzMjU2NjgzMzk=">
+  <!-- '"` --><!-- </textarea></xmp> --><form class="d-none js-timeline-marker-form" action="/_graphql/MarkNotificationSubjectAsRead" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="bRbMJtzQAk0eqvmPK8QGlBefK2If32b/Wjw07Y/SW7WCHyIijPXjy1jyyqIWh0Wf3SYFU8V0BI5RQ1XIX8BhrQ==" type="hidden">
+    <input name="variables[subjectId]" value="MDU6SXNzdWUzMjU2NjgzMzk=" type="hidden">
+</form></div>
+
+
+          </div>
+
+
+          <div class="discussion-timeline-actions">
+                  
+<div class="flash flash-warn mt-3">
+    <a rel="nofollow" class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;signed out comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="7dd99c64004dcd1d8e0e144c42c91d8be32b5c2e4ed57ad7856261e9af767087" href="https://github.com/join?source=comment-repo">Sign up for free</a>
+    <strong>to join this conversation on GitHub</strong>.
+    Already have an account?
+    <a rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;signed out comment&quot;,&quot;repository_id&quot;:133494535,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:&quot;321973907.1562583136&quot;,&quot;originating_request_id&quot;:&quot;F745:2184E:5D2670:8E8E3C:5D419F2D&quot;,&quot;originating_url&quot;:&quot;https://github.com/friendica/docker/issues/8&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="3e4f0928713bd3c8b67c419efaf159835f03ca6ffad1efd4e8fa23d701ed13c5" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffriendica%2Fdocker%2Fissues%2F8">Sign in to comment</a>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-sidebar col-3 pl-4">
+        
+<div id="partial-discussion-sidebar" class="js-socket-channel js-updatable-content" data-channel="issue:325668339" data-gid="MDU6SXNzdWUzMjU2NjgzMzk=" data-url="/friendica/docker/issues/8/show_partial?partial=issues%2Fsidebar" data-project-hovercards-enabled="">
+
+
+  <div class="discussion-sidebar-item sidebar-assignee js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --><form class="js-issue-sidebar-form" aria-label="Select assignees" action="/friendica/docker/issues/8/assignees" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="teaZH0YVpk1OAOC/JASrReR/YSxFLf9NyLEt3QdER6MIY426uGxTWtnN8uuG4veGNyiQ+X/QmMWFR/8Tju7U+A==" type="hidden">
+    
+  <div class="discussion-sidebar-heading text-bold">
+    Assignees
+  </div>
+
+    
+<span class="css-truncate js-issue-assignees">
+    No one assigned
+</span>
+
+</form></div>
+
+    <div class="discussion-sidebar-item sidebar-labels js-discussion-sidebar-item">
+  
+
+
+  <div class="discussion-sidebar-heading text-bold">
+    Labels
+  </div>
+
+  <div class="labels css-truncate js-issue-labels">
+      <a class="sidebar-labels-style box-shadow-none width-full d-block IssueLabel v-align-text-top" style="background-color: #e11d21; color: #ffffff" data-name="Bug" title="Something isn't working" href="https://github.com/friendica/docker/labels/Bug"><span class="css-truncate-target" style="max-width: 100%">Bug</span></a>
+
+</div>
+
+</div>
+
+    <div class="discussion-sidebar-item js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --><form class="js-issue-sidebar-form" aria-label="Select projects" action="/friendica/docker/projects/issues/8" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="9Hynd/eBp7Lil3vnAIJ3ApxxVkoI+xoxjU5aYFBxDUekAIw+f/NWLGnrHijutGSHxC5T7ZBpiCAI4D6tIJKR1A==" type="hidden">
+    
+  <div class="discussion-sidebar-heading text-bold">
+    Projects
+  </div>
+
+    
+<span class="css-truncate sidebar-projects">
+    None yet
+</span>
+
+</form></div>
+
+    <div class="discussion-sidebar-item sidebar-milestone js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --><form class="js-issue-sidebar-form" aria-label="Select milestones" action="/friendica/docker/issues/8/set_milestone?partial=issues%2Fsidebar%2Fshow%2Fmilestone" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="bkvtCt6trz7aWjX0p1j2aDa1ss1mWJ+e87qRmR39H03k5R7/Pvi3vSUcKOsGetsLWUYVl95roTxtH6l14fqIPw==" type="hidden">
+    
+  <div class="discussion-sidebar-heading text-bold">
+    Milestone
+  </div>
+
+      No milestone
+
+</form></div>
+
+  
+  <div id="partial-users-participants" class="discussion-sidebar-item">
+  <div class="participation">
+
+    <div class="discussion-sidebar-heading text-bold">
+      4 participants
+    </div>
+    <div class="participation-avatars d-flex flex-wrap">
+        <a class="participant-avatar" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=359552" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jaltek">
+          <img class="avatar" src="359552.png" alt="@jaltek" width="26" height="26"> 
+</a>        <a class="participant-avatar" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=379654" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nupplaphil">
+          <img class="avatar" src="379654_003.jfif" alt="@nupplaphil" width="26" height="26"> 
+</a>        <a class="participant-avatar" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=51347576" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pianic26">
+          <img class="avatar" src="51347576_002.png" alt="@pianic26" width="26" height="26"> 
+</a>        <a class="participant-avatar" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=925415" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/MrPetovan">
+          <img class="avatar" src="925415.png" alt="@MrPetovan" width="26" height="26"> 
+</a>    </div>
+  </div>
+</div>
+
+
+  
+
+
+
+  
+
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </main>
+  </div>
+  
+
+  </div>
+
+        
+<div class="footer container-lg width-full px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">© 2019 <span title="1.07459s from unicorn-6f55c89bd-4p5db">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
+        <li class="mr-3"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com/">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3"><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3"><a href="https://github.blog/" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    
+    <script crossorigin="anonymous" integrity="sha512-XMtqx2RdNQat7m2QYOvxa6seqrjkSRPqLQdgkmw6G0vDbKF+Y8fQIBHWqTlurp/a6ZvXaM3dy279O7+O8Qyaqw==" type="application/javascript" src="frameworks-96196a96.js"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-i6D130bBZmF9mfiyfC1Kz+mg+Xux+0ayhY63Q1HFx81zfjrKw1pUhG/0LSHhldz2tEn7y6WJxNZGyJZ+8GWtcw==" type="application/javascript" src="github-bootstrap-3f679bc1.js"></script>
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner" hidden="">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <template id="site-details-dialog">
+  <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark hx_rsm" open="">
+    <summary role="button" aria-label="Close dialog"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast hx_rsm-dialog hx_rsm-modal">
+      <button class="Box-btn-octicon m-0 btn-octicon position-absolute right-0 top-0" type="button" aria-label="Close dialog" data-close-dialog="">
+        <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+      </button>
+      <div class="octocat-spinner my-6 js-details-dialog-spinner"></div>
+    </details-dialog>
+  </details>
+</template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+  <div aria-live="polite" class="js-global-screen-reader-notice sr-only"></div>
+
+  
+
+
+</body></html>

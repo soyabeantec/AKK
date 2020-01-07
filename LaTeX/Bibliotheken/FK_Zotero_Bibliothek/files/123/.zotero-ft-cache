@@ -1,0 +1,195 @@
+Produkte
+elastic-logo-mobile
+
+    DE
+        Deutsch
+        English
+        Español
+        Français
+        日本語
+        한국어
+        简体中文
+        Português
+
+elastic-logo
+
+    Produkte
+    Cloud
+    Services
+    Kunden
+    Lernen
+
+    Downloads
+    Kontakt
+    DE
+        Deutsch
+        English
+        Español
+        Français
+        日本語
+        한국어
+        简体中文
+        Português
+
+Kibana
+Herunterladen Als Service
+Kibana
+Herunterladen Als Service
+Kibana
+The Elastic Stack
+Ihr Fenster in
+den Elastic Stack
+
+Kibana hilft, Elasticsearch-Daten zu visualisieren und durch den Elastic Stack zu navigieren. So können Sie nicht nur in Erfahrung bringen, warum Sie um zwei Uhr morgens eine Benachrichtigung erhalten, sondern auch herausfinden, welchen Einfluss Regen auf Ihre Quartalszahlen haben könnte – und vieles andere mehr.
+.st0{fill:#00BFB3;} .st1{fill:#DD0A73;} .st2{fill:#C1272D;} .kibana-svg-hidden{display:none;}
+Grundlagen von Kibana: Informationen für Einsteiger.   Video ansehen
+New In 7.2, try the new SIEM app, control which users can access specific features in Kibana, embed maps in your dashboards, and more.   Learn More
+Visualisieren und erkunden
+Ein Bild sagt mehr als tausend Log-Zeilen
+
+Kibana bietet Ihnen flexible Möglichkeiten, Ihre Daten aufzubereiten und zu visualisieren. Dabei müssen Sie noch nicht einmal wissen, wonach Sie eigentlich suchen. Dank interaktiver Visualisierungen können Sie mit einer Frage loslegen und dann sehen, wohin Sie das Ganze führt.
+Die Grundlagen
+
+Kibana bietet von Hause aus alle klassischen Visualisierungen: Histogramme, Liniendiagramme, Kreisdiagramme, Ringdiagramme und mehr. Mithilfe der Vega-Grammatik können Sie aber auch eigene Visualisierungen gestalten. In jedem Fall werden die umfassenden Aggregationsfähigkeiten von Elasticsearch voll genutzt.
+
+Live-Demo ansehen
+Karten mit Geo-Daten versehen
+
+Nutzen Sie unseren Elastic Maps Service , um Geo-Daten zu visualisieren, oder werden Sie kreativ und stellen Sie individuelle Standortdaten auf einer schematischen Karte Ihrer Wahl dar.
+Zeitreihen analysieren
+
+Mit unseren kuratierten Zeitreihen-UIs können Sie Ihre Elasticsearch-Daten ausführlichen Zeitreihenanalysen unterziehen. Beschreiben Sie Abfragen, Transformationen und Visualisierungen mit leistungsstarken, leicht zu erlernenden Ausdrücken.
+Analysieren von Beziehungen mit Graph
+
+Kombinieren Sie die Relevanzfähigkeiten einer Suchmaschine mit Funktionen zur Graphexploration und decken Sie so bislang unentdeckte Beziehungen in Ihren Elasticsearch-Daten auf.
+Machine Learning zur Analyse von Anomalien nutzen
+
+Entdecken Sie die Anomalien, die sich in Ihren Elasticsearch-Daten verstecken, und nutzen Sie Features zum unüberwachten Machine Learning , um zu analysieren, durch welche Eigenschaften diese beeinflusst werden.
+Canvas für professionelle Datenpräsentation
+
+Schluss mit langweiligen und immer gleich aussehenden Tabellen. Präsentieren Sie Ihre Live-Daten mit Logos, Farben und Designelementen im Stil Ihres Unternehmens. Mit Canvas können Sie Ihrer Kreativität freien Lauf lassen – und SQL wird auch unterstützt.
+Sicher teilen und zusammenarbeiten
+Gutes ist für alle da
+
+Teilen Sie Ihre Kibana-Visualisierungen ganz einfach mit anderen im Team, Ihrem Chef, dessen Chef, Ihren Kunden oder Compliance-Beauftragten – kurz mit jedem, mit dem Sie sie teilen möchten. Sie können wählen, welche Methode Sie bevorzugen, ob Dashboard-Einbettung, Link-Weitergabe oder Export ins PDF-, PNG- oder CSV-Format für die Weiterleitung als E-Mail-Anhang. Oder Sie fassen Ihre Dashboards und Visualisierungen in Kibana-Spaces zusammen und laden andere in diese Spaces ein. Die Sicherheit wird durch rollenbasierte Zugriffssteuerung gewährleistet, sodass jeder nur das zu sehen bekommt, was er sehen soll.
+security-login.gif
+Verwalten
+Apps und UIs für die Datenverarbeitung und mehr
+
+Auf dem Kibana-Startbildschirm finden Sie alle Tools, die Sie für das Ingestieren Ihrer Daten benötigen. Kibana bietet über die Befehlszeile hinaus zusätzliche Möglichkeiten, Sicherheitseinstellungen zu verwalten , Daten-Rollups zu erstellen oder weitere Elastic Stack-Features zu konfigurieren. Experten werden zum Verwalten und Sichern des Elastic Stack sicher weiterhin auf unsere hervorragenden APIs zurückgreifen, aber für das breite Publikum ist das Verwalten und Sichern des Elastic Stack jetzt noch intuitiver geworden.
+
+    Daten hinzufügen
+    Sicherer Zugriff
+    Pipelines verwalten
+    Verwaltungs-UI für Rollups
+
+Daten hinzufügen
+Entwickler-Tools
+Schön und leistungsstark zugleich.
+
+Die Kibana-Entwickler-Tools bieten Hilfestellung bei der Interaktion mit dem Elastic Stack. Mit Console müssen Sie nicht länger zum Terminal wechseln und Curl verwenden, sondern Sie können direkt an Ihren Elasticsearch-Daten herumbasteln, der Search Profiler gibt Aufschluss darüber, an welchen Stellen sich Suchanfragen verzögern, und mit dem Grok Debugger lassen sich im Handumdrehen komplizierte grok-Muster in Ihrer Logstash-Konfiguration erstellen.
+
+    Console
+    Search Profiler
+    Grok Debugger
+
+Console
+Klicken, ziehen, erkunden –
+experimentieren Sie mit Kibana.
+
+Wir machen Ihnen die ersten Schritte leicht. Kibana wird mit eigenem Node.js-Webserver geliefert. Sie brauchen also weder zusätzlichen Code noch weitere Infrastruktur, sondern nur etwas Neugier und Entdeckergeist.
+(Kibana ist auch in unserem gehosteten Angebot Elasticsearch Service verfügbar.)
+Herunterladen
+
+Frei zugänglich und kostenlos.
+
+    Dokumentation Dokumentation
+    Foren Foren
+    GitHub GitHub
+
+Unseren Newsletter abonnieren
+Products >
+
+    Elasticsearch
+    Kibana
+    Beats
+    Logstash
+    Stack Features (formerly X-Pack)
+    Security
+    Alerting
+    Canvas
+    Monitoring
+    Graph
+    Reporting
+    Machine Learning
+    Elasticsearch SQL
+    Elasticsearch-Hadoop
+    Elastic Cloud Enterprise
+    Elasticsearch on Kubernetes
+
+Solutions >
+
+    Logging
+    Metrics
+    Site Search
+    SIEM
+    APM
+    App Search
+    Ersatz für Google Site Search
+
+Elastic Cloud >
+
+    Elasticsearch Service
+    AWS Elasticsearch Service Comparison
+    Elastic App Search Service
+    Elastic Site Search Service
+
+Resources
+
+    Blog
+    Cloud Status
+    Community
+    Customers & Use Cases
+    Documentation
+    Elastic{ON} Events
+    Forums
+    Meetups
+    Security and Compliance
+    Subscriptions
+    Support Portal
+    Videos & Webinars
+    Training
+
+About >
+
+    Careers/Jobs
+    Our Source Code
+    Teams
+    Board of Directors
+    Leadership
+    Contact
+    Our Story
+    Why Open Source
+    Distributed by Intention
+    Partners
+    Media
+    Investor Relations
+    Elastic Store
+
+FOLLOW US
+
+    Trademarks
+    Terms of Use
+    Privacy
+    Brand
+
+© 2019. Elasticsearch B.V. All Rights Reserved
+
+Elasticsearch is a trademark of Elasticsearch B.V., registered in the U.S. and in other countries.
+
+Apache, Apache Lucene, Apache Hadoop, Hadoop, HDFS and the yellow elephant logo are trademarks of the Apache Software Foundation in the United States and/or other countries.
+
+Notice
+
+This website or its third-party tools use cookies, which are necessary to its functioning and required to achieve the purposes illustrated in the cookie policy. If you want to know more or withdraw your consent to all or some of the cookies, please refer to the cookie policy .
+By closing this banner, scrolling this page, clicking a link or continuing to browse otherwise, you agree to the use of cookies.

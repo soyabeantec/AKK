@@ -1,0 +1,452 @@
+<html><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="ga.js"></script><script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27880019-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>Python Data Analysis Library — pandas: Python Data Analysis Library</title>
+    <link rel="stylesheet" href="pydata.css" type="text/css">
+    <link rel="stylesheet" href="pygments.css" type="text/css">
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <script type="text/javascript" src="language_data.js"></script>
+    <link rel="author" title="About these documents" href="https://pandas.pydata.org/about.html">
+    <link rel="index" title="Index" href="https://pandas.pydata.org/genindex.html">
+    <link rel="search" title="Search" href="https://pandas.pydata.org/search.html">
+    <link rel="next" title="The pandas project" href="https://pandas.pydata.org/about.html"> 
+  </head><body data-gr-c-s-loaded="true">
+<div class="header-wrapper">
+	<div class="header">
+		<div class="logo">
+			<a href="https://pandas.pydata.org/index.html"><img class="logo" src="pandas_logo.png" alt="Logo"></a>
+		</div>
+
+        <div class="rel">
+			<a href="https://pandas.pydata.org/index.html">home</a> //
+			<a href="https://pandas.pydata.org/about.html">about</a> //
+			<a href="https://pandas.pydata.org/getpandas.html">get pandas</a> //
+			<a href="http://pandas.pydata.org/pandas-docs/stable">documentation</a> //
+			<a href="https://pandas.pydata.org/community.html">community</a> //
+			<a href="https://pandas.pydata.org/talks.html">talks</a> //
+			<a href="https://pandas.pydata.org/donate.html">donate</a>
+		</div>
+
+	</div>
+</div>
+
+<div class="content-wrapper">
+<div class="content">
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+
+<div class="sidebarblock">
+<h3>Versions</h3>
+
+
+  <div class="tile">
+      <h4>Release Candidate</h4>
+      0.25.0 - July 2019 <br>
+      <a href="https://pypi.org/project/pandas/0.25.0/#files">download</a> //
+      <a href="http://pandas.pydata.org/pandas-docs/version/0.25.0/">docs</a> //
+      <a href="http://pandas.pydata.org/pandas-docs/version/0.25.0/pandas.pdf">pdf</a>
+  </div>
+
+
+	<div class="tile">
+				<h4>Release</h4>
+				0.24.2 - March 2019 <br>
+				<a href="https://pypi.org/project/pandas/#files">download</a>          //
+				<a href="http://pandas.pydata.org/pandas-docs/stable/">docs</a> //
+				<a href="http://pandas.pydata.org/pandas-docs/stable/pandas.pdf">pdf</a>
+	</div>
+
+	<div class="tile">
+		<h4>Development</h4>
+        0.25.0 - April 2019<br>
+        <a href="https://github.com/pydata/pandas">github</a> //
+        <a href="http://pandas-docs.github.io/pandas-docs-travis/">docs</a>
+    </div>
+
+    <div class="tile">
+      <h4>Previous Releases</h4>
+      
+          <div>
+              0.24.1 -
+              <a href="https://pypi.org/project/pandas/0.24.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.24/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.24/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.24.0 -
+              <a href="https://pypi.org/project/pandas/0.24.0/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.24/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.24/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.23.4 -
+              <a href="https://pypi.org/project/pandas/0.23.4/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.23.3 -
+              <a href="https://pypi.org/project/pandas/0.23.3/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.23.2 -
+              <a href="https://pypi.org/project/pandas/0.23.2/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.23.1 -
+              <a href="https://pypi.org/project/pandas/0.23.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.23.0 -
+              <a href="https://pypi.org/project/pandas/0.23.0/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.23/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.22.0 -
+              <a href="https://pypi.org/project/pandas/0.22.0/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.22/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.22/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.21.1 -
+              <a href="https://pypi.org/project/pandas/0.21.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.21/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.21/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.21.0 -
+              <a href="https://pypi.org/project/pandas/0.21.0/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.21/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.21/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.20.3 -
+              <a href="https://pypi.org/project/pandas/0.20.3/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.20/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.20/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.19.2 -
+              <a href="https://pypi.org/project/pandas/0.19.2/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.19/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.19/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.18.1 -
+              <a href="https://pypi.org/project/pandas/0.18.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.18/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.18/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.17.1 -
+              <a href="https://pypi.org/project/pandas/0.17.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.17/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.17/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.16.2 -
+              <a href="https://pypi.org/project/pandas/0.16.2/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.16/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.16/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.15.2 -
+              <a href="https://pypi.org/project/pandas/0.15.2/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.15/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.15/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.14.1 -
+              <a href="https://pypi.org/project/pandas/0.14.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.14/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.14/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.13.1 -
+              <a href="https://pypi.org/project/pandas/0.13.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.13/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.13/pandas.pdf">pdf</a>
+          </div>
+
+      
+          <div>
+              0.12.0 -
+              <a href="https://pypi.org/project/pandas/0.12.0/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.12/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.12/pandas.pdf">pdf</a>
+          </div>
+
+      
+    </div>
+
+
+</div>
+
+<div class="sidebarblock">
+	<h3>About pandas</h3>
+  	<ul>
+    	<li><a href="http://pandas.pydata.org/pandas-docs/dev/whatsnew.html">What's New</a></li>
+		<li><a href="http://pandas.pydata.org/pandas-docs/stable/install.html">Getting Started</a></li>
+		<li><a href="https://github.com/pydata/pandas/issues">Issue Tracker</a></li>
+    	<li><a href="http://pandas.pydata.org/pandas-docs/stable/overview.html#license">License</a></li>
+		<li><a href="http://pandas.pydata.org/pandas-docs/stable/contributing.html">Contributing Guidelines</a></li>
+  	</ul>
+</div>
+
+<div class="sidebarblock">
+<h3>Get the book</h3>
+   <a href="http://www.kqzyfj.com/click-7040302-11260198?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920050896.do&amp;cjsku=0636920023784"><img src="pydata_cover.jpg" alt="Python for Data Analysis" ,="" width="180," height="240"></a>
+</div>
+
+<div class="sidebarblock">
+	<h3>Related Tools</h3>
+	<ul>
+    	<li><a href="http://www.scipy.org/">SciPy</a></li>
+    	<li><a href="http://www.numpy.org/">NumPy</a></li>
+    	<li><a href="http://statsmodels.sourceforge.net/">StatsModels</a></li>
+    	<li><a href="http://scikit-learn.org/">scikit-learn</a></li>
+		<li><a href="http://jupyter.org/">Jupyter</a></li>
+		<li><a href="http://matplotlib.org/">matplotlib</a></li>
+  	</ul>
+</div>
+
+</div>
+</div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-data-analysis-library">
+<h1>Python Data Analysis Library<a class="headerlink" href="#python-data-analysis-library" title="Permalink to this headline">¶</a></h1>
+<p><em>pandas</em> is an open source, BSD-licensed library providing high-performance,
+easy-to-use data structures and data analysis tools for the <a class="reference external" href="https://www.python.org/">Python</a> programming language.</p>
+<p><em>pandas</em> is a <a class="reference external" href="https://www.numfocus.org/open-source-projects.html">NumFOCUS</a> sponsored project. This will help ensure the success of development of <em>pandas</em> as a world-class open-source project, and makes it possible to <a class="reference internal" href="https://pandas.pydata.org/donate.html"><span class="doc">donate</span></a> to the project.</p>
+<a class="reference external image-reference" href="https://www.numfocus.org/open-source-projects.html"><img alt="NumFOCUS Logo" src="SponsoredProjectStamp_300px.png"></a>
+<div class="section" id="v0-24-2-final-march-14-2019">
+<h2>v0.24.2 Final (March 14, 2019)<a class="headerlink" href="#v0-24-2-final-march-14-2019" title="Permalink to this headline">¶</a></h2>
+<p>This is a minor bug-fix release in the 0.24.x series and includes 
+some regression fixes, bug fixes, and performance improvements.
+We recommend that all users upgrade to this version.</p>
+<p>The release can be installed with conda from conda-forge or the default channel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+<p>Or via PyPI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.24.2/whatsnew/v0.24.2.html">full whatsnew</a> for a list of all the changes.</p>
+</div>
+<div class="section" id="v0-24-0-final-january-25-2018">
+<h2>v0.24.0 Final (January 25, 2018)<a class="headerlink" href="#v0-24-0-final-january-25-2018" title="Permalink to this headline">¶</a></h2>
+<p>This is a major release from 0.23.4 and includes a number of API
+changes, new features, enhancements, and performance improvements along
+with a large number of bug fixes.</p>
+<p>Highlights include:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.24/whatsnew/v0.24.0.html#optional-integer-na-support">Optional Nullable Integer
+Support</a></li>
+<li><a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.24/whatsnew/v0.24.0.html#accessing-the-values-in-a-series-or-index">New APIs for accessing the array backing a Series or
+Index</a></li>
+<li><a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.24/whatsnew/v0.24.0.html#array">A new top-level pandas.array() method for creating
+arrays</a></li>
+<li><a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.24/whatsnew/v0.24.0.html#storing-interval-and-period-data-in-series-and-dataframe">Store Interval and Period data in a Series or
+DataFrame</a></li>
+<li><a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.24/whatsnew/v0.24.0.html#joining-with-two-multi-indexes">Joining with two
+MultiIndexes</a></li>
+</ul>
+<p>See the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.24/whatsnew/v0.24.0.html">release
+notes</a>
+for a full list of all the change from 0.23.4</p>
+<p>The release candidate can be installed with conda using the defaults or
+conda-forge channels</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+<p>Or via PyPI</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+<p>Note that 0.24.x is the last series of releases to support Python 2.</p>
+<p>Please report any issues with the release candidate on the <a class="reference external" href="https://github.com/pandas-dev/pandas/issues">pandas issue
+tracker</a>.</p>
+</div>
+<div class="section" id="best-way-to-install">
+<h2>Best way to Install<a class="headerlink" href="#best-way-to-install" title="Permalink to this headline">¶</a></h2>
+<p>The best way to get pandas is via <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/install.html#installing-pandas-with-anaconda">conda</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p>
+<p>Packages are available for <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/install.html#python-version-support">all supported python versions</a>
+on Windows, Linux, and MacOS.</p>
+<p>Wheels are also uploaded to <a class="reference external" href="https://pypi.org/project/pandas/">PyPI</a> and can be installed with</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install pandas
+</pre></div>
+</div>
+</div>
+<div class="section" id="quick-vignette">
+<h2>Quick vignette<a class="headerlink" href="#quick-vignette" title="Permalink to this headline">¶</a></h2>
+<iframe src="https://player.vimeo.com/video/59324550" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="500" frameborder="0" height="309"></iframe> <p><a href="https://vimeo.com/59324550">10-minute
+tour of pandas</a> from <a href="https://vimeo.com/user10077863">Wes
+McKinney</a> on <a href="https://vimeo.com/">Vimeo</a>.</p></div>
+<div class="section" id="what-problem-does-pandas-solve">
+<h2>What problem does <em>pandas</em> solve?<a class="headerlink" href="#what-problem-does-pandas-solve" title="Permalink to this headline">¶</a></h2>
+<p>Python has long been great for data munging and preparation, but less so for
+data analysis and modeling. <em>pandas</em> helps fill this gap, enabling you to
+carry out your entire data analysis workflow in Python without having to
+switch to a more domain specific language like R.</p>
+<p>Combined with the excellent <a class="reference external" href="https://ipython.org/">IPython</a> toolkit and
+other libraries, the environment for doing data analysis in Python excels in
+performance, productivity, and the ability to collaborate.</p>
+<p><em>pandas</em> does not implement significant modeling functionality outside of
+linear and panel regression; for this, look to <a class="reference external" href="http://statsmodels.sf.net/">statsmodels</a> and <a class="reference external" href="http://scikit-learn.org/">scikit-learn</a>. More work is still needed to make Python a first
+class statistical modeling environment, but we are well on our way toward that
+goal.</p>
+</div>
+<div class="section" id="what-do-our-users-have-to-say">
+<h2>What do our users have to say?<a class="headerlink" href="#what-do-our-users-have-to-say" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference external image-reference" href="https://www.aqr.com/"><img alt="AQR Capital Management Logo" class="align-right" src="aqr_capital_management_logo.png"></a>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Roni Israelov, PhD</strong></div>
+<div class="line">Portfolio Manager</div>
+<div class="line"><a class="reference external" href="https://www.aqr.com/">AQR Capital Management</a></div>
+</div>
+<blockquote>
+<div><p>“<em>pandas</em> allows us to focus more on research and less on programming. We
+have found <em>pandas</em> easy to learn, easy to use, and easy to maintain.
+The bottom line is that it has increased our productivity.”</p>
+<a class="reference external image-reference" href="https://www.appnexus.com/"><img alt="AppNexus Logo" class="align-right" src="appnexus_logo.png"></a>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>David Himrod</strong></div>
+<div class="line">Director of Optimization &amp; Analytics</div>
+<div class="line"><a class="reference external" href="https://www.appnexus.com/">AppNexus</a></div>
+</div>
+<blockquote>
+<div><p>“<em>pandas</em> is the perfect tool for bridging the gap between rapid
+iterations of ad-hoc analysis and production quality code. If you
+want one tool to be used across a multi-disciplined organization of
+engineers, mathematicians and analysts, look no further.”</p>
+<a class="reference external image-reference" href="https://www.datadoghq.com/"><img alt="Datadog Logo" class="align-right" src="datadog_logo.png"></a>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Olivier Pomel</strong></div>
+<div class="line">CEO</div>
+<div class="line"><a class="reference external" href="https://www.datadoghq.com/">Datadog</a></div>
+</div>
+<blockquote>
+<div>“We use <em>pandas</em> to process time series data on our production servers.
+The simplicity and elegance of its API, and its high level
+of performance for high-volume datasets, made it a perfect choice for
+us.”</div></blockquote>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="library-highlights">
+<h2>Library Highlights<a class="headerlink" href="#library-highlights" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>A fast and efficient <strong>DataFrame</strong> object for data manipulation with
+integrated indexing;</li>
+<li>Tools for <strong>reading and writing data</strong> between in-memory data structures and
+different formats: CSV and text files, Microsoft Excel, SQL databases, and
+the fast HDF5 format;</li>
+<li>Intelligent <strong>data alignment</strong> and integrated handling of <strong>missing data</strong>:
+gain automatic label-based alignment in computations and easily manipulate
+messy data into an orderly form;</li>
+<li>Flexible <strong>reshaping</strong> and pivoting of data sets;</li>
+<li>Intelligent label-based <strong>slicing</strong>, <strong>fancy indexing</strong>, and <strong>subsetting</strong>
+of large data sets;</li>
+<li>Columns can be inserted and deleted from data structures for <strong>size
+mutability</strong>;</li>
+<li>Aggregating or transforming data with a powerful <strong>group by</strong> engine
+allowing split-apply-combine operations on data sets;</li>
+<li>High performance <strong>merging and joining</strong> of data sets;</li>
+<li><strong>Hierarchical axis indexing</strong> provides an intuitive way of working with
+high-dimensional data in a lower-dimensional data structure;</li>
+<li><strong>Time series</strong>-functionality: date range generation and frequency
+conversion, moving window statistics, moving window linear regressions, date
+shifting and lagging. Even create domain-specific time offsets and join time
+series without losing data;</li>
+<li>Highly <strong>optimized for performance</strong>, with critical code paths written in
+<a class="reference external" href="http://www.cython.org/">Cython</a> or C.</li>
+<li>Python with <em>pandas</em> is in use in a wide variety of <strong>academic and
+commercial</strong> domains, including Finance, Neuroscience, Economics,
+Statistics, Advertising, Web Analytics, and more.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<div class="footer-wrapper">
+</div>
+
+<a href="http://github.com/pydata/pandas"><img style="position: fixed; top: 0; right: 0; border: 0;" src="forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a></div>
+
+
+
+
+  
+</div></body></html>
