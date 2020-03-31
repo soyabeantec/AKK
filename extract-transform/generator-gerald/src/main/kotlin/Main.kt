@@ -53,7 +53,8 @@ fun main(args: Array<String>) {
     } catch (e: Exception) {
         println("$ANSI_RED! Could not parse the JSON !$ANSI_RESET")
         println("   ERROR: $e")
-        println("   Content of the args: ${args[0]}")
+        if (args.isNotEmpty()) {  println("   Content of the args: ${args[0]}") }
+        else { println("Nothing passed - args is empty!")}
     }
 
     // Generate data
