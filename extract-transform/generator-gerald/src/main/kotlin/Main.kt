@@ -6,12 +6,45 @@ import kotlinx.serialization.*
 import kotlinx.serialization.internal.StringDescriptor
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
+import java.io.File
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
 const val ANSI_RESET = "\u001B[0m"
 const val ANSI_RED = "\u001B[31m"
+
+/**
+ * The maximal count of datasets
+ * that should be in one file. If
+ * this number is reached, the file
+ * will be cleared and started over again.
+ */
+const val MAX_DATASETS = 100
+
+/**
+ * Defines how fast a new dataset should
+ * be generated and written to the file.
+ */
+const val GENERATION_SPEED = 60_000L
+
+/**
+ * The name of file the where the generated
+ * date should be placed.
+ */
+const val OUTPUT_FILE = "gen.json"
+
+/**
+ * Indicates if the program should start
+ * with a clean file.
+ */
+var initWrite = true
+
+/**
+ * Keeps track of how many datasets are
+ * already in the file.
+ */
+var datasetCount: Int = 0
 
 /**
  * Custom serializer for the 'Date' class from java.util.
@@ -60,10 +93,40 @@ fun main(args: Array<String>) {
     if (generationParams != null) {
         // Validate parameters
         if (generationParams.validate()) {
-            val genData = generateDataItem(generationParams)
-            println("Content of genData: $genData")
-            val jsonGenData = jsonSerializer.stringify(GeneratedData.serializer(), genData)
-            println("Content of jsonGenData: $jsonGenData")
+
+            while (true) // Endless generation of data
+            {
+                // A new dataset will be created
+                datasetCount++
+                
+                // Generate the data
+                val genData = generateDataItem(generationParams)
+                println("===============================")
+                println("Content of genData:\n" +
+                        "  $genData\n" +
+                        " ")
+
+                // Convert to a Json-String
+                val jsonGenData = jsonSerializer.stringify(GeneratedData.serializer(), genData)
+                println("Content of jsonGenData:\n" +
+                        "  $jsonGenData\n" +
+                        " ")
+                println("===============================")
+                println("Writing to the $OUTPUT_FILE ...")
+
+                // Write the data to a file
+                buildJsonFile(jsonGenData)
+                Thread.sleep(GENERATION_SPEED) // Waits one minute for the next generation
+
+                // Check if the max. dataset count has been reached
+                if (datasetCount == MAX_DATASETS) {
+                    // Clear the file and start over again
+                    datasetCount = 0
+                    initWrite = true
+                }
+
+            }
+
         } else {
             println("$ANSI_RED! Parameters are not valid !$ANSI_RESET")
         }
@@ -144,6 +207,16 @@ fun generateDataItem(generationParams: GenerationParams): GeneratedData {
     )
 }
 
-fun buildJson() {
-    TODO("Implement buildJson")
+/**
+ * Writes the provided String into an Json file.
+ * Every restart of the whole program will result in an override.
+ * @param genDataAsJson the generated data as a Json-String.
+ */
+fun buildJsonFile(genDataAsJson: String) {
+    if (initWrite) {
+        initWrite = false
+        File(OUTPUT_FILE).writeText(genDataAsJson)
+    } else {
+        File(OUTPUT_FILE).appendText("\n" + genDataAsJson)
+    }
 }
