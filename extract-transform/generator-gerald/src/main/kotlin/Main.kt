@@ -35,6 +35,12 @@ const val GENERATION_SPEED = 60_000L
 const val OUTPUT_FILE = "gen.json"
 
 /**
+ * The path where the file should
+ * be generated.
+ */
+var filePath = ""
+
+/**
  * Indicates if the program should start
  * with a clean file.
  */
@@ -87,6 +93,21 @@ fun main(args: Array<String>) {
         println("   ERROR: $e")
         if (args.isNotEmpty()) {  println("   Content of the args: ${args[0]}") }
         else { println("Nothing passed - args is empty!")}
+        return
+    }
+
+    /* Check and sets the file path argument if there is one */
+    if (args.size == 2) { // File path provided
+        val path = args[1]
+        if (path[path.length - 1] == '/') { // Valid file path
+            filePath = path + OUTPUT_FILE
+        }
+        else {  // Invalid file path
+            println("$ANSI_RED! Invalid file path provided !$ANSI_RESET")
+            println("   ERROR: Must end with /")
+        }
+    } else { // No file path provided
+        filePath = OUTPUT_FILE
     }
 
     // Generate data
@@ -215,8 +236,8 @@ fun generateDataItem(generationParams: GenerationParams): GeneratedData {
 fun buildJsonFile(genDataAsJson: String) {
     if (initWrite) {
         initWrite = false
-        File(OUTPUT_FILE).writeText(genDataAsJson)
+        File(filePath).writeText(genDataAsJson)
     } else {
-        File(OUTPUT_FILE).appendText("\n" + genDataAsJson)
+        File(filePath).appendText("\n" + genDataAsJson)
     }
 }
