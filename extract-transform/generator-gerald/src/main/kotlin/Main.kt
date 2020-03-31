@@ -2,7 +2,6 @@ package eu.akkalytics.et.gen
 
 import eu.akkalytics.et.gen.entities.GeneratedData
 import eu.akkalytics.et.gen.entities.GenerationParams
-import eu.akkalytics.et.gen.entities.validCountryCode
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.StringDescriptor
 import kotlinx.serialization.json.Json
