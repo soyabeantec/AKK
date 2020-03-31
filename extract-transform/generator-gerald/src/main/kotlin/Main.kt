@@ -1,5 +1,7 @@
 package eu.akkalytics.et.gen
 
+import eu.akkalytics.et.gen.entities.GeneratedData
+import eu.akkalytics.et.gen.entities.GenerationParams
 import eu.akkalytics.et.gen.entities.validCountryCode
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.StringDescriptor
@@ -34,117 +36,6 @@ object DateSerializer: KSerializer<Date> {
     }
 }
 
-/**
- * Data class which holds the parameters which
- * are passed by the start of the program start
- * as one JSON.
- */
-@Serializable
-data class GenerationParams(
-    val company: String, //  e.g. ‘WV’ - 2 letter code
-    val plant: String, //  e.g. ’01’ - 2 digit numeric code
-    val importCountry: String, // e.g. ‘DE’ - country code
-    val periodRangeStart: Int, // e.g. 201904 - [YYYYMM] smaller than periodRangeEnd
-    val periodRangeEnd: Int // e.g. 201905 - [YYYYMM] bigger than periodRangeStart
-) {
-    // Validate parameters by this pattern
-    fun validate(): Boolean {
-        return importCountry.validCountryCode()
-
-        //return
-            //company.validCompanyCode() &&
-            //plant.validPlantCode() &&
-            //importCountry.validCountryCode() //&&
-            //periodRangeStart.validPeriodRange() &&
-            //periodRangeEnd.validPeriodRange()
-    }
-}
-
-/***
- * The to be generated data which is shared via JSON.
- */
-@Serializable
-data class GeneratedData (
-    // Provided by parameters
-    val company: String,
-    val plant: String,
-    val importCountry: String,
-    val periodRangeStart: Int,
-    val periodRangeEnd: Int,
-
-    /*              Generated data              */
-    val declarationId: String,
-    val shipmentId: String,
-    val invoiceId: Int,
-    val invoiceLineId: Int,
-
-    val status: String,
-    val originCountry: String,
-    @Serializable(with = DateSerializer::class)
-    val declarationDate: Date,
-    val customOffice: String,
-    val customOfficeOfEntry: String,
-    val declarant: String,
-    // val broker: String,
-    val localReference: String,
-    @Serializable(with = DateSerializer::class)
-    val shipmentDate: Date,
-    // @Serializable(with = DateSerializer::class)
-    // val estimatedTimeOfArrival: Date,
-    val modeOfTransportAtTheBorder: String,
-    val modeOfTransportInland: String,
-    val containerized: Boolean,
-    val containerNumbers: String,
-    val automationIndicator: String,
-
-    val exporterAddressNumber: String,
-    val exporterAddress: String,
-    val exporterRegistrationNumber: String,
-    val exporterName: String,
-    val exporterRegion: String,
-    val exporterCountry: String,
-
-    val importerAddressNumber: String,
-    val importerAddress: String,
-    val importerRegistrationNumber: String,
-    val importerName: String,
-    val importerRegion: String,
-    val importerCountry: String,
-
-    val supplierAddressNumber: String,
-    val supplierAddress: String,
-    val supplierRegistrationNumber: String,
-    val supplierName: String,
-    val supplierRegion: String,
-    val supplierCountry: String,
-
-    val invoiceLineFrightCosts: Float,
-    val invoiceLineInsuranceCosts: Float,
-    val invoiceLineAdditionalCosts: Float,
-    val invoiceLineGrossWeight: Float,
-    val invoiceLineNetWeight: Float,
-    val invoiceLineHSCode: String,
-    val invoiceLineValue: Float,
-    val invoiceLineQuantity: Int,
-    val invoiceLineCustomValue: Float,
-    val invoiceLineVAT: Float,
-    val invoiceLineDuties: Float,
-    // val invoiceLineSimulatedDuties: Float,
-    // val invoiceLineOtherTaxes: Float,
-    // val invoiceApplicableTariffs: String,
-    // val invoiceLineAverageDutyRate: Float,
-    val invoiceLinePreferentialCode: String,
-    @Serializable(with = DateSerializer::class)
-    val invoiceLineLastModified: Date,
-    @Serializable(with = DateSerializer::class)
-    val invoiceLastModified: Date,
-
-    @Serializable(with = DateSerializer::class)
-    val shipmentLastModified: Date,
-    @Serializable(with = DateSerializer::class)
-    val declarationLastModified: Date
-)
-
 fun main(args: Array<String>) {
     val jsonSerializer = Json(JsonConfiguration.Stable)
     // val generatedDataCollection = listOf<GeneratedData>()
@@ -152,7 +43,6 @@ fun main(args: Array<String>) {
 
     // Greeting
     println("Hello, I'm the generator Gerald!")
-
 
     // Parse the arguments to a 'Parameters' object
     try {
@@ -181,6 +71,9 @@ fun main(args: Array<String>) {
     }
 }
 
+/**
+ *
+ */
 fun generateDataItem(generationParams: GenerationParams): GeneratedData {
     val generate = Generate(generationParams)
 

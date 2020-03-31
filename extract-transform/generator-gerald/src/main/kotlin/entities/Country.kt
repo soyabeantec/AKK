@@ -20,7 +20,7 @@ data class Country (
 /**
  * Validates the country code by checking
  * if the code is an existing one in COUNTRIES.
- * @return true if it is a legal country code
+ * @return 'true' when the [String] it is a real country code
  */
 fun String.validCountryCode(): Boolean {
     return COUNTRIES.any{it.code == this}
