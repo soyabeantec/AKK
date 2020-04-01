@@ -1,0 +1,30 @@
+version: '3'
+
+services:  
+  restmachine:
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./rest/Dockerfile
+    ports:
+    - "5002:5002"
+    depends_on: 
+    - cassandramachine
+    - consumermachine
+
+
+  consumermachine:
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./consumer/Dockerfile
+    ports:
+     - "5003:5003"
+    depends_on: 
+      - cassandramachine
+
+  cassandramachine:
+    restart: always
+    image: 'cassandra'
+    ports:
+      - "9042:9042"

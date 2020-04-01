@@ -1,0 +1,86 @@
+# goconfigs/specification.yml
+openapi: "3.0.0"
+info:
+  version: "1.0.0"
+  title: "MIC Data Analytics"
+paths:
+  /:
+    get:
+      summary: Welcome Message
+      responses:
+        '200':
+          description: Welcome to MIC Data Analytics tools
+          content:
+            application/json:
+              schema:
+                type: string
+  /u:
+    get:
+      summary: Unique IDs
+      responses:
+        '200':
+          description: List of unique IDs
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/uid"
+  /d:
+    get:
+      summary: Declaration
+      responses:
+        '200':
+          description: List of declarations.
+          content:
+            application/json:
+              schema:
+                type: array
+                $ref: "#/components/schemas/declaration"
+
+components:
+  schemas:
+    declaration:
+      type: object
+
+    uid:
+      type: object
+      required:
+        - company
+        - plant
+        - import_country
+        - period
+        - shipment_id
+        - declaration_id
+      properties:
+        company:
+          type: string
+        plant:
+          type: string
+        import_country:
+          type: string
+        period:
+          type: integer
+        shipment_id:
+          type: string
+        declaration_id:
+          type: string
+
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+        exception:
+          type: string
+
+  responses:
+    BadRequest:
+      description: OpenAPI request/response validation failed
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Error"

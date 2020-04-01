@@ -1,0 +1,4 @@
+cassandra-driver
+aiohttp
+aiohttp_swagger3
+pandas

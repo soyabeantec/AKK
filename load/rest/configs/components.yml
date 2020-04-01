@@ -1,0 +1,217 @@
+components:
+  schemas:
+    Param:
+      type: object
+      required:
+        - company
+        - plant
+        - import_country
+      properties:
+        company:
+          type: string
+        plant:
+          type: string
+        import_country:
+          type: string
+        period:
+          type: integer
+          format: int32
+        declaration_id:
+          type: string
+        shipment_id:
+          type: string
+
+    Message:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+
+    Declaration:
+      type: object
+      required:
+        - company
+        - plant
+        - import_country
+        - shipment_id
+        - declaration_id
+        - shipment_system_id
+        - part_name
+        - shipment_head_system_id
+        - shipment_line_system_id
+        - declaration_date
+        - send_status
+        - receive_status
+        - encoded_status_name
+        - encoded_status_symbol
+        - status_description
+        - closure_flag
+        - customs_office
+        - declarant
+        - broker
+        - automation_indicator
+        - ship_from_address_number
+        - ship_from_registration_number
+        - ship_from_name
+        - ship_from_region
+        - ship_from_country
+        - ship_to_address_number
+        - ship_to_registration_number
+        - ship_to_name
+        - ship_to_region
+        - ship_to_country
+        - supplier_address_number
+        - supplier_registration_number
+        - supplier_name
+        - supplier_region
+        - supplier_country
+        - shipment_date
+        - mode_of_transport_at_border
+        - customs_office_of_entry
+        - mode_of_transport_inland
+        - containerized
+        - container_numbers
+        - sum_duty
+        - sum_vat
+        - sum_other
+      properties:
+        company:
+          type: string
+        plant:
+          type: string
+        import_country:
+          type: string
+        shipment_id:
+          type: string
+        declaration_id:
+          type: string
+        shipment_system_id:
+          type: string
+        part_name:
+          type: string
+        shipment_head_system_id:
+          type: string
+        shipment_line_system_id:
+          type: string
+        declaration_date:
+          type: string
+          format: date-time
+        send_status:
+          type: string
+        receive_status:
+          type: string
+        encoded_status_name:
+          type: string
+        encoded_status_symbol:
+          type: string
+        status_description:
+          type: string
+        closure_flag:
+          type: string
+        customs_office:
+          type: string
+        declarant:
+          type: string
+        broker:
+          type: string
+        automation_indicator:
+          type: string
+        ship_from_address_number:
+          type: string
+        ship_from_registration_number:
+          type: string
+        ship_from_name:
+          type: string
+        ship_from_region:
+          type: string
+        ship_from_country:
+          type: string
+        ship_to_address_number:
+          type: string
+        ship_to_registration_number:
+          type: string
+        ship_to_name:
+          type: string
+        ship_to_region:
+          type: string
+        ship_to_country:
+          type: string
+        supplier_address_number:
+          type: string
+        supplier_registration_number:
+          type: string
+        supplier_name:
+          type: string
+        supplier_region:
+          type: string
+        supplier_country:
+          type: string
+        shipment_date:
+          type: string
+          format: date-time
+        mode_of_transport_at_border:
+          type: string
+        customs_office_of_entry:
+          type: string
+        mode_of_transport_inland:
+          type: string
+        containerized:
+          type: string
+        container_numbers:
+          type: string
+        sum_duty:
+          type: number
+          format: float
+        sum_vat:
+          type: number
+          format: float
+        sum_other:
+          type: number
+          format: float
+
+    UID:
+      type: object
+      required:
+        - company
+        - plant
+        - import_country
+        - period
+        - declaration_id
+        - timestamp
+      properties:
+        company:
+          type: string
+        plant:
+          type: string
+        import_country:
+          type: string
+        period:
+          type: integer
+          format: int32
+        declaration_id:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+        exception:
+          type: string
+
+  responses:
+    BadRequest:
+      description: OpenAPI request/response validation failed
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Error"
