@@ -20,4 +20,4 @@ jobs:
         with:
           build-root-directory: extract-transform/generator-gerald
           wrapper-directory: extract-transform/generator-gerald
-          arguments: test
+          arguments: test --info
