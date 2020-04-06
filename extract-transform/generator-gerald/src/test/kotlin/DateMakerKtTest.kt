@@ -12,6 +12,7 @@ internal class DateMakerKtTest {
     @Test
     fun stringToDate_Test_PASS() {
         val dateFromString = "1998-06-04".toDate()
+        println(dateFromString.toString())
         assertEquals("Thu Jun 04 00:00:00 CEST 1998", dateFromString.toString())
     }
 
