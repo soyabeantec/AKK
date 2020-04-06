@@ -1,0 +1,7 @@
+PUT /persons/person/_bulk?refresh
+{"index":{"_id": "Herbert Krümelbach"}}
+{"name": "Herbert Krümelbach", "Sex": "M", "birth_date": "1969-08-12", "height": 170}
+{"index":{"_id": "Caprice Sargent"}}
+{"name": "Caprice Sargent", "Sex": "W", "birth_date": "1985-07-21", "height": 150}
+{"index":{"_id": "Robinson Dunkirk"}}
+{"name": "Robinson Dunkirk", "Sex": "M", "birth_date": "1930-08-23", "height": 200}

@@ -1,0 +1,23 @@
+\newpage
+\section{Load[AA]}\label{sec:load}
+Folgende Informationen wurden aus nachstehender Quelle bezogen. (vgl. \cite{guru_etl_2020}) \\
+
+In diesem Schritt werden die Daten in einem Datenspeicher gelagert. Dies kann entweder ein normales File beziehungsweise ein Data Warehouse sein. Da viele Daten in einer kurzen Zeit, also über eine Nacht, in das Data Warehouse geladen werden sollen, muss dieser Schritt für Performanz optimiert werden.
+
+Ein anderer wichtiger Punkt ist es, Daten ohne den Verlust von Datenintegrität wiederherstellen zu können. Der/Die Data Warehouse AdministratorIn muss diesen Schritt überwachen, weiterführen und stoppen während die Server Performanz weiter bestehen soll.
+\subsection{Typen des Ladens}
+\begin{itemize}
+\item Initial Load \mbox{} \\
+In diesem Load werden alle Tabellen im Data Warehouse bespielt.
+\item Incremental Load \mbox{} \\
+Hier werden alle Änderungen die passiert sind getätigt und wenn es nötig ist auch in einem periodischen Abstand durchgeführt.
+\item Full Refresh \mbox{} \\
+Bei einem Full Refresh werden alle Daten aus einer oder mehrerer Tabellen gelöscht und mit frischen Daten befüllt.
+\end{itemize}
+\subsection{Verifikationen des Ladens}
+\begin{itemize}
+\item Das Key Feld der Daten darf nicht fehlen oder Null sein.
+\item Modellierungsansichten müssen auf Basis der Tabellen getestet werden.
+\item Die BI Reports überprüfen Fakten- und Dimensionstabellen.
+\item Überprüfen der Daten in den Dimensionstabellen.
+\end{itemize}

@@ -1,4 +1,6 @@
 \documentclass[11pt]{report}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 \usepackage[english, german]{babel}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
 \geometry{a4paper}                   % ... or a4paper or a5paper or ... 
@@ -14,53 +16,56 @@
 \usepackage{fancyhdr}
 %\usepackage{natbib}
 \usepackage{url}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{subfigure}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+
+\lstdefinelanguage{Kotlin}{
+  comment=[l]{//},
+  commentstyle={\color{gray}\ttfamily},
+  emph={delegate, filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println, return@},
+  emphstyle={\color{OrangeRed}},
+  identifierstyle=\color{black},
+  keywords={abstract, actual, as, as?, break, by, class, companion, continue, data, do, dynamic, else, enum, expect, false, final, for, fun, get, if, import, in, interface, internal, is, null, object, override, package, private, public, return, set, super, suspend, this, throw, true, try, typealias, val, var, vararg, when, where, while},
+  keywordstyle={\color{NavyBlue}\bfseries},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  morestring=[s]{"""*}{*"""},
+  ndkeywords={@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String},
+  ndkeywordstyle={\color{BurntOrange}\bfseries},
+  sensitive=true,
+  stringstyle={\color{ForestGreen}\ttfamily},
+}
+
 
 \include{Globals} % Set basic data (author, title, etc.) of your thesis
-\include{00_FrontPageDefinitions} % This file should not really be touched
+\include{Allgemein/FrontPageDefinitions} % This file should not really be touched
 
 \begin{document}
-\include{00_FrontPage} % Should not be necessary to touch this file
-\include{00_Start} % Declaration of Academic Honesty, Abstracts, Acknowledgments, 
+\include{Allgemein/FrontPage} % Should not be necessary to touch this file
+\include{Allgemein/Start} % Declaration of Academic Honesty, Abstracts, Acknowledgments, 
 
 \tableofcontents
-
-\include{01_Introduction}
-\include{02_TheoreticalBackground}
-\include{03_Aufgabenstellung}
-\include{04_Loesungsansatz}
-\include{05_Architektur}
-\include{06_DatenquellenUndIhrAufbau}
-\include{07_Extract}
-\include{08_Transform}
-\include{09_Load}
-\include{10_Visualization}
-\include{11_Arbeitsumgebung}
-\include{12_Technologien}
-\include{13_Databus}
-\include{14_Kotlin}
-\include{15_Gradle}
-\include{16_Kafka}
-\include{17_Portainer}
-\include{19_Load}
-\include{20_NoSQL}
-\include{21_Python}
-\include{21_Spark}
-\include{23_Visualisierungstools}
-\include{24_Unterschied-JS-ZeroCode}
-\include{25_Vergleich-Vis-Apps}
-\include{26_Probleme_beim_Prozess}
-\include{30_Summary}
+\include{Allgemein/Introduction}
+\include{Allgemein/Aufgabenstellung}
+\include{Theoretisch/Theoretische-Grundlagen}
+\include{Theoretisch/Werkzeuge}
+\include{Praktisch/Praktische-Umsetzung}
+\include{Praktisch/DataWarehouseMitNoSQL}
+\include{Praktisch/Unterschied-JS-ZeroCode}
+\include{Praktisch/Der_Visualisierungs_Prozess}
+\include{Allgemein/Summary}
 
 
 
-\bibliography{da_bibliography}{}
+\bibliography{da_bibliography,FK_Zotero_Bibliothek,Klatzer_biblioteca}{}
 \bibliographystyle{alphaurl} % alternatives plainurl, alphaurl;  german alternative: dinat (but add package natbib)
-
 \listoffigures
-\listoftables
-\include{31_ProjectLogBook}
 
 \appendix
-\include{32_FirstAppendix}
-\include{33_IndividualGoals}
-\end{document}  
+\include{Allgemein/Glossar}
+\include{Allgemein/IndividualGoals}
+\end{document} 
