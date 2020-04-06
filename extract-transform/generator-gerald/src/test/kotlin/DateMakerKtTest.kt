@@ -12,8 +12,8 @@ internal class DateMakerKtTest {
     @Test
     fun stringToDate_Test_PASS() {
         val dateFromString = "1998-06-04".toDate()
-        println("OUTPUT-TIME: ${dateFromString.time}")
-        assertEquals(896911200000, dateFromString.time)
+        println("OUTPUT-TIME: $dateFromString")
+        assertEquals("Thu Jun 04 00:00:00 CEST 1998", dateFromString.toString())
     }
 
     /**
