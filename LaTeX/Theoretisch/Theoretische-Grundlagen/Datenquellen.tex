@@ -1,0 +1,9 @@
+\newpage
+\section{Datenquellen[EK]}
+Ein ETL-Prozess sollte die Möglichkeit bieten, aus vielen verschiedenen Quellen Daten zu extrahieren. Im Kontext der MIC handelt es sich bei diesen um Daten des Zollwesen. 
+Dadurch, dass die Möglichkeit eines Zugriffs auf ein Echtzeitsystem nicht gegeben war, sollte eine vereinfachte, abgeflachte Datei diese Zolldeklarationen für die Extraktion beinhalten. Diese Datei wiederum wird durch einen Generator im JSON-Format bereitgestellt.
+\vspace{5mm}\par
+Wie ist nun eine solche abgeflachte Zolldeklaration aufgebaut?
+\vspace{5mm}\par
+Jede Zolldeklaration, welche generiert wird, ist genau gesehen eine Rechnungszeile. Eine solche Zeile beinhaltet die Wareninformationen, wie ihre Id, die Kosten, die abzugebenden Steuern, die Anzahl, ihr Präferenzcode etc. Zu jeder Rechnungszeile, liegen die übergeordneten Informationen da. Dies bedeutet, wir wissen zu welcher Deklaration und Lieferung diese Zeile gehört. 
+Diese gibt Aufschlüsse über das zuständige Zollamt und durch welches es ins Land kam, das Datum, das Ursprungsland, ob die Fracht über Container transportiert wird oder nicht und mit welchem Transportmittel diese zur Grenze kam und mit welchen Transportmittel diese im Inland weitertransportiert wird. Zusätzlich liegen zu allen drei Parteien - Exporteur, Importeur und Lieferant - die Adressdaten und ihre Registrierungsnummer zu eindeutigen Identifizierung zur Verfügung. Dies sind noch nicht alle Informationen, welche vorhanden sind, jedoch sind diese die wichtigsten.

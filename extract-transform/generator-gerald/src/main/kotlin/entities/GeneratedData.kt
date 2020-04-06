@@ -1,8 +1,32 @@
 package eu.akkalytics.et.gen.entities
 
-import eu.akkalytics.et.gen.DateSerializer
-import kotlinx.serialization.Serializable
+import kotlinx.serialization.*
+import kotlinx.serialization.internal.StringDescriptor
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
+
+/**
+ * Custom serializer for the 'Date' class from java.util.
+ * Because there is no serialization for 'Date', due to the
+ * fact that it is a Java class and Kotlinx only supports real Kotlin data types.
+ * Ref.: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/custom_serializers.md
+ */
+@Serializer(forClass = Date::class)
+object DateSerializer: KSerializer<Date> {
+    private val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
+
+    override val descriptor: SerialDescriptor =
+        StringDescriptor.withName("WhitCustomDefault")
+
+    override fun deserialize(decoder: Decoder): Date {
+        return dateFormat.parse(decoder.decodeString())
+    }
+
+    override fun serialize(encoder: Encoder, obj: Date) {
+        encoder.encodeString(dateFormat.format(obj))
+    }
+}
 
 /***
  * The to be generated data which is shared via a JSON file.

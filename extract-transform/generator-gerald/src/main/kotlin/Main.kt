@@ -52,27 +52,7 @@ var initWrite = true
  */
 var datasetCount: Int = 0
 
-/**
- * Custom serializer for the 'Date' class from java.util.
- * Because there is no serialization for 'Date', due to the
- * fact that it is a Java class and Kotlinx only supports real Kotlin data types.
- * Ref.: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/custom_serializers.md
- */
-@Serializer(forClass = Date::class)
-object DateSerializer: KSerializer<Date> {
-    private val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
 
-    override val descriptor: SerialDescriptor =
-        StringDescriptor.withName("WhitCustomDefault")
-
-    override fun deserialize(decoder: Decoder): Date {
-        return dateFormat.parse(decoder.decodeString())
-    }
-
-    override fun serialize(encoder: Encoder, obj: Date) {
-        encoder.encodeString(dateFormat.format(obj))
-    }
-}
 
 fun main(args: Array<String>) {
     val jsonSerializer = Json(JsonConfiguration.Stable)
