@@ -1,0 +1,294 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>InvoiceLineGenerator - generator-gerald</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">generator-gerald</a>&nbsp;/&nbsp;<a href="../index.html">eu.akkalytics.et.gen.entities</a>&nbsp;/&nbsp;<a href="./index.html">InvoiceLineGenerator</a><br/>
+<br/>
+<h1>InvoiceLineGenerator</h1>
+(JVM) <code><span class="keyword">class </span><span class="identifier">InvoiceLineGenerator</span></code>
+<p>Used to generate one <a href="../-invoice-line/index.html">InvoiceLine</a></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Used to generate one <a href="../-invoice-line/index.html">InvoiceLine</a></p>
+<code><span class="identifier">InvoiceLineGenerator</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.entities.InvoiceLineGenerator$<init>(java.util.Date, java.util.Date, java.util.Date, kotlin.Boolean)/shipmentDate">shipmentDate</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.entities.InvoiceLineGenerator$<init>(java.util.Date, java.util.Date, java.util.Date, kotlin.Boolean)/minDate">minDate</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.entities.InvoiceLineGenerator$<init>(java.util.Date, java.util.Date, java.util.Date, kotlin.Boolean)/todayDate">todayDate</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.entities.InvoiceLineGenerator$<init>(java.util.Date, java.util.Date, java.util.Date, kotlin.Boolean)/sent">sent</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="additional-costs.html">additionalCosts</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">additionalCosts</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="custom-value.html">customValue</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">customValue</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="fright-costs.html">frightCosts</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">frightCosts</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="insurance-costs.html">insuranceCosts</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">insuranceCosts</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="min-date.html">minDate</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">minDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="net-value.html">netValue</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">netValue</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="net-weight.html">netWeight</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">netWeight</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="sent.html">sent</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">sent</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="shipment-date.html">shipmentDate</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">shipmentDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="today-date.html">todayDate</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">todayDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-additional-costs.html">genAdditionalCosts</a></h4>
+</td>
+<td>
+<p>Randomly chooses a percentage from 0% to 10% in order to calculate
+the cost that comes on top of all other ones combined (excl. taxes)</p>
+<code><span class="keyword">fun </span><span class="identifier">genAdditionalCosts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-custom-value.html">genCustomValue</a></h4>
+</td>
+<td>
+<p>Calculates the custom value by using the value + the additional costs.</p>
+<code><span class="keyword">fun </span><span class="identifier">genCustomValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-duties.html">genDuties</a></h4>
+</td>
+<td>
+<p>Randomly chooses a percentage from 1% to 30% in order
+to calculate the duties based on the 'customValue'.</p>
+<code><span class="keyword">fun </span><span class="identifier">genDuties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-fright-costs.html">genFrightCosts</a></h4>
+</td>
+<td>
+<p>Randomly chooses a percentage from 1% to 5% in order to calculate
+the fright cost for one item relative to its value.</p>
+<code><span class="keyword">fun </span><span class="identifier">genFrightCosts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-gross-weight.html">genGrossWeight</a></h4>
+</td>
+<td>
+<p>Adds five percent to the net weight,
+this should resemble the weight of the packaging.</p>
+<code><span class="keyword">fun </span><span class="identifier">genGrossWeight</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-h-s-code.html">genHSCode</a></h4>
+</td>
+<td>
+<p>Randomly generates a code (InvoiceLineHSCode) with a 10 digit number.</p>
+<code><span class="keyword">fun </span><span class="identifier">genHSCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-insurance-costs.html">genInsuranceCosts</a></h4>
+</td>
+<td>
+<p>Randomly chooses a percentage from 0.5% to 1.5% in order to calculate
+the insurance cost based on the fright cost.</p>
+<code><span class="keyword">fun </span><span class="identifier">genInsuranceCosts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-last-modified.html">genLastModified</a></h4>
+</td>
+<td>
+<p>Generates a day between the first day of the year and declaration date.</p>
+<code><span class="keyword">fun </span><span class="identifier">genLastModified</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-net-weight.html">genNetWeight</a></h4>
+</td>
+<td>
+<p>Randomly generates a weight for the item which takes the cost of the
+shipment into consideration, also the weight of one item can not
+exceed the max. weight a ISO-container which can hold 28.230kg.</p>
+<code><span class="keyword">fun </span><span class="identifier">genNetWeight</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-preferential-code.html">genPreferentialCode</a></h4>
+</td>
+<td>
+<p>Randomly chooses one of the possible preferential codes.</p>
+<code><span class="keyword">fun </span><span class="identifier">genPreferentialCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-quantity.html">genQuantity</a></h4>
+</td>
+<td>
+<p>Generates a random quantity within the range of 1 to 10,000.</p>
+<code><span class="keyword">fun </span><span class="identifier">genQuantity</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-value.html">genValue</a></h4>
+</td>
+<td>
+<p>Generates a random item value within the range of 1.99 to 10,000.99.</p>
+<code><span class="keyword">fun </span><span class="identifier">genValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-vat.html">genVat</a></h4>
+</td>
+<td>
+<p>Randomly chooses one of the possible vat values.</p>
+<code><span class="keyword">fun </span><span class="identifier">genVat</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="make-new-invoice-line.html">makeNewInvoiceLine</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">makeNewInvoiceLine</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-invoice-line/index.html"><span class="identifier">InvoiceLine</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="round.html">round</a></h4>
+</td>
+<td>
+<p>Float extension function that:
+Rounds a number to a given decimal position.</p>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">.</span><span class="identifier">round</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.entities.InvoiceLineGenerator$round(kotlin.Float, kotlin.Int)/decimals">decimals</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-m-a-x_-i-s-o_-c-o-n-t-a-i-n-e-r_-w-e-i-g-h-t.html">MAX_ISO_CONTAINER_WEIGHT</a></h4>
+</td>
+<td>
+<p>The maximal weight that a ISO container can carry.</p>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">MAX_ISO_CONTAINER_WEIGHT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-p-o-s-s-i-b-l-e_-p-r-e-f-e-r-e-n-t-i-a-l_-c-o-d-e-s.html">POSSIBLE_PREFERENTIAL_CODES</a></h4>
+</td>
+<td>
+<p>The possible preferential codes for the
+'genPreferentialCode' function.</p>
+<code><span class="keyword">val </span><span class="identifier">POSSIBLE_PREFERENTIAL_CODES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-p-o-s-s-i-b-l-e_-v-a-t_-v-a-l-u-e-s.html">POSSIBLE_VAT_VALUES</a></h4>
+</td>
+<td>
+<p>The possible VAT values in order to
+calculate the VAT value in the 'genVat' function.</p>
+<code><span class="keyword">val </span><span class="identifier">POSSIBLE_VAT_VALUES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -61,7 +61,9 @@ fun lastDateOfTheActualYear(): Date {
 }
 
 /**
- * '201911'
+ * Converts a period into a [Date] object.
+ * A period is a data as number in the YYYYMM format,
+ * e.g.'201911'
  */
 fun periodToDate(date: Int): Date {
     val stringDate = date.toString()

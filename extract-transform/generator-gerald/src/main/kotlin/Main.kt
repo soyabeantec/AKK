@@ -2,14 +2,9 @@ package eu.akkalytics.et.gen
 
 import eu.akkalytics.et.gen.entities.GeneratedData
 import eu.akkalytics.et.gen.entities.GenerationParams
-import kotlinx.serialization.*
-import kotlinx.serialization.internal.StringDescriptor
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import java.io.File
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-import java.util.*
 
 const val ANSI_RESET = "\u001B[0m"
 const val ANSI_RED = "\u001B[31m"
@@ -52,8 +47,6 @@ var initWrite = true
  */
 var datasetCount: Int = 0
 
-
-
 fun main(args: Array<String>) {
     val jsonSerializer = Json(JsonConfiguration.Stable)
     // val generatedDataCollection = listOf<GeneratedData>()
@@ -91,47 +84,41 @@ fun main(args: Array<String>) {
     }
 
     // Generate data
-    if (generationParams != null) {
-        // Validate parameters
-        if (generationParams.validate()) {
+    if (generationParams.validate()) {
+        while (true) // Endless generation of data
+        {
+            // A new dataset will be created
+            datasetCount++
 
-            while (true) // Endless generation of data
-            {
-                // A new dataset will be created
-                datasetCount++
-                
-                // Generate the data
-                val genData = generateDataItem(generationParams)
-                println("===============================")
-                println("Content of genData:\n" +
-                        "  $genData\n" +
-                        " ")
+            // Generate the data
+            val genData = generateDataItem(generationParams)
+            println("===============================")
+            println("Content of genData:\n" +
+                    "  $genData\n" +
+                    " ")
 
-                // Convert to a Json-String
-                val jsonGenData = jsonSerializer.stringify(GeneratedData.serializer(), genData)
-                println("Content of jsonGenData:\n" +
-                        "  $jsonGenData\n" +
-                        " ")
-                println("===============================")
-                println("Writing to the $OUTPUT_FILE ...")
+            // Convert to a Json-String
+            val jsonGenData = jsonSerializer.stringify(GeneratedData.serializer(), genData)
+            println("Content of jsonGenData:\n" +
+                    "  $jsonGenData\n" +
+                    " ")
+            println("===============================")
+            println("Writing to the $OUTPUT_FILE ...")
 
-                // Write the data to a file
-                buildJsonFile(jsonGenData)
-                Thread.sleep(GENERATION_SPEED) // Waits one minute for the next generation
+            // Write the data to a file
+            buildJsonFile(jsonGenData)
+            Thread.sleep(GENERATION_SPEED) // Waits one minute for the next generation
 
-                // Check if the max. dataset count has been reached
-                if (datasetCount == MAX_DATASETS) {
-                    // Clear the file and start over again
-                    datasetCount = 0
-                    initWrite = true
-                }
-
+            // Check if the max. dataset count has been reached
+            if (datasetCount == MAX_DATASETS) {
+                // Clear the file and start over again
+                datasetCount = 0
+                initWrite = true
             }
-
-        } else {
-            println("$ANSI_RED! Parameters are not valid !$ANSI_RESET")
         }
 
+    } else {
+        println("$ANSI_RED! Parameters are not valid !$ANSI_RESET")
     }
 }
 

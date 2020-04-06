@@ -1,0 +1,158 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>eu.akkalytics.et.gen.entities - generator-gerald</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">generator-gerald</a>&nbsp;/&nbsp;<a href="./index.html">eu.akkalytics.et.gen.entities</a><br/>
+<br/>
+<h2>Package eu.akkalytics.et.gen.entities</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-country/index.html">Country</a></h4>
+</td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Country</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-date-serializer/index.html">DateSerializer</a></h4>
+</td>
+<td>
+<p>Custom serializer for the 'Date' class from java.util.
+Because there is no serialization for 'Date', due to the
+fact that it is a Java class and Kotlinx only supports real Kotlin data types.
+Ref.: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/custom_serializers.md</p>
+<code><span class="keyword">object </span><span class="identifier">DateSerializer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">KSerializer</span><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-generated-data/index.html">GeneratedData</a></h4>
+</td>
+<td>
+<ul><li></li>
+</ul>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GeneratedData</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-generation-params/index.html">GenerationParams</a></h4>
+</td>
+<td>
+<p>A data class which holds the parameters that
+are passed at the start of the program and are later
+utilized as a basis for the customs data generation.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GenerationParams</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-invoice-line/index.html">InvoiceLine</a></h4>
+</td>
+<td>
+<p>Represents the data that is being hold in
+one invoice line.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">InvoiceLine</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-invoice-line-generator/index.html">InvoiceLineGenerator</a></h4>
+</td>
+<td>
+<p>Used to generate one <a href="-invoice-line/index.html">InvoiceLine</a></p>
+<code><span class="keyword">class </span><span class="identifier">InvoiceLineGenerator</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-participant/index.html">Participant</a></h4>
+</td>
+<td>
+<p>Commun data structure of the
+exporters, importers and suppliers.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Participant</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="kotlin.-string/index.html">kotlin.String</a></h4>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-c-o-u-n-t-r-i-e-s.html">COUNTRIES</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">COUNTRIES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="-country/index.html"><span class="identifier">Country</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-e-x-p-o-r-t-e-r-s.html">EXPORTERS</a></h4>
+</td>
+<td>
+<p>All possible values an exporter can have.
+Used for the random selection of one exporter.</p>
+<code><span class="keyword">val </span><span class="identifier">EXPORTERS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="-participant/index.html"><span class="identifier">Participant</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-i-m-p-o-r-t-e-r-s.html">IMPORTERS</a></h4>
+</td>
+<td>
+<p>All possible values an importer can have.
+Used for the random selection of one importer.</p>
+<code><span class="keyword">val </span><span class="identifier">IMPORTERS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="-participant/index.html"><span class="identifier">Participant</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-s-u-p-p-l-i-e-r-s.html">SUPPLIERS</a></h4>
+</td>
+<td>
+<p>All possible values a supplier can have.
+Used for the random selection of one supplier.</p>
+<code><span class="keyword">val </span><span class="identifier">SUPPLIERS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="-participant/index.html"><span class="identifier">Participant</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="load-countries.html">loadCountries</a></h4>
+</td>
+<td>
+<p>Retrieves all the countries from the
+<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html">java.util.Locale</a> class as List of <a href="-country/index.html">Country</a> objects.</p>
+<code><span class="keyword">fun </span><span class="identifier">loadCountries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="-country/index.html"><span class="identifier">Country</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

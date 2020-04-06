@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GenerationParams - generator-gerald</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">generator-gerald</a>&nbsp;/&nbsp;<a href="../index.html">eu.akkalytics.et.gen.entities</a>&nbsp;/&nbsp;<a href="./index.html">GenerationParams</a><br/>
+<br/>
+<h1>GenerationParams</h1>
+(JVM) <code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">GenerationParams</span></code>
+<p>A data class which holds the parameters that
+are passed at the start of the program and are later
+utilized as a basis for the customs data generation.</p>
+<h3>Parameters</h3>
+<p><a name="company"></a>
+<code>company</code> - a two letter code, e.g. ‘WV’.</p>
+<p><a name="plant"></a>
+<code>plant</code> - a two digit numeric code, e.g. ’01’.</p>
+<p><a name="importCountry"></a>
+<code>importCountry</code> - a country code, e.g. ‘DE’.</p>
+<p><a name="periodRangeStart"></a>
+<code>periodRangeStart</code> - a date (date format: yyyyMM), e.g. '201904'. Must be smaller than <em>periodRangeEnd</em>.</p>
+<p><a name="periodRangeEnd"></a>
+<code>periodRangeEnd</code> - a date (date format: yyyyMM)e.g. '201905'. Must be bigger than <em>periodRangeStart</em>.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>A data class which holds the parameters that
+are passed at the start of the program and are later
+utilized as a basis for the customs data generation.</p>
+<code><span class="identifier">GenerationParams</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.Int, kotlin.Int)/company">company</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.Int, kotlin.Int)/plant">plant</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.Int, kotlin.Int)/importCountry">importCountry</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.Int, kotlin.Int)/periodRangeStart">periodRangeStart</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$<init>(kotlin.String, kotlin.String, kotlin.String, kotlin.Int, kotlin.Int)/periodRangeEnd">periodRangeEnd</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="company.html">company</a></h4>
+</td>
+<td>
+<p>a two letter code, e.g. ‘WV’.</p>
+<code><span class="keyword">val </span><span class="identifier">company</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="import-country.html">importCountry</a></h4>
+</td>
+<td>
+<p>a country code, e.g. ‘DE’.</p>
+<code><span class="keyword">val </span><span class="identifier">importCountry</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="period-range-end.html">periodRangeEnd</a></h4>
+</td>
+<td>
+<p>a date (date format: yyyyMM)e.g. '201905'. Must be bigger than <em>periodRangeStart</em>.</p>
+<code><span class="keyword">val </span><span class="identifier">periodRangeEnd</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="period-range-start.html">periodRangeStart</a></h4>
+</td>
+<td>
+<p>a date (date format: yyyyMM), e.g. '201904'. Must be smaller than <em>periodRangeEnd</em>.</p>
+<code><span class="keyword">val </span><span class="identifier">periodRangeStart</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="plant.html">plant</a></h4>
+</td>
+<td>
+<p>a two digit numeric code, e.g. ’01’.</p>
+<code><span class="keyword">val </span><span class="identifier">plant</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="validate.html">validate</a></h4>
+</td>
+<td>
+<p>Validates the given <a href="./index.html">GenerationParams</a> parameters.</p>
+<code><span class="keyword">fun </span><span class="identifier">validate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="valid-company-code.html">validCompanyCode</a></h4>
+</td>
+<td>
+<p>Checks if a <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> is a valid company code.
+To be valid is has to consist of only two characters and
+those have to be upper-case letters.</p>
+<code><span class="keyword">fun </span><span class="identifier">validCompanyCode</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$validCompanyCode(kotlin.String)/checkCode">checkCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="valid-period-range.html">validPeriodRange</a></h4>
+</td>
+<td>
+<p>Checks if a <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> is a period range.
+To be valid is has to consist of only six characters.
+The first four digits have to be a valid year between '0000' and '9999'.
+The last two digits have a be a valid month between '01' and '12'.</p>
+<code><span class="keyword">fun </span><span class="identifier">validPeriodRange</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$validPeriodRange(kotlin.Int)/checkPeriod">checkPeriod</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="valid-plant-code.html">validPlantCode</a></h4>
+</td>
+<td>
+<p>Checks if a <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> is a valid plant code.
+To be valid is has to consist of only two characters and
+those have to be numeric.</p>
+<code><span class="keyword">fun </span><span class="identifier">validPlantCode</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.entities.GenerationParams$validPlantCode(kotlin.String)/checkCode">checkCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

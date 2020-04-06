@@ -1,0 +1,449 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Generate - generator-gerald</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">generator-gerald</a>&nbsp;/&nbsp;<a href="../index.html">eu.akkalytics.et.gen</a>&nbsp;/&nbsp;<a href="./index.html">Generate</a><br/>
+<br/>
+<h1>Generate</h1>
+(JVM) <code><span class="keyword">class </span><span class="identifier">Generate</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">Generate</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.Generate$<init>(eu.akkalytics.et.gen.entities.GenerationParams)/generationParams">generationParams</span><span class="symbol">:</span>&nbsp;<a href="../../eu.akkalytics.et.gen.entities/-generation-params/index.html"><span class="identifier">GenerationParams</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="containerized.html">containerized</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">containerized</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="declaration-date.html">declarationDate</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">declarationDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="exporter.html">exporter</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">exporter</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-participant/index.html"><span class="identifier">Participant</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="generation-params.html">generationParams</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">generationParams</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-generation-params/index.html"><span class="identifier">GenerationParams</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="importer.html">importer</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">importer</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-participant/index.html"><span class="identifier">Participant</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="invoice-last-modified.html">invoiceLastModified</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">invoiceLastModified</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="invoice-line.html">invoiceLine</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">invoiceLine</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-invoice-line/index.html"><span class="identifier">InvoiceLine</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="last-date.html">lastDate</a></h4>
+</td>
+<td>
+<p>The last date that should be used in the generated dates.
+Todo explain last date better</p>
+<code><span class="keyword">val </span><span class="identifier">lastDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="min-date.html">minDate</a></h4>
+</td>
+<td>
+<p>Start date for the generated dates.
+Todo explain min date better</p>
+<code><span class="keyword">val </span><span class="identifier">minDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="periods-given.html">periodsGiven</a></h4>
+</td>
+<td>
+<p>Zero means that the periods should not be used -&gt; use the actual year and date</p>
+<code><span class="keyword">val </span><span class="identifier">periodsGiven</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="sent.html">sent</a></h4>
+</td>
+<td>
+<p>Indicator if the shipment already has been sent</p>
+<code><span class="keyword">val </span><span class="identifier">sent</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="shipment-date.html">shipmentDate</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">shipmentDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="shipment-id.html">shipmentId</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">shipmentId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="status.html">status</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">status</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="supplier.html">supplier</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">supplier</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-participant/index.html"><span class="identifier">Participant</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="today-date.html">todayDate</a></h4>
+</td>
+<td>
+<p>The date of 'today' for reuse.
+Todo explain today date better</p>
+<code><span class="keyword">val </span><span class="identifier">todayDate</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="add-random-num.html">addRandomNum</a></h4>
+</td>
+<td>
+<p>String extension function that:
+Generates random numbers until the whole string has a length of 6.</p>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">addRandomNum</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-automation-indicator.html">genAutomationIndicator</a></h4>
+</td>
+<td>
+<p>Randomly chooses the automation indicator.</p>
+<code><span class="keyword">fun </span><span class="identifier">genAutomationIndicator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-containerized.html">genContainerized</a></h4>
+</td>
+<td>
+<p>Randomly chooses if the shipment is containerized.</p>
+<code><span class="keyword">fun </span><span class="identifier">genContainerized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-container-numbers.html">genContainerNumbers</a></h4>
+</td>
+<td>
+<p>Generates a random container number to the prefix "CO", but
+only if the shipment is containerized, if that is not the
+case a emtpy string will be used instead.</p>
+<code><span class="keyword">fun </span><span class="identifier">genContainerNumbers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-custom-office.html">genCustomOffice</a></h4>
+</td>
+<td>
+<p>Randomly returns a custom office,
+with a country prefix according to the 'importCountry'
+provided in the 'generationParams'</p>
+<code><span class="keyword">fun </span><span class="identifier">genCustomOffice</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-declarant.html">genDeclarant</a></h4>
+</td>
+<td>
+<p>Uses the Faker library to generate a realistic
+sounding name to name the declarant.</p>
+<code><span class="keyword">fun </span><span class="identifier">genDeclarant</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-declaration-date.html">genDeclarationDate</a></h4>
+</td>
+<td>
+<p>Generates a declaration date between the first day of the year and
+the actual day.</p>
+<code><span class="keyword">fun </span><span class="identifier">genDeclarationDate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-declaration-id.html">genDeclarationId</a></h4>
+</td>
+<td>
+<p>Generates a random 6 character string as the declarant id.</p>
+<code><span class="keyword">fun </span><span class="identifier">genDeclarationId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-declaration-last-modified.html">genDeclarationLastModified</a></h4>
+</td>
+<td>
+<p>Generates a day between the last invoice modification or declaration date, depending on
+which one is later and the actual date, if the shipment has already been sent, the
+shipment date will be used instead of the actual date.</p>
+<code><span class="keyword">fun </span><span class="identifier">genDeclarationLastModified</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-exporter.html">genExporter</a></h4>
+</td>
+<td>
+<p>Randomly chooses one exporter form the EXPORTERS array.</p>
+<code><span class="keyword">fun </span><span class="identifier">genExporter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-participant/index.html"><span class="identifier">Participant</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-importer.html">genImporter</a></h4>
+</td>
+<td>
+<p>Randomly chooses one importer form the IMPORTERS array.</p>
+<code><span class="keyword">fun </span><span class="identifier">genImporter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-participant/index.html"><span class="identifier">Participant</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-invoice-id.html">genInvoiceId</a></h4>
+</td>
+<td>
+<p>Generates a InvoiceId with the range 10001 - 20000
+and displays it in the console.</p>
+<code><span class="keyword">fun </span><span class="identifier">genInvoiceId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-invoice-last-modified.html">genInvoiceLastModified</a></h4>
+</td>
+<td>
+<p>Generates a day between the last invoiceLine modification and the declaration date.</p>
+<code><span class="keyword">fun </span><span class="identifier">genInvoiceLastModified</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-invoice-line.html">genInvoiceLine</a></h4>
+</td>
+<td>
+<p>Generate a new invoice line with the help of the
+shipmentDate, min. date, today date and sent status.</p>
+<code><span class="keyword">fun </span><span class="identifier">genInvoiceLine</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-invoice-line/index.html"><span class="identifier">InvoiceLine</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-invoice-line-id.html">genInvoiceLineId</a></h4>
+</td>
+<td>
+<p>Generates the InvoiceLineId with the range 1-1000</p>
+<code><span class="keyword">fun </span><span class="identifier">genInvoiceLineId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-local-reference.html">genLocalReference</a></h4>
+</td>
+<td>
+<p>Uses the same value as the one
+generated for the shipmentId.</p>
+<code><span class="keyword">fun </span><span class="identifier">genLocalReference</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-mode-of-transport.html">genModeOfTransport</a></h4>
+</td>
+<td>
+<p>Randomly chooses one of four possible modes
+of transport.</p>
+<code><span class="keyword">fun </span><span class="identifier">genModeOfTransport</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-origin-country.html">genOriginCountry</a></h4>
+</td>
+<td>
+<p>Randomly returns one the existing countries,
+excluding the import country from the generationParams.</p>
+<code><span class="keyword">fun </span><span class="identifier">genOriginCountry</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-shipment-date.html">genShipmentDate</a></h4>
+</td>
+<td>
+<p>Generates a shipment date between the actual day and the last day or
+between the 'declarationDate' and the actual day if the shipment has
+a sent-status.</p>
+<code><span class="keyword">fun </span><span class="identifier">genShipmentDate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-shipment-id.html">genShipmentId</a></h4>
+</td>
+<td>
+<p>Generates a random shipment identification.</p>
+<code><span class="keyword">fun </span><span class="identifier">genShipmentId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-shipment-last-modified.html">genShipmentLastModified</a></h4>
+</td>
+<td>
+<p>Generates a day between the declaration date and the actual date, if
+the shipment has already been sent, the shipment date will be used instead.</p>
+<code><span class="keyword">fun </span><span class="identifier">genShipmentLastModified</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-status.html">genStatus</a></h4>
+</td>
+<td>
+<p>Randomly returns one the possible status.</p>
+<code><span class="keyword">fun </span><span class="identifier">genStatus</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="gen-supplier.html">genSupplier</a></h4>
+</td>
+<td>
+<p>Randomly chooses one supplier form the SUPPLIERS array.</p>
+<code><span class="keyword">fun </span><span class="identifier">genSupplier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../eu.akkalytics.et.gen.entities/-participant/index.html"><span class="identifier">Participant</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="get-random-string.html">getRandomString</a></h4>
+</td>
+<td>
+<p>Int extension function that:
+Generates a random string with the length according to the
+Int value. Uses only the ALLOWED_CHARACTERS for the generation.
+Example: 2.getRandomString() will generate something like this: "BK"</p>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">.</span><span class="identifier">getRandomString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-a-l-l-o-w-e-d_-c-h-a-r-a-c-t-e-r-s.html">ALLOWED_CHARACTERS</a></h4>
+</td>
+<td>
+<p>The characters which are allowed for the random string generation at 'Int.getRandomString'</p>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">ALLOWED_CHARACTERS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-m-o-d-e-s_-o-f_-t-r-a-n-s-p-o-r-t.html">MODES_OF_TRANSPORT</a></h4>
+</td>
+<td>
+<p>All the modes of transport available to a shipment.</p>
+<code><span class="keyword">val </span><span class="identifier">MODES_OF_TRANSPORT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-p-o-s-s-i-b-l-e_-s-t-a-t-u-s.html">POSSIBLE_STATUS</a></h4>
+</td>
+<td>
+<p>All the possible status a shipment can have.</p>
+<code><span class="keyword">val </span><span class="identifier">POSSIBLE_STATUS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-s-e-n-t_-s-t-a-t-u-s.html">SENT_STATUS</a></h4>
+</td>
+<td>
+<p>All the status that indicate that a shipment has taken place.</p>
+<code><span class="keyword">val </span><span class="identifier">SENT_STATUS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

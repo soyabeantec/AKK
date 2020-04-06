@@ -5,6 +5,9 @@ import eu.akkalytics.et.gen.entities.*
 import java.util.*
 import kotlin.random.Random.Default.nextBoolean
 
+/**
+ *
+ */
 class Generate(private val generationParams: GenerationParams) {
     companion object {
         /**
@@ -48,7 +51,7 @@ class Generate(private val generationParams: GenerationParams) {
     // region Date range decision process
 
     /**
-     *  Zero means periods should not be used -> use the actual year and date
+     * Zero means that the periods should not be used -> use the actual year and date
      */
     private val periodsGiven = !(generationParams.periodRangeStart == 0 && generationParams.periodRangeEnd == 0)
 

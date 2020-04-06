@@ -4,6 +4,10 @@ import eu.akkalytics.et.gen.makeRandomDateWithinRange
 import java.util.*
 import kotlin.math.round
 
+/**
+ * Represents the data that is being hold in
+ * one invoice line.
+ */
 data class InvoiceLine(
     val frightCosts: Float,
     val insuranceCosts: Float,
@@ -17,9 +21,16 @@ data class InvoiceLine(
     val vat: Float,
     val duties: Float,
     val preferentialCode: String,
+    /**
+     * Date when the invoice line
+     * has been last modified
+     */
     val lastModified: Date
 )
 
+/**
+ * Used to generate one [InvoiceLine]
+ */
 class InvoiceLineGenerator(
     private val shipmentDate: Date,
     private val minDate: Date,

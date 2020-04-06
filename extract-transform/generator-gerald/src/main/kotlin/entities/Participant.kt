@@ -1,14 +1,40 @@
 package eu.akkalytics.et.gen.entities
 
+/**
+ * Commun data structure of the
+ * exporters, importers and suppliers.
+ */
 data class Participant(
+    /**
+     * House number
+     */
     val addressNumber: String,
+    /**
+     * Address of the legal entity
+     */
     val address: String,
+    /**
+     * Registration number of the legal entity
+     */
     val registrationNumber: String,
+    /**
+     * Name of the legal entity, e.g a company
+     */
     val name: String,
+    /**
+     * Region in the country
+     */
     val region: String,
+    /**
+     * Home country
+     */
     val country: String
 )
 
+/**
+ * All possible values an exporter can have.
+ * Used for the random selection of one exporter.
+ */
 val EXPORTERS = arrayOf(
     Participant(
         "78",
@@ -50,6 +76,10 @@ val EXPORTERS = arrayOf(
     )
 )
 
+/**
+ * All possible values an importer can have.
+ * Used for the random selection of one importer.
+ */
 val IMPORTERS = arrayOf(
     Participant(
         "62",
@@ -90,6 +120,10 @@ val IMPORTERS = arrayOf(
     )
 )
 
+/**
+ * All possible values a supplier can have.
+ * Used for the random selection of one supplier.
+ */
 val SUPPLIERS = arrayOf(
     Participant(
         "81",

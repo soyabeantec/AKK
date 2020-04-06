@@ -1,0 +1,6 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:eu.akkalytics.et.gen$toDate(kotlin.String)eu.akkalytics.et.gen/kotlin.-string/to-date.html
+$dokka.location:eu.akkalytics.et.gen.entities$validCountryCode(kotlin.String)eu.akkalytics.et.gen.entities/kotlin.-string/valid-country-code.html
+eu.akkalytics.et.gen
+eu.akkalytics.et.gen.entities

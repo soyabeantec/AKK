@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>eu.akkalytics.et.gen - generator-gerald</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">generator-gerald</a>&nbsp;/&nbsp;<a href="./index.html">eu.akkalytics.et.gen</a><br/>
+<br/>
+<h2>Package eu.akkalytics.et.gen</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-generate/index.html">Generate</a></h4>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Generate</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="kotlin.-string/index.html">kotlin.String</a></h4>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-a-n-s-i_-r-e-d.html">ANSI_RED</a></h4>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">ANSI_RED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-a-n-s-i_-r-e-s-e-t.html">ANSI_RESET</a></h4>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">ANSI_RESET</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="dataset-count.html">datasetCount</a></h4>
+</td>
+<td>
+<p>Keeps track of how many datasets are
+already in the file.</p>
+<code><span class="keyword">var </span><span class="identifier">datasetCount</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="file-path.html">filePath</a></h4>
+</td>
+<td>
+<p>The path where the file should
+be generated.</p>
+<code><span class="keyword">var </span><span class="identifier">filePath</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-g-e-n-e-r-a-t-i-o-n_-s-p-e-e-d.html">GENERATION_SPEED</a></h4>
+</td>
+<td>
+<p>Defines how fast a new dataset should
+be generated and written to the file.</p>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">GENERATION_SPEED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="init-write.html">initWrite</a></h4>
+</td>
+<td>
+<p>Indicates if the program should start
+with a clean file.</p>
+<code><span class="keyword">var </span><span class="identifier">initWrite</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-m-a-x_-d-a-t-a-s-e-t-s.html">MAX_DATASETS</a></h4>
+</td>
+<td>
+<p>The maximal count of datasets
+that should be in one file. If
+this number is reached, the file
+will be cleared and started over again.</p>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">MAX_DATASETS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="-o-u-t-p-u-t_-f-i-l-e.html">OUTPUT_FILE</a></h4>
+</td>
+<td>
+<p>The name of file the where the generated
+date should be placed.</p>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">OUTPUT_FILE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="build-json-file.html">buildJsonFile</a></h4>
+</td>
+<td>
+<p>Writes the provided String into an Json file.
+Every restart of the whole program will result in an override.</p>
+<code><span class="keyword">fun </span><span class="identifier">buildJsonFile</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen$buildJsonFile(kotlin.String)/genDataAsJson">genDataAsJson</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="first-date-of-the-actual-year.html">firstDateOfTheActualYear</a></h4>
+</td>
+<td>
+<p>Retrieves the first day of the actual year as a date.</p>
+<code><span class="keyword">fun </span><span class="identifier">firstDateOfTheActualYear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="generate-data-item.html">generateDataItem</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">generateDataItem</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen$generateDataItem(eu.akkalytics.et.gen.entities.GenerationParams)/generationParams">generationParams</span><span class="symbol">:</span>&nbsp;<a href="../eu.akkalytics.et.gen.entities/-generation-params/index.html"><span class="identifier">GenerationParams</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../eu.akkalytics.et.gen.entities/-generated-data/index.html"><span class="identifier">GeneratedData</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="last-date-of-the-actual-year.html">lastDateOfTheActualYear</a></h4>
+</td>
+<td>
+<p>Retrieves the last day of the actual year as a date.</p>
+<code><span class="keyword">fun </span><span class="identifier">lastDateOfTheActualYear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="main.html">main</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">main</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen$main(kotlin.Array((kotlin.String)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="make-random-date-within-range.html">makeRandomDateWithinRange</a></h4>
+</td>
+<td>
+<p>Randomly selects a date between the minDate and maxDate.</p>
+<code><span class="keyword">fun </span><span class="identifier">makeRandomDateWithinRange</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen$makeRandomDateWithinRange(java.util.Date, java.util.Date)/minDate">minDate</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen$makeRandomDateWithinRange(java.util.Date, java.util.Date)/maxDate">maxDate</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="period-to-date.html">periodToDate</a></h4>
+</td>
+<td>
+<p>Converts a period into a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> object.
+A period is a data as number in the YYYYMM format,
+e.g.'201911'</p>
+<code><span class="keyword">fun </span><span class="identifier">periodToDate</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen$periodToDate(kotlin.Int)/date">date</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

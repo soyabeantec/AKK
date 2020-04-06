@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DateSerializer - generator-gerald</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">generator-gerald</a>&nbsp;/&nbsp;<a href="../index.html">eu.akkalytics.et.gen</a>&nbsp;/&nbsp;<a href="./index.html">DateSerializer</a><br/>
+<br/>
+<h1>DateSerializer</h1>
+(JVM) <code><span class="keyword">object </span><span class="identifier">DateSerializer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">KSerializer</span><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">&gt;</span></code>
+<p>Custom serializer for the 'Date' class from java.util.
+Because there is no serialization for 'Date', due to the
+fact that it is a Java class and Kotlinx only supports real Kotlin data types.
+Ref.: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/custom_serializers.md</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="date-format.html">dateFormat</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">dateFormat</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/text/DateFormat.html"><span class="identifier">DateFormat</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="descriptor.html">descriptor</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">descriptor</span><span class="symbol">: </span><span class="identifier">SerialDescriptor</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+(JVM) 
+<h4><a href="deserialize.html">deserialize</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deserialize</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.DateSerializer$deserialize(kotlinx.serialization.Decoder)/decoder">decoder</span><span class="symbol">:</span>&nbsp;<span class="identifier">Decoder</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a></code></td>
+</tr>
+<tr>
+<td>
+(JVM) 
+<h4><a href="serialize.html">serialize</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">serialize</span><span class="symbol">(</span><span class="identifier" id="eu.akkalytics.et.gen.DateSerializer$serialize(kotlinx.serialization.Encoder, java.util.Date)/encoder">encoder</span><span class="symbol">:</span>&nbsp;<span class="identifier">Encoder</span><span class="symbol">, </span><span class="identifier" id="eu.akkalytics.et.gen.DateSerializer$serialize(kotlinx.serialization.Encoder, java.util.Date)/obj">obj</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html"><span class="identifier">Date</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
