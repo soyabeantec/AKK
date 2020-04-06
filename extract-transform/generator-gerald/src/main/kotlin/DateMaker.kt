@@ -19,6 +19,7 @@ fun String.toDate(): Date {
     if (dateRegex matches this) {
         try {
             val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+            dateFormat.timeZone = TimeZone.getTimeZone("UTC");
             result = dateFormat.parse(this)
         } catch (e: Exception) {
             e.printStackTrace()
